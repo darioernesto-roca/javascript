@@ -4440,12 +4440,54 @@ console.log(title);
 
     console.log(knapsackDP(capacity, weights, values, weights.length)); // Output: 220
 
+    // 7. Structured data: Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general. It is also coded using in-page markup on the page that the information applies to.
+
+    // Structured data - Examples:
+
+    // Example 1: JSON (JavaScript Object Notation)
+
+    const person = {
+      name: "Alice",
+      age: 30,
+      city: "New York"
+    };
+
+    console.log(JSON.stringify(person)); // Output: {"name":"Alice","age":30,"city":"New York"}
+
+    // Example 2: XML (Extensible Markup Language)
+
+    const xml = `
+    <person>
+      <name>Alice</name>
+      <age>30</age>
+      <city>New York</city>
+    </person>
+    `;
+
+    console.log(xml);
+
+    // Real cases of use:
+
+    // Structured data - Adding schema markup to a web page for search engine optimization (SEO):
+
+    /* <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alice",
+      "jobTitle": "Software Engineer",
+      "email": "example@example.com
+    }
+    </script>*/
+
+    
+
+
 }
 
-
-/* 16. JS Frameworks */
+/* 17. JS Frameworks */
 
 {
-  // 1. React: 
+  // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
 
 }
