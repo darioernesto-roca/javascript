@@ -4512,6 +4512,10 @@ console.log(title);
     .then(response => response.json())
     .then(data => console.log(data)); */
 
+    // 9. Indexed collections: Indexed collections are data structures that store elements in a specific order and allow for efficient access to elements by their index. Common examples of indexed collections include arrays and strings. Indexed collections are used in programming for storing and accessing data in a structured manner.
+
+    // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
+
 }
 
 /* 17. JS Frameworks */
