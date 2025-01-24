@@ -962,11 +962,52 @@ console.log(title);
     console.log(fibonacci(i)); // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377
   }
 
-  // Map: The map() method creates a new array by applying a function to each element of an existing array. It is a common functional programming pattern and is used to transform data without mutating the original array.
+  // Map: A Map is a data structure in JavaScript that stores key-value pairs. Unlike objects, keys in a Map can be any type, not just strings or symbols. A Map is typically used when you need to manage dynamic key-value associations. Key Features of Map:
+  //Can have keys of any type, including objects and functions.
+  // Maintains the insertion order of key-value pairs.
+  // Provides built-in methods to interact with the collection, like .set(), .get(), .delete(), .has(), etc.
+  // Often used for scenarios where you need a dictionary-like structure with flexibility.
 
-  const numbersMap = [1, 2, 3];
-  const doubledNumbersMap = numbersMap.map((number) => number * 2);
-  console.log(doubledNumbersMap); // [2, 4, 6]
+    const map = new Map();
+    map.set(key, value); // Adds a key-value pair
+    map.get(key);        // Retrieves the value for a key
+    map.delete(key);     // Deletes a key-value pair
+    map.has(key);        // Checks if a key exists
+
+    const userRoles = new Map();
+
+  // Add key-value pairs
+  userRoles.set('Alice', 'Admin');
+  userRoles.set('Bob', 'Editor');
+
+  // Retrieve a value by its key
+  console.log(userRoles.get('Alice')); // "Admin"
+
+  // Check if a key exists
+  console.log(userRoles.has('Bob')); // true
+
+  // Delete a key
+  userRoles.delete('Bob');
+
+  // Iterating over the map
+  for (const [key, value] of userRoles) {
+    console.log(`${key}: ${value}`);
+  }
+  // Output:
+  // Alice: Admin
+
+  // Weak map: The WeakMap object is a collection of key/value pairs in which the keys are weakly referenced. The keys must be objects, and the values can be arbitrary values. The WeakMap object is similar to the Map object, but with some key differences. The keys in a WeakMap are weakly referenced, meaning that they do not prevent the garbage collector from collecting them if there are no other references to the key. This makes WeakMap useful for scenarios where you want to associate data with objects without preventing those objects from being garbage collected. The WeakMap object is not iterable, so it does not have methods like keys(), values(), or entries(). It is used for private data storage, caching, and memoization.
+
+  // WeakMap - Example:
+
+  const weakMap = new WeakMap();
+
+  const key = { id: 1 };
+  const value = "Data associated with the key";
+
+  weakMap.set(key, value);
+
+  console.log(weakMap.get(key)); // "Data associated with the key"
 
   // Primitive types: In JavaScript, there are six primitive data types: string, number, bigint, boolean, undefined, and symbol. These types are immutable and have corresponding wrapper objects (e.g., String, Number) that provide additional functionality.
 
