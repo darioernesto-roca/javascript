@@ -2002,6 +2002,90 @@ console.log(title);
 
   console.log([...unionSet]); // [1, 2, 3, 4]
 
+  // 14. WeakSet: The WeakSet object in JavaScript is a collection of weakly held objects. It is similar to a Set, but with some key differences. WeakSets are used to store weakly held object references, meaning that the garbage collector can remove objects from the set if they are no longer used elsewhere in the program. WeakSets are commonly used to store private or internal object references that should not prevent objects from being garbage collected.
+
+  // WeakSet - Examples:
+
+  // WeakSet - Creating a new weak set
+
+  const usersWeakSet = new WeakSet();
+
+  // Adding objects to the weak set
+
+  const user1 = { name: "Alice" };
+  const user2 = { name: "Bob" };
+
+  usersWeakSet.add(user1);
+  usersWeakSet.add(user2);
+
+  // Checking if an object is in the weak set
+
+  console.log(usersWeakSet.has(user1)); // true
+
+  // Removing an object from the weak set
+
+  usersWeakSet.delete(user2);
+
+  console.log(usersWeakSet.has(user2)); // false
+
+  // Real cases of use:
+
+  // WeakSet - Storing private object references in classes:
+
+  class PrivateData {
+    #users = new WeakSet();
+
+    addUser(user) {
+      this.#users.add(user);
+    }
+
+    hasUser(user) {
+      return this.#users.has(user);
+    }
+
+    removeUser(user) {
+      this.#users.delete(user);
+    }
+  }
+
+  const dataSet = new PrivateData();
+
+  const userA = { name: "Alice" };
+  const userB = { name: "Bob" };
+
+  dataSet.addUser(userA);
+  dataSet.addUser(userB);
+
+  console.log(dataSet.hasUser(userA)); // true
+
+  // WeakSet - Storing internal object references in modules:
+
+  const internalData = new WeakSet();
+
+  function storeData(data) {
+    internalData.add(data);
+  }
+
+  function hasData(data) {
+    return internalData.has(data);
+  }
+
+  function removeData(data) {
+    internalData.delete(data);
+  }
+
+  // WeakSet - Storing temporary object references in functions:
+
+  function processUserData(userData) {
+    const temporaryData = new WeakSet();
+
+    temporaryData.add(userData);
+
+    // Perform operations on temporaryData
+
+    temporaryData.delete(userData);
+  }
+
 }
 
 /* 9. Promises */
