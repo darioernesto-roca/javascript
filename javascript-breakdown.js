@@ -3475,6 +3475,31 @@ console.log(title);
   shoppingCartSetItem[1].price = 25;
 
   console.log(shoppingCartSetItem); // [{ name: "Product 1", price: 10 }, { name: "Product 2", price: 25 }, { name: "Product 3", price: 30 }]
+
+  // 21. Typed arrays: Typed arrays in JavaScript are used to store and manipulate binary data in a structured format. They provide a way to work with raw binary data, such as integers, floats, and bytes, in a memory-efficient manner. Typed arrays are optimized for performance and memory usage and are commonly used in web development for handling network data, file I/O, and graphics processing.
+
+  // Typed arrays - Examples:
+
+  const buffer = new ArrayBuffer(16);
+
+  const int32Array = new Int32Array(buffer);
+
+  int32Array[0] = 42;
+
+  console.log(int32Array[0]); // 42
+
+  // Real cases of use:
+
+  // Typed arrays - Processing binary data in a web application:
+
+  const bufferTyped = new ArrayBuffer(8);
+
+  const float64Array = new Float64Array(bufferTyped);
+
+  float64Array[0] = 3.14;
+
+  console.log(float64Array[0]); // 3.14
+
 }
 
 /* 13. Classes */
