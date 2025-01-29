@@ -2086,6 +2086,14 @@ console.log(title);
     temporaryData.delete(userData);
   }
 
+  // 15. Object.is(): The Object.is() method in JavaScript is used to compare two values for strict equality. It returns true if the values are the same, taking into account edge cases like NaN and -0. Object.is() is similar to the strict equality operator (===), but with some key differences. It provides a more accurate comparison for certain values and edge cases.
+
+  // Object.is - Examples:
+
+  console.log(Object.is(1, 1)); // true
+  console.log(Object.is(NaN, NaN)); // true
+  console.log(Object.is(0, -0)); // false
+
 }
 
 /* 9. Promises */
