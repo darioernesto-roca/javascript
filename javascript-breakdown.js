@@ -2094,6 +2094,21 @@ console.log(title);
   console.log(Object.is(NaN, NaN)); // true
   console.log(Object.is(0, -0)); // false
 
+  // 16. Error objects: Error objects in JavaScript are used to represent and handle errors in code. They provide information about the type of error, the error message, and the stack trace of the error. Error objects are commonly used for error handling, debugging, and logging in JavaScript applications. When a runtime error occurs, a new Error object is created and thrown. With this Error object, we can determine the type of the Error and handle it according to its type. Besides error constructors, Javascript also has other core Error constructors. Like:
+
+  // 16.1 AggregateError - A collection of errors thrown simultaneously. For example
+  const errors = [new Error('Error 1'), new Error('Error 2')];
+
+  console.log(new AggregateError(errors)); // AggregateError: Error 1, Error 2
+
+  // 16.2 EvalError - An error regarding the global eval() function. EvalError occurred during the evaluation of a JavaScript expression. For example 
+
+  try {
+    throw new EvalError('Error in eval() function');
+  } catch (error) {
+    console.error(error); // EvalError: Error in eval() function
+  }
+
 }
 
 /* 9. Promises */
