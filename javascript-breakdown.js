@@ -697,9 +697,9 @@ console.log(title);
 
 {
   
-  // Built-in objects: Built-in objects, or “global objects”, are those built into the language specification itself. There are numerous built-in objects with the JavaScript language, all of which are accessible at the global scope. Some examples are: Number, Math, Date, String, Error, Function, Boolean.
+  // 1. Built-in objects: Built-in objects, or “global objects”, are those built into the language specification itself. There are numerous built-in objects with the JavaScript language, all of which are accessible at the global scope. Some examples are: Number, Math, Date, String, Error, Function, Boolean.
   
-  // Currying: Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument. This allows for partial application of the function, where some arguments are provided upfront, and the rest are provided later.
+  // 2. Currying: Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument. This allows for partial application of the function, where some arguments are provided upfront, and the rest are provided later.
 
   function multiplyCurrying(a) {
     return function (b) {
@@ -710,7 +710,7 @@ console.log(title);
   const multiplyByTwo = multiplyCurrying(2);
   console.log(multiplyByTwo(3)); // 6
 
-  // Deep equal" is a technique used to compare two objects to see if they are identical in terms of their properties and values, even when the objects contain nested structures such as arrays or other objects. Unlike shallow comparison (using ===), which checks only if two variables point to the same reference in memory, deep equal goes further to recursively compare the values inside the objects.
+  // 3. Deep equal" is a technique used to compare two objects to see if they are identical in terms of their properties and values, even when the objects contain nested structures such as arrays or other objects. Unlike shallow comparison (using ===), which checks only if two variables point to the same reference in memory, deep equal goes further to recursively compare the values inside the objects.
 
   const benjamin1 = {
     name: "Benjamin Button",
@@ -758,21 +758,21 @@ console.log(title);
   
   console.log(deepEqual(benjamin1, benjamin2)); // true (They are the same even with nested objects)
   
-  // ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
+  // 4. ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
 
-  // ECMAScript 6 (ES6): ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced many new features to JavaScript, such as arrow functions, classes, template literals, and destructuring assignments. It was a major update to the language and laid the foundation for modern JavaScript development.
+  // 5. ECMAScript 6 (ES6): ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced many new features to JavaScript, such as arrow functions, classes, template literals, and destructuring assignments. It was a major update to the language and laid the foundation for modern JavaScript development.
 
-  // Event Loop: The event loop is a fundamental concept in JavaScript that allows the runtime environment to efficiently handle asynchronous operations. It ensures that tasks are executed in the correct order and that the application remains responsive to user interactions.
+  // 6. Event Loop: The event loop is a fundamental concept in JavaScript that allows the runtime environment to efficiently handle asynchronous operations. It ensures that tasks are executed in the correct order and that the application remains responsive to user interactions.
 
-  // Event loop phases: The event loop in JavaScript consists of several phases, including the callback queue, microtask queue, and rendering. These phases work together to process tasks and ensure that the application remains responsive and performs well.
+  // 7. Event loop phases: The event loop in JavaScript consists of several phases, including the callback queue, microtask queue, and rendering. These phases work together to process tasks and ensure that the application remains responsive and performs well.
 
-  // IIFE (Immediately Invoked Function Expression): An IIFE is a common JavaScript pattern that involves defining and immediately executing a function. It is often used to create a new scope for variables and avoid polluting the global namespace.
+  // 8. IIFE (Immediately Invoked Function Expression): An IIFE is a common JavaScript pattern that involves defining and immediately executing a function. It is often used to create a new scope for variables and avoid polluting the global namespace.
   
   (function () {
     console.log("IIFE executed");
   })();
 
-  // Inmutability: Inmutability is a key concept in functional programming that refers to the idea that data should not be changed once it is created. Instead of modifying existing data, new data structures are created with the desired changes. This approach helps prevent bugs and makes code easier to reason about.
+  // 9. Inmutability: Inmutability is a key concept in functional programming that refers to the idea that data should not be changed once it is created. Instead of modifying existing data, new data structures are created with the desired changes. This approach helps prevent bugs and makes code easier to reason about.
 
   // Inmutability Example:
   const originalArray = [1, 2, 3];
@@ -839,7 +839,7 @@ console.log(title);
   //   team: ['Donny Donowitz', 'Hugo Stiglitz', 'Omar Ulmer', 'Archie Hicox']
   // }
 
-  // Regular Expressions
+  // 10. Regular Expressions
 
   // Regular expressions (regex or regexp) are patterns used to match character combinations in strings. They are a powerful tool for text processing and validation in JavaScript and other programming languages. They are primarily used for string searching and manipulation, making them extremely useful in various programming tasks, such as validation, parsing, and text processing. In JavaScript, regular expressions can be created using either the RegExp constructor or by using literal notation enclosed in slashes.
 
@@ -913,16 +913,16 @@ console.log(title);
   console.log(emailRegex.test(emailExample1)); // true
   console.log(emailRegex.test(emailExample2)); // false.
 
-  // Functional programming: Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. It emphasizes the use of pure functions, higher-order functions, and immutable data structures to create more predictable and maintainable code. In JavaScript, many libraries (such as Ramda or Lodash) are built to provide functional utilities and make functional programming easier to apply in day-to-day code.
+  // 11. Functional programming: Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. It emphasizes the use of pure functions, higher-order functions, and immutable data structures to create more predictable and maintainable code. In JavaScript, many libraries (such as Ramda or Lodash) are built to provide functional utilities and make functional programming easier to apply in day-to-day code.
 
   // Functional programming principles:
-  // 1. Pure functions: Functions that always produce the same output for the same input and have no side effects. Example:
+  // 11.1. Pure functions: Functions that always produce the same output for the same input and have no side effects. Example:
   function add(a, b) {
     return a + b;
   }
   console.log(add(2, 3)); // 5
 
-  // 2. Higher-order functions: Functions that take other functions as arguments or return functions as results. Example:
+  // 11.2. Higher-order functions: Functions that take other functions as arguments or return functions as results. Example:
 
   function multiplyByTwo(value) {
     return value * 2;
@@ -933,12 +933,12 @@ console.log(title);
   }
   console.log(operateOnNumber(5, multiplyByTwo)); // 10
 
-  // 3. Immutability: Data that cannot be changed after it is created. Instead of modifying existing data, new data structures are created with the desired changes. Example:
+  // 11.3. Immutability: Data that cannot be changed after it is created. Instead of modifying existing data, new data structures are created with the desired changes. Example:
   const numbers = [1, 2, 3];
   const doubledNumbers = numbers.map((number) => number * 2);
   console.log(doubledNumbers); // [2, 4, 6]
 
-  // 4. Recursion: A technique where a function calls itself to solve smaller instances of the same problem. Example:
+  // 11.4. Recursion: A technique where a function calls itself to solve smaller instances of the same problem. Example:
   function factorialRecursion(n) {
     if (n === 0) {
       return 1;
@@ -962,7 +962,7 @@ console.log(title);
     console.log(fibonacci(i)); // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377
   }
 
-  // Map: A Map is a data structure in JavaScript that stores key-value pairs. Unlike objects, keys in a Map can be any type, not just strings or symbols. A Map is typically used when you need to manage dynamic key-value associations. Key Features of Map:
+  // 12. Map: A Map is a data structure in JavaScript that stores key-value pairs. Unlike objects, keys in a Map can be any type, not just strings or symbols. A Map is typically used when you need to manage dynamic key-value associations. Key Features of Map:
   //Can have keys of any type, including objects and functions.
   // Maintains the insertion order of key-value pairs.
   // Provides built-in methods to interact with the collection, like .set(), .get(), .delete(), .has(), etc.
@@ -996,7 +996,7 @@ console.log(title);
   // Output:
   // Alice: Admin
 
-  // Weak map: The WeakMap object is a collection of key/value pairs in which the keys are weakly referenced. The keys must be objects, and the values can be arbitrary values. The WeakMap object is similar to the Map object, but with some key differences. The keys in a WeakMap are weakly referenced, meaning that they do not prevent the garbage collector from collecting them if there are no other references to the key. This makes WeakMap useful for scenarios where you want to associate data with objects without preventing those objects from being garbage collected. The WeakMap object is not iterable, so it does not have methods like keys(), values(), or entries(). It is used for private data storage, caching, and memoization.
+  // 13. Weak map: The WeakMap object is a collection of key/value pairs in which the keys are weakly referenced. The keys must be objects, and the values can be arbitrary values. The WeakMap object is similar to the Map object, but with some key differences. The keys in a WeakMap are weakly referenced, meaning that they do not prevent the garbage collector from collecting them if there are no other references to the key. This makes WeakMap useful for scenarios where you want to associate data with objects without preventing those objects from being garbage collected. The WeakMap object is not iterable, so it does not have methods like keys(), values(), or entries(). It is used for private data storage, caching, and memoization.
 
   // WeakMap - Example:
 
@@ -1009,33 +1009,33 @@ console.log(title);
 
   console.log(weakMap.get(key)); // "Data associated with the key"
 
-  // Primitive types: In JavaScript, there are six primitive data types: string, number, bigint, boolean, undefined, and symbol. These types are immutable and have corresponding wrapper objects (e.g., String, Number) that provide additional functionality.
+  // 14. Primitive types: In JavaScript, there are six primitive data types: string, number, bigint, boolean, undefined, and symbol. These types are immutable and have corresponding wrapper objects (e.g., String, Number) that provide additional functionality.
 
-  // String: Represents a sequence of characters enclosed in single or double quotes. Example:
+  // 14.1 String: Represents a sequence of characters enclosed in single or double quotes. Example:
   const stringPrimitive = "Hello, World!";
   console.log(stringPrimitive); // Hello, World!
 
-  // Number: Represents numeric data, including integers and floating-point numbers. Example:
+  // 14.2 Number: Represents numeric data, including integers and floating-point numbers. Example:
   const numberPrimitive = 42;
   console.log(numberPrimitive); // 42
 
-  // BigInt: Represents integers with arbitrary precision. Example:
+  // 14.3 BigInt: Represents integers with arbitrary precision. Example:
   const bigIntPrimitive = 1234567890123456789012345678901234567890n;
   console.log(bigIntPrimitive); // 1234567890123456789012345678901234567890n
 
-  // Boolean: Represents a logical value, either true or false. Example:
+  // 14.4 Boolean: Represents a logical value, either true or false. Example:
   const booleanPrimitive = true;
   console.log(booleanPrimitive); // true
 
-  // Undefined: Represents an undefined value. Example:
+  // 14.5 Undefined: Represents an undefined value. Example:
   let undefinedPrimitive;
   console.log(undefinedPrimitive); // undefined
 
-  // Symbol: Represents a unique and immutable value used as an identifier for object properties. Example:
+  // 14.6 Symbol: Represents a unique and immutable value used as an identifier for object properties. Example:
   const symbolPrimitive = Symbol("description");
   console.log(symbolPrimitive); // Symbol(description)
 
-  // Set: The Set object is a collection of unique values, where each value may occur only once. It is useful for storing and managing unique values, such as removing duplicates from an array or checking for the presence of specific values.
+  // 15. Set: The Set object is a collection of unique values, where each value may occur only once. It is useful for storing and managing unique values, such as removing duplicates from an array or checking for the presence of specific values.
 
   const uniqueNumbers = new Set([1, 2, 3, 1, 2, 3]);
   console.log(uniqueNumbers); // Set { 1, 2, 3 }
@@ -1046,7 +1046,7 @@ console.log(title);
   uniqueNumbers.add('1');
   console.log(uniqueNumbers); // Set { 1, 2, 3, 4, '1' }
 
-  // Strict mode: Strict mode is a feature in JavaScript that allows you to place a program or a function in a "strict" operating context. It helps catch common coding errors and makes the code more secure and optimized. Strict mode can be enabled at the global level or within a specific function. It is different than typescript, because typescript is a superset of javascript, and strict mode is a feature of javascript. And typescript has its own strict mode and with strict mode JavaScript didn't have the same features, like typescript, e.g. types.
+  // 16. Strict mode: Strict mode is a feature in JavaScript that allows you to place a program or a function in a "strict" operating context. It helps catch common coding errors and makes the code more secure and optimized. Strict mode can be enabled at the global level or within a specific function. It is different than typescript, because typescript is a superset of javascript, and strict mode is a feature of javascript. And typescript has its own strict mode and with strict mode JavaScript didn't have the same features, like typescript, e.g. types.
 
   // Enable strict mode at the global level
   "use strict";
@@ -1072,7 +1072,7 @@ console.log(title);
     // Strict mode can also be enabled within a specific function by adding the "use strict" directive at the beginning of the function body. This enables strict mode only within that function and helps catch errors specific to that function.
   }
 
-  // Window: The window object represents the browser window or tab that contains the JavaScript code. It provides access to the browser's properties and methods, such as the document object, location, history, and more. The window object is the global object in client-side JavaScript and is accessible from any part of the code.
+  // 17. Window: The window object represents the browser window or tab that contains the JavaScript code. It provides access to the browser's properties and methods, such as the document object, location, history, and more. The window object is the global object in client-side JavaScript and is accessible from any part of the code.
 
   // Window - Accessing window properties
   console.log(window.innerWidth); // Current window width
@@ -1109,7 +1109,7 @@ console.log(title);
     // Access to browser history: The window object provides access to the browser's history object, which allows navigation through the browser history.
     // Access to local storage: The window object provides access to the local storage object, which allows data to be stored locally in the browser.
 
-  // This: The this keyword in JavaScript refers to the object that the function is a method of. It allows functions to access and operate on the object's properties and methods. The value of this is determined by how a function is called, and it can vary depending on the context in which the function is executed.
+  // 18. This: The this keyword in JavaScript refers to the object that the function is a method of. It allows functions to access and operate on the object's properties and methods. The value of this is determined by how a function is called, and it can vary depending on the context in which the function is executed.
 
   // This - Example 1: Method context
   const personThisMethodContext = {
@@ -1151,7 +1151,7 @@ console.log(title);
     console.log(`Button clicked by ${this.id}`); // In event handlers, this refers to the element that triggered the event. In this case, this refers to the button element that was clicked.
   });
 
-  // typeof operator: The typeof operator in JavaScript returns the data type of a variable or expression. It is useful for checking the type of a value and handling different data types appropriately.
+  // 19. typeof operator: The typeof operator in JavaScript returns the data type of a variable or expression. It is useful for checking the type of a value and handling different data types appropriately.
 
   // typeof - Example 1: Checking data types
   console.log(typeof "Shalom"); // string
@@ -1243,6 +1243,49 @@ console.log(title);
   if (typeof bigNumberTypeof === "bigint") {
     console.log("bigNumber is a bigint");
   }
+
+  // 20. Bitwise operators: Bitwise operators in JavaScript are used to perform bitwise operations on binary representations of numbers. They work at the bit level and are used to manipulate and extract specific bits from numbers. Bitwise operators are rarely used in everyday programming but can be useful for low-level operations and optimizations. Bitwise operators treat arguments as 32-bits (zeros & ones) and work on the level of their binary representation. Ex. Decimal number 9 has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.
+
+  // Bitwise operators in JavaScript are as follows:
+  // & (AND)
+  // | (OR)
+  // ^ (XOR)
+  // ~ (NOT)
+  // << (Left SHIFT)
+  // >> (Right SHIFT)
+  // >>> (Zero-Fill Right SHIFT)
+
+  // Bitwise operators - Example 1: Bitwise AND (&)
+  const aBitwiseAND = 5; // 101
+  const bBitwiseAND = 3; // 011
+  console.log(aBitwiseAND & bBitwiseAND); // 1 (001)
+
+  // Bitwise operators - Example 2: Bitwise OR (|)
+  const aBitwiseOR = 5; // 101
+  const bBitwiseOR = 3; // 011
+  console.log(aBitwiseOR | bBitwiseOR); // 7 (111)
+
+  // Bitwise operators - Example 3: Bitwise XOR (^)
+  const aBitwiseXOR = 5; // 101
+  const bBitwiseXOR = 3; // 011
+  console.log(aBitwiseXOR ^ bBitwiseXOR); // 6 (110)
+
+  // Bitwise operators - Example 4: Bitwise NOT (~)
+  const aBitwiseNOT = 5; // 101
+  console.log(~aBitwiseNOT); // -6 (-110)
+
+  // Bitwise operators - Example 5: Left SHIFT (<<)
+  const aLeftSHIFT = 5; // 101
+  console.log(aLeftSHIFT << 1); // 10 (1010)
+
+  // Bitwise operators - Example 6: Right SHIFT (>>)
+  const aRightSHIFT = 5; // 101
+  console.log(aRightSHIFT >> 1); // 2 (10)
+
+  // Bitwise operators - Example 7: Zero-Fill Right SHIFT (>>>)
+  const aZeroFillRightSHIFT = -5; // -101
+  console.log(aZeroFillRightSHIFT >>> 1); // 2147483645 (01111111111111111111111111111011)
+
 }
 
 /* 6. Modules */
