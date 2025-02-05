@@ -543,6 +543,7 @@ console.log(title);
 }
 
 /* 4. Functions */
+
 {
   // Arrow Function ()=> : a shorter syntax for writing function expressions
 
@@ -691,6 +692,19 @@ console.log(title);
   console.log(generatorYieldNested.next()); // { value: 1, done: false }
   console.log(generatorYieldNested.next()); // { value: 2, done: false }
   console.log(generatorYieldNested.next()); // { value: 3, done: false }
+
+  // rest parameters: Rest parameters allow a function to accept an indefinite number of arguments as an array. They are denoted by three dots (...) followed by the parameter name.
+
+  function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+  }
+
+  console.log(sum(1, 2, 3)); // 6
+
+  // spread operator: The spread operator allows an iterable (e.g., an array) to be expanded into individual elements. It is denoted by three dots (...) followed by the iterable.
+
+  const numbers = [1, 2, 3];
+  console.log(...numbers); // 1 2 3
 }
 
 /* 5. Miscellaneous */
