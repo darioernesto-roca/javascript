@@ -545,7 +545,7 @@ console.log(title);
 /* 4. Functions */
 
 {
-  // Arrow Function ()=> : a shorter syntax for writing function expressions
+  // 1. Arrow Function ()=> : a shorter syntax for writing function expressions
 
   const arrowFunction = () => {
     console.log("Arrow function");
@@ -553,7 +553,7 @@ console.log(title);
 
   arrowFunction(); // Arrow function
 
-  // ?. (Optional Chaining): accesses nested properties without the need to validate each reference in the chain
+  // 2. ?. (Optional Chaining): accesses nested properties without the need to validate each reference in the chain
 
   const userOptionChaining = {
     name: "Florentino",
@@ -567,7 +567,7 @@ console.log(title);
   // The expression userOptionChaining?.address?.city checks if userOptionChaining and userOptionChaining.address exist. If they do, it accesses the city property.
   // If any part of the chain (e.g., userOptionChaining or userOptionChaining.address) is null or undefined, it returns undefined instead of throwing an error.
 
-  // Asynchronous callbacks: executes a function asynchronously after a certain time or event has passed.
+  // 3. Asynchronous callbacks: executes a function asynchronously after a certain time or event has passed.
 
   setTimeout(() => {
     console.log("Asynchronous callback");
@@ -580,7 +580,7 @@ console.log(title);
     }, 1000);
   });
 
-  // Callback patterns: Callbacks can be used to handle asynchronous operations, such as fetching data from a server or waiting for user input.
+  // 4. Callback patterns: Callbacks can be used to handle asynchronous operations, such as fetching data from a server or waiting for user input.
 
   function fetchDataCallback(callback) {
     setTimeout(() => {
@@ -594,7 +594,7 @@ console.log(title);
   }); // Data fetched
 
 
-  // Closures: Closures in JavaScript allow a function to "remember" and access variables from its lexical scope, even when the function is executed outside that scope. This happens because JavaScript functions form a closure (cierre o clausura) over the scope in which they were created, keeping a reference to that scope even after the outer function has returned. When outerFunction is called, this variable is created and stored in the function's scope. However, outerFunction also defines an inner function (innerFunction) which can access outerVariable.
+  // 5. Closures: Closures in JavaScript allow a function to "remember" and access variables from its lexical scope, even when the function is executed outside that scope. This happens because JavaScript functions form a closure (cierre o clausura) over the scope in which they were created, keeping a reference to that scope even after the outer function has returned. When outerFunction is called, this variable is created and stored in the function's scope. However, outerFunction also defines an inner function (innerFunction) which can access outerVariable.
 
   function outerFunction() {
     const outerVariable = "Outer variable";
@@ -607,7 +607,7 @@ console.log(title);
     return innerFunction;
   }
 
-  // Generator functions: Generator functions are a special type of function that can pause and resume their execution. They are defined using the function* syntax and yield keyword. This is useful in various scenarios, such as dealing with asynchronous code, streaming data, or implementing complex iteration behaviors. Generator functions are defined using the function* (with an asterisk) syntax, followed by a block of code. Inside the function, the yield keyword is used to pause the function and return a value to the caller.
+  // 6. Generator functions: Generator functions are a special type of function that can pause and resume their execution. They are defined using the function* syntax and yield keyword. This is useful in various scenarios, such as dealing with asynchronous code, streaming data, or implementing complex iteration behaviors. Generator functions are defined using the function* (with an asterisk) syntax, followed by a block of code. Inside the function, the yield keyword is used to pause the function and return a value to the caller.
 
   function* generatorFunction() {
     yield 1;
@@ -621,20 +621,20 @@ console.log(title);
   console.log(generator.next());  // { value: 3, done: false }
   console.log(generator.next());  // { value: undefined, done: true }
 
-  // Hoisting: Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope before code execution. This means that you can use a variable or function before it has been declared.
+  // 7. Hoisting: Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope before code execution. This means that you can use a variable or function before it has been declared.
 
   console.log(hoistedVariable); // undefined
   var hoistedVariable = "Hoisted variable";
 
-  // Immediately Invoked Function Expression (IIFE): an anonymous function that is executed immediately after it is defined. It is wrapped in parentheses to prevent it from being treated as a function declaration.
+  // 8. Immediately Invoked Function Expression (IIFE): an anonymous function that is executed immediately after it is defined. It is wrapped in parentheses to prevent it from being treated as a function declaration.
 
   (function () {
     console.log("IIFE");
   })(); // IIFE
 
-  // Lexical scope: Lexical scope is a scope in JavaScript that is determined by the placement of variables and functions in the code. It allows inner functions to access variables from their outer function, even after the outer function has finished executing. See closures example.
+  // 9. Lexical scope: Lexical scope is a scope in JavaScript that is determined by the placement of variables and functions in the code. It allows inner functions to access variables from their outer function, even after the outer function has finished executing. See closures example.
 
-  // Passing functions as arguments: Functions can be passed as arguments to other functions, allowing for dynamic behavior and code reusability.
+  // 10. Passing functions as arguments: Functions can be passed as arguments to other functions, allowing for dynamic behavior and code reusability.
 
   function sayHello(name) {
     return `Hello, ${name}!`;
@@ -646,7 +646,7 @@ console.log(title);
 
   console.log(sayHelloToUser(sayHello, "Florentino")); // Hello, Florentino!
 
-  // Basic functions: Functions in JavaScript are defined using the function keyword, followed by the function name, parameters, and function body.
+  // 11. Basic functions: Functions in JavaScript are defined using the function keyword, followed by the function name, parameters, and function body.
 
   function basicFunctionGreet(fullname) {
     return `Hello, ${fullname}!`;
@@ -654,7 +654,7 @@ console.log(title);
 
   console.log(basicFunctionGreet("Florentino")); // Hello, Florentino!
   
-  // Default parameters: Default parameters allow us to specify default values for function parameters in case no value is provided when the function is called.
+  // 12. Default parameters: Default parameters allow us to specify default values for function parameters in case no value is provided when the function is called.
 
   function greetDefaultParameters(name = "World") {
     return `Hello, ${name}!`;
@@ -663,11 +663,11 @@ console.log(title);
   console.log(greetDefaultParameters()); // Hello, World!
   console.log(greetDefaultParameters("Florentino")); // Hello, Florentino!
 
-  // Implicit return: Arrow functions with a single expression can have an implicit return, meaning the return keyword and curly braces are omitted.
+  // 13. Implicit return: Arrow functions with a single expression can have an implicit return, meaning the return keyword and curly braces are omitted.
   
   const implicitReturn = (name) => `Hello, ${name}!`;
 
-  // yield: The yield keyword is used inside generator functions to pause the function and return a value to the caller. It allows the function to be paused and resumed, enabling complex iteration behaviors and asynchronous code handling.
+  // 14. yield: The yield keyword is used inside generator functions to pause the function and return a value to the caller. It allows the function to be paused and resumed, enabling complex iteration behaviors and asynchronous code handling.
 
   function* generatorFunctionYield() {
     yield 1;
@@ -693,7 +693,7 @@ console.log(title);
   console.log(generatorYieldNested.next()); // { value: 2, done: false }
   console.log(generatorYieldNested.next()); // { value: 3, done: false }
 
-  // rest parameters: Rest parameters allow a function to accept an indefinite number of arguments as an array. They are denoted by three dots (...) followed by the parameter name.
+  // 15. rest parameters: Rest parameters allow a function to accept an indefinite number of arguments as an array. They are denoted by three dots (...) followed by the parameter name.
 
   function sum(...numbers) {
     return numbers.reduce((total, num) => total + num, 0);
@@ -2158,12 +2158,19 @@ console.log(title);
 
   console.log(new AggregateError(errors)); // AggregateError: Error 1, Error 2
 
-  // 16.2 EvalError - An error regarding the global eval() function. EvalError occurred during the evaluation of a JavaScript expression. For example 
+  // 16.2 EvalError - An error regarding the global eval() function. EvalError occurred during the evaluation of a JavaScript expression. For example: 
 
   try {
     throw new EvalError('Error in eval() function');
   } catch (error) {
-    console.error(error); // EvalError: Error in eval() function
+    console.er
+    
+  // 16.3 InternalError - An internal JavaScript error, often indicating a bug in the engine. For example:
+
+  try {
+    throw new InternalError('Internal error occurred');
+  } catch (error) {
+    console.error(error); // InternalError: Internal error occurred
   }
 
 }
