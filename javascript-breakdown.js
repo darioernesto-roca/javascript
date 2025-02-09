@@ -2165,7 +2165,7 @@ console.log(title);
   } catch (error) {
     console.er
     
-  // 16.3 InternalError - An internal JavaScript error, often indicating a bug in the engine. For example:
+  // 16.3 InternalError - An internal JavaScript error, often indicating a bug in the engine. Internal error are useful to get information about the internal state of the JavaScript engine. For example:
 
   try {
     throw new InternalError('Internal error occurred');
@@ -2173,6 +2173,13 @@ console.log(title);
     console.error(error); // InternalError: Internal error occurred
   }
 
+  // 16.4 RangeError - A number "out of range" has occurred. For example:
+
+  try {
+    throw new RangeError('Number out of range');
+  } catch (error) {
+    console.error(error); // RangeError: Number out of range
+  }
 }
 
 /* 9. Promises */
