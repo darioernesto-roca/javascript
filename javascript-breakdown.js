@@ -33,7 +33,7 @@ console.log(title);
   const nameFlorentinoConst = "Florentino";
   const ageConst = 25;
   const isMaleConst = true;
-  
+
   console.log(nameFlorentinoConst); // Florentino
   console.log(ageConst); // 25
   console.log(isMaleConst); // true
@@ -60,17 +60,17 @@ console.log(title);
 {
   // 1.2.1 .String: String is a primitive type that holds a sequence of characters. String in Javascript is written within a pair of single quotation marks '', double quotation marks "", or backticks `` (template literals). All types of quotes can be used to contain a string but only if the starting quote is the same as the end quote.
 
-  const backticksString = "backticks"
+  const backticksString = "backticks";
 
   const stringExample = "This is a string";
-  const stringExampleTwo = 'This is another string';
+  const stringExampleTwo = "This is another string";
   const stringExampleThree = `This is a string with ${backticksString}`;
-  const stringExampleFour = 'This is ' + 'a concatenated string';
+  const stringExampleFour = "This is " + "a concatenated string";
 
-  console.log(stringExample) // This is a string
-  console.log(stringExampleTwo) // This is another string
-  console.log(stringExampleThree) // This is a string with backticks
-  console.log(stringExampleFour) // This is a concatenated string
+  console.log(stringExample); // This is a string
+  console.log(stringExampleTwo); // This is another string
+  console.log(stringExampleThree); // This is a string with backticks
+  console.log(stringExampleFour); // This is a concatenated string
 
   // 1.2.2. Undefined: Whenever a variable is declared but not initialized or assigned a value, then it is stored as undefined. A function returns undefined if a value was not returned. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value.
 
@@ -78,38 +78,36 @@ console.log(title);
 
   // 1.2.4. Bigint: BigInt is a built-in JavaScript object that allows you to work with integers of arbitrary size. Unlike the Number type, which can accurately represent integers only within the range of ±2^53 , BigInt can handle integers far beyond this limit. This makes it particularly useful for applications requiring high precision with very large numbers, such as cryptography or scientific computations.
 
-    // Bigint examples:
+  // Bigint examples:
 
-    const previouslyMaxSafeInteger = 9007199254740991n;
-    console.log(previouslyMaxSafeInteger);
+  const previouslyMaxSafeInteger = 9007199254740991n;
+  console.log(previouslyMaxSafeInteger);
 
-    const alsoHuge = BigInt(9007199254740991);
-    console.log(alsoHuge); // 9007199254740991n
+  const alsoHuge = BigInt(9007199254740991);
+  console.log(alsoHuge); // 9007199254740991n
 
-    const hugeString = BigInt("9007199254740991");
-    console.log(hugeString); // 9007199254740991n
+  const hugeString = BigInt("9007199254740991");
+  console.log(hugeString); // 9007199254740991n
 
-    const hugeHex = BigInt("0x1fffffffffffff");
-    console.log(hugeHex); // 9007199254740991n
+  const hugeHex = BigInt("0x1fffffffffffff");
+  console.log(hugeHex); // 9007199254740991n
 
-    const hugeOctal = BigInt("0o377777777777777777");
-    console.log(hugeOctal); // 9007199254740991n
+  const hugeOctal = BigInt("0o377777777777777777");
+  console.log(hugeOctal); // 9007199254740991n
 
-    const hugeBin = BigInt(
-      "0b11111111111111111111111111111111111111111111111111111",
-    );
-    console.log(hugeBin); // 9007199254740991n
+  const hugeBin = BigInt(
+    "0b11111111111111111111111111111111111111111111111111111"
+  );
+  console.log(hugeBin); // 9007199254740991n
 
-    // When tested against typeof, a BigInt value (bigint primitive) will give "bigint":
+  // When tested against typeof, a BigInt value (bigint primitive) will give "bigint":
 
-    typeof 1n === "bigint"; // true
-    typeof BigInt("1") === "bigint"; // true
+  typeof 1n === "bigint"; // true
+  typeof BigInt("1") === "bigint"; // true
 
-    // A BigInt value can also be wrapped in an Object:
+  // A BigInt value can also be wrapped in an Object:
 
-    typeof Object(1n) === "object"; // true
-
-  
+  typeof Object(1n) === "object"; // true
 }
 
 /* 2. DOM */
@@ -160,7 +158,7 @@ console.log(title);
   });
 
   inputFocused.addEventListener("blur", function (event) {
-      console.log("Input blurred");
+    console.log("Input blurred");
   });
 
   // Keydown/Keypress/Keyup Event: occurs when a key is pressed/released
@@ -171,61 +169,61 @@ console.log(title);
   });
 
   inputKey.addEventListener("keypress", function (event) {
-      console.log("Keypress event");
+    console.log("Keypress event");
   });
 
   inputKey.addEventListener("keyup", function (event) {
-      console.log("Keyup event");
+    console.log("Keyup event");
   });
 
   // Scroll Event: occurs when an element's scroll position changes
 
   document.addEventListener("scroll", function (event) {
-      console.log("Document scrolled");
+    console.log("Document scrolled");
   });
 
   // Submit Event: occurs when a form is submitted
 
   const formSubmitted = document.querySelector("#form-submitted");
   formSubmitted.addEventListener("submit", function (event) {
-      event.preventDefault();
-      console.log("Form submitted");
-      // We can here, for example:
-      //Redirect to another page
-      window.location.href = "https://www.google.com";
-      // Send data to a server
-      const formData = new FormData(formSubmitted);
+    event.preventDefault();
+    console.log("Form submitted");
+    // We can here, for example:
+    //Redirect to another page
+    window.location.href = "https://www.google.com";
+    // Send data to a server
+    const formData = new FormData(formSubmitted);
 
-      fetch('https://example.com/submit', {
-          method: 'POST',
-          body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-          console.log('Success:', data);
+    fetch("https://example.com/submit", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
       })
       .catch((error) => {
-          console.error('Error:', error);
+        console.error("Error:", error);
       });
-      
-      // Validate the form
-      const nameToValidate = document.querySelector("#name");
-      const emailToValidate = document.querySelector("#email");
-      let isValid = true;
 
-      if (!nameToValidate.value.trim()) {
-          isValid = false;
-          console.error("Name is required");
-      }
+    // Validate the form
+    const nameToValidate = document.querySelector("#name");
+    const emailToValidate = document.querySelector("#email");
+    let isValid = true;
 
-      if (!emailToValidate.value.trim()) {
-          isValid = false;
-          console.error("Email is required");
-      }
+    if (!nameToValidate.value.trim()) {
+      isValid = false;
+      console.error("Name is required");
+    }
 
-      if (!isValid) {
-          return;
-      }
+    if (!emailToValidate.value.trim()) {
+      isValid = false;
+      console.error("Email is required");
+    }
+
+    if (!isValid) {
+      return;
+    }
   });
 
   // element.addEventListener(event, callback): adds an event listener to an element
@@ -233,7 +231,7 @@ console.log(title);
   const buttonEventToListen = document.querySelector("#button-event-to-listen");
 
   buttonEventToListen.addEventListener("click", function (event) {
-      console.log("Button clicked");
+    console.log("Button clicked");
   });
 
   // element.removeEventListener(event, callback): removes an event listener from an element
@@ -241,8 +239,7 @@ console.log(title);
   const buttonEventToRemove = document.querySelector("#button-event-to-remove");
 
   buttonEventToRemove.removeEventListener("click", function (event) {
-      console.log("Button clicked");
-
+    console.log("Button clicked");
   });
 
   // event.preventDefault(): prevents the default behavior of an event. Used in Submit Event example
@@ -257,22 +254,30 @@ console.log(title);
 
   // element.classList.remove(className): removes a class from an element
 
-  const elementClassListRemove = document.querySelector("#element-class-list-remove");
+  const elementClassListRemove = document.querySelector(
+    "#element-class-list-remove"
+  );
   elementClassListRemove.classList.remove("active");
 
   // element.classList.toggle(className): toggles a class on an element
 
-  const elementClassListToggle = document.querySelector("#element-class-list-toggle");
+  const elementClassListToggle = document.querySelector(
+    "#element-class-list-toggle"
+  );
   elementClassListToggle.classList.toggle("active");
 
   // element.classList.contains(className): checks if an element has a class
 
-  const elementClassListContains = document.querySelector("#element-class-list-contains");
+  const elementClassListContains = document.querySelector(
+    "#element-class-list-contains"
+  );
   console.log(elementClassListContains.classList.contains("active")); // true
 
   // element.classList.replace(oldClassName, newClassName): replaces a class on an element
 
-  const elementClassListReplace = document.querySelector("#element-class-list-replace");
+  const elementClassListReplace = document.querySelector(
+    "#element-class-list-replace"
+  );
   elementClassListReplace.classList.replace("active", "inactive");
 
   // element.getAttribute(attribute): gets the value of an attribute
@@ -317,8 +322,13 @@ console.log(title);
 
   // element.insertAdjacentHTML(position, text): inserts HTML content relative to an element. The position can be 'beforebegin', 'afterbegin', 'beforeend', 'afterend'.
 
-  const elementInsertAdjacentHTML = document.querySelector("#element-insert-adjacent-html");
-  elementInsertAdjacentHTML.insertAdjacentHTML("afterend", "<p>New paragraph</p>");
+  const elementInsertAdjacentHTML = document.querySelector(
+    "#element-insert-adjacent-html"
+  );
+  elementInsertAdjacentHTML.insertAdjacentHTML(
+    "afterend",
+    "<p>New paragraph</p>"
+  );
 
   // element.appendChild(childElement): appends a child element to a parent element
 
@@ -336,11 +346,20 @@ console.log(title);
 
   // element.replaceChild(newChildElement, oldChildElement): replaces a child element with a new child element
 
-  const parentElementReplace = document.querySelector("#parent-element-replace");
-  const newChildElementReplace = document.createElement("new-child-element-replace");
-  const oldChildElementReplace = document.querySelector("#old-child-element-replace");
+  const parentElementReplace = document.querySelector(
+    "#parent-element-replace"
+  );
+  const newChildElementReplace = document.createElement(
+    "new-child-element-replace"
+  );
+  const oldChildElementReplace = document.querySelector(
+    "#old-child-element-replace"
+  );
 
-  parentElementReplace.replaceChild(newChildElementReplace, oldChildElementReplace);
+  parentElementReplace.replaceChild(
+    newChildElementReplace,
+    oldChildElementReplace
+  );
 
   // element.createElement(): creates an element with the specified tag name
 
@@ -349,7 +368,6 @@ console.log(title);
   newElementCreateElement.style.color = "000";
 
   console.log(newElementCreateElement); // <div>New element created</div>
-
 }
 
 /* 2.3 DOM - Selection */
@@ -396,32 +414,44 @@ console.log(title);
 
   // document.getElementsByClassName(className): gets elements by their class name
 
-  const elementsByClassName = document.getElementsByClassName("elements-by-class-name");
+  const elementsByClassName = document.getElementsByClassName(
+    "elements-by-class-name"
+  );
   console.log(elementsByClassName); // HTMLCollection
 
   // document.querySelector(selector): gets the first element that matches the selector
 
-  const elementQuerySelector = document.querySelector("#element-query-selector");
+  const elementQuerySelector = document.querySelector(
+    "#element-query-selector"
+  );
   console.log(elementQuerySelector); // HTMLElement
 
   // document.querySelectorAll(selector): gets all elements that match the selector
 
-  const elementsQuerySelectorAll = document.querySelectorAll(".elements-query-selector-all");
+  const elementsQuerySelectorAll = document.querySelectorAll(
+    ".elements-query-selector-all"
+  );
   console.log(elementsQuerySelectorAll); // NodeList
 
   // element.children: gets the child elements of an element
 
-  const parentElementChildren = document.querySelector("#parent-element-children");
+  const parentElementChildren = document.querySelector(
+    "#parent-element-children"
+  );
   console.log(parentElementChildren.children); // HTMLCollection
 
   // element.firstElementChild: gets the first child element of an element
 
-  const parentElementFirstElementChild = document.querySelector("#parent-element-first-element-child");
+  const parentElementFirstElementChild = document.querySelector(
+    "#parent-element-first-element-child"
+  );
   console.log(parentElementFirstElementChild.firstElementChild); // HTMLElement
 
   // element.lastElementChild: gets the last child element of an element
 
-  const parentElementLastElementChild = document.querySelector("#parent-element-last-element-child");
+  const parentElementLastElementChild = document.querySelector(
+    "#parent-element-last-element-child"
+  );
   console.log(parentElementLastElementChild.lastElementChild); // HTMLElement
 
   // element.closest(selector): gets the closest ancestor of an element that matches the selector
@@ -441,7 +471,7 @@ console.log(title);
     .then((data) => {
       console.log(data);
     });
-  
+
   // GET Request: gets data from a server
 
   fetch("https://jsonplaceholder.typicode.com/posts")
@@ -484,62 +514,69 @@ console.log(title);
       console.error("There was a problem with your fetch operation:", error);
     });
 
-    // Fetch wrapper: creates a wrapper function for fetch() to handle errors
+  // Fetch wrapper: creates a wrapper function for fetch() to handle errors
 
-    async function fetchWrapper(url, options) {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
+  async function fetchWrapper(url, options) {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-
-    // Response status codes: 200 OK, 201 Created, 204 No Content, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error
-
-    function handleResponse(response) {
-      switch(response.status) {
-          case 200:
-              console.log("OK: The request was successful.");
-              // Handle the response data here
-              break;
-          case 201:
-              console.log("Created: The resource was successfully created.");
-              // Handle post-creation logic here
-              break;
-          case 204:
-              console.log("No Content: The request was successful, but there's no content to return.");
-              // Handle cases where no response body is expected
-              break;
-          case 400:
-              console.log("Bad Request: The request could not be understood or was missing required parameters.");
-              break;
-          case 401:
-              console.log("Unauthorized: Authentication is required.");
-              break;
-          case 403:
-              console.log("Forbidden: You don't have permission to access this resource.");
-              break;
-          case 404:
-              console.log("Not Found: The requested resource could not be found.");
-              // Handle 404 - Not Found response here
-              document.body.innerHTML = `<h1>404 Not Found</h1><p>The page you're looking for does not exist.</p>`;
-              break;
-          case 500:
-              console.log("Internal Server Error: There was a problem with the server.");
-              break;
-          default:
-              console.log("Unhandled status code:", response.status);
-              break;
-      }
+    return response.json();
   }
-  
+
+  // Response status codes: 200 OK, 201 Created, 204 No Content, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error
+
+  function handleResponse(response) {
+    switch (response.status) {
+      case 200:
+        console.log("OK: The request was successful.");
+        // Handle the response data here
+        break;
+      case 201:
+        console.log("Created: The resource was successfully created.");
+        // Handle post-creation logic here
+        break;
+      case 204:
+        console.log(
+          "No Content: The request was successful, but there's no content to return."
+        );
+        // Handle cases where no response body is expected
+        break;
+      case 400:
+        console.log(
+          "Bad Request: The request could not be understood or was missing required parameters."
+        );
+        break;
+      case 401:
+        console.log("Unauthorized: Authentication is required.");
+        break;
+      case 403:
+        console.log(
+          "Forbidden: You don't have permission to access this resource."
+        );
+        break;
+      case 404:
+        console.log("Not Found: The requested resource could not be found.");
+        // Handle 404 - Not Found response here
+        document.body.innerHTML = `<h1>404 Not Found</h1><p>The page you're looking for does not exist.</p>`;
+        break;
+      case 500:
+        console.log(
+          "Internal Server Error: There was a problem with the server."
+        );
+        break;
+      default:
+        console.log("Unhandled status code:", response.status);
+        break;
+    }
+  }
+
   // Example usage
-  fetch('https://example.com/some-resource')
-      .then(response => handleResponse(response))
-      .catch(error => {
-          console.error('There was an error with the request:', error);
-      });
-  
+  fetch("https://example.com/some-resource")
+    .then((response) => handleResponse(response))
+    .catch((error) => {
+      console.error("There was an error with the request:", error);
+    });
 }
 
 /* 4. Functions */
@@ -573,7 +610,9 @@ console.log(title);
     console.log("Asynchronous callback");
   }, 1000);
 
-  const buttonAsynchronousCallback = document.querySelector("#button-asynchronous-callback");
+  const buttonAsynchronousCallback = document.querySelector(
+    "#button-asynchronous-callback"
+  );
   buttonAsynchronousCallback.addEventListener("click", function (event) {
     setTimeout(() => {
       console.log("Button clicked asynchronously");
@@ -592,7 +631,6 @@ console.log(title);
   fetchDataCallback((data) => {
     console.log(data);
   }); // Data fetched
-
 
   // 5. Closures: Closures in JavaScript allow a function to "remember" and access variables from its lexical scope, even when the function is executed outside that scope. This happens because JavaScript functions form a closure (cierre o clausura) over the scope in which they were created, keeping a reference to that scope even after the outer function has returned. When outerFunction is called, this variable is created and stored in the function's scope. However, outerFunction also defines an inner function (innerFunction) which can access outerVariable.
 
@@ -616,10 +654,10 @@ console.log(title);
   }
 
   const generator = generatorFunction();
-  console.log(generator.next());  // { value: 1, done: false }
-  console.log(generator.next());  // { value: 2, done: false }
-  console.log(generator.next());  // { value: 3, done: false }
-  console.log(generator.next());  // { value: undefined, done: true }
+  console.log(generator.next()); // { value: 1, done: false }
+  console.log(generator.next()); // { value: 2, done: false }
+  console.log(generator.next()); // { value: 3, done: false }
+  console.log(generator.next()); // { value: undefined, done: true }
 
   // 7. Hoisting: Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope before code execution. This means that you can use a variable or function before it has been declared.
 
@@ -653,18 +691,18 @@ console.log(title);
   }
 
   console.log(basicFunctionGreet("Florentino")); // Hello, Florentino!
-  
+
   // 12. Default parameters: Default parameters allow us to specify default values for function parameters in case no value is provided when the function is called.
 
   function greetDefaultParameters(name = "World") {
     return `Hello, ${name}!`;
-  } 
+  }
 
   console.log(greetDefaultParameters()); // Hello, World!
   console.log(greetDefaultParameters("Florentino")); // Hello, Florentino!
 
   // 13. Implicit return: Arrow functions with a single expression can have an implicit return, meaning the return keyword and curly braces are omitted.
-  
+
   const implicitReturn = (name) => `Hello, ${name}!`;
 
   // 14. yield: The yield keyword is used inside generator functions to pause the function and return a value to the caller. It allows the function to be paused and resumed, enabling complex iteration behaviors and asynchronous code handling.
@@ -710,9 +748,8 @@ console.log(title);
 /* 5. Miscellaneous */
 
 {
-  
   // 1. Built-in objects: Built-in objects, or “global objects”, are those built into the language specification itself. There are numerous built-in objects with the JavaScript language, all of which are accessible at the global scope. Some examples are: Number, Math, Date, String, Error, Function, Boolean.
-  
+
   // 2. Currying: Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument. This allows for partial application of the function, where some arguments are provided upfront, and the rest are provided later.
 
   function multiplyCurrying(a) {
@@ -732,46 +769,51 @@ console.log(title);
     history: {
       birthYear: 1918,
       looksLike: "Young adult",
-      lifeEvents: ["Joins Navy", "Falls in love"]
-    }
+      lifeEvents: ["Joins Navy", "Falls in love"],
+    },
   };
-  
+
   const benjamin2 = {
     name: "Benjamin Button",
     age: 25, // Same age, same situation
     history: {
       birthYear: 1918,
       looksLike: "Young adult",
-      lifeEvents: ["Joins Navy", "Falls in love"]
-    }
+      lifeEvents: ["Joins Navy", "Falls in love"],
+    },
   };
-  
+
   // Deep Equal Function
   function deepEqual(obj1, obj2) {
     if (obj1 === obj2) return true;
-  
-    if (typeof obj1 !== "object" || typeof obj2 !== "object" || obj1 === null || obj2 === null) {
+
+    if (
+      typeof obj1 !== "object" ||
+      typeof obj2 !== "object" ||
+      obj1 === null ||
+      obj2 === null
+    ) {
       return false;
     }
-  
+
     const keys1 = Object.keys(obj1);
     const keys2 = Object.keys(obj2);
-  
+
     if (keys1.length !== keys2.length) {
       return false;
     }
-  
+
     for (let key of keys1) {
       if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
         return false;
       }
     }
-  
+
     return true;
   }
-  
+
   console.log(deepEqual(benjamin1, benjamin2)); // true (They are the same even with nested objects)
-  
+
   // 4. ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
 
   // 5. ECMAScript 6 (ES6): ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced many new features to JavaScript, such as arrow functions, classes, template literals, and destructuring assignments. It was a major update to the language and laid the foundation for modern JavaScript development.
@@ -781,7 +823,7 @@ console.log(title);
   // 7. Event loop phases: The event loop in JavaScript consists of several phases, including the callback queue, microtask queue, and rendering. These phases work together to process tasks and ensure that the application remains responsive and performs well.
 
   // 8. IIFE (Immediately Invoked Function Expression): An IIFE is a common JavaScript pattern that involves defining and immediately executing a function. It is often used to create a new scope for variables and avoid polluting the global namespace.
-  
+
   (function () {
     console.log("IIFE executed");
   })();
@@ -797,26 +839,25 @@ console.log(title);
   console.log(originalArray); // [1, 2, 3]
   console.log(newArray); // [1, 2, 3, 4]
 
-
   // Inmutability - Original character object
   const aldoRaine = {
-    name: 'Aldo Raine',
-    rank: 'Lieutenant',
-    mission: 'Take down Nazis',
-    team: ['Donny Donowitz', 'Hugo Stiglitz', 'Omar Ulmer']
+    name: "Aldo Raine",
+    rank: "Lieutenant",
+    mission: "Take down Nazis",
+    team: ["Donny Donowitz", "Hugo Stiglitz", "Omar Ulmer"],
   };
 
   // Let's say Aldo Raine gets promoted to 'Captain' and completes his mission.
   // Instead of modifying the original object, we'll create a new one with the updated info.
 
   const updatedAldoRaine = {
-    ...aldoRaine,        // Spread the original object
-    rank: 'Captain',     // Update the rank
-    mission: 'Mission Accomplished' // Update the mission status
+    ...aldoRaine, // Spread the original object
+    rank: "Captain", // Update the rank
+    mission: "Mission Accomplished", // Update the mission status
   };
 
   console.log(aldoRaine);
-  // Output: 
+  // Output:
   // {
   //   name: 'Aldo Raine',
   //   rank: 'Lieutenant',
@@ -825,7 +866,7 @@ console.log(title);
   // }
 
   console.log(updatedAldoRaine);
-  // Output: 
+  // Output:
   // {
   //   name: 'Aldo Raine',
   //   rank: 'Captain',
@@ -836,16 +877,16 @@ console.log(title);
   // Now, let's say we want to add a new member to Aldo Raine's team but keep immutability. This time we'll create a new object with an updated team.
 
   // Aldo Raine recruits a new member to his team
-  const newTeamMember = 'Archie Hicox';
+  const newTeamMember = "Archie Hicox";
 
   // Create a new object with the updated team (without mutating the original one)
   const fullyUpdatedAldoRaine = {
     ...updatedAldoRaine,
-    team: [...updatedAldoRaine.team, newTeamMember] // Create a new array with the new team member
+    team: [...updatedAldoRaine.team, newTeamMember], // Create a new array with the new team member
   };
 
   console.log(fullyUpdatedAldoRaine);
-  // Output: 
+  // Output:
   // {
   //   name: 'Aldo Raine',
   //   rank: 'Captain',
@@ -899,9 +940,9 @@ console.log(title);
 
   // Regular Expression Example: Anchors: Start and End of String
   const regexStart = /^hello/; // Matches "hello" at the start
-  const regexEnd = /world$/;   // Matches "world" at the end
+  const regexEnd = /world$/; // Matches "world" at the end
   console.log(regexStart.test("hello world")); // true. The caret (^) asserts position at the start
-  console.log(regexEnd.test("hello world"));   // true. The dollar sign ($) asserts position at the end.
+  console.log(regexEnd.test("hello world")); // true. The dollar sign ($) asserts position at the end.
 
   // Regular Expression Example: Using Character Classes
   const regexCharacterClasses = /[aeiou]/; // Matches any vowel
@@ -959,7 +1000,7 @@ console.log(title);
     } else {
       return n * factorialRecursion(n - 1);
     }
-  }  
+  }
   console.log(factorialRecursion(5)); // 120
 
   function fibonacci(n) {
@@ -968,7 +1009,7 @@ console.log(title);
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
   }
-  
+
   console.log(fibonacci(6)); // 8
 
   // Generate the first 15 Fibonacci numbers
@@ -982,26 +1023,26 @@ console.log(title);
   // Provides built-in methods to interact with the collection, like .set(), .get(), .delete(), .has(), etc.
   // Often used for scenarios where you need a dictionary-like structure with flexibility.
 
-    const map = new Map();
-    map.set(key, value); // Adds a key-value pair
-    map.get(key);        // Retrieves the value for a key
-    map.delete(key);     // Deletes a key-value pair
-    map.has(key);        // Checks if a key exists
+  const map = new Map();
+  map.set(key, value); // Adds a key-value pair
+  map.get(key); // Retrieves the value for a key
+  map.delete(key); // Deletes a key-value pair
+  map.has(key); // Checks if a key exists
 
-    const userRoles = new Map();
+  const userRoles = new Map();
 
   // Add key-value pairs
-  userRoles.set('Alice', 'Admin');
-  userRoles.set('Bob', 'Editor');
+  userRoles.set("Alice", "Admin");
+  userRoles.set("Bob", "Editor");
 
   // Retrieve a value by its key
-  console.log(userRoles.get('Alice')); // "Admin"
+  console.log(userRoles.get("Alice")); // "Admin"
 
   // Check if a key exists
-  console.log(userRoles.has('Bob')); // true
+  console.log(userRoles.has("Bob")); // true
 
   // Delete a key
-  userRoles.delete('Bob');
+  userRoles.delete("Bob");
 
   // Iterating over the map
   for (const [key, value] of userRoles) {
@@ -1057,13 +1098,13 @@ console.log(title);
   uniqueNumbers.add(4);
   console.log(uniqueNumbers); // Set { 1, 2, 3, 4 }
 
-  uniqueNumbers.add('1');
+  uniqueNumbers.add("1");
   console.log(uniqueNumbers); // Set { 1, 2, 3, 4, '1' }
 
   // 16. Strict mode: Strict mode is a feature in JavaScript that allows you to place a program or a function in a "strict" operating context. It helps catch common coding errors and makes the code more secure and optimized. Strict mode can be enabled at the global level or within a specific function. It is different than typescript, because typescript is a superset of javascript, and strict mode is a feature of javascript. And typescript has its own strict mode and with strict mode JavaScript didn't have the same features, like typescript, e.g. types.
 
   // Enable strict mode at the global level
-  "use strict";
+  ("use strict");
   // Example of strict mode behavior:
   // Variables must be declared before being used
   // Assigning a value to an undeclared variable throws an error
@@ -1107,21 +1148,41 @@ console.log(title);
   console.log(window.document.querySelectorAll(".elementClass")); // Query selector all
   console.log(window.document.createElement("div")); // Create element
   console.log(window.document.getElementById("elementId").remove()); // Remove element
-  console.log(window.document.getElementById("elementId").textContent = "New text content"); // Set text content
-  console.log(window.document.getElementById("elementId").value = "New value"); // Set value
-  console.log(window.document.getElementById("elementId").innerHTML = "<strong>New HTML content</strong>"); // Set inner HTML
-  console.log(window.document.getElementById("elementId").insertAdjacentHTML("afterend", "<p>New paragraph</p>")); // Insert adjacent HTML
-  console.log(window.document.getElementById("elementId").appendChild(childElement)); // Append child
-  console.log(window.document.getElementById("elementId").removeChild(childElement)); // Remove child
-  console.log(window.document.getElementById("elementId").replaceChild(newChildElement, oldChildElement)); // Replace child
+  console.log(
+    (window.document.getElementById("elementId").textContent =
+      "New text content")
+  ); // Set text content
+  console.log(
+    (window.document.getElementById("elementId").value = "New value")
+  ); // Set value
+  console.log(
+    (window.document.getElementById("elementId").innerHTML =
+      "<strong>New HTML content</strong>")
+  ); // Set inner HTML
+  console.log(
+    window.document
+      .getElementById("elementId")
+      .insertAdjacentHTML("afterend", "<p>New paragraph</p>")
+  ); // Insert adjacent HTML
+  console.log(
+    window.document.getElementById("elementId").appendChild(childElement)
+  ); // Append child
+  console.log(
+    window.document.getElementById("elementId").removeChild(childElement)
+  ); // Remove child
+  console.log(
+    window.document
+      .getElementById("elementId")
+      .replaceChild(newChildElement, oldChildElement)
+  ); // Replace child
   console.log(window.document.querySelectorAll(".elementsNodeList")); // Query selector all
 
   // Window - Main features of the window object:
-    // Access to browser properties: The window object provides access to various browser properties, such as the current URL, user agent string, and window dimensions.
-    // Access to browser methods: The window object provides access to browser methods, such as alert, confirm, and prompt, for displaying messages and interacting with users.
-    // Access to the document object: The window object contains the document object, which represents the current HTML document and provides methods for interacting with the DOM.
-    // Access to browser history: The window object provides access to the browser's history object, which allows navigation through the browser history.
-    // Access to local storage: The window object provides access to the local storage object, which allows data to be stored locally in the browser.
+  // Access to browser properties: The window object provides access to various browser properties, such as the current URL, user agent string, and window dimensions.
+  // Access to browser methods: The window object provides access to browser methods, such as alert, confirm, and prompt, for displaying messages and interacting with users.
+  // Access to the document object: The window object contains the document object, which represents the current HTML document and provides methods for interacting with the DOM.
+  // Access to browser history: The window object provides access to the browser's history object, which allows navigation through the browser history.
+  // Access to local storage: The window object provides access to the local storage object, which allows data to be stored locally in the browser.
 
   // 18. This: The this keyword in JavaScript refers to the object that the function is a method of. It allows functions to access and operate on the object's properties and methods. The value of this is determined by how a function is called, and it can vary depending on the context in which the function is executed.
 
@@ -1130,7 +1191,7 @@ console.log(title);
     name: "Alice",
     greet() {
       console.log(`Hello, my name is ${this.name}`);
-    }
+    },
   };
   personThisMethodContext.greet(); // Hello, my name is Alice
 
@@ -1141,7 +1202,7 @@ console.log(title);
 
   const personThisFunctionContext = {
     name: "Bob",
-    greet: greetThisFunctionContext
+    greet: greetThisFunctionContext,
   };
 
   greetThisFunctionContext(); // Hello, my name is undefined
@@ -1150,10 +1211,10 @@ console.log(title);
   // This - Example 3: Constructor context
   function PersonThisConstructorContext(name) {
     this.name = name;
-    this.greet = function() {
+    this.greet = function () {
       console.log(`Hello, my name is ${this.name}`);
     };
-  } 
+  }
 
   // This - Example 3: Constructor context - Create a new instance of Person
   const aliceConstructorContext = new PersonThisConstructorContext("Alice");
@@ -1161,7 +1222,7 @@ console.log(title);
 
   // This - Example 4: Event handler context
   const buttonThisEventHandlerContext = document.getElementById("button");
-  buttonThisEventHandlerContext.addEventListener("click", function() {
+  buttonThisEventHandlerContext.addEventListener("click", function () {
     console.log(`Button clicked by ${this.id}`); // In event handlers, this refers to the element that triggered the event. In this case, this refers to the button element that was clicked.
   });
 
@@ -1176,7 +1237,7 @@ console.log(title);
   console.log(typeof Symbol("תֵאוּר")); // symbol
   console.log(typeof { name: "David" }); // object
   console.log(typeof [3, 5, 8]); // object
-  console.log(typeof function() {}); // function
+  console.log(typeof function () {}); // function
 
   // typeof - Example 2: Handling different data types
   function greetTypeof(name) {
@@ -1299,92 +1360,65 @@ console.log(title);
   // Bitwise operators - Example 7: Zero-Fill Right SHIFT (>>>)
   const aZeroFillRightSHIFT = -5; // -101
   console.log(aZeroFillRightSHIFT >>> 1); // 2147483645 (01111111111111111111111111111011)
-
 }
 
 /* 6. Modules */
 
 {
   // 1. ES Modules: ES Modules (ECMAScript Modules) are a standard for working with modules in JavaScript. They provide a way to organize and structure code by splitting it into separate files, each containing a module. ES Modules use the import and export keywords to define dependencies between modules and share code between them.
-
   // ES Modules - Examples:
-
   // ES Modules - Exporting a module
   // math.js
   // export const sum = (a, b) => a + b;
   // export const subtract = (a, b) => a - b;
-
   // ES Modules - Importing a module
   // import { sum, subtract } from './math.js';
   // console.log(sum(5, 3)); // 8
   // console.log(subtract(5, 3)); // 2
-
   // ES Modules - Exporting default: In addition to named exports, ES Modules also support default exports. A default export is a single value or function that is exported as the default export of a module. When importing a module with a default export, you can choose any name for the imported value.
   // math.js
   // const sum = (a, b) => a + b;
   // const subtract = (a, b) => a - b;
   // export default { sum, subtract };
-
   // ES Modules - Importing a default export
   // import math from './math.js';
   // console.log(math.sum(5, 3)); // 8
   // console.log(math.subtract(5, 3)); // 2
-
   // ES Modules - Dynamic imports: Dynamic imports allow you to import modules asynchronously at runtime, rather than statically at compile time. This can be useful for loading modules conditionally or on-demand, reducing the initial load time of an application.
   // const module = await import('./math.js');
   // console.log(module.sum(5, 3)); // 8
   // console.log(module.subtract(5, 3)); // 2
-
   // 2. Importing from libraries: ES Modules can also be used to import code from external libraries and modules. Many libraries and frameworks provide ES Modules for easy integration into JavaScript projects.
-
   // Importing from libraries - Importing a library module
   // import { sum, subtract } from 'library-module';
   // console.log(sum(5, 3)); // 8
-
   // Importing from libraries - Importing a library default export
   // import library from 'library-module';
   // console.log(library.sum(5, 3)); // 8
-
   // Importing from libraries - Importing a library dynamically
   // const module = await import('library-module');
   // console.log(module.sum(5, 3)); // 8
-
   // 3. Module bundlers (empaquetador): Module bundlers are tools that combine multiple modules and dependencies into a single file or bundle. They help manage dependencies, optimize code, and improve performance by reducing the number of HTTP requests needed to load a web application.
-  
   // Module bundlers (empaquetador) - Examples of module bundlers:
-
   // Webpack: A popular module bundler that supports ES Modules, CommonJS, and AMD modules. It can bundle JavaScript, CSS, and other assets, and provides features like code splitting, hot module replacement, and tree shaking.
-
   // Rollup: A module bundler designed for building JavaScript libraries and packages. It focuses on tree shaking and generates smaller, more optimized bundles compared to other bundlers.
-
   // Parcel: A zero-configuration module bundler that supports ES Modules, CommonJS, and other module formats. It automatically handles dependencies, code splitting, and optimizations, making it easy to get started with bundling.
-
   // Vite: A modern build tool that leverages ES Modules and native browser features for fast development and optimized production builds. It provides instant server start, hot module replacement, and optimized bundling for modern web applications.
-
   // Module bundlers - Tree shaking: Tree shaking is a technique used by module bundlers to eliminate dead code or unused code from the final bundle. It works by analyzing the code and dependencies of a module to determine which parts are not used and can be safely removed. Tree shaking helps reduce the size of the bundle and improve performance by removing unnecessary code.
-
   // 4. Namespace import: In ES Modules, you can import an entire module as a namespace object using the * as syntax. This allows you to access all the exports of the module through the namespace object.
-
   // Namespace import - Example:
   // math.js
   // export const sum = (a, b) => a + b;
   // export const subtract = (a, b) => a - b;
-
   // Importing the entire module as a namespace object. This allows you to access all the exports of the module through the math namespace object.
   // import * as math from './math.js';
   // console.log(math.sum(5, 3)); // 8
   // console.log(math.subtract(5, 3)); // 2
-
   // 5. Package managers: Package managers are tools that help manage dependencies and packages in a project. They automate the process of installing, updating, and removing packages, making it easier to work with external libraries and modules.
-
   // Package managers - Examples of package managers:
-
   // npm (Node Package Manager): A popular package manager for JavaScript that is used to install, manage, and publish packages. It is commonly used for Node.js projects and front-end development.
-
   // Yarn: A fast and secure package manager for JavaScript that is compatible with npm. It provides features like offline installation, deterministic dependency resolution, and parallel package downloads.
-
   // Package managers - Common commands:
-
   // npm install package-name: Installs a package locally in the project.
   // npm install -g package-name: Installs a package globally on the system.
   // npm install --save package-name: Installs a package and adds it to the dependencies in package.json.
@@ -1395,9 +1429,7 @@ console.log(title);
   // npm search package-name: Searches for a package in the npm registry.
   // npm init: Initializes a new project and creates a package.json file.
   // npm run script-name: Runs a script defined in the package.json file.
-
   // 6.package.json: The package.json file is a metadata file for Node.js projects that contains information about the project, its dependencies, and scripts. It is used by package managers like npm and Yarn to manage project dependencies and scripts.
-
   // package.json - Example:
   // {
   //   "name": "my-project",
@@ -1416,7 +1448,6 @@ console.log(title);
   //     "jest": "^27.0.6"
   //   }
   // }
-
   // package.json - Main properties:
   // name: The name of the project.
   // version: The version number of the project.
@@ -1427,20 +1458,15 @@ console.log(title);
   // devDependencies: Development dependencies required for testing and development.
   // engines: Specifies the versions of Node.js and npm required by the project.
   // license: The license under which the project is distributed.
-
   // 7. script type="module": In HTML, you can use the script type="module" attribute to indicate that a script is an ES Module. This allows you to use ES Modules directly in the browser without the need for a module bundler. The script type="module" attribute is supported in modern browsers and provides a way to load and execute ES Modules in a web page. In the package.json file, you can specify the type of module using the "type" field.
-
   // script type="module" - Example:
   // <script type="module" src="main.js"></script>
   // In this example, the script tag loads the main.js file as an ES Module in the browser. The type="module" attribute indicates that the script is an ES Module and should be treated as such by the browser.
-
   // package.json - Specify module type:
   // {
   //   "type": "module"
   // }
-
   // 8. Yarn: Yarn is a fast, reliable, and secure package manager for JavaScript. It is compatible with npm and provides additional features like offline installation, deterministic dependency resolution, and parallel package downloads. Yarn is commonly used for managing dependencies in Node.js projects and front-end development. Yarn can be installed using npm or by downloading the Yarn installer from the official website. The main difference between npm and Yarn is that Yarn uses a lockfile (yarn.lock) to ensure deterministic installs, while npm uses a package-lock.json file. At the end both are package managers for JavaScript, and they have their own features and differences, but the choice of which one to use depends on the project requirements and personal preference.
-
 }
 
 /* 7. Number */
@@ -1462,7 +1488,7 @@ console.log(title);
   console.log(numberDivisionReminder % 5); // 2
 
   // Real cases of use:
-  
+
   // Checking if a number is even or odd
 
   const numberEven = 10;
@@ -1473,7 +1499,7 @@ console.log(title);
 
   function isEven(number) {
     return number % 2 === 0;
-  } 
+  }
 
   console.log(isEven(10)); // true
 
@@ -1489,13 +1515,13 @@ console.log(title);
   const numbersNaN = [10, 20, NaN, 30];
 
   function calculateAverage(numbers) {
-    const filteredNumbers = numbers.filter(num => !isNaN(num));
+    const filteredNumbers = numbers.filter((num) => !isNaN(num));
     if (filteredNumbers.length === 0) return 0; // Handle case with no valid numbers
-    
+
     const sum = filteredNumbers.reduce((acc, num) => acc + num, 0);
     return sum / filteredNumbers.length;
   }
-  
+
   console.log(calculateAverage(numbersNaN)); // 20
 
   // 4. Number.parseInt(): The Number.parseInt() method in JavaScript parses a string and returns an integer. It is similar to the global parseInt() function, but it is a static method of the Number object. Number.parseInt() is useful for converting strings to integers in a more explicit and predictable way.
@@ -1509,13 +1535,13 @@ console.log(title);
   if (age >= 18) {
     console.log("User is an adult.");
   }
-  
+
   // Real cases of use - Extracting Numbers from URL Parameters:
   const url = "https://example.com/product?id=38";
-  const params = new URLSearchParams(url.split('?')[1]);
-  const productId = Number.parseInt(params.get('id'));
+  const params = new URLSearchParams(url.split("?")[1]);
+  const productId = Number.parseInt(params.get("id"));
   console.log(productId); // 38
-  
+
   // Real cases of use - Parsing CSS Values for Calculations:
 
   const margin = "15px";
@@ -1531,7 +1557,7 @@ console.log(title);
   const discount = "15%";
   const discountValue = Number.parseInt(discount);
   const total = 100;
-  const discountedTotal = total - (total * discountValue / 100);
+  const discountedTotal = total - (total * discountValue) / 100;
   console.log(discountedTotal); // 85
 
   // 5. Numeric separators (_): Numeric separators are a feature in JavaScript that allows you to use underscores (_) as separators in numeric literals. They improve readability by breaking down large numbers into smaller, more manageable parts. Numeric separators make these numbers clearer to developers, reducing errors when reading, verifying, or editing code.
@@ -1584,9 +1610,6 @@ console.log(title);
   console.log(num1 === num3); // true
   console.log(num1 === num4); // true
   console.log(num1 === num5); // true
-  
-
-
 }
 
 /* 8. Objects */
@@ -1637,7 +1660,10 @@ console.log(title);
 
   // Optional chaining - Accessing nested properties
 
-  const personOptionalChaining = { name: "Alice", address: { city: "New York" } };
+  const personOptionalChaining = {
+    name: "Alice",
+    address: { city: "New York" },
+  };
   console.log(personOptionalChaining.address?.city); // "New York"
 
   // Optional chaining - Handling missing properties
@@ -1647,15 +1673,20 @@ console.log(title);
 
   // Optional chaining - Calling methods on optional properties
 
-  const personMethod = { name: "Alice", greet() { return `Hello, ${this.name}!`; } };
+  const personMethod = {
+    name: "Alice",
+    greet() {
+      return `Hello, ${this.name}!`;
+    },
+  };
   console.log(personMethod.greet?.()); // "Hello, Alice!"
 
   // Optional chaining - Accessing array elements
 
   const numbersOptionalChaining = [1, 2, 3];
   console.log(numbersOptionalChaining[2]); // 3
-  console.log(numbersOptionalChaining?.[5]) // undefined
-  console.log(numbersOptionalChaining[5]) // undefined  This does not use optional chaining, so it assumes numbersOptionalChaining is a defined object or array. If numbersOptionalChaining is null or undefined, trying to access [5] would throw a TypeError.
+  console.log(numbersOptionalChaining?.[5]); // undefined
+  console.log(numbersOptionalChaining[5]); // undefined  This does not use optional chaining, so it assumes numbersOptionalChaining is a defined object or array. If numbersOptionalChaining is null or undefined, trying to access [5] would throw a TypeError.
 
   // 3. ?? (nullish coalescing): The nullish coalescing operator (??) in JavaScript provides a way to handle default values for null or undefined values. It returns the right-hand operand when the left-hand operand is null or undefined, but not for other falsy values like 0 or an empty string.
 
@@ -1705,7 +1736,7 @@ console.log(title);
     if (!query) {
       return products;
     }
-    return products.filter(product => product.name.includes(query));
+    return products.filter((product) => product.name.includes(query));
   }
 
   // Advanced control flow - Implementing complex business logic and rules in applications:
@@ -1717,7 +1748,7 @@ console.log(title);
       return order.total * 0.05;
     } else {
       return 0;
-    } 
+    }
   }
 
   // Advanced control flow - Handling asynchronous operations and error handling in JavaScript:
@@ -1763,7 +1794,9 @@ console.log(title);
 
   // Object.entries - Filtering object properties based on conditions:
 
-  const personFiltered = Object.entries(personProperties).filter(([key, value]) => key !== "age");
+  const personFiltered = Object.entries(personProperties).filter(
+    ([key, value]) => key !== "age"
+  );
   console.log(personFiltered); // [["name", "Alice"], ["city", "New York"]]
 
   // 6. Object.keys(): The Object.keys() method in JavaScript returns an array of the keys of an object. It provides a way to access the keys of an object and iterate over them. Object.keys() returns an array of strings where each element is a key of the object. The difference between Object.keys() and Object.entries() is that Object.keys() returns only the keys, while Object.entries() returns both the keys and values.
@@ -1870,7 +1903,7 @@ console.log(title);
 
   for (const [key, value] of formData.entries()) {
     data[key] = value;
-  } 
+  }
 
   // Dynamic properties - Working with API responses and data transformations:
 
@@ -1943,7 +1976,6 @@ console.log(title);
     console.log("Name is missing in the API response");
   }
 
-
   // 11. Object shorthand: Object shorthand in JavaScript is a concise way to create objects by using variable names as property names. It allows you to define object properties with the same name as the variables used to assign their values. Object shorthand is useful for reducing redundancy and improving code readability when creating objects.
 
   // Object shorthand - Examples:
@@ -1985,7 +2017,7 @@ console.log(title);
   // Property access - Reading object properties dynamically:
 
   const personDynamicAccess = { name: "Alice", age: 30 };
-  
+
   const property = "name";
   console.log(personDynamicAccess[property]); // "Alice"
 
@@ -2154,31 +2186,32 @@ console.log(title);
   // 16. Error objects: Error objects in JavaScript are used to represent and handle errors in code. They provide information about the type of error, the error message, and the stack trace of the error. Error objects are commonly used for error handling, debugging, and logging in JavaScript applications. When a runtime error occurs, a new Error object is created and thrown. With this Error object, we can determine the type of the Error and handle it according to its type. Besides error constructors, Javascript also has other core Error constructors. Like:
 
   // 16.1 AggregateError - A collection of errors thrown simultaneously. For example
-  const errors = [new Error('Error 1'), new Error('Error 2')];
+  const errors = [new Error("Error 1"), new Error("Error 2")];
 
   console.log(new AggregateError(errors)); // AggregateError: Error 1, Error 2
 
-  // 16.2 EvalError - An error regarding the global eval() function. EvalError occurred during the evaluation of a JavaScript expression. For example: 
+  // 16.2 EvalError - An error regarding the global eval() function. EvalError occurred during the evaluation of a JavaScript expression. For example:
 
   try {
-    throw new EvalError('Error in eval() function');
+    throw new EvalError("Error in eval() function");
   } catch (error) {
-    console.er
-    
-  // 16.3 InternalError - An internal JavaScript error, often indicating a bug in the engine. Internal error are useful to get information about the internal state of the JavaScript engine. For example:
+    console.er;
 
-  try {
-    throw new InternalError('Internal error occurred');
-  } catch (error) {
-    console.error(error); // InternalError: Internal error occurred
-  }
+    // 16.3 InternalError - An internal JavaScript error, often indicating a bug in the engine. Internal error are useful to get information about the internal state of the JavaScript engine. For example:
 
-  // 16.4 RangeError - A number "out of range" has occurred. For example:
+    try {
+      throw new InternalError("Internal error occurred");
+    } catch (error) {
+      console.error(error); // InternalError: Internal error occurred
+    }
 
-  try {
-    throw new RangeError('Number out of range');
-  } catch (error) {
-    console.error(error); // RangeError: Number out of range
+    // 16.4 RangeError - A number "out of range" has occurred. For example:
+
+    try {
+      throw new RangeError("Number out of range");
+    } catch (error) {
+      console.error(error); // RangeError: Number out of range
+    }
   }
 }
 
@@ -2200,11 +2233,13 @@ console.log(title);
     }, 1000);
   });
 
-  promise.then(value => {
-    console.log("Resolved:", value);
-  }).catch(error => {
-    console.error("Rejected:", error.message);
-  });
+  promise
+    .then((value) => {
+      console.log("Resolved:", value);
+    })
+    .catch((error) => {
+      console.error("Rejected:", error.message);
+    });
 
   // Real cases of use:
 
@@ -2213,15 +2248,15 @@ console.log(title);
   function fetchData(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
-        .then(response => response.json())
-        .then(data => resolve(data))
-        .catch(error => reject(error));
+        .then((response) => response.json())
+        .then((data) => resolve(data))
+        .catch((error) => reject(error));
     });
   }
 
   fetchData("https://api.example.com/data")
-    .then(data => console.log("Data:", data))
-    .catch(error => console.error("Error:", error));
+    .then((data) => console.log("Data:", data))
+    .catch((error) => console.error("Error:", error));
 
   // Promise - Handling user authentication and authorization:
 
@@ -2236,8 +2271,8 @@ console.log(title);
   }
 
   authenticateUser({ username: "alice", password: "password" })
-    .then(message => console.log(message))
-    .catch(error => console.error(error.message));
+    .then((message) => console.log(message))
+    .catch((error) => console.error(error.message));
 
   // Promise - Loading images and resources in web applications:
 
@@ -2251,8 +2286,8 @@ console.log(title);
   }
 
   loadImage("image.jpg")
-    .then(image => console.log("Image loaded:", image))
-    .catch(error => console.error("Error loading image:", error));
+    .then((image) => console.log("Image loaded:", image))
+    .catch((error) => console.error("Error loading image:", error));
 
   // Promise - Handling form submissions and data processing:
 
@@ -2283,13 +2318,15 @@ console.log(title);
 
   console.log(promiseState); // Promise { <pending> }
 
-  promiseState.then(value => {
-    console.log("Resolved:", value);
-    console.log(promiseState); // Promise { 0.625 }
-  }).catch(error => {
-    console.error("Rejected:", error.message);
-    console.log(promiseState); // Promise { <rejected> }
-  });
+  promiseState
+    .then((value) => {
+      console.log("Resolved:", value);
+      console.log(promiseState); // Promise { 0.625 }
+    })
+    .catch((error) => {
+      console.error("Rejected:", error.message);
+      console.log(promiseState); // Promise { <rejected> }
+    });
 
   // 3. new Promise(): The new Promise() constructor in JavaScript is used to create a new Promise object. It takes a function as an argument with two parameters: resolve and reject. The resolve parameter is a function that is called when the asynchronous operation is successful and the Promise is fulfilled. The reject parameter is a function that is called when an error occurs during the operation and the Promise is rejected.
 
@@ -2306,11 +2343,13 @@ console.log(title);
     }, 1000);
   });
 
-  promiseNew.then(value => {
-    console.log("Resolved:", value);
-  }).catch(error => {
-    console.error("Rejected:", error.message);
-  });
+  promiseNew
+    .then((value) => {
+      console.log("Resolved:", value);
+    })
+    .catch((error) => {
+      console.error("Rejected:", error.message);
+    });
 
   // Real cases of use:
 
@@ -2319,286 +2358,301 @@ console.log(title);
   function fetchData(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
-        .then(response => response.json())
-        .then(data => resolve(data))
-        .catch(error => reject(error));
+        .then((response) => response.json())
+        .then((data) => resolve(data))
+        .catch((error) => reject(error));
     });
   }
 
   fetchData("https://api.example.com/data")
-    .then(data => console.log("Data:", data))
-    .catch(error => console.error("Error:", error));
+    .then((data) => console.log("Data:", data))
+    .catch((error) => console.error("Error:", error));
 
-    // 4. await keyword: The await keyword in JavaScript is used to pause the execution of an asynchronous function until a Promise is settled (resolved or rejected). It can only be used inside an async function, which allows you to write asynchronous code in a synchronous style. The await keyword simplifies working with Promises and makes asynchronous code easier to read and maintain.
+  // 4. await keyword: The await keyword in JavaScript is used to pause the execution of an asynchronous function until a Promise is settled (resolved or rejected). It can only be used inside an async function, which allows you to write asynchronous code in a synchronous style. The await keyword simplifies working with Promises and makes asynchronous code easier to read and maintain.
 
-    // await keyword examples:
+  // await keyword examples:
 
-    function resolveAfter2Seconds(x) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(x);
-        }, 2000);
-      });
-    }
-    
-    async function f1() {
-      const x = await resolveAfter2Seconds(10);
-      console.log(x); // 10
-    }
-    
-    f1();
-
-    // Real cases of use:
-
-    // await keyword - Fetching data from an API:
-
-    async function fetchData(url) {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    }
-
-    const data = await fetchData("https://api.example.com/data");
-
-    // await keyword - Handling user authentication and authorization:
-
-    async function authenticateUser(credentials) {
-      if (isValidCredentials(credentials)) {
-        return "User is authenticated";
-      } else {
-        throw new Error("Invalid credentials");
-      }
-    }   
-
-    try {
-      const message = await authenticateUser({ username: "ernestico", password: "password" });
-      console.log(message);
-    } catch (error) {
-      console.error(error.message);
-    }
-
-    // await keyword - Loading images and resources in web applications:
-
-    async function loadImage(url) {
-      const image = new Image();
-      image.src = url;
-      await new Promise((resolve, reject) => {
-        image.onload = resolve;
-        image.onerror = reject;
-      });
-      return image;
-    }
-
-    // 5. async/await: The async/await syntax in JavaScript provides a way to write asynchronous code in a synchronous style. It allows you to define asynchronous functions using the async keyword and use the await keyword to pause the execution of asynchronous operations until they are settled (resolved or rejected). async/await simplifies working with Promises and improves the readability and maintainability of asynchronous code.
-
-    // async/await - Examples:
-
-    async function fetchDataAsync(url) {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    }
-
-    fetchDataAsync("https://api.example.com/data")
-
-    async function authenticateUserAsync(credentials) {
-      if (isValidCredentials(credentials)) {
-        return "User is authenticated";
-      } else {
-        throw new Error("Invalid credentials");
-      }
-    }
-
-    // 6. Async Function: An async function in JavaScript is a function that returns a Promise. It allows you to write asynchronous code in a synchronous style using the async/await syntax. An async function can contain one or more await expressions, which pause the execution of the function until the Promise is settled. Async functions simplify working with Promises and make asynchronous code easier to read and maintain.
-
-    // Async function - Example:
-
-    async function fetchDataAsyncFunction(url) {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    }
-
-    fetchDataAsyncFunction("https://api.example.com/data")
-
-    // Async function with error handling:
-
-    async function authenticateUserAsyncFunction(credentials) {
-      if (isValidCredentials(credentials)) {
-        return "User is authenticated";
-      } else {
-        throw new Error("Invalid credentials");
-      }
-    }
-
-    // Async with arrow function: We can create async functions using arrow function syntax. This is useful when defining short asynchronous functions or when using arrow functions in combination with other features like Promises and async/await.
-
-    const fetchDataAsyncArrow = async (url) => {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    }
-
-    // 7. Top-level await: Top-level await is a feature in JavaScript that allows you to use the await keyword outside of async functions at the top level of a module. It simplifies working with asynchronous code in module scripts and provides a more straightforward way to handle asynchronous operations.
-
-    // Note: Top-level await only works at the top level of modules. There is no support for classic scripts or non-async functions. Top-level await enables developers to use the await keyword outside of async functions. It acts like a big async function causing other modules who import them to wait before they start evaluating their body.
-
-    // For more info: https://v8.dev/features/top-level-await
-
-    // Top-level await - Example:
-
-    const responseTopLevelAwait = await fetch("https://api.example.com/data");
-
-    const dataTopLevelAwait = await response.json();
-
-    // export default dataTopLevelAwait;
-
-    // Real cases of use:
-
-    // Top-level await - Fetching data from an API in module scripts:
-
-    // const response = await fetch("https://api.example.com/data");
-
-    // 8. Promises: Promises in JavaScript are used to handle asynchronous operations and provide a way to work with asynchronous code in a more structured and manageable way. A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises have three states: pending, fulfilled, and rejected. A Promise is created using the new Promise() constructor, which takes a function as an argument with two parameters: resolve and reject.
-
-    // Promises - Example:
-
-    const promisePromises = new Promise((resolve, reject) => {
+  function resolveAfter2Seconds(x) {
+    return new Promise((resolve) => {
       setTimeout(() => {
-        const randomValue = Math.random();
-        if (randomValue >= 0.5) {
-          resolve(randomValue);
-        } else {
-          reject(new Error("Value is too low"));
-        }
-      }, 1000);
+        resolve(x);
+      }, 2000);
+    });
+  }
+
+  async function f1() {
+    const x = await resolveAfter2Seconds(10);
+    console.log(x); // 10
+  }
+
+  f1();
+
+  // Real cases of use:
+
+  // await keyword - Fetching data from an API:
+
+  async function fetchData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  const data = await fetchData("https://api.example.com/data");
+
+  // await keyword - Handling user authentication and authorization:
+
+  async function authenticateUser(credentials) {
+    if (isValidCredentials(credentials)) {
+      return "User is authenticated";
+    } else {
+      throw new Error("Invalid credentials");
+    }
+  }
+
+  try {
+    const message = await authenticateUser({
+      username: "ernestico",
+      password: "password",
+    });
+    console.log(message);
+  } catch (error) {
+    console.error(error.message);
+  }
+
+  // await keyword - Loading images and resources in web applications:
+
+  async function loadImage(url) {
+    const image = new Image();
+    image.src = url;
+    await new Promise((resolve, reject) => {
+      image.onload = resolve;
+      image.onerror = reject;
+    });
+    return image;
+  }
+
+  // 5. async/await: The async/await syntax in JavaScript provides a way to write asynchronous code in a synchronous style. It allows you to define asynchronous functions using the async keyword and use the await keyword to pause the execution of asynchronous operations until they are settled (resolved or rejected). async/await simplifies working with Promises and improves the readability and maintainability of asynchronous code.
+
+  // async/await - Examples:
+
+  async function fetchDataAsync(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  fetchDataAsync("https://api.example.com/data");
+
+  async function authenticateUserAsync(credentials) {
+    if (isValidCredentials(credentials)) {
+      return "User is authenticated";
+    } else {
+      throw new Error("Invalid credentials");
+    }
+  }
+
+  // 6. Async Function: An async function in JavaScript is a function that returns a Promise. It allows you to write asynchronous code in a synchronous style using the async/await syntax. An async function can contain one or more await expressions, which pause the execution of the function until the Promise is settled. Async functions simplify working with Promises and make asynchronous code easier to read and maintain.
+
+  // Async function - Example:
+
+  async function fetchDataAsyncFunction(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  fetchDataAsyncFunction("https://api.example.com/data");
+
+  // Async function with error handling:
+
+  async function authenticateUserAsyncFunction(credentials) {
+    if (isValidCredentials(credentials)) {
+      return "User is authenticated";
+    } else {
+      throw new Error("Invalid credentials");
+    }
+  }
+
+  // Async with arrow function: We can create async functions using arrow function syntax. This is useful when defining short asynchronous functions or when using arrow functions in combination with other features like Promises and async/await.
+
+  const fetchDataAsyncArrow = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+
+  // 7. Top-level await: Top-level await is a feature in JavaScript that allows you to use the await keyword outside of async functions at the top level of a module. It simplifies working with asynchronous code in module scripts and provides a more straightforward way to handle asynchronous operations.
+
+  // Note: Top-level await only works at the top level of modules. There is no support for classic scripts or non-async functions. Top-level await enables developers to use the await keyword outside of async functions. It acts like a big async function causing other modules who import them to wait before they start evaluating their body.
+
+  // For more info: https://v8.dev/features/top-level-await
+
+  // Top-level await - Example:
+
+  const responseTopLevelAwait = await fetch("https://api.example.com/data");
+
+  const dataTopLevelAwait = await response.json();
+
+  // export default dataTopLevelAwait;
+
+  // Real cases of use:
+
+  // Top-level await - Fetching data from an API in module scripts:
+
+  // const response = await fetch("https://api.example.com/data");
+
+  // 8. Promises: Promises in JavaScript are used to handle asynchronous operations and provide a way to work with asynchronous code in a more structured and manageable way. A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises have three states: pending, fulfilled, and rejected. A Promise is created using the new Promise() constructor, which takes a function as an argument with two parameters: resolve and reject.
+
+  // Promises - Example:
+
+  const promisePromises = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const randomValue = Math.random();
+      if (randomValue >= 0.5) {
+        resolve(randomValue);
+      } else {
+        reject(new Error("Value is too low"));
+      }
     }, 1000);
+  }, 1000);
 
-    promisePromises.then(value => {
+  promisePromises
+    .then((value) => {
       console.log("Resolved:", value);
-    }).catch(error => {
-      console.error("Rejected:", error.message);
-    });
-
-    // Real cases of use:
-
-    // Promises - Fetching data from an API:
-
-    function fetchDataPromises(url) {
-      return new Promise((resolve, reject) => {
-        fetch(url)
-          .then(response => response.json())
-          .then(data => resolve(data))
-          .catch(error => reject(error));
-      });
-    }
-
-    // 9. Promise.resolve(): The Promise.resolve() method in JavaScript returns a Promise object that is resolved with a given value. It is a convenient way to create a Promise that is already resolved with a specific value. Promise.resolve() is useful for converting non-Promise values into Promises and simplifying asynchronous code.
-
-    // Promise.resolve() - Example:
-
-    const resolvedPromise = Promise.resolve(42);
-
-    resolvedPromise.then(value => {
-      console.log("Resolved:", value);
-    });
-
-    // 10. Promise.reject(): The Promise.reject() method in JavaScript returns a Promise object that is rejected with a given reason. It is a convenient way to create a Promise that is already rejected with a specific error. Promise.reject() is useful for handling errors and failures in asynchronous code.
-
-    // Promise.reject() - Example:
-
-    const rejectedPromise = Promise.reject(new Error("Promise rejected"));
-
-    rejectedPromise.catch(error => {
-      console.error("Rejected:", error.message);
-    });
-
-    // 11. Promise.all(): The Promise.all() method in JavaScript takes an iterable of Promises and returns a single Promise that resolves when all of the input Promises have resolved, or rejects with the reason of the first Promise that rejects. It is useful for running multiple asynchronous operations in parallel and waiting for all of them to complete.
-
-    // Promise.all() - Example:
-
-    const promise1 = Promise.resolve(1);
-    const promise2 = Promise.resolve(2);
-    const promise3 = Promise.resolve(3);
-
-    Promise.all([promise1, promise2, promise3])
-    .then(values => {
-      console.log("Resolved:", values);
-    });
-
-    // 12. Promise.any(): The Promise.any() method in JavaScript takes an iterable of Promises and returns a single Promise that resolves as soon as one of the input Promises resolves, or rejects if all of the input Promises reject. It is useful for handling multiple asynchronous operations and waiting for the first one to complete successfully.
-
-    // Promise.any() - Example:
-
-    const promiseAny1 = new Promise((resolve, reject) => setTimeout(resolve, 100, "one"));
-    const promiseAny2 = new Promise((resolve, reject) => setTimeout(resolve, 200, "two"));
-    const promiseAny3 = new Promise((resolve, reject) => setTimeout(resolve, 300, "three"));
-
-    Promise.any([promiseAny1, promiseAny2, promiseAny3])
-    .then(value => {
-      console.log("Resolved:", value);
-    });
-
-    // 13. .then(): The .then() method in JavaScript is used to handle the result of a Promise after it has been resolved. It takes two optional callback functions as arguments: onFulfilled and onRejected. The onFulfilled callback is called when the Promise is resolved, and the onRejected callback is called when the Promise is rejected.
-
-    // .then() - Example:
-
-    const promiseThen = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const randomValue = Math.random();
-        if (randomValue >= 0.5) {
-          resolve(randomValue);
-        } else {
-          reject(new Error("Value is too low"));
-        }
-      }, 1000);
     })
-
-    promiseThen.then(value => {
-      console.log("Resolved:", value);
-    }).catch(error => {
+    .catch((error) => {
       console.error("Rejected:", error.message);
     });
 
-    // 14. .finally(): The .finally() method in JavaScript is used to run cleanup code after a Promise is settled (resolved or rejected). It is called regardless of the Promise's outcome and allows you to perform cleanup tasks like closing resources, releasing memory, or logging final results.
+  // Real cases of use:
 
-    // .finally() - Example:
+  // Promises - Fetching data from an API:
 
-    const promiseFinally = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const randomValue = Math.random();
-        if (randomValue >= 0.5) {
-          resolve(randomValue);
-        } else {
-          reject(new Error("Value is too low"));
-        }
-      }, 1000);
-    })
+  function fetchDataPromises(url) {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => resolve(data))
+        .catch((error) => reject(error));
+    });
+  }
 
-    promiseFinally.then(value => {
+  // 9. Promise.resolve(): The Promise.resolve() method in JavaScript returns a Promise object that is resolved with a given value. It is a convenient way to create a Promise that is already resolved with a specific value. Promise.resolve() is useful for converting non-Promise values into Promises and simplifying asynchronous code.
+
+  // Promise.resolve() - Example:
+
+  const resolvedPromise = Promise.resolve(42);
+
+  resolvedPromise.then((value) => {
+    console.log("Resolved:", value);
+  });
+
+  // 10. Promise.reject(): The Promise.reject() method in JavaScript returns a Promise object that is rejected with a given reason. It is a convenient way to create a Promise that is already rejected with a specific error. Promise.reject() is useful for handling errors and failures in asynchronous code.
+
+  // Promise.reject() - Example:
+
+  const rejectedPromise = Promise.reject(new Error("Promise rejected"));
+
+  rejectedPromise.catch((error) => {
+    console.error("Rejected:", error.message);
+  });
+
+  // 11. Promise.all(): The Promise.all() method in JavaScript takes an iterable of Promises and returns a single Promise that resolves when all of the input Promises have resolved, or rejects with the reason of the first Promise that rejects. It is useful for running multiple asynchronous operations in parallel and waiting for all of them to complete.
+
+  // Promise.all() - Example:
+
+  const promise1 = Promise.resolve(1);
+  const promise2 = Promise.resolve(2);
+  const promise3 = Promise.resolve(3);
+
+  Promise.all([promise1, promise2, promise3]).then((values) => {
+    console.log("Resolved:", values);
+  });
+
+  // 12. Promise.any(): The Promise.any() method in JavaScript takes an iterable of Promises and returns a single Promise that resolves as soon as one of the input Promises resolves, or rejects if all of the input Promises reject. It is useful for handling multiple asynchronous operations and waiting for the first one to complete successfully.
+
+  // Promise.any() - Example:
+
+  const promiseAny1 = new Promise((resolve, reject) =>
+    setTimeout(resolve, 100, "one")
+  );
+  const promiseAny2 = new Promise((resolve, reject) =>
+    setTimeout(resolve, 200, "two")
+  );
+  const promiseAny3 = new Promise((resolve, reject) =>
+    setTimeout(resolve, 300, "three")
+  );
+
+  Promise.any([promiseAny1, promiseAny2, promiseAny3]).then((value) => {
+    console.log("Resolved:", value);
+  });
+
+  // 13. .then(): The .then() method in JavaScript is used to handle the result of a Promise after it has been resolved. It takes two optional callback functions as arguments: onFulfilled and onRejected. The onFulfilled callback is called when the Promise is resolved, and the onRejected callback is called when the Promise is rejected.
+
+  // .then() - Example:
+
+  const promiseThen = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const randomValue = Math.random();
+      if (randomValue >= 0.5) {
+        resolve(randomValue);
+      } else {
+        reject(new Error("Value is too low"));
+      }
+    }, 1000);
+  });
+
+  promiseThen
+    .then((value) => {
       console.log("Resolved:", value);
-    }).catch(error => {
+    })
+    .catch((error) => {
       console.error("Rejected:", error.message);
-    }).finally(() => {
+    });
+
+  // 14. .finally(): The .finally() method in JavaScript is used to run cleanup code after a Promise is settled (resolved or rejected). It is called regardless of the Promise's outcome and allows you to perform cleanup tasks like closing resources, releasing memory, or logging final results.
+
+  // .finally() - Example:
+
+  const promiseFinally = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const randomValue = Math.random();
+      if (randomValue >= 0.5) {
+        resolve(randomValue);
+      } else {
+        reject(new Error("Value is too low"));
+      }
+    }, 1000);
+  });
+
+  promiseFinally
+    .then((value) => {
+      console.log("Resolved:", value);
+    })
+    .catch((error) => {
+      console.error("Rejected:", error.message);
+    })
+    .finally(() => {
       console.log("Cleanup code here");
     });
 
-    // 15. .catch(): The .catch() method in JavaScript is used to handle errors in Promises. It is a shorthand for .then(null, onRejected) and is called when a Promise is rejected. The .catch() method allows you to handle errors in a more concise and readable way.
+  // 15. .catch(): The .catch() method in JavaScript is used to handle errors in Promises. It is a shorthand for .then(null, onRejected) and is called when a Promise is rejected. The .catch() method allows you to handle errors in a more concise and readable way.
 
-    // .catch() - Example:
+  // .catch() - Example:
 
-    const promiseCatch = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        reject(new Error("Promise rejected"));
-      }, 1000);
-    })
+  const promiseCatch = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error("Promise rejected"));
+    }, 1000);
+  });
 
-    promiseCatch.then(value => {
+  promiseCatch
+    .then((value) => {
       console.log("Resolved:", value);
-    }).catch(error => {
+    })
+    .catch((error) => {
       console.error("Rejected:", error.message);
     });
-
 }
 
 /* 10. Strings */
@@ -2682,7 +2736,7 @@ console.log(title);
 
   console.log(messageConcat); // "Hello, Ernestico!"
 
-  // 4. .trim(): The .trim() method in JavaScript is used to remove whitespace characters from the beginning and end of a string. It trims leading and trailing spaces, tabs, and line breaks, but not spaces within the string. The .trim() method is useful for cleaning up user input, normalizing strings, and comparing strings without leading or trailing whitespace. 
+  // 4. .trim(): The .trim() method in JavaScript is used to remove whitespace characters from the beginning and end of a string. It trims leading and trailing spaces, tabs, and line breaks, but not spaces within the string. The .trim() method is useful for cleaning up user input, normalizing strings, and comparing strings without leading or trailing whitespace.
 
   // .trim() - Examples:
 
@@ -2741,7 +2795,7 @@ console.log(title);
   const textSplit = "Hello, Ernestico!";
   console.log(textSplit.split(",")); // ["Hello", " Ernestico!"]
   console.log(textSplit.split(" ")); // ["Hello,", "Ernestico!"]
-  console.log(textSplit.split("o")); // ["Hell", ", Ernestic", "!"] 
+  console.log(textSplit.split("o")); // ["Hell", ", Ernestic", "!"]
 
   // 10. .replaceAll(): The .replaceAll() method in JavaScript is used to replace all occurrences of a specified substring with another substring in a string. It takes two parameters: the substring to be replaced and the new substring to replace it with. The .replaceAll() method returns a new string with all occurrences of the specified substring replaced.
 
@@ -2816,37 +2870,36 @@ console.log(title);
 
   // Null examples:
 
-    // Initializing a Variable to Indicate No Value. Why null? It explicitly communicates that the variable is intentionally empty, not undefined by accident.
+  // Initializing a Variable to Indicate No Value. Why null? It explicitly communicates that the variable is intentionally empty, not undefined by accident.
 
-    let selectedCountry = null;
+  let selectedCountry = null;
 
-    // Later in the code
-    if (selectedCountry === null) {
-        console.log("No country selected yet.");
-    }
+  // Later in the code
+  if (selectedCountry === null) {
+    console.log("No country selected yet.");
+  }
 
-    // Resetting a Variable. Why null? It signifies the deliberate removal of the object data, indicating that there’s no active session.
+  // Resetting a Variable. Why null? It signifies the deliberate removal of the object data, indicating that there’s no active session.
 
-    let userSession = {
-        id: 123,
-        name: "John Doe"
-    };
+  let userSession = {
+    id: 123,
+    name: "John Doe",
+  };
 
-    // When the user logs out
-    userSession = null;
+  // When the user logs out
+  userSession = null;
 
-    console.log(userSession); // Output: null
+  console.log(userSession); // Output: null
 
-    // Representing Missing Data. Why null? It clarifies that the middle name is intentionally left blank, rather than being undefined due to an error.
+  // Representing Missing Data. Why null? It clarifies that the middle name is intentionally left blank, rather than being undefined due to an error.
 
-    let user = {
-        firstName: "Alice",
-        middleName: null, // Middle name is not provided
-        lastName: "Smith"
-    };
-    
-    console.log(user.middleName); // Output: null
-    
+  let user = {
+    firstName: "Alice",
+    middleName: null, // Middle name is not provided
+    lastName: "Smith",
+  };
+
+  console.log(user.middleName); // Output: null
 }
 
 /* 11. Syntax */
@@ -2887,11 +2940,9 @@ console.log(title);
   try {
     const data = await fetchDataFromDatabase();
     console.log("Data from database:", data);
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching data:", error.message);
-  }
-  finally {
+  } finally {
     console.log("Database operation completed");
   }
 
@@ -2952,7 +3003,8 @@ console.log(title);
   // Ternary operator - Example:
 
   const ageTernary = 25;
-  const messageTernary = ageTernary >= 18 ? "You are an adult" : "You are a minor";
+  const messageTernary =
+    ageTernary >= 18 ? "You are an adult" : "You are a minor";
 
   console.log(messageTernary); // "You are an adult"
 
@@ -3005,7 +3057,7 @@ console.log(title);
   const shoppingCart = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
   let totalPrice = 0;
@@ -3023,7 +3075,7 @@ console.log(title);
   for (let i = 0; i < 5; i++) {
     console.log(i); // 0, 1, 2, 3, 4
   }
- 
+
   // Real cases of use:
 
   // for (loops) - Generating a sequence of numbers:
@@ -3127,8 +3179,7 @@ console.log(title);
   try {
     const data = await fetchDataFromDatabase();
     console.log("Data from database:", data);
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching data:", error.message);
   }
 }
@@ -3168,7 +3219,7 @@ console.log(title);
 
   const numbersEvery = [1, 2, 3, 4, 5];
 
-  const isPositive = numbersEvery.every(number => number > 0);
+  const isPositive = numbersEvery.every((number) => number > 0);
 
   console.log(isPositive); // true
 
@@ -3178,7 +3229,7 @@ console.log(title);
 
   const numbersFilter = [1, -2, 3, -4, 5];
 
-  const positiveNumbers = numbersFilter.filter(number => number > 0);
+  const positiveNumbers = numbersFilter.filter((number) => number > 0);
 
   console.log(positiveNumbers); // [1, 3, 5]
 
@@ -3189,10 +3240,10 @@ console.log(title);
   const products = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
-  const affordableProducts = products.filter(product => product.price < 20);
+  const affordableProducts = products.filter((product) => product.price < 20);
 
   console.log(affordableProducts); // [{ name: "Product 1", price: 10 }]
 
@@ -3202,7 +3253,7 @@ console.log(title);
 
   const numbersFind = [1, 2, 3, 4, 5];
 
-  const foundNumber = numbersFind.find(number => number > 3);
+  const foundNumber = numbersFind.find((number) => number > 3);
 
   console.log(foundNumber); // 4
 
@@ -3212,7 +3263,7 @@ console.log(title);
 
   const numbersFindIndex = [1, 2, 3, 4, 5];
 
-  const index = numbersFindIndex.findIndex(number => number > 3);
+  const index = numbersFindIndex.findIndex((number) => number > 3);
 
   console.log(index); // 3
 
@@ -3222,7 +3273,7 @@ console.log(title);
 
   const numbersForEach = [1, 2, 3, 4, 5];
 
-  numbersForEach.forEach(number => {
+  numbersForEach.forEach((number) => {
     console.log(number);
   });
 
@@ -3233,10 +3284,10 @@ console.log(title);
   const shoppingCart = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
-  shoppingCart.forEach(item => {
+  shoppingCart.forEach((item) => {
     console.log(item.name, item.price);
   });
 
@@ -3274,7 +3325,7 @@ console.log(title);
 
   const numbersMap = [1, 2, 3, 4, 5];
 
-  const squaredNumbers = numbersMap.map(number => number ** 2);
+  const squaredNumbers = numbersMap.map((number) => number ** 2);
 
   console.log(squaredNumbers); // [1, 4, 9, 16, 25]
 
@@ -3284,7 +3335,7 @@ console.log(title);
 
   const data = [10, 20, 30, 40, 50];
 
-  const formattedData = data.map(value => `$${value}`);
+  const formattedData = data.map((value) => `$${value}`);
 
   console.log("Formatted data:", formattedData.join(", ")); // Formatted data: "$10, $20, $30, $40, $50"
 
@@ -3308,18 +3359,19 @@ console.log(title);
   shoppingCartPush.push({ name: "Product 1", price: 10 });
   shoppingCartPush.push({ name: "Product 2", price: 20 });
 
-  console.log("Shopping cart:", shoppingCartPush); // 
+  console.log("Shopping cart:", shoppingCartPush); //
 
   // 12. .reduce(): The .reduce() method in JavaScript is used to reduce an array to a single value by applying a specified function to each element in the array. It takes a callback function and an optional initial value as arguments. The callback function is called for each element in the array, and the result is accumulated into a single value. The .reduce() method returns the final accumulated value. It is useful for calculating totals, aggregating data, and performing complex transformations on arrays. The difference between .reduce() and .map() is that .reduce() reduces an array to a single value, while .map() transforms each element of an array and returns a new array with the transformed values.
   // The value of 0 in the second argument of the .reduce() method is the initial value of the accumulator. The first argument of the reduce method is a callback function that takes two parameters: the accumulator and the current value of the array. The callback function returns the new value of the accumulator after processing the current value.
-
-
 
   // .reduce() - Examples:
 
   const numbersReduce = [1, 2, 3, 4, 5];
 
-  const sumReduce = numbersReduce.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const sumReduce = numbersReduce.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
 
   console.log(sumReduce); // 15
 
@@ -3330,10 +3382,13 @@ console.log(title);
   const shoppingCartReduce = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
-  const totalPriceReduce = shoppingCartReduce.reduce((total, item) => total + item.price, 0);
+  const totalPriceReduce = shoppingCartReduce.reduce(
+    (total, item) => total + item.price,
+    0
+  );
 
   console.log("Total price:", totalPriceReduce); // Total price: 60
 
@@ -3343,7 +3398,7 @@ console.log(title);
 
   const numbersSome = [1, 2, 3, 4, 5];
 
-  const hasNegativeNumber = numbersSome.some(number => number < 0);
+  const hasNegativeNumber = numbersSome.some((number) => number < 0);
 
   console.log(hasNegativeNumber); // false
 
@@ -3354,10 +3409,10 @@ console.log(title);
   const productsSome = [
     { name: "Product 1", price: 10, onSale: false },
     { name: "Product 2", price: 20, onSale: true },
-    { name: "Product 3", price: 30, onSale: false }
+    { name: "Product 3", price: 30, onSale: false },
   ];
 
-  const hasSale = productsSome.some(product => product.onSale);
+  const hasSale = productsSome.some((product) => product.onSale);
 
   console.log("Sale available:", hasSale); // Sale available: true
 
@@ -3378,7 +3433,7 @@ console.log(title);
   const productsSort = [
     { name: "Product 1", price: 30 },
     { name: "Product 2", price: 10 },
-    { name: "Product 3", price: 20 }
+    { name: "Product 3", price: 20 },
   ];
 
   productsSort.sort((a, b) => a.price - b.price);
@@ -3406,7 +3461,7 @@ console.log(title);
   const shoppingCartSplice = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
   const removedItems = shoppingCartSplice.splice(1, 2);
@@ -3420,14 +3475,14 @@ console.log(title);
   let userOptionalChaining = {
     name: "Ernestico",
     address: {
-      city: "San Francisco"
-    }
+      city: "San Francisco",
+    },
   };
 
   console.log(userOptionalChaining.address?.city); // "San Francisco
 
   userOptionalChaining = {
-    name: "Ernestico"
+    name: "Ernestico",
   };
 
   console.log(userOptionalChaining.address?.city); // undefined
@@ -3439,7 +3494,7 @@ console.log(title);
   const productsArray = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
   console.log(productsArray[0].name); // "Product 1"
@@ -3453,7 +3508,7 @@ console.log(title);
   const usersArray = [
     { name: "User 1", email: "user1@email.com" },
     { name: "User 2", email: "user2@email.com" },
-    { name: "User 3", email: "user3@email.com" }
+    { name: "User 3", email: "user3@email.com" },
   ];
 
   console.log(usersArray[0].name); // "User 1"
@@ -3485,7 +3540,7 @@ console.log(title);
 
   const userDestructuring = {
     name: "Ernestico",
-    age: 25
+    age: 25,
   };
 
   const { name, age } = userDestructuring;
@@ -3501,8 +3556,8 @@ console.log(title);
     data: {
       id: 1,
       name: "Product 1",
-      price: 10
-    }
+      price: 10,
+    },
   };
 
   const { id, nameApi, price } = apiResponse.data;
@@ -3519,7 +3574,7 @@ console.log(title);
 
   const user = {
     name: "Ernestico",
-    age: 25
+    age: 25,
   };
 
   printUser(user);
@@ -3533,14 +3588,14 @@ console.log(title);
         <p>{age}</p>
       </div>
     );
-  }
+  };
 
   const userProps = {
     name: "Ernestico",
-    age: 25
+    age: 25,
   };
 
-  <UserComponent {...userProps} />
+  <UserComponent {...userProps} />;
 
   // 20. [] set item: The [] operator in JavaScript is used to update elements in an array by their index. It takes an index and a new value as arguments and assigns the new value to the element at that index. The [] operator is used to update, add, or remove elements from an array. It is useful for modifying arrays and updating individual elements by their position.
 
@@ -3563,7 +3618,7 @@ console.log(title);
   const shoppingCartSetItem = [
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ];
 
   shoppingCartSetItem[1].price = 25;
@@ -3593,7 +3648,6 @@ console.log(title);
   float64Array[0] = 3.14;
 
   console.log(float64Array[0]); // 3.14
-
 }
 
 /* 13. Classes */
@@ -3610,7 +3664,9 @@ console.log(title);
     }
 
     greet() {
-      console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
+      console.log(
+        `Hello, my name is ${this.name} and I am ${this.age} years old`
+      );
     }
   }
 
@@ -3651,7 +3707,7 @@ console.log(title);
   const shoppingCart = new ShoppingCart([
     { name: "Product 1", price: 10 },
     { name: "Product 2", price: 20 },
-    { name: "Product 3", price: 30 }
+    { name: "Product 3", price: 30 },
   ]);
 
   console.log(shoppingCart.totalPrice); // 60
@@ -3687,8 +3743,8 @@ console.log(title);
     counter.increment();
     counter.decrement();
 
-    console.log(counter.getCount()); // 1   
-    
+    console.log(counter.getCount()); // 1
+
     // 3.3. Public class fields: Public class fields in JavaScript are used to define public properties and methods that are accessible outside the class. They provide a way to expose class members to external code and allow for interaction with the class. Public class fields are declared without the # symbol before the field name. They are useful for defining properties and methods that can be accessed and modified from external code.
 
     // Public class fields - Examples:
@@ -3698,7 +3754,9 @@ console.log(title);
       age = 25;
 
       greet() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
+        console.log(
+          `Hello, my name is ${this.name} and I am ${this.age} years old`
+        );
       }
     }
 
@@ -3729,7 +3787,6 @@ console.log(title);
     }
 
     const dog = new Dog("Buddy");
-
   }
 
   // 3.5. Prototypal inheritance: Prototypal inheritance in JavaScript is a mechanism that allows objects to inherit properties and methods from other objects. It is based on the prototype chain, where objects inherit from other objects through a prototype link. Prototypal inheritance is a fundamental concept in JavaScript and is used to model relationships between objects. The relation between prototypal inheritance and inheritance is that prototypal inheritance is a specific type of inheritance that is based on the prototype chain. Other types of inheritance, such as class-based inheritance, are also used in object-oriented programming.
@@ -3740,9 +3797,9 @@ console.log(title);
     this.name = name;
   }
 
-  Animal.prototype.speak = function() {
+  Animal.prototype.speak = function () {
     console.log(`${this.name} makes a sound`);
-  }
+  };
 
   function Dog(name) {
     Animal.call(this, name);
@@ -3750,9 +3807,9 @@ console.log(title);
 
   Dog.prototype = Object.create(Animal.prototype);
 
-  Dog.prototype.speak = function() {
+  Dog.prototype.speak = function () {
     console.log(`${this.name} barks`);
-  }
+  };
 
   const dog = new Dog("Buddy");
 
@@ -3766,9 +3823,9 @@ console.log(title);
     this.name = name;
   }
 
-  Animal.prototype.speak = function() {
+  Animal.prototype.speak = function () {
     console.log(`${this.name} makes a sound`);
-  }
+  };
 
   function Dog(name) {
     Animal.call(this, name);
@@ -3776,9 +3833,9 @@ console.log(title);
 
   Dog.prototype = Object.create(Animal.prototype);
 
-  Dog.prototype.speak = function() {
+  Dog.prototype.speak = function () {
     console.log(`${this.name} barks`);
-  }
+  };
 
   const dog2 = new Dog("Buddy");
 
@@ -3797,7 +3854,7 @@ console.log(title);
     speak() {
       console.log(`${this.name} makes a sound`);
     }
-  } 
+  }
 
   class Dog extends Animal {
     constructor(name, breed) {
@@ -3863,7 +3920,6 @@ console.log(title);
   // Using instance methods
   console.log(car1.startEngine()); // Output: Toyota Corolla's engine has started.
   console.log(car2.displayDetails()); // Output: Car: Honda Civic, Year: 2022
-
 
   // Example 2: Advanced Instance Methods with Operations
   class BankAccount {
@@ -3957,9 +4013,9 @@ console.log(title);
   // 6. Setters: In JavaScript, setters are special methods within classes that allow you to define logic for setting a value to a property. They are part of the getter/setter concept, enabling controlled access to an object's properties. When you assign a value to a property, the setter method for that property is automatically called instead of directly changing the property.
 
   // Key Features of Setters:
-    // Encapsulation: They allow you to control how values are assigned to object properties.
-    // Validation: You can add logic to validate or manipulate the data before assigning it to a property.
-    // Syntax: Setters are defined using the set keyword.
+  // Encapsulation: They allow you to control how values are assigned to object properties.
+  // Validation: You can add logic to validate or manipulate the data before assigning it to a property.
+  // Syntax: Setters are defined using the set keyword.
 
   // Setters - Examples:
 
@@ -3968,12 +4024,12 @@ console.log(title);
       this.owner = owner;
       this._balance = initialBalance; // Use an internal property for encapsulation
     }
-  
+
     // Getter for balance
     get balance() {
       return this._balance;
     }
-  
+
     // Setter for balance
     set balance(amount) {
       if (amount < 0) {
@@ -3982,7 +4038,7 @@ console.log(title);
         this._balance = amount;
       }
     }
-  
+
     // Deposit method
     deposit(amount) {
       if (amount > 0) {
@@ -3992,7 +4048,7 @@ console.log(title);
         console.error("Deposit amount must be positive.");
       }
     }
-  
+
     // Withdraw method
     withdraw(amount) {
       if (amount > this._balance) {
@@ -4005,18 +4061,18 @@ console.log(title);
       }
     }
   }
-  
+
   // Example Usage
   const account = new BankAccount("Alice", 1000);
-  
+
   console.log(`Initial Balance: $${account.balance}`); // Getter used
-  
+
   account.deposit(500); // Adds $500 to balance
   console.log(`Updated Balance: $${account.balance}`);
-  
+
   account.withdraw(300); // Deducts $300 from balance
   console.log(`Updated Balance: $${account.balance}`);
-  
+
   account.balance = -100; // Setter blocks this, shows error
   console.log(`Final Balance: $${account.balance}`);
 
@@ -4031,19 +4087,18 @@ console.log(title);
 
   // 7. Static Methods: In JavaScript, static methods are methods defined on the class itself rather than on instances of the class. They are used for functionality that doesn't depend on an individual instance of the class and can be called directly on the class without creating an object.
 
-    // Syntax: Static methods are defined using the static keyword:
-    class MyClass {
-      static myStaticMethod() {
-          return "I am a static method!";
-        }
+  // Syntax: Static methods are defined using the static keyword:
+  class MyClass {
+    static myStaticMethod() {
+      return "I am a static method!";
     }
+  }
 
-    // You call them directly on the class:
-    console.log(MyClass.myStaticMethod()); // Output: I am a static method!
+  // You call them directly on the class:
+  console.log(MyClass.myStaticMethod()); // Output: I am a static method!
 
-    // Static methods cannot be called on instances of the class.
-    // They are typically used for utility or helper functions, factory methods, or to define application-wide constants.
-    
+  // Static methods cannot be called on instances of the class.
+  // They are typically used for utility or helper functions, factory methods, or to define application-wide constants.
 }
 
 /* 14. Type Casting */
@@ -4126,7 +4181,6 @@ console.log(title);
 
   console.log(numberFromUserInput); // 10
 }
-
 
 /* 15 Data Structures */
 /* A Data structure is a format to organize, manage and store data in a way that allows efficient access and modification. JavaScript has primitive (built-in) and non-primitive (not built-in) data structures. Primitive data structures come by default with the programming language and you can implement them out of the box (like arrays and objects). Non-primitive data structures don’t come by default and you have to code them up if you want to use them. */
@@ -4358,7 +4412,7 @@ console.log(title);
 
   function traverseDirectory(directory) {
     const files = directory.getFiles();
-    files.forEach(file => {
+    files.forEach((file) => {
       if (file.isDirectory()) {
         traverseDirectory(file);
       } else {
@@ -4577,7 +4631,7 @@ console.log(title);
       const result = [];
       const visited = {};
 
-      const dfsHelper = vertex => {
+      const dfsHelper = (vertex) => {
         if (!vertex) {
           return null;
         }
@@ -4585,7 +4639,7 @@ console.log(title);
         visited[vertex] = true;
         result.push(vertex);
 
-        this.adjacencyList[vertex].forEach(neighbor => {
+        this.adjacencyList[vertex].forEach((neighbor) => {
           if (!visited[neighbor]) {
             return dfsHelper(neighbor);
           }
@@ -4617,90 +4671,93 @@ console.log(title);
 
   console.log(graphDFS.dfs("A")); // Output: ["A", "B", "D", "E", "C", "F"]
 
-    // 6. Dynamic Programming: Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is a powerful technique used in algorithms and computer science to optimize the time and space complexity of solutions. Dynamic programming is commonly used in problems that involve overlapping subproblems and optimal substructure. It is essential for technical interviews in software engineering and computer science.
+  // 6. Dynamic Programming: Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is a powerful technique used in algorithms and computer science to optimize the time and space complexity of solutions. Dynamic programming is commonly used in problems that involve overlapping subproblems and optimal substructure. It is essential for technical interviews in software engineering and computer science.
 
-    // Dynamic Programming - Examples:
+  // Dynamic Programming - Examples:
 
-    // Example 1: Fibonacci using Dynamic Programming
+  // Example 1: Fibonacci using Dynamic Programming
 
-    function fibonacciDP(n) {
-      const fib = [0, 1];
+  function fibonacciDP(n) {
+    const fib = [0, 1];
 
-      for (let i = 2; i <= n; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
-      }
-
-      return fib[n];
+    for (let i = 2; i <= n; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
     }
 
-    console.log(fibonacciDP(6)); // Output: 8
-    console.log(fibonacciDP(50)); // Output: 12586269025
+    return fib[n];
+  }
 
-    // Example 2: Longest Common Subsequence (LCS) using Dynamic Programming
+  console.log(fibonacciDP(6)); // Output: 8
+  console.log(fibonacciDP(50)); // Output: 12586269025
 
-    function lcsDP(str1, str2) {
-      const m = str1.length;
-      const n = str2.length;
-      const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+  // Example 2: Longest Common Subsequence (LCS) using Dynamic Programming
 
-      for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-          if (str1[i - 1] === str2[j - 1]) {
-            dp[i][j] = dp[i - 1][j - 1] + 1;
-          } else {
-            dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-          }
+  function lcsDP(str1, str2) {
+    const m = str1.length;
+    const n = str2.length;
+    const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        if (str1[i - 1] === str2[j - 1]) {
+          dp[i][j] = dp[i - 1][j - 1] + 1;
+        } else {
+          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
         }
       }
-
-      return dp[m][n];
     }
 
-    console.log(lcsDP("AGGTAB", "GXTXAYB")); // Output: 4
+    return dp[m][n];
+  }
 
-    // Real cases of use:
+  console.log(lcsDP("AGGTAB", "GXTXAYB")); // Output: 4
 
-    // Dynamic Programming - Solving the knapsack problem in a shopping application:
+  // Real cases of use:
 
-    function knapsackDP(capacity, weights, values, n) {
-      const dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
+  // Dynamic Programming - Solving the knapsack problem in a shopping application:
 
-      for (let i = 1; i <= n; i++) {
-        for (let w = 1; w <= capacity; w++) {
-          if (weights[i - 1] <= w) {
-            dp[i][w] = Math.max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w]);
-          } else {
-            dp[i][w] = dp[i - 1][w];
-          }
+  function knapsackDP(capacity, weights, values, n) {
+    const dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
+
+    for (let i = 1; i <= n; i++) {
+      for (let w = 1; w <= capacity; w++) {
+        if (weights[i - 1] <= w) {
+          dp[i][w] = Math.max(
+            values[i - 1] + dp[i - 1][w - weights[i - 1]],
+            dp[i - 1][w]
+          );
+        } else {
+          dp[i][w] = dp[i - 1][w];
         }
       }
-
-      return dp[n][capacity];
     }
 
-    const capacity = 50;
-    const weights = [10, 20, 30];
-    const values = [60, 100, 120];
+    return dp[n][capacity];
+  }
 
-    console.log(knapsackDP(capacity, weights, values, weights.length)); // Output: 220
+  const capacity = 50;
+  const weights = [10, 20, 30];
+  const values = [60, 100, 120];
 
-    // 7. Structured data: Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general. It is also coded using in-page markup on the page that the information applies to.
+  console.log(knapsackDP(capacity, weights, values, weights.length)); // Output: 220
 
-    // Structured data - Examples:
+  // 7. Structured data: Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general. It is also coded using in-page markup on the page that the information applies to.
 
-    // Example 1: JSON (JavaScript Object Notation)
+  // Structured data - Examples:
 
-    const person = {
-      name: "Alice",
-      age: 30,
-      city: "New York"
-    };
+  // Example 1: JSON (JavaScript Object Notation)
 
-    console.log(JSON.stringify(person)); // Output: {"name":"Alice","age":30,"city":"New York"}
+  const person = {
+    name: "Alice",
+    age: 30,
+    city: "New York",
+  };
 
-    // Example 2: XML (Extensible Markup Language)
+  console.log(JSON.stringify(person)); // Output: {"name":"Alice","age":30,"city":"New York"}
 
-    const xml = `
+  // Example 2: XML (Extensible Markup Language)
+
+  const xml = `
     <person>
       <name>Alice</name>
       <age>30</age>
@@ -4708,13 +4765,13 @@ console.log(title);
     </person>
     `;
 
-    console.log(xml);
+  console.log(xml);
 
-    // Real cases of use:
+  // Real cases of use:
 
-    // Structured data - Adding schema markup to a web page for search engine optimization (SEO):
+  // Structured data - Adding schema markup to a web page for search engine optimization (SEO):
 
-    /* <script type="application/ld+json">
+  /* <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -4724,86 +4781,68 @@ console.log(title);
     }
     </script>*/
 
-    // 8. JSON: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). JSON is language-independent and can be parsed and generated by many programming languages, including JavaScript, Python, and Java.
+  // 8. JSON: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). JSON is language-independent and can be parsed and generated by many programming languages, including JavaScript, Python, and Java.
 
-    // JSON - Examples:
+  // JSON - Examples:
 
-    // Example 1: JSON Object
+  // Example 1: JSON Object
 
-    const personJSON = `{
+  const personJSON = `{
       "name": "Alice",
       "age": 30,
       "city": "New York"
     }`;
 
-    const personObject = JSON.parse(personJSON);
+  const personObject = JSON.parse(personJSON);
 
-    console.log(personObject.name); // Output: "Alice"
+  console.log(personObject.name); // Output: "Alice"
 
-    // Example 2: JSON Array
+  // Example 2: JSON Array
 
-    const fruitsJSON = `["Apple", "Banana", "Orange"]`;
+  const fruitsJSON = `["Apple", "Banana", "Orange"]`;
 
-    const fruitsArray = JSON.parse(fruitsJSON);
+  const fruitsArray = JSON.parse(fruitsJSON);
 
-    console.log(fruitsArray[0]); // Output: "Apple"
+  console.log(fruitsArray[0]); // Output: "Apple"
 
-    // Real cases of use:
+  // Real cases of use:
 
-    // JSON - Fetching and parsing JSON data from an API in a web application:
+  // JSON - Fetching and parsing JSON data from an API in a web application:
 
-    /* fetch("https://api.example.com/data")
+  /* fetch("https://api.example.com/data")
     .then(response => response.json())
     .then(data => console.log(data)); */
 
-    // 9. Indexed collections: Indexed collections are data structures that store elements in a specific order and allow for efficient access to elements by their index. Common examples of indexed collections include arrays and strings. Indexed collections are used in programming for storing and accessing data in a structured manner.
+  // 9. Indexed collections: Indexed collections are data structures that store elements in a specific order and allow for efficient access to elements by their index. Common examples of indexed collections include arrays and strings. Indexed collections are used in programming for storing and accessing data in a structured manner.
 
-    // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
-
+  // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
 }
 
 /* 17. JS Frameworks */
 
 {
   // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
-
   // React - Features:
-
   // 1. Component-Based Architecture: React follows a component-based architecture where UI elements are broken down into reusable components. Components can be composed together to build complex user interfaces.
-
   // 2. Virtual DOM: React uses a virtual DOM to optimize the rendering of UI components. The virtual DOM is a lightweight copy of the actual DOM, which allows React to efficiently update the UI when the application state changes.
-
   // 3. JSX: JSX is a syntax extension for JavaScript that allows developers to write HTML-like code within JavaScript. JSX makes it easier to create UI components and define their structure and behavior.
-
   // 4. State Management: React provides a simple and efficient way to manage the state of an application. State can be stored in components and updated using the setState() method.
-
   // 5. React Hooks: React Hooks are functions that allow developers to use state and other React features in functional components. Hooks provide a more flexible and concise way to manage state and side effects in React applications.
-
   // 6. React Router: React Router is a popular library for handling routing in React applications. It allows developers to define routes and navigate between different views in a single-page application.
-
   // 7. Context API: React's Context API allows developers to share state between components without having to pass props down the component tree. Context provides a way to manage global state in React applications.
-
   // Steps to initialize a React App with vite:
-
   // 1. Install Vite globally:
   // npm install -g create-vite
-
   // 2. Create a new React project:
   // create-vite react-app
-
   // 3. Change directory to the project folder:
   // cd react-app
-
   // 4. Start the development server:
   // npm run dev
-
   // 5. Open the project in a web browser:
   // http://localhost:3000
-
   // After this, typically you would start building your React application by creating components, defining routes, managing state, and fetching data from APIs. For example:
-
   // Example: Creating a simple React component
-
   // src/App.js file:
   /*
   
@@ -4818,9 +4857,4 @@ console.log(title);
   }
   
   */
-
-
-
-  
-
 }
