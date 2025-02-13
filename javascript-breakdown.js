@@ -1208,6 +1208,21 @@ console.log(title);
   greetThisFunctionContext(); // Hello, my name is undefined
   personThisFunctionContext.greet(); // Hello, my name is Bob
 
+  // When use it in arrow functions this refers to the parent object:
+
+  const personThisArrowFunctionContext = {
+      name: "Charlie",
+      greet: () => {
+        console.log(`Hello, my name is ${this.name}`);
+      },
+
+      greet2: function () {
+        console.log(`Hello, my name is ${this.name}`);
+      }
+    };
+
+    personThisArrowFunctionContext.greet(); // Hello, my name is undefined. In this case this refers to the parent object of the arrow function, which is the global object (window in browsers).
+
   // This - Example 3: Constructor context
   function PersonThisConstructorContext(name) {
     this.name = name;
@@ -1224,6 +1239,11 @@ console.log(title);
   const buttonThisEventHandlerContext = document.getElementById("button");
   buttonThisEventHandlerContext.addEventListener("click", function () {
     console.log(`Button clicked by ${this.id}`); // In event handlers, this refers to the element that triggered the event. In this case, this refers to the button element that was clicked.
+
+  // This - Example 5: Using it alone: When used alone, this refers to the global object (window in browsers, global in Node.js). In strict mode, this will be undefined when used alone in a function.
+  function logThis() {
+    console.log(this);
+  }
   });
 
   // 19. typeof operator: The typeof operator in JavaScript returns the data type of a variable or expression. It is useful for checking the type of a value and handling different data types appropriately.
