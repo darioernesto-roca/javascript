@@ -666,6 +666,8 @@ console.log(title);
 
   // 8. Immediately Invoked Function Expression (IIFE): an anonymous function that is executed immediately after it is defined. It is wrapped in parentheses to prevent it from being treated as a function declaration.
 
+  (() => {})(); // IIFE
+
   (function () {
     console.log("IIFE");
   })(); // IIFE
