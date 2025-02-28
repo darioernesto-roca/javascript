@@ -995,7 +995,32 @@ console.log(title);
   const doubledNumbers = numbers.map((number) => number * 2);
   console.log(doubledNumbers); // [2, 4, 6]
 
-  // 11.4. Recursion: A technique where a function calls itself to solve smaller instances of the same problem. Example:
+  // 11.4. Recursion: A technique where a function calls itself to solve smaller instances of the same problem. One of the most powerful and elegant concept of functions, recursion is when a function invokes itself. Such a function is called a recursive function. As recursion happens, the underlying code of the recursive function gets executed again and again until a terminating condition, called the base case, gets fulfilled. As you dive into the world of algorithms, you’ll come across recursion in many many instances. Recursion is a programming pattern that is useful in situations when a task can be naturally split into several tasks of the same kind, but simpler. Or when a task can be simplified into an easy action plus a simpler variant of the same task. Or, as we’ll see soon, to deal with certain data structures. Examples:
+
+  // Two ways of thinking:
+  function pow(x, n) {
+    let result = 1;
+  
+    // multiply result by x n times in the loop
+    for (let i = 0; i < n; i++) {
+      result *= x;
+    }
+  
+    return result;
+  }
+  console.log( pow(2, 3) );
+
+  // The same using recursion
+  function pow(x, n) {
+    if (n == 1) {
+      return x;
+    } else {
+      return x * pow(x, n - 1);
+    }
+  }
+  console.log( pow(2, 3) ); // 8
+
+  // Factorial using recursion
   function factorialRecursion(n) {
     if (n === 0) {
       return 1;
