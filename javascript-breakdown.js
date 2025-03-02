@@ -634,6 +634,8 @@ console.log(title);
 
   // 5. Closures: Closures in JavaScript allow a function to "remember" and access variables from its lexical scope, even when the function is executed outside that scope. This happens because JavaScript functions form a closure (cierre o clausura) over the scope in which they were created, keeping a reference to that scope even after the outer function has returned. When outerFunction is called, this variable is created and stored in the function's scope. However, outerFunction also defines an inner function (innerFunction) which can access outerVariable.
 
+  // Lexical scoping: Before one can make an intuition of closures in JavaScript, it’s important to first get the hang of the term ‘lexical environment’. In simple words, the lexical environment for a function f simply refers to the environment enclosing that function’s definition in the source code. This environment consists of all the variables that are in scope at the time of the function’s definition. The lexical environment is determined by the location of the function in the source code, and it is fixed at the time of the function’s creation.
+
   function outerFunction() {
     const outerVariable = "Outer variable";
 
