@@ -604,7 +604,42 @@ console.log(title);
   // The expression userOptionChaining?.address?.city checks if userOptionChaining and userOptionChaining.address exist. If they do, it accesses the city property.
   // If any part of the chain (e.g., userOptionChaining or userOptionChaining.address) is null or undefined, it returns undefined instead of throwing an error.
 
-  // 3. Asynchronous callbacks: executes a function asynchronously after a certain time or event has passed.
+  // 3. Asynchronous callbacks: executes a function asynchronously after a certain time or event has passed. Many functions provided by browsers, especially the most interesting ones, can potentially take a long time, and therefore, are asynchronous. For example: setTimeout, setInterval, addEventListener, fetch.
+
+  // Making HTTP requests using fetch(): Fetch is a modern API for making HTTP requests in the browser. It is asynchronous and returns a Promise that resolves to the Response object representing the response to the request.
+
+  fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+
+  // Accessing a user’s camera or microphone using getUserMedia(): getUserMedia() is an asynchronous function that prompts the user for permission to access their camera or microphone. It returns a Promise that resolves to a MediaStream object representing the user's audio and video streams.
+
+  navigator.mediaDevices
+    .getUserMedia({ video: true, audio: true })
+    .then((stream) => {
+      console.log("User granted access to camera and microphone");
+    })
+    .catch((error) => {
+      console.error("Error accessing camera and microphone:", error);
+    });
+
+  // Asking a user to select files using showOpenFilePicker(): showOpenFilePicker() is an asynchronous function that prompts the user to select files from their device. It returns a Promise that resolves to an array of File objects representing the selected files.
+
+  const filePicker = document.querySelector("#file-picker");
+
+  filePicker.addEventListener("click", async function (event) {
+    try {
+      const [fileHandle] = await window.showOpenFilePicker();
+      const file = await fileHandle.getFile();
+      console.log("Selected file:", file.name);
+    } catch (error) {
+      console.error("Error selecting file:", error);
+    }
+  });
+
+  // SetTimeout: executes a function after a specified delay. It is commonly used to create a delay before running a function or to schedule a function to run in the future.
 
   setTimeout(() => {
     console.log("Asynchronous callback");
