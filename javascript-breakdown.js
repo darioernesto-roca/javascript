@@ -782,6 +782,52 @@ console.log(title);
 
   const numbers = [1, 2, 3];
   console.log(...numbers); // 1 2 3
+
+  // 16. Function Burrowing: Function borrowing allows us to use the methods of one object on a different object without having to make a copy of that method and maintain it in two separate places. It is accomplished through the use of .call(), .apply(), or .bind(), all of which exist to explicitly set this on the method we are borrowing.
+
+  // Example with .call()
+
+  const person = {
+    name: "Florentino",
+    greet: function () {
+      return `Hello, ${this.name}!`;
+    },
+  };
+
+  const anotherPerson = {
+    name: "Fermina",
+  };
+
+  console.log(person.greet.call(anotherPerson)); // Hello, Fermina!
+
+  // Example with .apply()
+
+  const numbersApply = [1, 2, 3];
+
+  function sumApply(a, b, c) {
+    return a + b + c;
+  }
+
+  console.log(sumApply.apply(null, numbersApply)); // 6
+
+  // Example with .bind()
+
+  const personBind = {
+    name: "Florentino",
+    greet: function () {
+      return `Hello, ${this.name}!`;
+    },
+  };
+
+  const anotherPersonBind = {
+    name: "Fermina",
+  };
+
+  const greetAnotherPerson = personBind.greet.bind(anotherPersonBind);
+  console.log(greetAnotherPerson()); // Hello, Fermina!
+
+  // Whe to use .call(), .apply(), or .bind(): .call() and .apply() are used when you want to invoke a function immediately, while .bind() is used when you want to create a new function that, when called, has its this keyword set to the provided value.
+
 }
 
 /* 5. Miscellaneous */
