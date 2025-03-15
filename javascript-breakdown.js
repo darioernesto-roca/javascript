@@ -828,6 +828,36 @@ console.log(title);
 
   // Whe to use .call(), .apply(), or .bind(): .call() and .apply() are used when you want to invoke a function immediately, while .bind() is used when you want to create a new function that, when called, has its this keyword set to the provided value.
 
+  // 17. Explicit binding: Explicit binding is when you use the call or apply methods to explicitly set the value of this in a function. Explicit Binding can be applied using call(), apply(), and bind(). The difference between explicit binding and function burrow is that in explicit binding, you are setting the value of this to a specific object, whereas in function burrow, you are borrowing a method from another object.
+
+  // For example:
+
+  const personExplicitBinding = {
+    name: "Florentino",
+    greet: function () {
+      return `Hello, ${this.name}!`;
+    },
+  };
+
+  const anotherPersonExplicitBinding = {
+    name: "Fermina",
+  };
+
+  console.log(personExplicitBinding.greet.call(anotherPersonExplicitBinding)); // Hello, Fermina!
+
+  // 18. Implicit binding: Implicit binding is when you use the this keyword to refer to the object that the function is a method of. In other words, the object that the function is called on is the object that this refers to. This is the default behavior in JavaScript.
+
+  // For example:
+
+  const personImplicitBinding = {
+    name: "Florentino",
+    greet: function () {
+      return `Hello, ${this.name}!`;
+    },
+  };
+
+  console.log(personImplicitBinding.greet()); // Hello, Florentino!
+
 }
 
 /* 5. Miscellaneous */
