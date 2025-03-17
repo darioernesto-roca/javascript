@@ -2419,6 +2419,21 @@ console.log(title);
 /* 9. Promises */
 
 {
+  // 0. Asynchronous programming: Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.
+
+  // 0.1 Many functions provided by browsers, especially the most interesting ones, can potentially take a long time, and therefore, are asynchronous. For example:
+
+  // Making HTTP requests using fetch()
+  // Accessing a user’s camera or microphone using getUserMedia()
+  // Asking a user to select files using showOpenFilePicker()
+  // So even though you may not have to implement your own asynchronous functions very often, you are very likely to need to use them correctly.
+
+  // 0.2 Event Handlers: Asynchronous functions might remind you of event handlers, and if it does, you'd be right. Event handlers are really a form of asynchronous programming: you provide a function (the event handler) that will be called, not right away, but whenever the event happens. If "the event" is "the asynchronous operation has completed", then that event could be used to notify the caller about the result of an asynchronous function call.
+
+  // 0.3 An event handler is a particular type of callback. A callback is just a function that's passed into another function, with the expectation that the callback will be called at the appropriate time. As we just saw, callbacks used to be the main way asynchronous functions were implemented in JavaScript. However, callback-based code can get hard to understand when the callback itself has to call functions that accept a callback. This is a common situation if you need to perform some operation that breaks down into a series of asynchronous functions.
+
+  // 0.4 For these reasons, most modern asynchronous APIs don't use callbacks. Instead, the foundation of asynchronous programming in JavaScript is the Promise object, which represents the eventual completion (or failure) of an asynchronous operation and its resulting value, avoiding the "callback hell" problem.
+
   // 1. Promise: A Promise in JavaScript represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It provides a way to handle asynchronous code in a more structured and manageable way. Promises have three states: pending, fulfilled, and rejected. A Promise is created using the new Promise() constructor, which takes a function as an argument with two parameters: resolve and reject.
 
   // Promise - Example:
