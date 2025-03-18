@@ -5034,7 +5034,22 @@ console.log(title);
   // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
 }
 
-/* 17. JS Frameworks */
+/* 17.Working with APIs */
+
+{
+  // 1. Making network requests with JavaScript: JavaScript provides several ways to make network requests to APIs and servers. The most common methods for making network requests in JavaScript are the Fetch API and XMLHttpRequest. These methods allow you to send HTTP requests to servers, retrieve data, and handle responses asynchronously. Another very common task in modern websites and applications is making network requests to retrieve individual data items from the server to update sections of a webpage without having to load an entire new page. This seemingly small detail has had a huge impact on the performance and behavior of sites, so in this article, we'll explain the concept and look at technologies that make it possible: in particular, the Fetch API.
+
+  // Example 1: Fetch API
+
+  fetch("https://api.example.com/data")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+
+
+}
+
+/* 18. JS Frameworks */
 
 {
   // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
