@@ -5045,6 +5045,43 @@ console.log(title);
     .then((response) => response.json())
     .then((data) => console.log(data));
 
+  // Example 2: XMLHttpRequest
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "https://api.example.com/data", true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+
+  xhr.send();
+
+  // 2. Fetch API: The Fetch API provides a modern way to make network requests in JavaScript. It is a promise-based API that allows you to send HTTP requests and handle responses asynchronously. The Fetch API is supported by all modern browsers and provides a more flexible and powerful alternative to the older XMLHttpRequest object. The Fetch API supports various HTTP methods, headers, and request options, making it easy to work with APIs and servers.
+
+  // Fetch API - Examples:
+
+  // Example 1: Fetching JSON data
+
+  fetch("https://api.example.com/data")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+  // Example 2: Fetching text data
+
+  fetch("https://api.example.com/text")
+    .then((response) => response.text())
+    .then((data) => console.log(data));
+
+  // Example 3: Fetching binary data
+
+  fetch("https://api.example.com/image")
+    .then((response) => response.blob())
+    .then((data) => console.log(data));
+
+  // 3. XMLHttpRequest: The XMLHttpRequest object is a built-in JavaScript object that allows you to make network requests to servers. It is commonly used to send and receive data from APIs and servers asynchronously. The XMLHttpRequest object provides methods and properties for configuring and sending HTTP requests, handling responses, and working with server data. While the Fetch API is the modern and recommended way to make network requests in JavaScript, the XMLHttpRequest object is still widely used and supported in web browsers.
 
 
 }
