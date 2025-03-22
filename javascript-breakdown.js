@@ -3871,7 +3871,18 @@ console.log(title);
 {
   // 1. Classes: Classes in JavaScript are used to define blueprints for creating objects with shared properties and methods. They provide a way to create objects with similar characteristics and behaviors by encapsulating data and functionality into a single unit. Classes are a fundamental concept in object-oriented programming (OOP) and are used to model real-world entities, such as users, products, or vehicles.
 
+  // In object-oriented programming, a class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
+
   // Classes - Examples:
+
+  // class MyClass {
+  //   // class methods
+  //   constructor() { ... }
+  //   method1() { ... }
+  //   method2() { ... }
+  //   method3() { ... }
+  //   ...
+  // }
 
   class Person {
     constructor(name, age) {
