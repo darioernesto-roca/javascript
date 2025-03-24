@@ -1564,6 +1564,7 @@ console.log(title);
 }
 
 /* 6. Modules */
+// Modules encapsulate all sorts of code like functions and variables and expose all this to other files. Generally, we use it to break our code into separate files to make it more maintainable. They were introduced into JavaScript with ECMAScript 6. There are two types of modules in JavaScript: ES Modules and CommonJS modules. ES Modules are the standard for working with modules in JavaScript and are supported in modern browsers and Node.js. CommonJS modules are used in Node.js and provide a way to organize code into separate files. Modules can be imported and exported using the import and export keywords.
 
 {
   // 1. ES Modules: ES Modules (ECMAScript Modules) are a standard for working with modules in JavaScript. They provide a way to organize and structure code by splitting it into separate files, each containing a module. ES Modules use the import and export keywords to define dependencies between modules and share code between them.
