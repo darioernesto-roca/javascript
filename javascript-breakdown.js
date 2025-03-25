@@ -1669,6 +1669,15 @@ console.log(title);
   //   "type": "module"
   // }
   // 8. Yarn: Yarn is a fast, reliable, and secure package manager for JavaScript. It is compatible with npm and provides additional features like offline installation, deterministic dependency resolution, and parallel package downloads. Yarn is commonly used for managing dependencies in Node.js projects and front-end development. Yarn can be installed using npm or by downloading the Yarn installer from the official website. The main difference between npm and Yarn is that Yarn uses a lockfile (yarn.lock) to ensure deterministic installs, while npm uses a package-lock.json file. At the end both are package managers for JavaScript, and they have their own features and differences, but the choice of which one to use depends on the project requirements and personal preference.
+
+  // CommonJS modules: CommonJS modules are a module format used in Node.js for organizing and structuring code. They use the require() function to import modules and the module.exports object to export values. CommonJS modules are synchronous and are loaded and executed at runtime. CommonJS modules are used in Node.js and provide a way to organize code into separate files and modules. They use the require() function to import modules and the module.exports object to export values. CommonJS modules are synchronous and are loaded and executed
+
+  // CommonJS modules - Example:
+
+  // math.js
+  // const sum = (a, b) => a + b;
+  // const subtract = (a, b) => a - b;
+  // module.exports = { sum, subtract };
 }
 
 /* 7. Number */
