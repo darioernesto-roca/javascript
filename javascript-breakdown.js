@@ -1678,6 +1678,12 @@ console.log(title);
   // const sum = (a, b) => a + b;
   // const subtract = (a, b) => a - b;
   // module.exports = { sum, subtract };
+
+  // CommonJS modules - Importing a module
+  // const math = require('./math.js');
+  // console.log(math.sum(5, 3)); // 8
+  // console.log(math.subtract(5, 3)); // 2
+
 }
 
 /* 7. Number */
