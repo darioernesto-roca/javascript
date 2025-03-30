@@ -5136,7 +5136,15 @@ console.log(title);
 
 }
 
-/* 18. JS Frameworks */
+/* 18. Memory Management */
+
+{
+  // 1. Memory Management: Memory management is the process of managing computer memory resources, including allocating and deallocating memory for data storage and ensuring efficient use of memory. In JavaScript, memory management is primarily handled by the JavaScript engine, which automatically allocates and frees memory as needed. However, developers can also optimize memory usage in their applications by following best practices and using tools to monitor memory consumption. Low-level languages like C, have manual memory management primitives such as malloc() and free(). In contrast, JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection). This automaticity is a potential source of confusion: it can give developers the false impression that they don’t need to worry about memory management.
+
+  // 2. Garbage Collection: Garbage collection is the automatic process of identifying and reclaiming memory that is no longer in use by a program. In JavaScript, garbage collection is performed by the JavaScript engine, which periodically scans the memory for objects that are no longer reachable or referenced by the program. When an object is no longer reachable, it is considered "garbage" and can be safely removed from memory. This process helps prevent memory leaks and ensures efficient use of memory resources.
+}
+
+/* 19. JS Frameworks */
 
 {
   // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
