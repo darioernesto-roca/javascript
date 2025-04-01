@@ -5145,6 +5145,12 @@ console.log(title);
 
   // Reachability: Reachability is a concept in memory management that refers to whether an object can be accessed or referenced by the program. In JavaScript, an object is considered reachable if it can be accessed through a variable, property, or function. If an object is no longer reachable, it is eligible for garbage collection and can be removed from memory. For example:
 
+  // 3. Memory Lifecicle: Regardless of the programming language, the memory life cycle is pretty much always the same:
+      // - Allocate the memory you need
+      // - Use the allocated memory (read, write)
+      // - Release the allocated memory when it is not needed anymore
+  // The second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.
+
 
 }
 
