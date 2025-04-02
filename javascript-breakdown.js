@@ -5151,7 +5151,16 @@ console.log(title);
       // - Release the allocated memory when it is not needed anymore
   // The second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.
 
+  // Example: 
 
+  // Creating an object and checking its reachability
+  
+  const obj = { name: "Alice" };
+
+  console.log(obj); // Output: { name: "Alice" }
+  console.log(obj.name); // Output: "Alice"
+  console.log(obj === null); // Output: false
+  console.log(obj === undefined); // Output: false
 }
 
 /* 19. JS Frameworks */
