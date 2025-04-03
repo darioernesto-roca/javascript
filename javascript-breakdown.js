@@ -5163,7 +5163,17 @@ console.log(title);
   console.log(obj === undefined); // Output: false
 }
 
-/* 19. JS Frameworks */
+/* 19. JavaScript Chrome Dev Tools */
+// These are a set of tools built into the browser to aid frontend developers diagnose and solve various issues in their applications — such as JavaScript and logical bugs, CSS styling issues or even just making quick temporary alterations to the DOM. To enter the dev tools, right click and click Inspect (or press ctrl+shift+c/cmd+opt+c) to enter the Elements panel. Here you can debug CSS and HTML issues. If you want to see logged messages or interact with javascript, enter the Console tab from the tabs above (or press ctrl+shift+j or F12 / cmd+opt+j to enter it directly). Another very useful feature in the Chrome dev tools is the Lighthouse (for checking performance).
+
+{
+  // 1. JavaScript Chrome Dev Tools: The Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. It provides a powerful suite of tools for debugging, profiling, and optimizing web applications. The DevTools allow developers to inspect and modify HTML and CSS, debug JavaScript code, analyze network requests, and monitor performance. The DevTools are essential for modern web development and are widely used by developers to improve the quality and performance of their applications.
+  // The DevTools are accessible by right-clicking on a web page and selecting "Inspect" or by pressing F12 or Ctrl+Shift+I (Cmd+Option+I on Mac). The DevTools consist of several panels, including Elements, Console, Sources, Network, Performance, Memory, Application, Security, and Lighthouse. Each panel provides specific functionality for inspecting and debugging different aspects of a web application.
+
+  // Debug JavaScript with Chrome Dev Tools: https://www.youtube.com/watch?v=H0XScE08hy8
+}
+
+/* 20. JS Frameworks */
 
 {
   // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
