@@ -5175,6 +5175,9 @@ console.log(title);
   // 1. Debugging issues: The DevTools provide a powerful JavaScript debugger that allows developers to set breakpoints, step through code, and inspect variables and call stacks. This helps identify and fix issues in JavaScript code.
 
   // 2. Debugging Memory Leaks: The DevTools provide tools for analyzing memory usage and identifying memory leaks in web applications. Developers can use the Memory panel to take heap snapshots, record allocation timelines, and analyze memory usage patterns. This helps identify objects that are not being properly garbage collected and can lead to memory leaks.
+
+  // 3. Debugging Performance Issues: The DevTools provide tools for analyzing the performance of web applications. Developers can use the Performance panel to record and analyze CPU usage, rendering performance, and network activity. This helps identify performance bottlenecks and optimize the performance of web applications. Lighthouse is a tool that audits the performance of web applications and provides recommendations for improving performance, accessibility, and SEO.
+  // Developers can use Lighthouse to generate reports on the performance of their web applications and identify areas for improvement.
 }
 
 /* 20. JS Frameworks */
