@@ -7,6 +7,12 @@ const title = "JavaScript Breakdown";
 console.log(title);
 
 /* 1. Variables */
+// There are three ways to declare a variable in JavaScript: var, let, and const. The main differences between them are their scope and whether they can be reassigned or not.
+// var: function-scoped, can be reassigned and redeclared
+// let: block-scoped, can be reassigned but not redeclared
+// const: block-scoped, cannot be reassigned or redeclared
+// Declaration vs Initialization: Declaration is the process of creating a variable, while initialization is the process of assigning a value to a variable.
+
 {
   // var (legacy)
 
@@ -936,7 +942,7 @@ console.log(title);
   // 6. Event Loop: The event loop is a fundamental concept in JavaScript that allows the runtime environment to efficiently handle asynchronous operations. It ensures that tasks are executed in the correct order and that the application remains responsive to user interactions.
 
   /*
-     ┌───────────────────────────┐
+    ───────────────────────────┐
 ┌─>│           timers          │
 │  └─────────────┬─────────────┘
 │  ┌─────────────┴─────────────┐
