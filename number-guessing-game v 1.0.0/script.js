@@ -4,11 +4,10 @@ const resetButton = document.getElementById("reset");
 const resultDisplay = document.getElementById("result");
 const attemptsDisplay = document.getElementById("attempts");
 const correctNumberDisplay = document.getElementById("correct-number");
-const numberGuessedDisplay = document.getElementById("number-guessed");
+const numberGuessedDisplay = document.getElementById("guessed-number");
 
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
-
 
 submitButton.addEventListener("click", function() {
     const userGuess = parseInt(guessInput.value);
