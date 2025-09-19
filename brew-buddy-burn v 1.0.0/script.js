@@ -1,118 +1,102 @@
-/* JavaScript for Brew, Buddy & Burn */
+/* Brew, Buddy & Burn — Simple, robust JS */
 
-// Initial settings object
-let settings = {
-  coffee: {
-    gramsPerScoop: 10,
-  },
-  dog: {
-    yearsPerHumanYear: 7,
-  },
-  calories: {
-    burnRate: 5,
-  },
-};
-
-// Object to hold user preferences
-settings.coffee.gramsPerScoop = 10;
-settings.dog.yearsPerHumanYear = 7;
-settings.calories.burnRate = 5;
-
-// Persist settings to localStorage
-function saveSettings() {
-  localStorage.setItem("brewBuddyBurnSettings", JSON.stringify(settings));
+// -------------------- Tab logic --------------------
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => {
+    el.style.display = el.id === id ? 'block' : 'none';
+  });
 }
 
-// Load settings from localStorage
-function loadSettings() {
-  const savedSettings = localStorage.getItem("brewBuddyBurnSettings");
-  if (savedSettings) {
-    settings = JSON.parse(savedSettings);
+// Optional: show first tab on load if none visible
+document.addEventListener('DOMContentLoaded', () => {
+  const anyVisible = Array.from(document.querySelectorAll('.tab-content'))
+    .some(el => el.style.display !== 'none');
+  if (!anyVisible) showTab('coffee');
+});
+
+// -------------------- Helpers --------------------
+const $ = (sel) => document.querySelector(sel);
+
+function toNumber(value) {
+  const n = typeof value === 'number' ? value : parseFloat(String(value).trim());
+  return Number.isFinite(n) ? n : NaN;
+}
+
+function requirePositiveNumber(value) {
+  const n = toNumber(value);
+  return Number.isFinite(n) && n > 0 ? n : NaN;
+}
+
+// -------------------- Coffee: grams & scoops --------------------
+// Assumption: 10 g per scoop (change here if you prefer 12g, etc.)
+const GRAMS_PER_SCOOP = 10;
+
+$('#calculate-coffee')?.addEventListener('click', () => {
+  const gPerL = requirePositiveNumber($('#coffee-strength')?.value);
+  const liters = requirePositiveNumber($('#coffee-volume')?.value);
+
+  if (Number.isNaN(gPerL) || Number.isNaN(liters)) {
+    $('#coffee-result').textContent = 'Please enter valid numbers for strength (g/L) and volume (L).';
+    return;
   }
+
+  const grams = gPerL * liters;
+  const scoops = Math.ceil(grams / GRAMS_PER_SCOOP);
+
+  $('#coffee-result').textContent =
+    `You need ~${grams.toFixed(1)} g of coffee (≈ ${scoops} scoop${scoops === 1 ? '' : 's'} at ${GRAMS_PER_SCOOP} g/scoop).`;
+});
+
+// -------------------- Dog age: dog → human years --------------------
+/*
+  Simple vet-style rule of thumb:
+  - 1st dog year ≈ 15 human years
+  - 2nd dog year +9 (total 24)
+  - Each additional year +5
+*/
+function dogToHumanYears(dogYears) {
+  if (dogYears <= 0) return 0;
+  if (dogYears <= 1) return 15 * dogYears;              // fractional puppies supported
+  if (dogYears <= 2) return 15 + 9 * (dogYears - 1);
+  return 24 + 5 * (dogYears - 2);
 }
-loadSettings();
 
-// Update settings based on user input
-document
-  .getElementById("coffee-grams-per-scoop")
-  .addEventListener("input", function () {
-    settings.coffee.gramsPerScoop = parseInt(this.value);
-    saveSettings();
-  });
+$('#calculate-dog-age')?.addEventListener('click', () => {
+  const dogYears = requirePositiveNumber($('#dog-age')?.value);
 
-document
-  .getElementById("dog-years-per-human-year")
-  .addEventListener("input", function () {
-    settings.dog.yearsPerHumanYear = parseInt(this.value);
-    saveSettings();
-  });
-document
-  .getElementById("calories-burn-rate")
-  .addEventListener("input", function () {
-    settings.calories.burnRate = parseInt(this.value);
-    saveSettings();
-  });
+  if (Number.isNaN(dogYears)) {
+    $('#dog-age-result').textContent = 'Please enter a valid dog age (years).';
+    return;
+  }
 
-// Coffee Brew Calculator
-document
-  .getElementById("calculate-coffee")
-  .addEventListener("click", function () {
-    const waterAmount = parseInt(document.getElementById("water-amount").value);
-    const gramsPerScoop = settings.coffee.gramsPerScoop;
-    const scoopsNeeded = Math.ceil(waterAmount / gramsPerScoop);
-    document.getElementById(
-      "coffee-result"
-    ).textContent = `You need ${scoopsNeeded} scoops of coffee for ${waterAmount} ml of water.`;
-  });
+  const humanYears = dogToHumanYears(dogYears);
+  $('#dog-age-result').textContent = `≈ ${humanYears.toFixed(1)} human years.`;
+});
 
-// Dog Age Calculator
-document
-  .getElementById("calculate-dog-age")
-  .addEventListener("click", function () {
-    const humanYears = parseInt(document.getElementById("human-years").value);
-    const yearsPerHumanYear = settings.dog.yearsPerHumanYear;
-    const dogYears = humanYears * yearsPerHumanYear;
-    document.getElementById(
-      "dog-age-result"
-    ).textContent = `Your dog is ${dogYears} dog years old.`;
-  });
+// -------------------- Calories → Exercise equivalents --------------------
+/*
+  Very rough per-minute calorie burn estimates for an average adult:
+  - Walking (brisk): ~4 kcal/min
+  - Jogging (easy): ~8 kcal/min
+  - Cycling (moderate): ~7 kcal/min
+  These are illustrative; real burn depends on weight, speed, etc.
+*/
+const BURN_WALK = 4;
+const BURN_JOG = 8;
+const BURN_CYCLE = 7;
 
-// Calories Burned Calculator
-document
-  .getElementById("calculate-calories")
-  .addEventListener("click", function () {
-    const minutes = parseInt(document.getElementById("exercise-minutes").value);
-    const burnRate = settings.calories.burnRate;
-    const caloriesBurned = minutes * burnRate;
-    document.getElementById(
-      "calories-burned-result"
-    ).textContent = `You burned approximately ${caloriesBurned} calories in ${minutes} minutes.`;
-  });
+$('#calculate-exercise')?.addEventListener('click', () => {
+  const kcal = requirePositiveNumber($('#calories')?.value);
 
-// Reset all settings to default
-document
-  .getElementById("reset-settings")
-  .addEventListener("click", function () {
-    settings = {
-      coffee: {
-        gramsPerScoop: 10,
-      },
-      dog: {
-        yearsPerHumanYear: 7,
-      },
-      calories: {
-        burnRate: 5,
-      },
-    };
-    saveSettings();
-    loadSettings();
-  });
+  if (Number.isNaN(kcal)) {
+    $('#exercise-result').textContent = 'Please enter a valid calorie amount.';
+    return;
+  }
 
-// Initialize input fields with current settings
-document.getElementById("coffee-grams-per-scoop").value =
-  settings.coffee.gramsPerScoop;
-document.getElementById("dog-years-per-human-year").value =
-  settings.dog.yearsPerHumanYear;
-document.getElementById("calories-burn-rate").value =
-  settings.calories.burnRate;
-// End of Brew, Buddy & Burn JavaScript
+  const minsWalk = Math.ceil(kcal / BURN_WALK);
+  const minsJog  = Math.ceil(kcal / BURN_JOG);
+  const minsBike = Math.ceil(kcal / BURN_CYCLE);
+
+  $('#exercise-result').textContent =
+    `To burn ~${kcal} kcal: walking ≈ ${minsWalk} min, jogging ≈ ${minsJog} min, cycling ≈ ${minsBike} min.`;
+});
