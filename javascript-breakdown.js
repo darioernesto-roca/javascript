@@ -257,6 +257,8 @@ console.log(title);
 }
 
 /* 2.2 DOM - HTML Element */
+
+// The HTMLElement interface represents any HTML element. It inherits properties and methods from the Element and Node interfaces. All HTML elements in the DOM are instances of the HTMLElement interface or one of its subclasses. Some frameworks like React or Angular use virtual DOMs, which are in-memory representations of the actual DOM. They allow for efficient updates and rendering of UI components by minimizing direct manipulation of the real DOM.
 {
   // element.classList.add(className): adds a class to an element
 
