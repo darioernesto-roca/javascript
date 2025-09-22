@@ -3360,6 +3360,22 @@ console.log(title);
     console.log(numbersFor[i]);
   }
 
+  // for (loops) - Calculating the sum of an array:
+  const numbersSum = [1, 2, 3, 4, 5];
+  let sum = 0;
+  for (let i = 0; i < numbersSum.length; i++) {
+    sum += numbersSum[i];
+  }
+  console.log("Sum:", sum);
+
+  // for (loops) - Iterating over a string:
+
+  const textFor = "Hello";
+  for (let i = 0; i < textFor.length; i++) {
+    console.log(textFor[i]);
+  }
+  console.log("Length:", textFor.length);
+
   // 8. while: The while loop in JavaScript is used to execute a block of code as long as a specified condition is true. It consists of a condition that is evaluated before each iteration of the loop. The while loop continues to execute the code block until the condition becomes false. It is commonly used for repeating tasks with an unknown number of iterations.
 
   // while - Example:
