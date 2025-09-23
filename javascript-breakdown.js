@@ -3376,6 +3376,28 @@ console.log(title);
   }
   console.log("Length:", textFor.length);
 
+  // for to create a Dynamic To-Do List with Persistence
+  const todoList = [];
+  function addTodoItem(item) {
+    todoList.push(item);
+    console.log(`Added: ${item}`);
+    console.log("Current To-Do List:", todoList);
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }
+
+  addTodoItem("Learn JavaScript");
+  addTodoItem("Build a project");
+  addTodoItem("Review code");
+  addTodoItem("Test the application");
+  addTodoItem("Deploy to production");
+  addTodoItem("Celebrate success!");
+
+
+  for (let i = 0; i < todoList.length; i++) {
+    console.log(`To-Do Item ${i + 1}: ${todoList[i]}`);
+  }
+
+
   // 8. while: The while loop in JavaScript is used to execute a block of code as long as a specified condition is true. It consists of a condition that is evaluated before each iteration of the loop. The while loop continues to execute the code block until the condition becomes false. It is commonly used for repeating tasks with an unknown number of iterations.
 
   // while - Example:
