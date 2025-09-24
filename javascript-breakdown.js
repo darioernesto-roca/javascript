@@ -3431,6 +3431,22 @@ console.log(title);
 
   console.log("Random numbers:", randomNumbers);
 
+  // While Example - Processing a Queue (FIFO structure): Useful in async tasks, messaging, or jobs processing. Good for task scheduling, async job runners, or simulating message queues.
+
+  const jobQueue = [
+    { id: 1, task: "Send email" },
+    { id: 2, task: "Generate report" },
+    { id: 3, task: "Backup database" }
+  ];
+
+  while (jobQueue.length > 0) {
+    const currentJob = jobQueue.shift(); // Get the first job in the queue
+    console.log(`Processing job ${currentJob.id}: ${currentJob.task}`);
+    // Simulate job processing with a delay (for demonstration purposes)
+    // In real scenarios, this could be an async operation
+  }
+
+
   // 9. Semi-colons: Semi-colons in JavaScript are used to terminate statements and separate multiple statements on the same line. While semi-colons are optional in JavaScript due to automatic semicolon insertion (ASI), it is recommended to use them to avoid potential issues and improve code readability. Semi-colons are used to indicate the end of a statement and prevent syntax errors.
 
   // Semi-colons - Examples:
