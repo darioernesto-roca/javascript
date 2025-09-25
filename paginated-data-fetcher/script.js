@@ -1,3 +1,8 @@
+/* A generator function (function*) returns a generator object, which is both an iterator (you can keep requesting values with .next()) and iterable (you can loop through it with for…of).
+The variables inside the generator are a remembered state, because each time you use yield the function pauses and keeps everything until you call it again.
+You can think of yield in Spanish as “deliver/hand over a value for now.”
+And .next() is the method to request the next value. */
+
 {
   function* userIterator(users) {
     for (let user of users) {
