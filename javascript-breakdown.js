@@ -3446,9 +3446,6 @@ console.log(title);
     // In real scenarios, this could be an async operation
   }
 
-    // While Example - 
-
-
   // 9. Semi-colons: Semi-colons in JavaScript are used to terminate statements and separate multiple statements on the same line. While semi-colons are optional in JavaScript due to automatic semicolon insertion (ASI), it is recommended to use them to avoid potential issues and improve code readability. Semi-colons are used to indicate the end of a statement and prevent syntax errors.
 
   // Semi-colons - Examples:
@@ -3498,8 +3495,22 @@ console.log(title);
     }
   }
 
+  try {
+    validateUserInput("");
+    console.log("Input is valid");
+    validateUserInput("Some input");
+    console.log("Input is valid");
+  } catch (error) {
+    console.error("Error validating user input:", error.message);
+  }
+
   // Exceptions - Handling database operations in web applications:
 
+  async function fetchDataFromDatabase() {
+    // Simulating a database operation that may fail
+    throw new Error("Database connection failed");
+  }
+  
   try {
     const data = await fetchDataFromDatabase();
     console.log("Data from database:", data);
