@@ -3538,7 +3538,7 @@ console.log(title);
 
   console.log(numbersCombined); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-  // 2. .at(): The .at() method in JavaScript is used to get the element at a specific index in an array. It takes an index as an argument and returns the element at that index. The .at() method is similar to the .charAt() method for strings but works with arrays. The difference between .at() and .charAt() is that .at() returns undefined for out-of-bounds indices, while .charAt() returns an empty string for negative indices.
+  // 2. .at(): The .at() method in JavaScript is used to get the element at a specific index in an array. It takes an index as an argument and returns the element at that index. The .at() method is similar to the .charAt() method for strings but works with arrays. The difference between .at() and .charAt() is that .at() returns undefined for out-of-bounds indices, while .charAt() returns an empty string for negative indices. The bracket notation (array[index]) can also be used to access elements in an array, but it does not support negative indices.
 
   // .at() - Examples:
 
