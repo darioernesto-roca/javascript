@@ -3558,6 +3558,25 @@ console.log(title);
 
   console.log(isPositive); // true
 
+  // A more complex example for .every():
+  const words = ["apple", "banana", "cherry"];
+  const allHaveFiveLetters = words.every((word) => word.length === 5);
+  console.log(allHaveFiveLetters); // false
+
+  // Real cases of use:
+  // .every() - Validating user input in a web form:
+  const userInputs = ["John", "Jane", "Doe"];
+  const allInputsValid = userInputs.every((input) => input.length > 0);
+  console.log(allInputsValid); // true
+  // .every() - Checking product availability in an inventory system:
+  const productsEvery = [
+    { name: "Product 1", inStock: true },
+    { name: "Product 2", inStock: true },
+    { name: "Product 3", inStock: false },
+  ];
+  const allProductsInStock = productsEvery.every((product) => product.inStock);
+  console.log(allProductsInStock); // false
+
   // 4. .filter(): The .filter() method in JavaScript is used to create a new array with elements that pass a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .filter() method returns a new array containing only the elements that satisfy the condition. It is useful for selecting or filtering elements based on a specific criteria. The difference with .every() is that .every() returns a boolean value, while .filter() returns a new array with the elements that pass the condition.
 
   // .filter() - Examples:
