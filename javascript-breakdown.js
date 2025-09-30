@@ -3601,6 +3601,44 @@ console.log(title);
 
   console.log(affordableProducts); // [{ name: "Product 1", price: 10 }]
 
+  // Here's a more complex example for .filter():
+  const people = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 17 },
+    { name: "Charlie", age: 30 },
+    { name: "David", age: 15 },
+  ];
+
+  const adults = people.filter((person) = > person.age >= 18);
+  console.log(adults); // [{ name: "Alice", age: 25 }, { name: "Charlie", age: 30 }]
+
+  // Real cases of use:
+  // .filter() - Filtering tasks in a to-do list application:
+  const tasks = [
+    { title: "Arias web development", completed: true },
+    { title: "Write blog post", completed: false },
+    { title: "Read a book", completed: true },
+    { title: "Go for a walk", completed: false },
+  ];
+
+  const completedTasks = tasks.filter((task) => task.completed);
+  console.log(completedTasks); // [{ title: "Arias web development", completed: true }, { title: "Read a book", completed: true }]
+
+  // To change the status of a task to completed:
+
+  function completeTask(title) {
+    const task = tasks.find((task) => task.title === title);
+    if (task) {
+      task.completed = true;
+      console.log(`Task "${title}" marked as completed.`);
+    } else {
+      console.log(`Task "${title}" not found.`);
+    }
+  }
+  completeTask("Write blog post");
+  console.log(tasks);
+  
+
   // 5. .find(): The .find() method in JavaScript is used to find the first element in an array that passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .find() method returns the first element that satisfies the condition, or undefined if no element matches the condition. It is useful for searching for a specific element in an array.
 
   // .find() - Examples:
