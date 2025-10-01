@@ -3611,7 +3611,7 @@ console.log(title);
     { name: "David", age: 15 },
   ];
 
-  const adults = people.filter((person) = > person.age >= 18);
+  const adults = people.filter((person) => person.age >= 18);
   console.log(adults); // [{ name: "Alice", age: 25 }, { name: "Charlie", age: 30 }]
 
   // Real cases of use:
