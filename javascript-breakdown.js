@@ -3553,10 +3553,12 @@ console.log(title);
   // .every() - Examples:
 
   const numbersEvery = [1, 2, 3, 4, 5];
-
   const isPositive = numbersEvery.every((number) => number > 0);
-
   console.log(isPositive); // true
+
+  const arrayNames = ['name1', 'name2', 'name3', 'name4'];
+  const allHaveFourLetters = arrayNames.every((name) => name.length === 4);
+  console.log(allHaveFourLetters); // true
 
   // A more complex example for .every():
   const words = ["apple", "banana", "cherry"];
@@ -3668,6 +3670,32 @@ console.log(title);
   numbersForEach.forEach((number) => {
     console.log(number);
   });
+
+  // More complex example for .forEach():
+
+  const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 78 },
+    { name: "David", score: 90 },
+    { name: "Eve", score: 88 },
+  ];
+
+  let totalScore = 0;
+  let highestScore = 0;
+  let topStudent = "";
+
+  students.forEach((student) => {
+    totalScore += student.score;
+    if (student.score > highestScore) {
+      highestScore = student.score;
+      topStudent = student.name;
+    }
+  });
+
+  const averageScore = totalScore / students.length;
+  console.log(`Average Score: ${averageScore}`); // Average Score: 86.6
+  console.log(`Top Student: ${topStudent} with a score of ${highestScore}`); // Top Student: Bob with a score of 92
 
   // Real cases of use:
 
