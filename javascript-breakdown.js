@@ -3672,7 +3672,19 @@ console.log(title);
 
   const index = numbersFindIndex.findIndex((number) => number > 3);
 
-  console.log(index); // 3
+  console.log(index); // 3 This means that the first element greater than 3 is at index 3 (which is the number 4).
+
+  // A more complex example for .findIndex():
+  const studentsFindIndex = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 78 },
+    { name: "David", score: 90 },
+    { name: "Eve", score: 88 },
+  ];
+
+  const indexTopStudent = studentsFindIndex.findIndex((student) => student.score > 90);
+  console.log(indexTopStudent); // 1 This means that the first student with a score greater than 90 is at index 1 (which is Bob).
 
   // 7. .foreach(): The .forEach() method in JavaScript is used to iterate over the elements of an array and perform a specified action for each element. It takes a callback function as an argument, which is called for each element in the array. The .forEach() method does not return a new array but executes the callback function for each element. It is useful for performing side effects, such as logging, updating variables, or interacting with the DOM.
 
