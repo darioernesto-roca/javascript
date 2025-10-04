@@ -3745,6 +3745,32 @@ console.log(title);
   console.log(numbersIncludes.includes(3)); // true
   console.log(numbersIncludes.includes(6)); // false
 
+  // A more complex example for .includes():
+
+  const fruitsIncludes = ["apple", "banana", "orange"];
+  console.log(fruitsIncludes.includes("banana")); // true
+  console.log(fruitsIncludes.includes("grape")); // false
+
+  // Real cases of use:
+  // .includes() - Checking if a product is in stock:
+  const productsIncludes = [
+    { name: "Product 1", inStock: true },
+    { name: "Product 2", inStock: false },
+    { name: "Product 3", inStock: true },
+  ];
+  const productNames = productsIncludes.map((product) => product.name);
+  console.log(productNames.includes("Product 2")); // true
+  console.log(productNames.includes("Product 4")); // false
+
+  // .includes() - Validating user input in a web form:
+  const validUsernames = ["user1", "user2", "user3"];
+  const inputUsername = "user2";
+  if (validUsernames.includes(inputUsername)) {
+    console.log("Username is valid");
+  } else {
+    console.log("Username is not valid");
+  }
+
   // 9. .join(): The .join() method in JavaScript is used to join the elements of an array into a string. It takes an optional separator as an argument, which is inserted between the elements in the resulting string. The .join() method returns a new string containing the elements of the array joined together. It is useful for converting arrays into strings with custom separators.
 
   // .join() - Examples:
