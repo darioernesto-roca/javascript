@@ -3780,6 +3780,27 @@ console.log(title);
   console.log(fruits.join(", ")); // "apple, banana, orange"
   console.log(fruits.join(" | ")); // "apple | banana | orange"
 
+  // A more complex example for .join():
+
+  const wordsJoin = ["Hello", "world", "this", "is", "JavaScript"];
+  const sentence = wordsJoin.join(" ");
+  console.log(sentence); // "Hello world this is JavaScript"
+
+  const csvData = [
+    ["Name", "Age", "City"],
+    ["Alice", 30, "New York"],
+    ["Bob", 25, "Los Angeles"],
+    ["Charlie", 35, "Chicago"],
+  ];
+
+  const csvString = csvData.map((row) => row.join(",")).join("\n");
+  console.log(csvString);
+  // Output:
+  // Name,Age,City
+  // Alice,30,New York
+  // Bob,25,Los Angeles
+  // Charlie,35,Chicago
+
   // Real cases of use:
 
   // .join() - Formatting a list of items for display:
