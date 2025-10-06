@@ -3815,14 +3815,12 @@ console.log(title);
   const tagString = tags.join(" | ");
   console.log("Tags:", tagString); // "Tags: JavaScript | Programming | Web Development"
 
-  // 10. .map(): The .map() method in JavaScript is used to create a new array by applying a specified function to each element in an existing array. It takes a callback function as an argument, which is called for each element in the array. The .map() method returns a new array containing the results of applying the callback function to each element. It is useful for transforming, modifying, or extracting values from an array. The difference between .map() and .forEach() is that .map() returns a new array with the transformed elements, while .forEach() does not return a new array. In general is recommend to use .map() when you want to transform the elements of an array and create a new array with the transformed values. .map() is a type of keyed collection, where each element is associated with a key or index.
+  // 10. .map(): The .map() method in JavaScript is used to create a new array by applying a specified function to each element in an existing array. It takes a callback function as an argument, which is called for each element in the array. The .map() method returns a new array containing the results of applying the callback function to each element. It is useful for transforming, modifying, or extracting values from an array. The difference between .map() and .forEach() is that .map() returns a new array with the transformed elements, while .forEach() does not return a new array. In general is recommend to use .map() when you want to transform the elements of an array and create a new array with the transformed values. .map() is a type of keyed collection, where each element is associated with a key or index. That practice of copy a collection and transform it is called immutability and it is a good practice in functional programming.
 
   // .map() - Examples:
 
   const numbersMap = [1, 2, 3, 4, 5];
-
   const squaredNumbers = numbersMap.map((number) => number ** 2);
-
   console.log(squaredNumbers); // [1, 4, 9, 16, 25]
 
   // Real cases of use:
@@ -3830,10 +3828,30 @@ console.log(title);
   // .map() - Formatting data for display in a web application:
 
   const data = [10, 20, 30, 40, 50];
-
   const formattedData = data.map((value) => `$${value}`);
-
   console.log("Formatted data:", formattedData.join(", ")); // Formatted data: "$10, $20, $30, $40, $50"
+
+  // .map() - Extracting specific properties from an array of objects:
+
+  const users = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 35 },
+  ];
+  const userNames = users.map((user) => user.name);
+  console.log("User names:", userNames.join(", ")); // User names: Alice, Bob, Charlie
+
+  // A more complex example for .map():
+  const productsMap = [
+    { name: "Product 1", price: 10, category: "Electronics" },
+    { name: "Product 2", price: 20, category: "Clothing" },
+    { name: "Product 3", price: 30, category: "Electronics" },
+    { name: "Product 4", price: 40, category: "Home" },
+    { name: "Product 5", price: 50, category: "Clothing" },
+  ];
+
+  const productNamesMap = productsMap.map((product) => product.name);
+  console.log("Product names:", productNamesMap.join(", ")); // Product names: Product 1, Product 2, Product 3, Product 4, Product 5
 
   // 11. .push(): The .push() method in JavaScript is used to add one or more elements to the end of an array. It takes one or more arguments, which are appended to the array in the order they are provided. The .push() method modifies the original array and returns the new length of the array. It is useful for adding elements to an array dynamically.
 
