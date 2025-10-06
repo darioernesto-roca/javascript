@@ -3806,10 +3806,14 @@ console.log(title);
   // .join() - Formatting a list of items for display:
 
   const items = ["item1", "item2", "item3"];
-
   const formattedList = items.join(", ");
+  console.log("Items:", formattedList); // "Items: item1, item2, item3"
 
-  console.log("Items:", formattedList);
+  // .join() - Creating list of tags for a blog post:
+
+  const tags = ["JavaScript", "Programming", "Web Development"];
+  const tagString = tags.join(" | ");
+  console.log("Tags:", tagString); // "Tags: JavaScript | Programming | Web Development"
 
   // 10. .map(): The .map() method in JavaScript is used to create a new array by applying a specified function to each element in an existing array. It takes a callback function as an argument, which is called for each element in the array. The .map() method returns a new array containing the results of applying the callback function to each element. It is useful for transforming, modifying, or extracting values from an array. The difference between .map() and .forEach() is that .map() returns a new array with the transformed elements, while .forEach() does not return a new array. In general is recommend to use .map() when you want to transform the elements of an array and create a new array with the transformed values. .map() is a type of keyed collection, where each element is associated with a key or index.
 
