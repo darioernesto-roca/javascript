@@ -3853,6 +3853,25 @@ console.log(title);
   const productNamesMap = productsMap.map((product) => product.name);
   console.log("Product names:", productNamesMap.join(", ")); // Product names: Product 1, Product 2, Product 3, Product 4, Product 5
 
+  // 10.1. .flatMap(): The .flatMap() method in JavaScript is used to first map each element of an array using a mapping function, and then flatten the result into a new array. It combines the functionality of .map() and .flat() methods. The .flatMap() method is useful for transforming and flattening nested arrays in a single step. It is particularly useful when you want to apply a transformation to each element and then flatten the resulting arrays into a single array.
+  
+  // .flatMap() - Examples:
+  const numbersFlatMap = [1, 2, 3];
+  const flatMapped = numbersFlatMap.flatMap((number) => [number, number * 2]);
+  console.log(flatMapped); // [1, 2, 2, 4, 3, 6]
+
+  // Real cases of use:
+
+  // .flatMap() - Transforming and flattening nested arrays:
+  const nestedArrays = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+  ];
+
+  const flattened = nestedArrays.flatMap((array) => array.map((num) => num * 2));
+  console.log(flattened); // [2, 4, 6, 8, 10, 12]
+
   // 11. .push(): The .push() method in JavaScript is used to add one or more elements to the end of an array. It takes one or more arguments, which are appended to the array in the order they are provided. The .push() method modifies the original array and returns the new length of the array. It is useful for adding elements to an array dynamically.
 
   // .push() - Examples:
