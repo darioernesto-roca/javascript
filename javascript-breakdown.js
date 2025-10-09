@@ -3883,6 +3883,13 @@ console.log(title);
   numbersPush.push(7, 8, 9);
   console.log(numbersPush); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+  // A more complex example for .push():
+  const arrayPush = [];
+  for (let i = 1; i <= 10; i++) {
+    arrayPush.push(i);
+  }
+  console.log(arrayPush); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
   // Real cases of use:
 
   // .push() - Adding items to a shopping cart:
