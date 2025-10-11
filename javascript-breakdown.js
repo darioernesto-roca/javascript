@@ -3911,6 +3911,8 @@ console.log(title);
 
   // 12. .reduce(): The .reduce() method in JavaScript is used to reduce an array to a single value by applying a specified function to each element in the array. It takes a callback function and an optional initial value as arguments. The callback function is called for each element in the array, and the result is accumulated into a single value. The .reduce() method returns the final accumulated value. It is useful for calculating totals, aggregating data, and performing complex transformations on arrays. The difference between .reduce() and .map() is that .reduce() reduces an array to a single value, while .map() transforms each element of an array and returns a new array with the transformed values.
   // The value of 0 in the second argument of the .reduce() method is the initial value of the accumulator. The first argument of the reduce method is a callback function that takes two parameters: the accumulator and the current value of the array. The callback function returns the new value of the accumulator after processing the current value.
+  // reduce is also a type of keyed collection, where each element is associated with a key or index. That practice of copy a collection and transform it is called immutability and it is a good practice in functional programming.
+  // For strings, you can use .reduce() to concatenate all the strings in an array into a single string.
 
   // .reduce() - Examples:
 
@@ -3939,6 +3941,15 @@ console.log(title);
   );
 
   console.log("Total price:", totalPriceReduce); // Total price: 60
+
+  // .reduce() - Counting occurrences of elements in an array:
+
+  const fruitsReduce = ["apple", "banana", "orange", "apple", "banana", "apple"];
+  const fruitCount = fruitsReduce.reduce((count, fruit) => { // count is the accumulator, fruit is the current value
+    count[fruit] = (count[fruit] || 0) + 1; // Count occurrences of each fruit
+    return count; // Return the updated count object
+  }, {});
+  console.log(fruitCount); // { apple: 3, banana: 2, orange: 1 }
 
   // 13. .some(): The .some() method in JavaScript is used to check if at least one element in an array passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .some() method returns true if at least one element satisfies the condition, and false otherwise. It is useful for checking if any element meets a specific criteria or condition.
 
