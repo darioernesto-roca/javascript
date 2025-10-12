@@ -3966,6 +3966,11 @@ console.log(title);
   }, 0);
   console.log("Balance:", balance); // Balance: 175
 
+  // .reduce() - Concatenating strings in an array:
+  const wordsReduce = ["Hello", "world", "this", "is", "JavaScript"];
+  const sentenceReduce = wordsReduce.reduce((acc, word) => acc + " " + word, "");
+  console.log(sentenceReduce.trim()); // "Hello world this is JavaScript"
+
   // 13. .some(): The .some() method in JavaScript is used to check if at least one element in an array passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .some() method returns true if at least one element satisfies the condition, and false otherwise. It is useful for checking if any element meets a specific criteria or condition.
 
   // .some() - Examples:
