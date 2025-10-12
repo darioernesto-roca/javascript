@@ -3951,6 +3951,21 @@ console.log(title);
   }, {});
   console.log(fruitCount); // { apple: 3, banana: 2, orange: 1 }
 
+  // A more complex example for .reduce():
+
+  const transactions = [
+    { type: "deposit", amount: 100 },
+    { type: "withdrawal", amount: 50 },
+    { type: "deposit", amount: 200 },
+    { type: "withdrawal", amount: 75 },
+  ];
+  const balance = transactions.reduce((acc, transaction) => {
+    return transaction.type === "deposit"
+      ? acc + transaction.amount
+      : acc - transaction.amount;
+  }, 0);
+  console.log("Balance:", balance); // Balance: 175
+
   // 13. .some(): The .some() method in JavaScript is used to check if at least one element in an array passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .some() method returns true if at least one element satisfies the condition, and false otherwise. It is useful for checking if any element meets a specific criteria or condition.
 
   // .some() - Examples:
