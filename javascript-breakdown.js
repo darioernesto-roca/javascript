@@ -3971,6 +3971,27 @@ console.log(title);
   const sentenceReduce = wordsReduce.reduce((acc, word) => acc + " " + word, "");
   console.log(sentenceReduce.trim()); // "Hello world this is JavaScript"
 
+  // .reduce() - Grouping objects by a property:
+  const peopleReduce = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 25 },
+    { name: "David", age: 30 },
+    { name: "Eve", age: 35 },
+  ];
+
+  const groupedByAge = peopleReduce.reduce((acc, person) => {
+    const ageGroup = person.age;
+    if (!acc[ageGroup]) {
+      acc[ageGroup] = [];
+    }
+    acc[ageGroup].push(person.name);
+    return acc;
+  }, {});
+
+  console.log(groupedByAge);
+  // Output: { '25': [ 'Alice', 'Charlie' ], '30': [ 'Bob', 'David' ], '35': [ 'Eve' ] }
+
   // 13. .some(): The .some() method in JavaScript is used to check if at least one element in an array passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .some() method returns true if at least one element satisfies the condition, and false otherwise. It is useful for checking if any element meets a specific criteria or condition.
 
   // .some() - Examples:
