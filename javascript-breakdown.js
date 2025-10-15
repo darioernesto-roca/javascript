@@ -4002,6 +4002,17 @@ console.log(title);
 
   console.log(hasNegativeNumber); // false
 
+  // Other examples for .some():
+  const wordsSome = ["apple", "banana", "cherry"];
+  const hasLongWord = wordsSome.some((word) => word.length > 6);
+  console.log(hasLongWord); // false
+
+  const hasWordWithA = wordsSome.some((word) => word.includes("a"));
+  console.log(hasWordWithA); // true
+
+  const finishWordWithY = wordsSome.some((word) => word.endsWith("y"));
+  console.log(finishWordWithY); // true
+
   // Real case of use:
 
   // .some() - Checking if any item is on sale in an e-commerce website:
