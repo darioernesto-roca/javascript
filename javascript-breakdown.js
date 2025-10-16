@@ -4037,6 +4037,19 @@ console.log(title);
 
   console.log(numbersSort); // [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 
+  // A more complex example for .sort():
+
+  const wordsSort = ["banana", "apple", "cherry", "date"];
+
+  wordsSort.sort();
+
+  console.log(wordsSort); // ["apple", "banana", "cherry", "date"]
+
+  // Sorting numbers in ascending order
+  const numbersAsc = [10, 5, 20, 15];
+  numbersAsc.sort((a, b) => a - b);
+  console.log(numbersAsc); // [5, 10, 15, 20]
+
   // Real cases of use:
 
   // .sort() - Sorting products by price in an e-commerce website:
