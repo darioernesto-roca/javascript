@@ -4045,6 +4045,25 @@ console.log(title);
 
   console.log(wordsSort); // ["apple", "banana", "cherry", "date"]
 
+  // .sort() example with another string, but changing the order to descending:
+  const wordsDesc = ["banana", "apple", "cherry", "date"];
+  wordsDesc.sort((a, b) => {
+    if (a < b) return 1;
+    if (a > b) return -1;
+    return 0;
+  });
+  console.log(wordsDesc); // ["date", "cherry", "banana", "apple"]
+
+  // .sort() example with string length:
+  const wordsByLength = ["banana", "apple", "cherry", "date"];
+  wordsByLength.sort((a, b) => a.length - b.length);
+  console.log(wordsByLength); // ["date", "apple", "banana", "cherry"]
+
+  // .sort() example with string length in descending order:
+  const wordsByLengthDesc = ["banana", "apple", "cherry", "date"];
+  wordsByLengthDesc.sort((a, b) => b.length - a.length);
+  console.log(wordsByLengthDesc); // ["date", "banana", "cherry", "apple"]
+
   // Sorting numbers in ascending order
   const numbersAsc = [10, 5, 20, 15];
   numbersAsc.sort((a, b) => a - b);
