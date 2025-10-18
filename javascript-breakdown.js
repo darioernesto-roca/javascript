@@ -4110,6 +4110,10 @@ console.log(title);
   const removedItems = shoppingCartSplice.splice(1, 2);
 
   console.log("Removed items:", removedItems); // Removed items: [{ name: "Product 2", price: 20 }, { name: "Product 3", price: 30 }]
+  console.log("Updated shopping cart:", shoppingCartSplice); // Updated shopping cart: [{ name: "Product 1", price: 10 }]
+
+  const addedItems = shoppingCartSplice.splice(1, 0, { name: "Product 2", price: 20 }, { name: "Product 3", price: 30 });
+  console.log("New shopping cart:", shoppingCartSplice); // New shopping cart: [{ name: "Product 1", price: 10 }, { name: "Product 2", price: 20 }, { name: "Product 3", price: 30 }]
 
   // 16. ?. (optional chaining): The optional chaining operator (?.) in JavaScript is used to access properties of an object without causing an error if the property is undefined or null. It allows you to safely navigate nested object properties without checking for each level of existence. The optional chaining operator returns undefined if any property in the chain is null or undefined. It is useful for handling optional properties, nested objects, and avoiding "TypeError: Cannot read property 'x' of undefined" errors.
 
