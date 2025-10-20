@@ -4134,6 +4134,36 @@ console.log(title);
 
   console.log(userOptionalChaining.address?.city); // undefined
 
+  // A more complex example for optional chaining:
+  const order = {
+    id: 123,
+    customer: {
+      name: "John Doe",
+      address: {
+        street: "123 Main St",
+        city: "Anytown",
+      }, 
+    },
+  };
+
+  console.log(order.customer?.address?.city); // "Anytown"
+  console.log(order.shipping?.address?.city); // undefined
+
+  // Real cases of use:
+  // ?. (optional chaining) - Accessing nested properties in API responses:
+
+  const apiResponseOptionalChaining = {
+    data: {
+      user: {
+        name: "Alice",
+        profile: {
+          age: 30,
+        },
+      },
+    },
+  };
+  console.log(apiResponseOptionalChaining.data.user?.profile?.age); // 30
+
   // 17. Arrays of objects: Arrays of objects in JavaScript are used to store collections of related data in a structured format. Each element in the array is an object that contains key-value pairs of properties and values. Arrays of objects are useful for representing complex data structures, such as lists of products, users, or items. They allow you to group related data together and perform operations on the collection as a whole.
 
   // Arrays of objects - Examples:
