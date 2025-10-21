@@ -4163,6 +4163,23 @@ console.log(title);
     },
   };
   console.log(apiResponseOptionalChaining.data.user?.profile?.age); // 30
+  console.log(apiResponseOptionalChaining.data.user?.settings?.theme); // undefined
+
+  // ?. (optional chaining) - Handling optional properties in configuration objects:
+
+  const config = {
+    database: {
+      host: "localhost",
+      port: 5432,
+    },
+    server: {
+      host: "localhost",
+      port: 3000,
+    },
+  };
+
+  console.log(config.database?.username); // undefined
+  console.log(config.server?.port); // 3000
 
   // 17. Arrays of objects: Arrays of objects in JavaScript are used to store collections of related data in a structured format. Each element in the array is an object that contains key-value pairs of properties and values. Arrays of objects are useful for representing complex data structures, such as lists of products, users, or items. They allow you to group related data together and perform operations on the collection as a whole.
 
