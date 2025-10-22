@@ -4221,8 +4221,8 @@ console.log(title);
   console.log(tasksArray.length); // 3
 
   // Arrays of objects - Filtering tasks by completion status:
-  const completedTasks = tasksArray.filter((task) => task.completed);
-  console.log(completedTasks); // [{ title: "Task 2", completed: true }]
+  const completedTasksStatus = tasksArray.filter((task) => task.completed);
+  console.log(completedTasksStatus); // [{ title: "Task 2", completed: true }]
 
   // 18. [] get item: The [] operator in JavaScript is used to access elements in an array by their index. It takes an index as an argument and returns the element at that index. The [] operator is used to retrieve, update, or remove elements from an array. It is useful for working with arrays and accessing individual elements by their position.
 
