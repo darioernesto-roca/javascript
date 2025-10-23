@@ -4288,6 +4288,18 @@ console.log(title);
 
   printUser(user);
 
+  function printUserWithoutDestructuring(user) {
+    console.log(`Name: ${user.name}, Age: ${user.age}`);
+  }
+
+  const userNoDestructuring = {
+    name: "Roca",
+    age: 25,
+  };
+
+  printUserWithoutDestructuring(userNoDestructuring); // Name: Roca, Age: 25
+
+
   // Destructuring in React components:
 
   const UserComponent = ({ name, age }) => {
