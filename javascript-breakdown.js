@@ -4350,13 +4350,23 @@ console.log(title);
 
   // Typed arrays - Examples:
 
-  const buffer = new ArrayBuffer(16);
+  const buffer = new ArrayBuffer(16); // 16 bytes
+  const int32Array = new Int32Array(buffer); // interprets memory as 4 x 4-byte integers
 
-  const int32Array = new Int32Array(buffer);
+  console.log(buffer); // ArrayBuffer { byteLength: 16 }
+  console.log(int32Array); // Int32Array(4) [ 67305985, 0, 0, 0 ]
+
+  buffer.byteLength; // 16
+  int32Array.length; // 4
+
 
   int32Array[0] = 42;
-
   console.log(int32Array[0]); // 42
+
+  /* ✅ ArrayBuffer = raw memory
+    ✅ Int32Array = interprets it as 4 integers
+    ✅ Memory-efficient, fast, fixed-size, perfect for binary operations
+ */ 
 
   // Real cases of use:
 
