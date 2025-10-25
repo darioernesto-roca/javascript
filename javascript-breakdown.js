@@ -4348,6 +4348,14 @@ console.log(title);
 
   // 21. Typed arrays: Typed arrays in JavaScript are used to store and manipulate binary data in a structured format. They provide a way to work with raw binary data, such as integers, floats, and bytes, in a memory-efficient manner. Typed arrays are optimized for performance and memory usage and are commonly used in web development for handling network data, file I/O, and graphics processing.
 
+  // ArrayBuffer is a generic, fixed-length raw binary data buffer. You cannot directly manipulate the contents of an ArrayBuffer; instead, you create a typed array or a DataView object that represents the buffer in a specific format, and use that to read and write the contents of the buffer.
+
+  // DataView provides a low-level interface for reading and writing multiple number types in an ArrayBuffer irrespective of the platform's endianness.
+
+  // Buffer refers to a region of memory allocated to store binary data. It is an instance of the ArrayBuffer class.
+
+  // Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, and Float64Array are typed array classes that represent arrays of 8-bit, 16-bit, 32-bit integers (signed and unsigned), and 32-bit and 64-bit floating-point numbers, respectively.
+
   // Typed arrays - Examples:
 
   const buffer = new ArrayBuffer(16); // 16 bytes
