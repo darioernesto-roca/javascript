@@ -4359,10 +4359,18 @@ console.log(title);
   // Typed arrays - Examples:
 
   const buffer = new ArrayBuffer(16); // 16 bytes
+  const view = new DataView(buffer);
+
+  view.setUint8(0, 1);
   const int32Array = new Int32Array(buffer); // interprets memory as 4 x 4-byte integers
+  const int16Array = new Int16Array(buffer); // interprets memory as 8 x 2-byte integers
+  const int8Array = new Int8Array(buffer); // interprets memory as 16 x 1-byte integers
+
 
   console.log(buffer); // ArrayBuffer { byteLength: 16 }
   console.log(int32Array); // Int32Array(4) [ 67305985, 0, 0, 0 ]
+  console.log(int16Array); // Int16Array(8) [ 257, 258, 0, 0, 0, 0, 0, 0 ]
+  console.log(int8Array); // Int8Array(16) [ 1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 
   buffer.byteLength; // 16
   int32Array.length; // 4
