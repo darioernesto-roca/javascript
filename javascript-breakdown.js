@@ -4428,6 +4428,56 @@ console.log(title);
     }
   }
 
+  class Car {
+    constructor(brand, model, motor, year, color, price, mileage, fuelType, fuelCapacity) {
+      this.brand = brand;
+      this.model = model;
+      this.motor = motor;
+      this.year = year;
+      this.color = color;
+      this.price = price;
+      this.mileage = mileage;
+      this.fuelType = fuelType;
+      this.fuelCapacity = fuelCapacity;
+    } 
+    
+    getDetails() {
+      return `${this.brand} ${this.model}, ${this.year}, ${this.color}, ${this.mileage} miles, ${this.fuelType} motor, $${this.price}`;
+    }
+
+    getCarInfo() {
+      return `Car Info: ${this.getDetails()}`;
+    }
+
+    startEngine() {
+      function ignite() {
+        const itsOn = true;
+        return itsOn ? "Engine started" : "Engine failed to start";
+      }
+      return ignite();
+    }
+
+    stopEngine() {
+      function shutdown() {
+        const itsOff = true;
+        return itsOff ? "Engine stopped" : "Engine failed to stop";
+      }
+      return shutdown();
+    }
+
+    fillFuel(amount) {
+      if (amount <= 0) {
+        return "Invalid fuel amount";
+      }
+      if (amount + this.fuelCapacity > 100) {
+        return "Fuel tank overflow";
+      }
+      this.fuelCapacity += amount;
+      return `Filled ${amount} liters of fuel. Current fuel level: ${this.fuelCapacity} liters`;
+    }
+
+  }
+
   const person = new Person("Ernestico", 25);
   person.greet(); // "Hello, my name is Ernestico and I am 25 years old"
 
