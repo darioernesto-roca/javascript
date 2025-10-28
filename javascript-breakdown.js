@@ -4478,6 +4478,14 @@ console.log(title);
 
   }
 
+
+  // Create an instance of Car
+  const myCar = new Car("Toyota", "Corolla", "1.8L", 2020, "Blue", 20000, 15000, "Gasoline", 50);
+  console.log(myCar.getCarInfo()); // Car Info: Toyota Corolla, 2020, Blue, 15000 miles, Gasoline motor, $20000
+  console.log(myCar.startEngine());
+  console.log(myCar.fillFuel(30)); // Filled 30 liters of fuel. Current fuel level: 80 liters
+  console.log(myCar.stopEngine());
+
   const person = new Person("Ernestico", 25);
   person.greet(); // "Hello, my name is Ernestico and I am 25 years old"
 
