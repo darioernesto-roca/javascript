@@ -4489,6 +4489,42 @@ console.log(title);
   const person = new Person("Ernestico", 25);
   person.greet(); // "Hello, my name is Ernestico and I am 25 years old"
 
+  // Real cases of use:
+
+  // Classes - Modeling a user in a web application:
+  class User {
+    constructor(name, lastname, id, address, phone, email) {
+      this.name = name;
+      this.lastname = lastname;
+      this.id = id;
+      this.address = address;
+      this.phone = phone;
+      this.email = email;
+    }
+
+    getFullName() {
+      return `${this.name} ${this.lastname}`;
+    }
+
+    getContactInfo() {
+      return `Email: ${this.email}, Phone: ${this.phone}`;
+    }
+
+    getUserInfo() {
+      return `User Info: ${this.getFullName()}, ID: ${this.id}, Address: ${this.address}, ${this.getContactInfo()}`;
+    }
+  }
+
+  const user = new User(
+    "Ernestico",
+    "Roca",
+    "123456789",
+    "123 Main St, City, Country",
+    "+1234567890",
+    "ernestico.roca@example.com"
+  );
+  console.log(user.getUserInfo()); // User Info: Ernestico Roca, ID: 123456789, Address: 123 Main St, City, Country, Email: ernestico.roca@example.com
+
   // 2. Getters: Getters in JavaScript are used to define computed properties that are accessed like object properties but are computed on the fly. They allow you to define custom behavior when accessing a property of an object. Getters are useful for calculating derived values, formatting data, or performing validation logic.
 
   // Getters - Examples:
@@ -4527,6 +4563,7 @@ console.log(title);
   ]);
 
   console.log(shoppingCart.totalPrice); // 60
+
 
   // 3. Inheritance: Inheritance in JavaScript is a mechanism that allows a class to inherit properties and methods from another class. It enables code reuse and promotes a hierarchical structure of classes. Inheritance is a fundamental concept in object-oriented programming (OOP) and is used to model relationships between objects.
 
