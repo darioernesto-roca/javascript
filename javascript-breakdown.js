@@ -4478,7 +4478,6 @@ console.log(title);
 
   }
 
-
   // Create an instance of Car
   const myCar = new Car("Toyota", "Corolla", "1.8L", 2020, "Blue", 20000, 15000, "Gasoline", 50);
   console.log(myCar.getCarInfo()); // Car Info: Toyota Corolla, 2020, Blue, 15000 miles, Gasoline motor, $20000
@@ -4525,7 +4524,7 @@ console.log(title);
   );
   console.log(user.getUserInfo()); // User Info: Ernestico Roca, ID: 123456789, Address: 123 Main St, City, Country, Email: ernestico.roca@example.com
 
-  // 2. Getters: Getters in JavaScript are used to define computed properties that are accessed like object properties but are computed on the fly. They allow you to define custom behavior when accessing a property of an object. Getters are useful for calculating derived values, formatting data, or performing validation logic.
+  // 2.1 Getters: Getters in JavaScript are used to define computed properties that are accessed like object properties but are computed on the fly. They allow you to define custom behavior when accessing a property of an object. Getters are useful for calculating derived values, formatting data, or performing validation logic.
 
   // Getters - Examples:
 
@@ -4563,6 +4562,31 @@ console.log(title);
   ]);
 
   console.log(shoppingCart.totalPrice); // 60
+
+  // 2.2 Setters: Setters in JavaScript are used to define custom behavior when setting the value of a property of an object. They allow you to define logic that is executed when a property is assigned a new value. Setters are useful for performing validation, formatting data, or triggering side effects when a property is updated.
+
+  // Setters - Examples:
+
+  class User {
+    constructor(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+
+    set email(value) {
+      // Perform validation or formatting
+      this._email = value.trim().toLowerCase();
+    }
+
+    get email() {
+      return this._email;
+    }
+  }
+
+  const user2 = new User("Ernestico", "ERNESTICO.ROCA@EXAMPLE.COM");
+  console.log(user2.email); // ernestico.roca@example.com
+  user2.email = "ERNESTICO.ROCA@EXAMPLE.COM";
+  console.log(user2.email); // ernestico.roca@example.com
 
 
   // 3. Inheritance: Inheritance in JavaScript is a mechanism that allows a class to inherit properties and methods from another class. It enables code reuse and promotes a hierarchical structure of classes. Inheritance is a fundamental concept in object-oriented programming (OOP) and is used to model relationships between objects.
