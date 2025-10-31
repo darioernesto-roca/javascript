@@ -4588,6 +4588,18 @@ console.log(title);
   user2.email = "ERNESTICO.ROCA@EXAMPLE.COM";
   console.log(user2.email); // ernestico.roca@example.com
 
+  // 2.3 Static methods: Static methods in JavaScript are methods that are defined on the class itself rather than on instances of the class. They are called directly on the class and do not require an instance to be created. Static methods are useful for utility functions, factory methods, or any functionality that does not depend on instance-specific data.
+
+  // Static methods - Examples:
+
+  class MathUtils {
+    static add(a, b) {
+      return a + b;
+    }
+  }
+
+  console.log(MathUtils.add(5, 10)); // 15
+
 
   // 3. Inheritance: Inheritance in JavaScript is a mechanism that allows a class to inherit properties and methods from another class. It enables code reuse and promotes a hierarchical structure of classes. Inheritance is a fundamental concept in object-oriented programming (OOP) and is used to model relationships between objects.
 
