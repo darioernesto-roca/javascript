@@ -4587,6 +4587,8 @@ console.log(title);
   console.log(user2.email); // ernestico.roca@example.com
   user2.email = "ERNESTICO.ROCA@EXAMPLE.COM";
   console.log(user2.email); // ernestico.roca@example.com
+  user2.email = "info@test.com"
+  console.log(user2.email); // info@test.com
 
   // 2.3 Static methods: Static methods in JavaScript are methods that are defined on the class itself rather than on instances of the class. They are called directly on the class and do not require an instance to be created. Static methods are useful for utility functions, factory methods, or any functionality that does not depend on instance-specific data.
 
@@ -4595,6 +4597,14 @@ console.log(title);
   class MathUtils {
     static add(a, b) {
       return a + b;
+    }
+
+    static subtract(a, b) {
+      return a - b;
+    }
+
+    static multiply(a, b) {
+      return a * b;
     }
   }
 
