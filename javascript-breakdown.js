@@ -120,10 +120,10 @@ console.log(title);
 
 // DOM (Document Object Model) is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing programming languages to manipulate the content, structure, and style of web pages.
 
-  /* 2.1 DOM - Events */
+/* 2.1 DOM - Events */
 
-  // All the JS Events:
-  // https://developer.mozilla.org/en-US/docs/Web/Events
+// All the JS Events:
+// https://developer.mozilla.org/en-US/docs/Web/Events
 {
   // Change Event: occurs when the value of an element has been changed
 
@@ -870,7 +870,6 @@ console.log(title);
   };
 
   console.log(personImplicitBinding.greet()); // Hello, Florentino!
-
 }
 
 /* 5. Miscellaneous */
@@ -969,15 +968,15 @@ console.log(title);
    └───────────────────────────┘
   */
 
-   // Each box will be referred to as a "phase" of the event loop.
+  // Each box will be referred to as a "phase" of the event loop.
 
-   // Each phase has a FIFO queue of callbacks to execute. While each phase is special in its own way, generally, when the event loop enters a given phase, it will perform any operations specific to that phase, then execute callbacks in that phase's queue until the queue has been exhausted or the maximum number of callbacks has executed. When the queue has been exhausted or the callback limit is reached, the event loop will move to the next phase, and so on.
+  // Each phase has a FIFO queue of callbacks to execute. While each phase is special in its own way, generally, when the event loop enters a given phase, it will perform any operations specific to that phase, then execute callbacks in that phase's queue until the queue has been exhausted or the maximum number of callbacks has executed. When the queue has been exhausted or the callback limit is reached, the event loop will move to the next phase, and so on.
 
-   // Since any of these operations may schedule more operations and new events processed in the poll phase are queued by the kernel, poll events can be queued while polling events are being processed. As a result, long running callbacks can allow the poll phase to run much longer than a timer's threshold.
+  // Since any of these operations may schedule more operations and new events processed in the poll phase are queued by the kernel, poll events can be queued while polling events are being processed. As a result, long running callbacks can allow the poll phase to run much longer than a timer's threshold.
 
-   // There is a slight discrepancy between the Windows and the Unix/Linux implementation, but that's not important for this demonstration. The most important parts are here. There are actually seven or eight steps, but the ones we care about — ones that Node.js actually uses - are those above.
+  // There is a slight discrepancy between the Windows and the Unix/Linux implementation, but that's not important for this demonstration. The most important parts are here. There are actually seven or eight steps, but the ones we care about — ones that Node.js actually uses - are those above.
 
-   /*
+  /*
    Phases Overview:
    1. timers: this phase executes callbacks scheduled by setTimeout() and setInterval().
    2. pending callbacks: executes I/O callbacks deferred to the next loop iteration.
@@ -987,7 +986,7 @@ console.log(title);
    6. close callbacks: some close callbacks, e.g. socket.on('close', ...).
    */
 
-   // Between each run of the event loop, Node.js checks if it is waiting for any asynchronous I/O or timers and shuts down cleanly if there are not any.
+  // Between each run of the event loop, Node.js checks if it is waiting for any asynchronous I/O or timers and shuts down cleanly if there are not any.
 
   // 7. Event loop phases: The event loop in JavaScript consists of several phases, including the callback queue, microtask queue, and rendering. These phases work together to process tasks and ensure that the application remains responsive and performs well.
 
@@ -1167,15 +1166,15 @@ console.log(title);
   // Two ways of thinking:
   function pow(x, n) {
     let result = 1;
-  
+
     // multiply result by x n times in the loop
     for (let i = 0; i < n; i++) {
       result *= x;
     }
-  
+
     return result;
   }
-  console.log( pow(2, 3) );
+  console.log(pow(2, 3));
 
   // The same using recursion
   function pow(x, n) {
@@ -1185,7 +1184,7 @@ console.log(title);
       return x * pow(x, n - 1);
     }
   }
-  console.log( pow(2, 3) ); // 8
+  console.log(pow(2, 3)); // 8
 
   // Factorial using recursion
   function factorialRecursion(n) {
@@ -1405,17 +1404,17 @@ console.log(title);
   // When use it in arrow functions this refers to the parent object:
 
   const personThisArrowFunctionContext = {
-      name: "Charlie",
-      greet: () => {
-        console.log(`Hello, my name is ${this.name}`);
-      },
+    name: "Charlie",
+    greet: () => {
+      console.log(`Hello, my name is ${this.name}`);
+    },
 
-      greet2: function () {
-        console.log(`Hello, my name is ${this.name}`);
-      }
-    };
+    greet2: function () {
+      console.log(`Hello, my name is ${this.name}`);
+    },
+  };
 
-    personThisArrowFunctionContext.greet(); // Hello, my name is undefined. In this case this refers to the parent object of the arrow function, which is the global object (window in browsers).
+  personThisArrowFunctionContext.greet(); // Hello, my name is undefined. In this case this refers to the parent object of the arrow function, which is the global object (window in browsers).
 
   // This - Example 3: Constructor context
   function PersonThisConstructorContext(name) {
@@ -1434,10 +1433,10 @@ console.log(title);
   buttonThisEventHandlerContext.addEventListener("click", function () {
     console.log(`Button clicked by ${this.id}`); // In event handlers, this refers to the element that triggered the event. In this case, this refers to the button element that was clicked.
 
-  // This - Example 5: Using it alone: When used alone, this refers to the global object (window in browsers, global in Node.js). In strict mode, this will be undefined when used alone in a function.
-  function logThis() {
-    console.log(this);
-  }
+    // This - Example 5: Using it alone: When used alone, this refers to the global object (window in browsers, global in Node.js). In strict mode, this will be undefined when used alone in a function.
+    function logThis() {
+      console.log(this);
+    }
   });
 
   // 19. typeof operator: The typeof operator in JavaScript returns the data type of a variable or expression. It is useful for checking the type of a value and handling different data types appropriately.
@@ -1580,29 +1579,20 @@ console.log(title);
 
 {
   // 0. As our application grows bigger, we want to split it into multiple files, so called “modules”. A module may contain a class or a library of functions for a specific purpose. Modules encapsulate all sorts of code like functions and variables and expose all this to other files. Generally, we use it to break our code into separate files to make it more maintainable. They were introduced into JavaScript with ECMAScript 6. There are two types of modules in JavaScript: ES Modules and CommonJS modules. ES Modules are the standard for working with modules in JavaScript and are supported in modern browsers and Node.js. CommonJS modules are used in Node.js and provide a way to organize code into separate files. Modules can be imported and exported using the import and export keywords.
-
-// A module is just a file. One script is one module. As simple as that.
-
-// Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:
-
-// export: keyword labels variables and functions that should be accessible from outside the current module.
-// import: allows the import of functionality from other modules.
-
-// For instance, if we have a file sayHi.js exporting a function:
-
-// 📁 sayHi.js
-// export function sayHi(user) {
-//   alert(`Hello, ${user}!`);
-// }
-
-
-// Then we can import it in another file:
-// 📁 main.js
-// import {sayHi} from './sayHi.js';
-
-// alert(sayHi); // function...
-// sayHi('John'); // Hello, John!s
-  
+  // A module is just a file. One script is one module. As simple as that.
+  // Modules can load each other and use special directives export and import to interchange functionality, call functions of one module from another one:
+  // export: keyword labels variables and functions that should be accessible from outside the current module.
+  // import: allows the import of functionality from other modules.
+  // For instance, if we have a file sayHi.js exporting a function:
+  // 📁 sayHi.js
+  // export function sayHi(user) {
+  //   alert(`Hello, ${user}!`);
+  // }
+  // Then we can import it in another file:
+  // 📁 main.js
+  // import {sayHi} from './sayHi.js';
+  // alert(sayHi); // function...
+  // sayHi('John'); // Hello, John!s
   // 1. ES Modules: ES Modules (ECMAScript Modules) are a standard for working with modules in JavaScript. They provide a way to organize and structure code by splitting it into separate files, each containing a module. ES Modules use the import and export keywords to define dependencies between modules and share code between them.
   // ES Modules - Examples:
   // ES Modules - Exporting a module
@@ -1705,21 +1695,16 @@ console.log(title);
   //   "type": "module"
   // }
   // 8. Yarn: Yarn is a fast, reliable, and secure package manager for JavaScript. It is compatible with npm and provides additional features like offline installation, deterministic dependency resolution, and parallel package downloads. Yarn is commonly used for managing dependencies in Node.js projects and front-end development. Yarn can be installed using npm or by downloading the Yarn installer from the official website. The main difference between npm and Yarn is that Yarn uses a lockfile (yarn.lock) to ensure deterministic installs, while npm uses a package-lock.json file. At the end both are package managers for JavaScript, and they have their own features and differences, but the choice of which one to use depends on the project requirements and personal preference.
-
   // CommonJS modules: CommonJS modules are a module format used in Node.js for organizing and structuring code. They use the require() function to import modules and the module.exports object to export values. CommonJS modules are synchronous and are loaded and executed at runtime. CommonJS modules are used in Node.js and provide a way to organize code into separate files and modules. They use the require() function to import modules and the module.exports object to export values. CommonJS modules are synchronous and are loaded and executed
-
   // CommonJS modules - Example:
-
   // math.js
   // const sum = (a, b) => a + b;
   // const subtract = (a, b) => a - b;
   // module.exports = { sum, subtract };
-
   // CommonJS modules - Importing a module
   // const math = require('./math.js');
   // console.log(math.sum(5, 3)); // 8
   // console.log(math.subtract(5, 3)); // 2
-
 }
 
 /* 7. Number */
@@ -3392,11 +3377,9 @@ console.log(title);
   addTodoItem("Deploy to production");
   addTodoItem("Celebrate success!");
 
-
   for (let i = 0; i < todoList.length; i++) {
     console.log(`To-Do Item ${i + 1}: ${todoList[i]}`);
   }
-
 
   // 8. while: The while loop in JavaScript is used to execute a block of code as long as a specified condition is true. It consists of a condition that is evaluated before each iteration of the loop. The while loop continues to execute the code block until the condition becomes false. It is commonly used for repeating tasks with an unknown number of iterations.
 
@@ -3436,7 +3419,7 @@ console.log(title);
   const jobQueue = [
     { id: 1, task: "Send email" },
     { id: 2, task: "Generate report" },
-    { id: 3, task: "Backup database" }
+    { id: 3, task: "Backup database" },
   ];
 
   while (jobQueue.length > 0) {
@@ -3510,7 +3493,7 @@ console.log(title);
     // Simulating a database operation that may fail
     throw new Error("Database connection failed");
   }
-  
+
   try {
     const data = await fetchDataFromDatabase();
     console.log("Data from database:", data);
@@ -3556,7 +3539,7 @@ console.log(title);
   const isPositive = numbersEvery.every((number) => number > 0);
   console.log(isPositive); // true
 
-  const arrayNames = ['name1', 'name2', 'name3', 'name4'];
+  const arrayNames = ["name1", "name2", "name3", "name4"];
   const allHaveFourLetters = arrayNames.every((name) => name.length === 4);
   console.log(allHaveFourLetters); // true
 
@@ -3639,7 +3622,6 @@ console.log(title);
   }
   completeTask("Write blog post");
   console.log(tasks);
-  
 
   // 5. .find(): The .find() method in JavaScript is used to find the first element in an array that passes a specified condition. It takes a callback function as an argument, which is called for each element in the array. The .find() method returns the first element that satisfies the condition, or undefined if no element matches the condition. It is useful for searching for a specific element in an array.
 
@@ -3683,7 +3665,9 @@ console.log(title);
     { name: "Eve", score: 88 },
   ];
 
-  const indexTopStudent = studentsFindIndex.findIndex((student) => student.score > 90);
+  const indexTopStudent = studentsFindIndex.findIndex(
+    (student) => student.score > 90
+  );
   console.log(indexTopStudent); // 1 This means that the first student with a score greater than 90 is at index 1 (which is Bob).
 
   // 7. .foreach(): The .forEach() method in JavaScript is used to iterate over the elements of an array and perform a specified action for each element. It takes a callback function as an argument, which is called for each element in the array. The .forEach() method does not return a new array but executes the callback function for each element. It is useful for performing side effects, such as logging, updating variables, or interacting with the DOM.
@@ -3854,7 +3838,7 @@ console.log(title);
   console.log("Product names:", productNamesMap.join(", ")); // Product names: Product 1, Product 2, Product 3, Product 4, Product 5
 
   // 10.1. .flatMap(): The .flatMap() method in JavaScript is used to first map each element of an array using a mapping function, and then flatten the result into a new array. It combines the functionality of .map() and .flat() methods. The .flatMap() method is useful for transforming and flattening nested arrays in a single step. It is particularly useful when you want to apply a transformation to each element and then flatten the resulting arrays into a single array.
-  
+
   // .flatMap() - Examples:
   const numbersFlatMap = [1, 2, 3];
   const flatMapped = numbersFlatMap.flatMap((number) => [number, number * 2]);
@@ -3869,7 +3853,9 @@ console.log(title);
     [5, 6],
   ];
 
-  const flattened = nestedArrays.flatMap((array) => array.map((num) => num * 2));
+  const flattened = nestedArrays.flatMap((array) =>
+    array.map((num) => num * 2)
+  );
   console.log(flattened); // [2, 4, 6, 8, 10, 12]
 
   // 11. .push(): The .push() method in JavaScript is used to add one or more elements to the end of an array. It takes one or more arguments, which are appended to the array in the order they are provided. The .push() method modifies the original array and returns the new length of the array. It is useful for adding elements to an array dynamically.
@@ -3907,7 +3893,6 @@ console.log(title);
   todoListPush.push("Build a project");
   todoListPush.push("Review code");
   console.log("To-Do List:", todoListPush); // To-Do List: ["Learn JavaScript", "Build a project", "Review code"] We can then use an HTML interface to display and manage the to-do list.
-  
 
   // 12. .reduce(): The .reduce() method in JavaScript is used to reduce an array to a single value by applying a specified function to each element in the array. It takes a callback function and an optional initial value as arguments. The callback function is called for each element in the array, and the result is accumulated into a single value. The .reduce() method returns the final accumulated value. It is useful for calculating totals, aggregating data, and performing complex transformations on arrays. The difference between .reduce() and .map() is that .reduce() reduces an array to a single value, while .map() transforms each element of an array and returns a new array with the transformed values.
   // The value of 0 in the second argument of the .reduce() method is the initial value of the accumulator. The first argument of the reduce method is a callback function that takes two parameters: the accumulator and the current value of the array. The callback function returns the new value of the accumulator after processing the current value.
@@ -3944,8 +3929,16 @@ console.log(title);
 
   // .reduce() - Counting occurrences of elements in an array:
 
-  const fruitsReduce = ["apple", "banana", "orange", "apple", "banana", "apple"];
-  const fruitCount = fruitsReduce.reduce((count, fruit) => { // count is the accumulator, fruit is the current value
+  const fruitsReduce = [
+    "apple",
+    "banana",
+    "orange",
+    "apple",
+    "banana",
+    "apple",
+  ];
+  const fruitCount = fruitsReduce.reduce((count, fruit) => {
+    // count is the accumulator, fruit is the current value
     count[fruit] = (count[fruit] || 0) + 1; // Count occurrences of each fruit
     return count; // Return the updated count object
   }, {});
@@ -3968,7 +3961,10 @@ console.log(title);
 
   // .reduce() - Concatenating strings in an array:
   const wordsReduce = ["Hello", "world", "this", "is", "JavaScript"];
-  const sentenceReduce = wordsReduce.reduce((acc, word) => acc + " " + word, "");
+  const sentenceReduce = wordsReduce.reduce(
+    (acc, word) => acc + " " + word,
+    ""
+  );
   console.log(sentenceReduce.trim()); // "Hello world this is JavaScript"
 
   // .reduce() - Grouping objects by a property:
@@ -4112,7 +4108,12 @@ console.log(title);
   console.log("Removed items:", removedItems); // Removed items: [{ name: "Product 2", price: 20 }, { name: "Product 3", price: 30 }]
   console.log("Updated shopping cart:", shoppingCartSplice); // Updated shopping cart: [{ name: "Product 1", price: 10 }]
 
-  const addedItems = shoppingCartSplice.splice(1, 0, { name: "Product 2", price: 20 }, { name: "Product 3", price: 30 });
+  const addedItems = shoppingCartSplice.splice(
+    1,
+    0,
+    { name: "Product 2", price: 20 },
+    { name: "Product 3", price: 30 }
+  );
   console.log("New shopping cart:", shoppingCartSplice); // New shopping cart: [{ name: "Product 1", price: 10 }, { name: "Product 2", price: 20 }, { name: "Product 3", price: 30 }]
 
   // 16. ?. (optional chaining): The optional chaining operator (?.) in JavaScript is used to access properties of an object without causing an error if the property is undefined or null. It allows you to safely navigate nested object properties without checking for each level of existence. The optional chaining operator returns undefined if any property in the chain is null or undefined. It is useful for handling optional properties, nested objects, and avoiding "TypeError: Cannot read property 'x' of undefined" errors.
@@ -4142,7 +4143,7 @@ console.log(title);
       address: {
         street: "123 Main St",
         city: "Anytown",
-      }, 
+      },
     },
   };
 
@@ -4299,7 +4300,6 @@ console.log(title);
 
   printUserWithoutDestructuring(userNoDestructuring); // Name: Roca, Age: 25
 
-
   // Destructuring in React components:
 
   const UserComponent = ({ name, age }) => {
@@ -4366,7 +4366,6 @@ console.log(title);
   const int16Array = new Int16Array(buffer); // interprets memory as 8 x 2-byte integers
   const int8Array = new Int8Array(buffer); // interprets memory as 16 x 1-byte integers
 
-
   console.log(buffer); // ArrayBuffer { byteLength: 16 }
   console.log(int32Array); // Int32Array(4) [ 67305985, 0, 0, 0 ]
   console.log(int16Array); // Int16Array(8) [ 257, 258, 0, 0, 0, 0, 0, 0 ]
@@ -4375,14 +4374,13 @@ console.log(title);
   buffer.byteLength; // 16
   int32Array.length; // 4
 
-
   int32Array[0] = 42;
   console.log(int32Array[0]); // 42
 
   /* ✅ ArrayBuffer = raw memory
     ✅ Int32Array = interprets it as 4 integers
     ✅ Memory-efficient, fast, fixed-size, perfect for binary operations
- */ 
+ */
 
   // Real cases of use:
 
@@ -4429,7 +4427,17 @@ console.log(title);
   }
 
   class Car {
-    constructor(brand, model, motor, year, color, price, mileage, fuelType, fuelCapacity) {
+    constructor(
+      brand,
+      model,
+      motor,
+      year,
+      color,
+      price,
+      mileage,
+      fuelType,
+      fuelCapacity
+    ) {
       this.brand = brand;
       this.model = model;
       this.motor = motor;
@@ -4439,8 +4447,8 @@ console.log(title);
       this.mileage = mileage;
       this.fuelType = fuelType;
       this.fuelCapacity = fuelCapacity;
-    } 
-    
+    }
+
     getDetails() {
       return `${this.brand} ${this.model}, ${this.year}, ${this.color}, ${this.mileage} miles, ${this.fuelType} motor, $${this.price}`;
     }
@@ -4475,11 +4483,20 @@ console.log(title);
       this.fuelCapacity += amount;
       return `Filled ${amount} liters of fuel. Current fuel level: ${this.fuelCapacity} liters`;
     }
-
   }
 
   // Create an instance of Car
-  const myCar = new Car("Toyota", "Corolla", "1.8L", 2020, "Blue", 20000, 15000, "Gasoline", 50);
+  const myCar = new Car(
+    "Toyota",
+    "Corolla",
+    "1.8L",
+    2020,
+    "Blue",
+    20000,
+    15000,
+    "Gasoline",
+    50
+  );
   console.log(myCar.getCarInfo()); // Car Info: Toyota Corolla, 2020, Blue, 15000 miles, Gasoline motor, $20000
   console.log(myCar.startEngine());
   console.log(myCar.fillFuel(30)); // Filled 30 liters of fuel. Current fuel level: 80 liters
@@ -4510,7 +4527,9 @@ console.log(title);
     }
 
     getUserInfo() {
-      return `User Info: ${this.getFullName()}, ID: ${this.id}, Address: ${this.address}, ${this.getContactInfo()}`;
+      return `User Info: ${this.getFullName()}, ID: ${this.id}, Address: ${
+        this.address
+      }, ${this.getContactInfo()}`;
     }
   }
 
@@ -4587,7 +4606,7 @@ console.log(title);
   console.log(user2.email); // ernestico.roca@example.com
   user2.email = "ERNESTICO.ROCA@EXAMPLE.COM";
   console.log(user2.email); // ernestico.roca@example.com
-  user2.email = "info@test.com"
+  user2.email = "info@test.com";
   console.log(user2.email); // info@test.com
 
   // 2.3 Static methods: Static methods in JavaScript are methods that are defined on the class itself rather than on instances of the class. They are called directly on the class and do not require an instance to be created. Static methods are useful for utility functions, factory methods, or any functionality that does not depend on instance-specific data.
@@ -4609,7 +4628,6 @@ console.log(title);
   }
 
   console.log(MathUtils.add(5, 10)); // 15
-
 
   // 3. Inheritance: Inheritance in JavaScript is a mechanism that allows a class to inherit properties and methods from another class. It enables code reuse and promotes a hierarchical structure of classes. Inheritance is a fundamental concept in object-oriented programming (OOP) and is used to model relationships between objects.
 
@@ -4643,6 +4661,42 @@ console.log(title);
     counter.decrement();
 
     console.log(counter.getCount()); // 1
+
+    // Another example of inheritance:
+
+    class Vehicle {
+      #speed = 0; // #private class field, that means it cannot be accessed outside the class
+      #fuel = 100; // #private class field, that means it cannot be accessed outside the class
+      accelerate(amount) {
+        this.#speed += amount;
+        this.#fuel -= amount * 0.5;
+      }
+      brake(amount) {
+        this.#speed = Math.max(0, this.#speed - amount); // Make sure speed doesn't go below 0. Math.max() is used to return the largest of zero or the calculated speed.
+      }
+      getStatus() {
+        return `Speed: ${this.#speed} km/h, Fuel: ${this.#fuel} liters`;
+      }
+      get speed() {
+        return this.#speed;
+      }
+    }
+    class Motorcycle extends Vehicle {
+      doWheelie() {
+        if (this.speed > 40) {
+          console.log("Doing a wheelie!");
+        } else {
+          console.log("Not enough speed for a wheelie.");
+        }
+      }
+    }
+
+    const myMotorcycle = new Motorcycle();
+    myMotorcycle.accelerate(50);
+    console.log(myMotorcycle.getStatus()); // Speed: 50 km/h, Fuel: 75 liters
+    myMotorcycle.doWheelie(); // Doing a wheelie!
+    myMotorcycle.brake(30);
+    console.log(myMotorcycle.getStatus()); // Speed: 20 km/h, Fuel: 75 liters
 
     // 3.3. Public class fields: Public class fields in JavaScript are used to define public properties and methods that are accessible outside the class. They provide a way to expose class members to external code and allow for interaction with the class. Public class fields are declared without the # symbol before the field name. They are useful for defining properties and methods that can be accessed and modified from external code.
 
@@ -5765,8 +5819,6 @@ console.log(title);
     .then((data) => console.log(data));
 
   // 3. XMLHttpRequest: The XMLHttpRequest object is a built-in JavaScript object that allows you to make network requests to servers. It is commonly used to send and receive data from APIs and servers asynchronously. The XMLHttpRequest object provides methods and properties for configuring and sending HTTP requests, handling responses, and working with server data. While the Fetch API is the modern and recommended way to make network requests in JavaScript, the XMLHttpRequest object is still widely used and supported in web browsers.
-
-
 }
 
 /* 18. Memory Management */
@@ -5779,15 +5831,15 @@ console.log(title);
   // Reachability: Reachability is a concept in memory management that refers to whether an object can be accessed or referenced by the program. In JavaScript, an object is considered reachable if it can be accessed through a variable, property, or function. If an object is no longer reachable, it is eligible for garbage collection and can be removed from memory. For example:
 
   // 3. Memory Lifecicle: Regardless of the programming language, the memory life cycle is pretty much always the same:
-      // - Allocate the memory you need
-      // - Use the allocated memory (read, write)
-      // - Release the allocated memory when it is not needed anymore
+  // - Allocate the memory you need
+  // - Use the allocated memory (read, write)
+  // - Release the allocated memory when it is not needed anymore
   // The second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.
 
-  // Example: 
+  // Example:
 
   // Creating an object and checking its reachability
-  
+
   const obj = { name: "Alice" };
 
   console.log(obj); // Output: { name: "Alice" }
@@ -5802,13 +5854,9 @@ console.log(title);
 {
   // 1. JavaScript Chrome Dev Tools: The Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. It provides a powerful suite of tools for debugging, profiling, and optimizing web applications. The DevTools allow developers to inspect and modify HTML and CSS, debug JavaScript code, analyze network requests, and monitor performance. The DevTools are essential for modern web development and are widely used by developers to improve the quality and performance of their applications.
   // The DevTools are accessible by right-clicking on a web page and selecting "Inspect" or by pressing F12 or Ctrl+Shift+I (Cmd+Option+I on Mac). The DevTools consist of several panels, including Elements, Console, Sources, Network, Performance, Memory, Application, Security, and Lighthouse. Each panel provides specific functionality for inspecting and debugging different aspects of a web application.
-
   // Debug JavaScript with Chrome Dev Tools: https://www.youtube.com/watch?v=H0XScE08hy8
-
   // 1. Debugging issues: The DevTools provide a powerful JavaScript debugger that allows developers to set breakpoints, step through code, and inspect variables and call stacks. This helps identify and fix issues in JavaScript code.
-
   // 2. Debugging Memory Leaks: The DevTools provide tools for analyzing memory usage and identifying memory leaks in web applications. Developers can use the Memory panel to take heap snapshots, record allocation timelines, and analyze memory usage patterns. This helps identify objects that are not being properly garbage collected and can lead to memory leaks.
-
   // 3. Debugging Performance Issues: The DevTools provide tools for analyzing the performance of web applications. Developers can use the Performance panel to record and analyze CPU usage, rendering performance, and network activity. This helps identify performance bottlenecks and optimize the performance of web applications. Lighthouse is a tool that audits the performance of web applications and provides recommendations for improving performance, accessibility, and SEO.
   // Developers can use Lighthouse to generate reports on the performance of their web applications and identify areas for improvement.
 }
