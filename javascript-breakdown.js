@@ -4684,7 +4684,7 @@ console.log(title);
     class Motorcycle extends Vehicle {
       doWheelie() {
         if (this.speed > 40) {
-          console.log("Doing a wheelie!");
+          console.log("Doing a wheelie!"); 
         } else {
           console.log("Not enough speed for a wheelie.");
         }
@@ -5079,7 +5079,7 @@ console.log(title);
 
   // Type Conversion/Coercion - Examples:
 
-  // Example 1: String to Number
+  // Example 1: String to Number - Using Number() function. The string "10" is converted to the number 10.
 
   const strToNum = "10";
   const numFromString = Number(strToNum);
@@ -5099,6 +5099,19 @@ console.log(title);
   const numFromBoolean = Number(boolToNum);
 
   console.log(numFromBoolean); // Output: 1
+
+  // Boolean to String
+
+  const boolToStr = false;
+  const strFromBoolean = String(boolToStr);
+
+  console.log(strFromBoolean); // Output: "false"
+
+  // String to Boolean
+
+  const strToBool = "Hello";
+  const boolFromString = Boolean(strToBool);
+  console.log(boolFromString); // Output: true
 
   // 3. Explicit Type Casting: Type casting means transferring data from one data type to another by explicitly specifying the type to convert the given data to. Explicit type casting is normally done to make data compatible with other variables. Examples of typecasting methods are parseInt(), parseFloat(), toString().
 
