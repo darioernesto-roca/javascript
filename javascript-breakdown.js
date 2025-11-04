@@ -5113,7 +5113,7 @@ console.log(title);
   const boolFromString = Boolean(strToBool);
   console.log(boolFromString); // Output: true
 
-  // 3. Explicit Type Casting: Type casting means transferring data from one data type to another by explicitly specifying the type to convert the given data to. Explicit type casting is normally done to make data compatible with other variables. Examples of typecasting methods are parseInt(), parseFloat(), toString().
+  // 3. Explicit Type Casting: Type casting means transferring data from one data type to another by explicitly specifying the type to convert the given data to. Explicit type casting is normally done to make data compatible with other variables. Examples of typecasting methods are parseInt(), parseFloat(), toString(). Other examples are using the Number(), String(), and Boolean() functions to convert values to their respective types.
 
   // Explicit Type Casting - Examples:
 
