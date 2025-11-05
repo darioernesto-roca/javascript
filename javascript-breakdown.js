@@ -5249,6 +5249,43 @@ console.log(title);
 
   console.log(browser.getCurrentPage()); // "https://www.facebook.com"
 
+  // Another example of stack - Expression evaluation using stack:
+
+  function evaluatePostfix(expression) {
+    const stack = new Stack();
+    const tokens = expression.split(" ");
+    tokens.forEach((token) => {
+      if (!isNaN(token)) {
+        stack.push(parseInt(token));
+      } else {
+        const b = stack.pop();
+        const a = stack.pop();
+        let result;
+        switch (token) {
+          case "+":
+            result = a + b;
+            break;
+          case "-":
+            result = a - b;
+            break;
+          case "*":
+            result = a * b;
+            break;
+          case "/":
+            result = a / b;
+            break;
+        }
+        stack.push(result);
+      }
+    });
+
+    return stack.pop();
+  }
+
+  const expression = "5 6 2 + * 12 4 / -"; // Equivalent to 5 * (6 + 2) - (12 / 4)
+
+  console.log(evaluatePostfix(expression)); // Output: 34
+
   // 2. Queue Data Structure: A queue is a linear data structure that follows the First In First Out (FIFO) principle. In a queue, elements are added at the rear end and removed from the front end. The first element added to the queue is the first one to be removed. Queues are used in programming for task scheduling, breadth-first search, and printer queues.
 
   // Queue Data Structure - Examples:
