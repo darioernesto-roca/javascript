@@ -5204,11 +5204,8 @@ console.log(title);
   stack.push(30);
 
   console.log(stack.printStack()); // 10 20 30
-
   console.log(stack.peek()); // 30
-
   console.log(stack.pop()); // 30
-
   console.log(stack.printStack()); // 10 20
 
   // Real cases of use:
@@ -5251,17 +5248,17 @@ console.log(title);
 
   // Another example of stack - Expression evaluation using stack:
 
-  function evaluatePostfix(expression) {
-    const stack = new Stack();
-    const tokens = expression.split(" ");
-    tokens.forEach((token) => {
-      if (!isNaN(token)) {
-        stack.push(parseInt(token));
-      } else {
-        const b = stack.pop();
-        const a = stack.pop();
-        let result;
-        switch (token) {
+  function evaluatePostfix(expression) { // In this line expression is a string containing a postfix expression.
+    const stack = new Stack(); // Create a new instance of the Stack class to hold operands during evaluation.
+    const tokens = expression.split(" "); // Split the expression into individual tokens (operands and operators) based on spaces.
+    tokens.forEach((token) => { // Iterate through each token in the expression.
+      if (!isNaN(token)) { // Check if the token is a number (operand). !isNaN() returns true if the token is not a number.
+        stack.push(parseInt(token)); // If it's a number, convert it to an integer and push it onto the stack.
+      } else { // If the token is an operator (+, -, *, /), pop the top two operands from the stack.
+        const b = stack.pop(); // Pop the second operand from the stack.
+        const a = stack.pop(); // Pop the first operand from the stack.
+        let result; // Initialize a variable to hold the result of the operation.
+        switch (token) { // Perform the operation based on the operator token.
           case "+":
             result = a + b;
             break;
@@ -5275,11 +5272,11 @@ console.log(title);
             result = a / b;
             break;
         }
-        stack.push(result);
+        stack.push(result); // Push the result of the operation back onto the stack.
       }
     });
 
-    return stack.pop();
+    return stack.pop(); // After processing all tokens, the final result will be the only value left on the stack. Pop and return it.
   }
 
   const expression = "5 6 2 + * 12 4 / -"; // Equivalent to 5 * (6 + 2) - (12 / 4)
