@@ -5287,55 +5287,55 @@ console.log(title);
 
   // Queue Data Structure - Examples:
 
-  class Queue {
-    constructor() {
-      this.items = [];
+  class Queue { // Defining a Queue class to represent a queue data structure.
+    constructor() { // The constructor method initializes the queue. The constructor is necessary to set up the initial state of the queue when a new instance is created.  The constructor is called automatically when a new object of the class is instantiated. Without a constructor, the queue would not have an internal storage mechanism to hold its elements.
+      this.items = []; // An array named 'items' is created to hold the elements of the queue.
     }
 
-    enqueue(element) {
-      this.items.push(element);
+    enqueue(element) { // The 'enqueue' method adds an element to the rear of the queue.
+      this.items.push(element); // The 'push' method of the array is used to add the element to the end of the 'items' array.
     }
 
-    dequeue() {
-      if (this.items.length === 0) {
-        return "Underflow";
+    dequeue() { // The 'dequeue' method removes and returns the front element of the queue.
+      if (this.items.length === 0) { // It first checks if the queue is empty by checking the length of the 'items' array.
+        return "Underflow"; // If the queue is empty, it returns the string "Underflow" to indicate that there are no elements to dequeue.
       }
-      return this.items.shift();
+      return this.items.shift(); // If the queue is not empty, it uses the 'shift' method of the array to remove and return the first element from the 'items' array.
     }
 
-    front() {
-      if (this.items.length === 0) {
-        return "No elements in Queue";
+    front() { // The 'front' method returns the front element of the queue without removing it.
+      if (this.items.length === 0) { // It first checks if the queue is empty.
+        return "No elements in Queue"; // If the queue is empty, it returns a message indicating so.
       }
-      return this.items[0];
+      return this.items[0]; // If the queue is not empty, it returns the first element of the 'items' array, which represents the front of the queue.
     }
 
-    isEmpty() {
-      return this.items.length === 0;
+    isEmpty() { // The 'isEmpty' method checks if the queue is empty.
+      return this.items.length === 0; // It returns true if the length of the 'items' array is zero, indicating that the queue is empty; otherwise, it returns false.
     }
 
-    printQueue() {
-      let str = "";
-      for (let i = 0; i < this.items.length; i++) {
-        str += this.items[i] + " ";
+    printQueue() { // The 'printQueue' method returns a string representation of the queue.
+      let str = ""; // It initializes an empty string 'str' to hold the elements of the queue.
+      for (let i = 0; i < this.items.length; i++) { // It iterates through each element in the 'items' array using a for loop.
+        str += this.items[i] + " "; // During each iteration, it appends the current element followed by a space to the 'str' string.
       }
-      return str;
+      return str; // After the loop, it returns the constructed string representing the queue.
     }
   }
 
-  const queue = new Queue();
+  const queue = new Queue(); // Creating a new instance of the Queue class.
 
   console.log(queue.isEmpty()); // true
 
-  queue.enqueue(10);
+  queue.enqueue(10); // Adding the element 10 to the queue.
 
   console.log(queue.printQueue()); // 10
 
-  queue.enqueue(20);
+  queue.enqueue(20); // Adding the element 20 to the queue.
 
   console.log(queue.printQueue()); // 10 20
 
-  queue.enqueue(30);
+  queue.enqueue(30); // Adding the element 30 to the queue.
 
   console.log(queue.printQueue()); // 10 20 30
 
