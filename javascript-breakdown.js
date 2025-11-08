@@ -5397,12 +5397,11 @@ console.log(title);
 
   // Example 2: Fibonacci using Recursion
 
-  function fibonacci(n) {
-    if (n <= 1) {
+  function fibonacci(n) { // Function to calculate the nth Fibonacci number using recursion.
+    if (n <= 1) { // Base case: If n is 0 or 1, return n (Fibonacci(0) = 0, Fibonacci(1) = 1).
       return n;
     }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
+    return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case: Return the sum of the two preceding Fibonacci numbers. We cannot use only n - 1 + n -2 because that would just add the two numbers together without calculating the Fibonacci sequence. Adding Fibonacci(n - 1) and Fibonacci(n - 2) ensures that we are following the Fibonacci sequence definition. In this case the word Fibonacci is necessary to call the function itself recursively. So the function calls itself twice with the arguments n - 1 and n - 2, respectively, and adds the results together to get the nth Fibonacci number.}
 
   console.log(fibonacci(6)); // Output: 8
 
