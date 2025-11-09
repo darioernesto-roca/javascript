@@ -5430,26 +5430,26 @@ console.log(title);
 
   // Example 1: Binary Search Tree (BST) Implementation
 
-  class Node {
+  class Node { // Node class represents a single node in the binary search tree. It comes from the word node which means a point where lines or pathways intersect or branch; a central or connecting point. It is created to hold a value and references to its left and right child nodes.
     constructor(value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
+      this.value = value; // The 'value' parameter is assigned to the 'value' property of the node, representing the data stored in the node.
+      this.left = null; // The 'left' property is initialized to null, indicating that the node does not have a left child initially.
+      this.right = null; // The 'right' property is initialized to null, indicating that the node does not have a right child initially.
     }
   }
 
-  class BinarySearchTree {
-    constructor() {
-      this.root = null;
+  class BinarySearchTree { // BinarySearchTree class represents the binary search tree data structure itself.
+    constructor() { // The constructor method initializes the binary search tree.
+      this.root = null; // The 'root' property is initialized to null, indicating that the tree is empty initially.
     }
 
-    insert(value) {
-      const newNode = new Node(value);
+    insert(value) { // The 'insert' method is used to add a new value to the binary search tree.
+      const newNode = new Node(value); // A new instance of the Node class is created with the provided value.
 
-      if (this.root === null) {
+      if (this.root === null) { // If the tree is empty (root is null), the new node becomes the root of the tree.
         this.root = newNode;
       } else {
-        this.insertNode(this.root, newNode);
+        this.insertNode(this.root, newNode); // If the tree is not empty, the 'insertNode' method is called to find the correct position for the new node in the tree.
       }
     }
 
