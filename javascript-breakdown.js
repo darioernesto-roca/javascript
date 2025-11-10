@@ -5453,18 +5453,18 @@ console.log(title);
       }
     }
 
-    insertNode(node, newNode) {
-      if (newNode.value < node.value) {
-        if (node.left === null) {
-          node.left = newNode;
+    insertNode(node, newNode) { // The 'insertNode' method is a recursive helper function that finds the correct position for the new node in the tree.
+      if (newNode.value < node.value) { // If the value of the new node is less than the value of the current node, it should be placed in the left subtree.
+        if (node.left === null) { // If the left child of the current node is null, the new node is inserted as the left child.
+          node.left = newNode; // Assign the new node to the left child of the current node.
         } else {
-          this.insertNode(node.left, newNode);
+          this.insertNode(node.left, newNode); // If the left child is not null, the 'insertNode' method is called recursively on the left child to continue searching for the correct position.
         }
       } else {
-        if (node.right === null) {
-          node.right = newNode;
+        if (node.right === null) { // If the value of the new node is greater than or equal to the value of the current node, it should be placed in the right subtree. If the right child of the current node is null, the new node is inserted as the right child.
+          node.right = newNode; // Assign the new node to the right child of the current node.
         } else {
-          this.insertNode(node.right, newNode);
+          this.insertNode(node.right, newNode); // If the right child is not null, the 'insertNode' method is called recursively on the right child to continue searching for the correct position.
         }
       }
     }
