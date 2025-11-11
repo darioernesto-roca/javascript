@@ -4768,6 +4768,12 @@ console.log(title);
 
   dog.speak(); // "Buddy barks"
 
+  // 3.5.1 If I don't want a prototypal inheritance to happen, how can I achieve that?
+  // You can achieve that by using Object.create(null) to create an object with no prototype.
+  const objWithoutPrototype = Object.create(null);
+  console.log(Object.getPrototypeOf(objWithoutPrototype)); // null
+  
+
   //  3.6. Prototype chain: The prototype chain in JavaScript is a mechanism that allows objects to inherit properties and methods from other objects through a prototype link. It is a fundamental concept in JavaScript and is used to model relationships between objects. The prototype chain is a chain of objects linked through their prototype property, where each object inherits from its prototype object. The prototype chain enables objects to share behavior and functionality through inheritance.
 
   // Prototype chain - Examples:
