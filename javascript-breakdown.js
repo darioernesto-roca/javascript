@@ -4855,20 +4855,20 @@ console.log(title);
 
   // Example 1: Basic Class with Instance Methods
   class Car {
-    constructor(make, model, year) {
+    constructor(make, model, year) { // In this example , make, model, and year are instance variables that store data specific to each Car instance.
       this.make = make;
       this.model = model;
       this.year = year;
     }
 
     // Instance method
-    startEngine() {
-      return `${this.make} ${this.model}'s engine has started.`;
+    startEngine() { // startEngine is an instance method that returns a string indicating that the car's engine has started.
+      return `${this.make} ${this.model}'s engine has started.`; // Here, this.make and this.model refer to the instance variables of the specific Car instance.
     }
 
     // Instance method
-    displayDetails() {
-      return `Car: ${this.make} ${this.model}, Year: ${this.year}`;
+    displayDetails() { // Here, displayDetails is an instance method that returns a string containing the car's details.
+      return `Car: ${this.make} ${this.model}, Year: ${this.year}`; // Here, this.year refers to the instance variable of the specific Car instance.
     }
   }
 
@@ -4913,11 +4913,11 @@ console.log(title);
   console.log(myAccount.deposit(200)); // Output: Deposited $200. New balance: $700.
   console.log(myAccount.withdraw(100)); // Output: Withdrew $100. Remaining balance: $600.
 
-  // 5. Instance variables: Instance variables in JavaScript are properties that are defined on individual instances of a class. They store data specific to each instance and are accessible through the this keyword within instance methods. Instance variables are used to store state and data associated with individual objects created from the class. They provide a way to encapsulate data within objects and maintain separate state for each instance.
+  // 5. Instance variables: Instance variables in JavaScript are properties that are defined on individual instances of a class. They store data specific to each instance and are accessible through the this keyword within instance methods. Instance variables are used to store state and data associated with individual objects created from the class. They provide a way to encapsulate data within objects and maintain separate state for each instance. The difference between instance methods and instance variables is that instance methods are functions that define behavior and actions that can be performed on an object, while instance variables are properties that store data specific to each instance of a class.
 
   // Instance variables - Examples:
 
-  class Counter {
+  class Counter { // In this example, count is an instance variable that keeps track of the current count for each Counter instance.
     constructor() {
       this.count = 0;
     }
