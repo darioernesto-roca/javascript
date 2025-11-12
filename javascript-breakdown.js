@@ -4849,7 +4849,7 @@ console.log(title);
 
   console.log(numbers.unique()); // [1, 2, 3]
 
-  // 4. Instance methods: Instance methods in JavaScript are methods that are defined on the prototype of a class and are accessible on instances of the class. They provide behavior and functionality that can be shared across multiple instances of the class. Instance methods are used to define actions and operations that can be performed on individual objects created from the class.
+  // 4. Instance methods: Instance methods in JavaScript are methods that are defined on the prototype of a class and are accessible on instances of the class. They provide behavior and functionality that can be shared across multiple instances of the class. Instance methods are used to define actions and operations that can be performed on individual objects created from the class. In other words instance methods are functions specific to an instance of a class and can access and manipulate the instance's data and state using the this keyword.
 
   // Instance methods examples:
 
