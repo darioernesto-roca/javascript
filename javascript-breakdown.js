@@ -5959,6 +5959,32 @@ console.log(title);
     // 4. Templating System: Angular provides a powerful templating system that allows developers to define the structure and behavior of UI components using HTML and Angular-specific syntax.
     // 5. Routing: Angular has a built-in routing module that allows developers to define routes and navigate between different views in a single-page application.
     // 6. State Management: Angular provides several options for managing the state of an application, including services, RxJS, and NgRx. These tools help developers manage complex application state and handle asynchronous data streams.
+  // Steps to initialize an Angular App with Angular CLI:
+    // 1. Install Angular CLI globally:
+    // npm install -g @angular/cli
+    // 2. Create a new Angular project:
+    // ng new angular-app
+    // 3. Change directory to the project folder:
+    // cd angular-app
+    // 4. Start the development server:
+    // ng serve
+    // 5. Open the project in a web browser:
+    // http://localhost:4200
+    // After this, typically you would start building your Angular application by creating components, defining routes, managing state, and fetching data from APIs. For example:
+    // Example: Creating a simple Angular component
+    // src/app/app.component.ts file:
+    /*
+      import { Component } from '@angular/core';
+      @Component({
+        selector: 'app-root',
+        template: `
+          <div>
+            <h1>Hello, Angular!</h1>
+          </div>
+        `,
+      })
+      export class AppComponent {}
+    */
 
   // 3. Vue.js: Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable, allowing developers to use as much or as little of the framework as needed. Vue.js provides a simple and flexible API for building UI components and managing application state. It uses a virtual DOM to optimize rendering performance and provides a reactive data binding system that makes it easy to keep the UI in sync with the application state. Vue.js is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
   // Vue.js - Features:
