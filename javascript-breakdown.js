@@ -5830,13 +5830,13 @@ console.log(title);
 
   // Example 1: Fetch API
 
-  fetch("https://api.example.com/data")
+  fetch("https://api.example.com/data") // The fetch() function is called with the URL of the API endpoint as an argument. This initiates a network request to the specified URL. fetch is a built-in JavaScript function that allows you to make network requests and handle responses asynchronously.
     .then((response) => response.json())
     .then((data) => console.log(data));
 
   // Example 2: XMLHttpRequest
 
-  const xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest(); // Create a new instance of the XMLHttpRequest object. This object is used to make HTTP requests to a server and it is part of the browser's built-in API for handling network communication. The difference with fetch is that XMLHttpRequest is an older API that uses a callback-based approach for handling responses, while fetch uses promises, which provide a more modern and flexible way to work with asynchronous operations. Fetch is not a browser API per se, but a modern interface built on top of the older XMLHttpRequest API, the JavaScript object that has been available in browsers for a long time.
 
   xhr.open("GET", "https://api.example.com/data", true);
 
