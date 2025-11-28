@@ -950,8 +950,23 @@ console.log(title);
 
 
   // 4. ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
+  // The main versions of ECMAScript are:
+  // ECMAScript 1 (ES1): The first version of ECMAScript, released in 1997, established the basic syntax and features of the language.
+  // ECMAScript 2 (ES2): Released in 1998, this version made minor revisions and corrections to the ES1 specification.
+  // ECMAScript 3 (ES3): Released in 1999, ES3 introduced several new features, such as regular expressions, better string handling, and improved error handling.
+  // ECMAScript 4 (ES4): This version was never officially released due to disagreements among the JavaScript community. However, many of its proposed features were later incorporated into ES5 and ES6.
+  // ECMAScript 5 (ES5): Released in 2009, ES5 introduced several important features, such as strict mode, JSON support, and new array methods like forEach, map, filter, and reduce.
 
   // 5. ECMAScript 6 (ES6): ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced many new features to JavaScript, such as arrow functions, classes, template literals, and destructuring assignments. It was a major update to the language and laid the foundation for modern JavaScript development.
+  // Some of the key features of ES6 include:
+  // Arrow functions: A shorter syntax for writing function expressions.
+  // Classes: A new syntax for creating objects and handling inheritance.
+  // Template literals: A new way to create strings using backticks (`) and allowing for embedded expressions.
+  // Destructuring assignments: A way to extract values from arrays or objects and assign them to variables.
+  // Modules: A way to organize code into reusable modules using the import and export keywords.
+  // Promises: A new way to handle asynchronous operations in JavaScript.
+  // Let and const: New keywords for declaring variables with block scope and constants.
+
 
   // 6. Event Loop: The event loop is a fundamental concept in JavaScript that allows the runtime environment to efficiently handle asynchronous operations. It ensures that tasks are executed in the correct order and that the application remains responsive to user interactions.
 
