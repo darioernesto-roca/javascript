@@ -948,10 +948,43 @@ console.log(title);
   console.log(deepEqual([1, 2, [3, 4]], [1, 2, [4, 3]])); // false
   // Deep Equal can be particularly useful in scenarios such as testing, data validation, and state management in applications. It helps ensure that complex data structures are accurately compared for equality.
 
-
   // 4. ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
   // The main versions of ECMAScript are:
   // ECMAScript 1 (ES1): The first version of ECMAScript, released in 1997, established the basic syntax and features of the language.
+  // This is the basic ES1 syntax:
+  // var x = 5;
+  // var y = 10;
+  // var sum = x + y;
+  // console.log(sum); // Output: 15
+  // The basic methods of ES1 are:
+  // alert(): displays an alert dialog with a specified message.
+  // prompt(): displays a dialog that prompts the user for input.
+  // confirm(): displays a dialog that asks the user to confirm an action.
+  // parseInt(): converts a string to an integer.
+  // parseFloat(): converts a string to a floating-point number.
+  // isNaN(): checks if a value is NaN (Not-a-Number).
+  // eval(): evaluates a string as JavaScript code.
+  // escape(): encodes a string for use in a URL.
+  // unescape(): decodes a string that was encoded with escape().
+  // The basic objects of ES1 are:
+  // Object: the base object from which all other objects inherit.
+  // Array: a collection of values that can be accessed by index.
+  // String: a sequence of characters.
+  // Number: a numeric value.
+  // Boolean: a value that can be either true or false.
+  // Date: a representation of a date and time.
+  // Math: a collection of mathematical functions and constants.
+  // RegExp: a representation of a regular expression.
+  // Function: a callable object that can be invoked with arguments.
+  // Error: a representation of an error that can be thrown and caught.
+  // The basic control structures of ES1 are:
+  // if...else: a conditional statement that executes different code blocks based on a condition.
+  // switch: a conditional statement that executes different code blocks based on the value of an expression.
+  // for: a loop that iterates over a sequence of values.
+  // while: a loop that continues to execute as long as a condition is true.
+  // do...while: a loop that executes at least once and continues to execute as long as a condition is true.
+  // try...catch: a statement that handles exceptions and errors.
+
   // ECMAScript 2 (ES2): Released in 1998, this version made minor revisions and corrections to the ES1 specification.
   // ECMAScript 3 (ES3): Released in 1999, ES3 introduced several new features, such as regular expressions, better string handling, and improved error handling.
   // ECMAScript 4 (ES4): This version was never officially released due to disagreements among the JavaScript community. However, many of its proposed features were later incorporated into ES5 and ES6.
@@ -966,7 +999,6 @@ console.log(title);
   // Modules: A way to organize code into reusable modules using the import and export keywords.
   // Promises: A new way to handle asynchronous operations in JavaScript.
   // Let and const: New keywords for declaring variables with block scope and constants.
-
 
   // 6. Event Loop: The event loop is a fundamental concept in JavaScript that allows the runtime environment to efficiently handle asynchronous operations. It ensures that tasks are executed in the correct order and that the application remains responsive to user interactions.
 
@@ -4707,7 +4739,7 @@ console.log(title);
     class Motorcycle extends Vehicle {
       doWheelie() {
         if (this.speed > 40) {
-          console.log("Doing a wheelie!"); 
+          console.log("Doing a wheelie!");
         } else {
           console.log("Not enough speed for a wheelie.");
         }
@@ -4795,7 +4827,6 @@ console.log(title);
   // You can achieve that by using Object.create(null) to create an object with no prototype.
   const objWithoutPrototype = Object.create(null);
   console.log(Object.getPrototypeOf(objWithoutPrototype)); // null
-  
 
   //  3.6. Prototype chain: The prototype chain in JavaScript is a mechanism that allows objects to inherit properties and methods from other objects through a prototype link. It is a fundamental concept in JavaScript and is used to model relationships between objects. The prototype chain is a chain of objects linked through their prototype property, where each object inherits from its prototype object. The prototype chain enables objects to share behavior and functionality through inheritance.
 
@@ -4878,19 +4909,22 @@ console.log(title);
 
   // Example 1: Basic Class with Instance Methods
   class Car {
-    constructor(make, model, year) { // In this example , make, model, and year are instance variables that store data specific to each Car instance.
+    constructor(make, model, year) {
+      // In this example , make, model, and year are instance variables that store data specific to each Car instance.
       this.make = make;
       this.model = model;
       this.year = year;
     }
 
     // Instance method
-    startEngine() { // startEngine is an instance method that returns a string indicating that the car's engine has started.
+    startEngine() {
+      // startEngine is an instance method that returns a string indicating that the car's engine has started.
       return `${this.make} ${this.model}'s engine has started.`; // Here, this.make and this.model refer to the instance variables of the specific Car instance.
     }
 
     // Instance method
-    displayDetails() { // Here, displayDetails is an instance method that returns a string containing the car's details.
+    displayDetails() {
+      // Here, displayDetails is an instance method that returns a string containing the car's details.
       return `Car: ${this.make} ${this.model}, Year: ${this.year}`; // Here, this.year refers to the instance variable of the specific Car instance.
     }
   }
@@ -4940,7 +4974,8 @@ console.log(title);
 
   // Instance variables - Examples:
 
-  class Counter { // In this example, count is an instance variable that keeps track of the current count for each Counter instance.
+  class Counter {
+    // In this example, count is an instance variable that keeps track of the current count for each Counter instance.
     constructor() {
       this.count = 0;
     }
@@ -5277,17 +5312,23 @@ console.log(title);
 
   // Another example of stack - Expression evaluation using stack:
 
-  function evaluatePostfix(expression) { // In this line expression is a string containing a postfix expression.
+  function evaluatePostfix(expression) {
+    // In this line expression is a string containing a postfix expression.
     const stack = new Stack(); // Create a new instance of the Stack class to hold operands during evaluation.
     const tokens = expression.split(" "); // Split the expression into individual tokens (operands and operators) based on spaces.
-    tokens.forEach((token) => { // Iterate through each token in the expression.
-      if (!isNaN(token)) { // Check if the token is a number (operand). !isNaN() returns true if the token is not a number.
+    tokens.forEach((token) => {
+      // Iterate through each token in the expression.
+      if (!isNaN(token)) {
+        // Check if the token is a number (operand). !isNaN() returns true if the token is not a number.
         stack.push(parseInt(token)); // If it's a number, convert it to an integer and push it onto the stack.
-      } else { // If the token is an operator (+, -, *, /), pop the top two operands from the stack.
+      } else {
+        // If the token is an operator (+, -, *, /), pop the top two operands from the stack.
         const b = stack.pop(); // Pop the second operand from the stack.
         const a = stack.pop(); // Pop the first operand from the stack.
         let result; // Initialize a variable to hold the result of the operation.
-        switch (token) { // Perform the operation based on the operator token.
+        switch (
+          token // Perform the operation based on the operator token.
+        ) {
           case "+":
             result = a + b;
             break;
@@ -5316,36 +5357,46 @@ console.log(title);
 
   // Queue Data Structure - Examples:
 
-  class Queue { // Defining a Queue class to represent a queue data structure.
-    constructor() { // The constructor method initializes the queue. The constructor is necessary to set up the initial state of the queue when a new instance is created.  The constructor is called automatically when a new object of the class is instantiated. Without a constructor, the queue would not have an internal storage mechanism to hold its elements.
+  class Queue {
+    // Defining a Queue class to represent a queue data structure.
+    constructor() {
+      // The constructor method initializes the queue. The constructor is necessary to set up the initial state of the queue when a new instance is created.  The constructor is called automatically when a new object of the class is instantiated. Without a constructor, the queue would not have an internal storage mechanism to hold its elements.
       this.items = []; // An array named 'items' is created to hold the elements of the queue.
     }
 
-    enqueue(element) { // The 'enqueue' method adds an element to the rear of the queue.
+    enqueue(element) {
+      // The 'enqueue' method adds an element to the rear of the queue.
       this.items.push(element); // The 'push' method of the array is used to add the element to the end of the 'items' array.
     }
 
-    dequeue() { // The 'dequeue' method removes and returns the front element of the queue.
-      if (this.items.length === 0) { // It first checks if the queue is empty by checking the length of the 'items' array.
+    dequeue() {
+      // The 'dequeue' method removes and returns the front element of the queue.
+      if (this.items.length === 0) {
+        // It first checks if the queue is empty by checking the length of the 'items' array.
         return "Underflow"; // If the queue is empty, it returns the string "Underflow" to indicate that there are no elements to dequeue.
       }
       return this.items.shift(); // If the queue is not empty, it uses the 'shift' method of the array to remove and return the first element from the 'items' array.
     }
 
-    front() { // The 'front' method returns the front element of the queue without removing it.
-      if (this.items.length === 0) { // It first checks if the queue is empty.
+    front() {
+      // The 'front' method returns the front element of the queue without removing it.
+      if (this.items.length === 0) {
+        // It first checks if the queue is empty.
         return "No elements in Queue"; // If the queue is empty, it returns a message indicating so.
       }
       return this.items[0]; // If the queue is not empty, it returns the first element of the 'items' array, which represents the front of the queue.
     }
 
-    isEmpty() { // The 'isEmpty' method checks if the queue is empty.
+    isEmpty() {
+      // The 'isEmpty' method checks if the queue is empty.
       return this.items.length === 0; // It returns true if the length of the 'items' array is zero, indicating that the queue is empty; otherwise, it returns false.
     }
 
-    printQueue() { // The 'printQueue' method returns a string representation of the queue.
+    printQueue() {
+      // The 'printQueue' method returns a string representation of the queue.
       let str = ""; // It initializes an empty string 'str' to hold the elements of the queue.
-      for (let i = 0; i < this.items.length; i++) { // It iterates through each element in the 'items' array using a for loop.
+      for (let i = 0; i < this.items.length; i++) {
+        // It iterates through each element in the 'items' array using a for loop.
         str += this.items[i] + " "; // During each iteration, it appends the current element followed by a space to the 'str' string.
       }
       return str; // After the loop, it returns the constructed string representing the queue.
@@ -5426,366 +5477,379 @@ console.log(title);
 
   // Example 2: Fibonacci using Recursion
 
-  function fibonacci(n) { // Function to calculate the nth Fibonacci number using recursion.
-    if (n <= 1) { // Base case: If n is 0 or 1, return n (Fibonacci(0) = 0, Fibonacci(1) = 1).
+  function fibonacci(n) {
+    // Function to calculate the nth Fibonacci number using recursion.
+    if (n <= 1) {
+      // Base case: If n is 0 or 1, return n (Fibonacci(0) = 0, Fibonacci(1) = 1).
       return n;
     }
     return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case: Return the sum of the two preceding Fibonacci numbers. We cannot use only n - 1 + n -2 because that would just add the two numbers together without calculating the Fibonacci sequence. Adding Fibonacci(n - 1) and Fibonacci(n - 2) ensures that we are following the Fibonacci sequence definition. In this case the word Fibonacci is necessary to call the function itself recursively. So the function calls itself twice with the arguments n - 1 and n - 2, respectively, and adds the results together to get the nth Fibonacci number.}
 
-  console.log(fibonacci(6)); // Output: 8
+    console.log(fibonacci(6)); // Output: 8
 
-  // Real cases of use:
+    // Real cases of use:
 
-  // Recursion - Traversing a directory structure in a file system:
+    // Recursion - Traversing a directory structure in a file system:
 
-  function traverseDirectory(directory) {
-    const files = directory.getFiles();
-    files.forEach((file) => {
-      if (file.isDirectory()) {
-        traverseDirectory(file);
-      } else {
-        console.log(file.getName());
-      }
-    });
-  }
-
-  const rootDirectory = new Directory("root");
-
-  traverseDirectory(rootDirectory);
-
-  // 4. Binary Tree Algorithms for Technical Interviews: Binary trees are a fundamental data structure in computer science used to represent hierarchical relationships between elements. They consist of nodes, each with a value and two child nodes (left and right). Binary trees are commonly used in algorithms and data structures, such as binary search trees, binary heaps, and expression trees. Understanding binary trees and their algorithms is essential for technical interviews in software engineering and computer science.
-
-  // Binary Tree Algorithms for Technical Interviews - Examples:
-
-  // Example 1: Binary Search Tree (BST) Implementation
-
-  class Node { // Node class represents a single node in the binary search tree. It comes from the word node which means a point where lines or pathways intersect or branch; a central or connecting point. It is created to hold a value and references to its left and right child nodes.
-    constructor(value) {
-      this.value = value; // The 'value' parameter is assigned to the 'value' property of the node, representing the data stored in the node.
-      this.left = null; // The 'left' property is initialized to null, indicating that the node does not have a left child initially.
-      this.right = null; // The 'right' property is initialized to null, indicating that the node does not have a right child initially.
-    }
-  }
-
-  class BinarySearchTree { // BinarySearchTree class represents the binary search tree data structure itself.
-    constructor() { // The constructor method initializes the binary search tree.
-      this.root = null; // The 'root' property is initialized to null, indicating that the tree is empty initially.
-    }
-
-    insert(value) { // The 'insert' method is used to add a new value to the binary search tree.
-      const newNode = new Node(value); // A new instance of the Node class is created with the provided value.
-
-      if (this.root === null) { // If the tree is empty (root is null), the new node becomes the root of the tree.
-        this.root = newNode;
-      } else {
-        this.insertNode(this.root, newNode); // If the tree is not empty, the 'insertNode' method is called to find the correct position for the new node in the tree.
-      }
-    }
-
-    insertNode(node, newNode) { // The 'insertNode' method is a recursive helper function that finds the correct position for the new node in the tree.
-      if (newNode.value < node.value) { // If the value of the new node is less than the value of the current node, it should be placed in the left subtree.
-        if (node.left === null) { // If the left child of the current node is null, the new node is inserted as the left child.
-          node.left = newNode; // Assign the new node to the left child of the current node.
+    function traverseDirectory(directory) {
+      const files = directory.getFiles();
+      files.forEach((file) => {
+        if (file.isDirectory()) {
+          traverseDirectory(file);
         } else {
-          this.insertNode(node.left, newNode); // If the left child is not null, the 'insertNode' method is called recursively on the left child to continue searching for the correct position.
+          console.log(file.getName());
         }
-      } else {
-        if (node.right === null) { // If the value of the new node is greater than or equal to the value of the current node, it should be placed in the right subtree. If the right child of the current node is null, the new node is inserted as the right child.
-          node.right = newNode; // Assign the new node to the right child of the current node.
+      });
+    }
+
+    const rootDirectory = new Directory("root");
+
+    traverseDirectory(rootDirectory);
+
+    // 4. Binary Tree Algorithms for Technical Interviews: Binary trees are a fundamental data structure in computer science used to represent hierarchical relationships between elements. They consist of nodes, each with a value and two child nodes (left and right). Binary trees are commonly used in algorithms and data structures, such as binary search trees, binary heaps, and expression trees. Understanding binary trees and their algorithms is essential for technical interviews in software engineering and computer science.
+
+    // Binary Tree Algorithms for Technical Interviews - Examples:
+
+    // Example 1: Binary Search Tree (BST) Implementation
+
+    class Node {
+      // Node class represents a single node in the binary search tree. It comes from the word node which means a point where lines or pathways intersect or branch; a central or connecting point. It is created to hold a value and references to its left and right child nodes.
+      constructor(value) {
+        this.value = value; // The 'value' parameter is assigned to the 'value' property of the node, representing the data stored in the node.
+        this.left = null; // The 'left' property is initialized to null, indicating that the node does not have a left child initially.
+        this.right = null; // The 'right' property is initialized to null, indicating that the node does not have a right child initially.
+      }
+    }
+
+    class BinarySearchTree {
+      // BinarySearchTree class represents the binary search tree data structure itself.
+      constructor() {
+        // The constructor method initializes the binary search tree.
+        this.root = null; // The 'root' property is initialized to null, indicating that the tree is empty initially.
+      }
+
+      insert(value) {
+        // The 'insert' method is used to add a new value to the binary search tree.
+        const newNode = new Node(value); // A new instance of the Node class is created with the provided value.
+
+        if (this.root === null) {
+          // If the tree is empty (root is null), the new node becomes the root of the tree.
+          this.root = newNode;
         } else {
-          this.insertNode(node.right, newNode); // If the right child is not null, the 'insertNode' method is called recursively on the right child to continue searching for the correct position.
+          this.insertNode(this.root, newNode); // If the tree is not empty, the 'insertNode' method is called to find the correct position for the new node in the tree.
         }
       }
-    }
 
-    search(value) {
-      return this.searchNode(this.root, value);
-    }
-
-    searchNode(node, value) {
-      if (node === null) {
-        return false;
-      }
-
-      if (value < node.value) {
-        return this.searchNode(node.left, value);
-      } else if (value > node.value) {
-        return this.searchNode(node.right, value);
-      } else {
-        return true;
-      }
-    }
-  }
-
-  const bst = new BinarySearchTree();
-
-  bst.insert(10);
-  bst.insert(5);
-  bst.insert(15);
-  bst.insert(3);
-  bst.insert(7);
-
-  console.log(bst.search(7)); // Output: true
-
-  console.log(bst.search(20)); // Output: false
-
-  // Example 2: Depth-First Search (DFS) Algorithm
-
-  class NodeDFS {
-    constructor(value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
-    }
-  }
-
-  class BinaryTreeDFS {
-    constructor() {
-      this.root = null;
-    }
-
-    dfsInOrder() {
-      const result = [];
-
-      function traverse(node) {
-        if (node.left) traverse(node.left);
-        result.push(node.value);
-        if (node.right) traverse(node.right);
-      }
-
-      traverse(this.root);
-
-      return result;
-    }
-  }
-
-  const btdfs = new BinaryTreeDFS();
-
-  btdfs.root = new NodeDFS(10);
-  btdfs.root.left = new NodeDFS(5);
-  btdfs.root.right = new NodeDFS(15);
-  btdfs.root.left.left = new NodeDFS(3);
-  btdfs.root.left.right = new NodeDFS(7);
-
-  console.log(btdfs.dfsInOrder()); // Output: [3, 5, 7, 10, 15]
-
-  // Real cases of use:
-
-  // Binary Tree Algorithms for Technical Interviews - Implementing a binary search tree in a search algorithm:
-
-  class BinarySearchTreeSearch {
-    constructor() {
-      this.root = null;
-    }
-
-    insert(value) {
-      const newNode = new Node(value);
-
-      if (this.root === null) {
-        this.root = newNode;
-      } else {
-        this.insertNode(this.root, newNode);
-      }
-    }
-
-    insertNode(node, newNode) {
-      if (newNode.value < node.value) {
-        if (node.left === null) {
-          node.left = newNode;
-        } else {
-          this.insertNode(node.left, newNode);
-        }
-      } else {
-        if (node.right === null) {
-          node.right = newNode;
-        } else {
-          this.insertNode(node.right, newNode);
-        }
-      }
-    }
-
-    search(value) {
-      return this.searchNode(this.root, value);
-    }
-
-    searchNode(node, value) {
-      if (node === null) {
-        return false;
-      }
-
-      if (value < node.value) {
-        return this.searchNode(node.left, value);
-      } else if (value > node.value) {
-        return this.searchNode(node.right, value);
-      } else {
-        return true;
-      }
-    }
-  }
-
-  const bstSearch = new BinarySearchTreeSearch();
-
-  bstSearch.insert(10);
-  bstSearch.insert(5);
-  bstSearch.insert(15);
-  bstSearch.insert(3);
-  bstSearch.insert(7);
-
-  console.log(bstSearch.search(7)); // true
-
-  // 5. Graph Algorithms for Technical Interviews: Graphs are a fundamental data structure in computer science used to represent relationships between elements. They consist of nodes (vertices) connected by edges (links). Graphs are commonly used in algorithms and data structures, such as depth-first search, breadth-first search, and shortest path algorithms. Understanding graphs and their algorithms is essential for technical interviews in software engineering and computer science.
-
-  // Graph Algorithms for Technical Interviews - Examples:
-
-  // Example 1: Depth-First Search (DFS) Algorithm
-
-  class GraphDFS {
-    constructor() {
-      this.adjacencyList = {};
-    }
-
-    addVertex(vertex) {
-      if (!this.adjacencyList[vertex]) {
-        this.adjacencyList[vertex] = [];
-      }
-    }
-
-    addEdge(vertex1, vertex2) {
-      this.adjacencyList[vertex1].push(vertex2);
-      this.adjacencyList[vertex2].push(vertex1);
-    }
-
-    dfs(startingVertex) {
-      const result = [];
-      const visited = {};
-
-      const dfsHelper = (vertex) => {
-        if (!vertex) {
-          return null;
-        }
-
-        visited[vertex] = true;
-        result.push(vertex);
-
-        this.adjacencyList[vertex].forEach((neighbor) => {
-          if (!visited[neighbor]) {
-            return dfsHelper(neighbor);
+      insertNode(node, newNode) {
+        // The 'insertNode' method is a recursive helper function that finds the correct position for the new node in the tree.
+        if (newNode.value < node.value) {
+          // If the value of the new node is less than the value of the current node, it should be placed in the left subtree.
+          if (node.left === null) {
+            // If the left child of the current node is null, the new node is inserted as the left child.
+            node.left = newNode; // Assign the new node to the left child of the current node.
+          } else {
+            this.insertNode(node.left, newNode); // If the left child is not null, the 'insertNode' method is called recursively on the left child to continue searching for the correct position.
           }
-        });
-      };
-
-      dfsHelper(startingVertex);
-
-      return result;
-    }
-  }
-
-  const graphDFS = new GraphDFS();
-
-  graphDFS.addVertex("A");
-  graphDFS.addVertex("B");
-  graphDFS.addVertex("C");
-  graphDFS.addVertex("D");
-  graphDFS.addVertex("E");
-  graphDFS.addVertex("F");
-
-  graphDFS.addEdge("A", "B");
-  graphDFS.addEdge("A", "C");
-  graphDFS.addEdge("B", "D");
-  graphDFS.addEdge("C", "E");
-  graphDFS.addEdge("D", "E");
-  graphDFS.addEdge("D", "F");
-  graphDFS.addEdge("E", "F");
-
-  console.log(graphDFS.dfs("A")); // Output: ["A", "B", "D", "E", "C", "F"]
-
-  // 6. Dynamic Programming: Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is a powerful technique used in algorithms and computer science to optimize the time and space complexity of solutions. Dynamic programming is commonly used in problems that involve overlapping subproblems and optimal substructure. It is essential for technical interviews in software engineering and computer science.
-
-  // Dynamic Programming - Examples:
-
-  // Example 1: Fibonacci using Dynamic Programming
-
-  function fibonacciDP(n) {
-    const fib = [0, 1];
-
-    for (let i = 2; i <= n; i++) {
-      fib[i] = fib[i - 1] + fib[i - 2];
-    }
-
-    return fib[n];
-  }
-
-  console.log(fibonacciDP(6)); // Output: 8
-  console.log(fibonacciDP(50)); // Output: 12586269025
-
-  // Example 2: Longest Common Subsequence (LCS) using Dynamic Programming
-
-  function lcsDP(str1, str2) {
-    const m = str1.length;
-    const n = str2.length;
-    const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
-
-    for (let i = 1; i <= m; i++) {
-      for (let j = 1; j <= n; j++) {
-        if (str1[i - 1] === str2[j - 1]) {
-          dp[i][j] = dp[i - 1][j - 1] + 1;
         } else {
-          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+          if (node.right === null) {
+            // If the value of the new node is greater than or equal to the value of the current node, it should be placed in the right subtree. If the right child of the current node is null, the new node is inserted as the right child.
+            node.right = newNode; // Assign the new node to the right child of the current node.
+          } else {
+            this.insertNode(node.right, newNode); // If the right child is not null, the 'insertNode' method is called recursively on the right child to continue searching for the correct position.
+          }
+        }
+      }
+
+      search(value) {
+        return this.searchNode(this.root, value);
+      }
+
+      searchNode(node, value) {
+        if (node === null) {
+          return false;
+        }
+
+        if (value < node.value) {
+          return this.searchNode(node.left, value);
+        } else if (value > node.value) {
+          return this.searchNode(node.right, value);
+        } else {
+          return true;
         }
       }
     }
 
-    return dp[m][n];
-  }
+    const bst = new BinarySearchTree();
 
-  console.log(lcsDP("AGGTAB", "GXTXAYB")); // Output: 4
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
 
-  // Real cases of use:
+    console.log(bst.search(7)); // Output: true
 
-  // Dynamic Programming - Solving the knapsack problem in a shopping application:
+    console.log(bst.search(20)); // Output: false
 
-  function knapsackDP(capacity, weights, values, n) {
-    const dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
+    // Example 2: Depth-First Search (DFS) Algorithm
 
-    for (let i = 1; i <= n; i++) {
-      for (let w = 1; w <= capacity; w++) {
-        if (weights[i - 1] <= w) {
-          dp[i][w] = Math.max(
-            values[i - 1] + dp[i - 1][w - weights[i - 1]],
-            dp[i - 1][w]
-          );
+    class NodeDFS {
+      constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+      }
+    }
+
+    class BinaryTreeDFS {
+      constructor() {
+        this.root = null;
+      }
+
+      dfsInOrder() {
+        const result = [];
+
+        function traverse(node) {
+          if (node.left) traverse(node.left);
+          result.push(node.value);
+          if (node.right) traverse(node.right);
+        }
+
+        traverse(this.root);
+
+        return result;
+      }
+    }
+
+    const btdfs = new BinaryTreeDFS();
+
+    btdfs.root = new NodeDFS(10);
+    btdfs.root.left = new NodeDFS(5);
+    btdfs.root.right = new NodeDFS(15);
+    btdfs.root.left.left = new NodeDFS(3);
+    btdfs.root.left.right = new NodeDFS(7);
+
+    console.log(btdfs.dfsInOrder()); // Output: [3, 5, 7, 10, 15]
+
+    // Real cases of use:
+
+    // Binary Tree Algorithms for Technical Interviews - Implementing a binary search tree in a search algorithm:
+
+    class BinarySearchTreeSearch {
+      constructor() {
+        this.root = null;
+      }
+
+      insert(value) {
+        const newNode = new Node(value);
+
+        if (this.root === null) {
+          this.root = newNode;
         } else {
-          dp[i][w] = dp[i - 1][w];
+          this.insertNode(this.root, newNode);
+        }
+      }
+
+      insertNode(node, newNode) {
+        if (newNode.value < node.value) {
+          if (node.left === null) {
+            node.left = newNode;
+          } else {
+            this.insertNode(node.left, newNode);
+          }
+        } else {
+          if (node.right === null) {
+            node.right = newNode;
+          } else {
+            this.insertNode(node.right, newNode);
+          }
+        }
+      }
+
+      search(value) {
+        return this.searchNode(this.root, value);
+      }
+
+      searchNode(node, value) {
+        if (node === null) {
+          return false;
+        }
+
+        if (value < node.value) {
+          return this.searchNode(node.left, value);
+        } else if (value > node.value) {
+          return this.searchNode(node.right, value);
+        } else {
+          return true;
         }
       }
     }
 
-    return dp[n][capacity];
-  }
+    const bstSearch = new BinarySearchTreeSearch();
 
-  const capacity = 50;
-  const weights = [10, 20, 30];
-  const values = [60, 100, 120];
+    bstSearch.insert(10);
+    bstSearch.insert(5);
+    bstSearch.insert(15);
+    bstSearch.insert(3);
+    bstSearch.insert(7);
 
-  console.log(knapsackDP(capacity, weights, values, weights.length)); // Output: 220
+    console.log(bstSearch.search(7)); // true
 
-  // 7. Structured data: Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general. It is also coded using in-page markup on the page that the information applies to.
+    // 5. Graph Algorithms for Technical Interviews: Graphs are a fundamental data structure in computer science used to represent relationships between elements. They consist of nodes (vertices) connected by edges (links). Graphs are commonly used in algorithms and data structures, such as depth-first search, breadth-first search, and shortest path algorithms. Understanding graphs and their algorithms is essential for technical interviews in software engineering and computer science.
 
-  // Structured data - Examples:
+    // Graph Algorithms for Technical Interviews - Examples:
 
-  // Example 1: JSON (JavaScript Object Notation)
+    // Example 1: Depth-First Search (DFS) Algorithm
 
-  const person = {
-    name: "Alice",
-    age: 30,
-    city: "New York",
-  };
+    class GraphDFS {
+      constructor() {
+        this.adjacencyList = {};
+      }
 
-  console.log(JSON.stringify(person)); // Output: {"name":"Alice","age":30,"city":"New York"}
+      addVertex(vertex) {
+        if (!this.adjacencyList[vertex]) {
+          this.adjacencyList[vertex] = [];
+        }
+      }
 
-  // Example 2: XML (Extensible Markup Language)
+      addEdge(vertex1, vertex2) {
+        this.adjacencyList[vertex1].push(vertex2);
+        this.adjacencyList[vertex2].push(vertex1);
+      }
 
-  const xml = `
+      dfs(startingVertex) {
+        const result = [];
+        const visited = {};
+
+        const dfsHelper = (vertex) => {
+          if (!vertex) {
+            return null;
+          }
+
+          visited[vertex] = true;
+          result.push(vertex);
+
+          this.adjacencyList[vertex].forEach((neighbor) => {
+            if (!visited[neighbor]) {
+              return dfsHelper(neighbor);
+            }
+          });
+        };
+
+        dfsHelper(startingVertex);
+
+        return result;
+      }
+    }
+
+    const graphDFS = new GraphDFS();
+
+    graphDFS.addVertex("A");
+    graphDFS.addVertex("B");
+    graphDFS.addVertex("C");
+    graphDFS.addVertex("D");
+    graphDFS.addVertex("E");
+    graphDFS.addVertex("F");
+
+    graphDFS.addEdge("A", "B");
+    graphDFS.addEdge("A", "C");
+    graphDFS.addEdge("B", "D");
+    graphDFS.addEdge("C", "E");
+    graphDFS.addEdge("D", "E");
+    graphDFS.addEdge("D", "F");
+    graphDFS.addEdge("E", "F");
+
+    console.log(graphDFS.dfs("A")); // Output: ["A", "B", "D", "E", "C", "F"]
+
+    // 6. Dynamic Programming: Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is a powerful technique used in algorithms and computer science to optimize the time and space complexity of solutions. Dynamic programming is commonly used in problems that involve overlapping subproblems and optimal substructure. It is essential for technical interviews in software engineering and computer science.
+
+    // Dynamic Programming - Examples:
+
+    // Example 1: Fibonacci using Dynamic Programming
+
+    function fibonacciDP(n) {
+      const fib = [0, 1];
+
+      for (let i = 2; i <= n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+      }
+
+      return fib[n];
+    }
+
+    console.log(fibonacciDP(6)); // Output: 8
+    console.log(fibonacciDP(50)); // Output: 12586269025
+
+    // Example 2: Longest Common Subsequence (LCS) using Dynamic Programming
+
+    function lcsDP(str1, str2) {
+      const m = str1.length;
+      const n = str2.length;
+      const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          if (str1[i - 1] === str2[j - 1]) {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+          } else {
+            dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+          }
+        }
+      }
+
+      return dp[m][n];
+    }
+
+    console.log(lcsDP("AGGTAB", "GXTXAYB")); // Output: 4
+
+    // Real cases of use:
+
+    // Dynamic Programming - Solving the knapsack problem in a shopping application:
+
+    function knapsackDP(capacity, weights, values, n) {
+      const dp = Array.from({ length: n + 1 }, () =>
+        Array(capacity + 1).fill(0)
+      );
+
+      for (let i = 1; i <= n; i++) {
+        for (let w = 1; w <= capacity; w++) {
+          if (weights[i - 1] <= w) {
+            dp[i][w] = Math.max(
+              values[i - 1] + dp[i - 1][w - weights[i - 1]],
+              dp[i - 1][w]
+            );
+          } else {
+            dp[i][w] = dp[i - 1][w];
+          }
+        }
+      }
+
+      return dp[n][capacity];
+    }
+
+    const capacity = 50;
+    const weights = [10, 20, 30];
+    const values = [60, 100, 120];
+
+    console.log(knapsackDP(capacity, weights, values, weights.length)); // Output: 220
+
+    // 7. Structured data: Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general. It is also coded using in-page markup on the page that the information applies to.
+
+    // Structured data - Examples:
+
+    // Example 1: JSON (JavaScript Object Notation)
+
+    const person = {
+      name: "Alice",
+      age: 30,
+      city: "New York",
+    };
+
+    console.log(JSON.stringify(person)); // Output: {"name":"Alice","age":30,"city":"New York"}
+
+    // Example 2: XML (Extensible Markup Language)
+
+    const xml = `
     <person>
       <name>Alice</name>
       <age>30</age>
@@ -5793,13 +5857,13 @@ console.log(title);
     </person>
     `;
 
-  console.log(xml);
+    console.log(xml);
 
-  // Real cases of use:
+    // Real cases of use:
 
-  // Structured data - Adding schema markup to a web page for search engine optimization (SEO):
+    // Structured data - Adding schema markup to a web page for search engine optimization (SEO):
 
-  /* <script type="application/ld+json">
+    /* <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -5809,160 +5873,160 @@ console.log(title);
     }
     </script>*/
 
-  // 8. JSON: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). JSON is language-independent and can be parsed and generated by many programming languages, including JavaScript, Python, and Java.
+    // 8. JSON: JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). JSON is language-independent and can be parsed and generated by many programming languages, including JavaScript, Python, and Java.
 
-  // JSON - Examples:
+    // JSON - Examples:
 
-  // Example 1: JSON Object
+    // Example 1: JSON Object
 
-  const personJSON = `{
+    const personJSON = `{
       "name": "Alice",
       "age": 30,
       "city": "New York"
     }`;
 
-  const personObject = JSON.parse(personJSON);
+    const personObject = JSON.parse(personJSON);
 
-  console.log(personObject.name); // Output: "Alice"
+    console.log(personObject.name); // Output: "Alice"
 
-  // Example 2: JSON Array
+    // Example 2: JSON Array
 
-  const fruitsJSON = `["Apple", "Banana", "Orange"]`;
+    const fruitsJSON = `["Apple", "Banana", "Orange"]`;
 
-  const fruitsArray = JSON.parse(fruitsJSON);
+    const fruitsArray = JSON.parse(fruitsJSON);
 
-  console.log(fruitsArray[0]); // Output: "Apple"
+    console.log(fruitsArray[0]); // Output: "Apple"
 
-  // Real cases of use:
+    // Real cases of use:
 
-  // JSON - Fetching and parsing JSON data from an API in a web application:
+    // JSON - Fetching and parsing JSON data from an API in a web application:
 
-  /* fetch("https://api.example.com/data")
+    /* fetch("https://api.example.com/data")
     .then(response => response.json())
     .then(data => console.log(data)); */
 
-  // 9. Indexed collections: Indexed collections are data structures that store elements in a specific order and allow for efficient access to elements by their index. Common examples of indexed collections include arrays and strings. Indexed collections are used in programming for storing and accessing data in a structured manner.
+    // 9. Indexed collections: Indexed collections are data structures that store elements in a specific order and allow for efficient access to elements by their index. Common examples of indexed collections include arrays and strings. Indexed collections are used in programming for storing and accessing data in a structured manner.
 
-  // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
-}
+    // Indexed collections - Examples: Array, String, TypedArray, Map, Set, WeakMap, WeakSet, ArrayBuffer, SharedArrayBuffer, DataView, Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
+  }
 
-/* 17.Working with APIs */
+  /* 17.Working with APIs */
 
-{
-  // 1. Making network requests with JavaScript: JavaScript provides several ways to make network requests to APIs and servers. The most common methods for making network requests in JavaScript are the Fetch API and XMLHttpRequest. These methods allow you to send HTTP requests to servers, retrieve data, and handle responses asynchronously. Another very common task in modern websites and applications is making network requests to retrieve individual data items from the server to update sections of a webpage without having to load an entire new page. This seemingly small detail has had a huge impact on the performance and behavior of sites, so in this article, we'll explain the concept and look at technologies that make it possible: in particular, the Fetch API.
+  {
+    // 1. Making network requests with JavaScript: JavaScript provides several ways to make network requests to APIs and servers. The most common methods for making network requests in JavaScript are the Fetch API and XMLHttpRequest. These methods allow you to send HTTP requests to servers, retrieve data, and handle responses asynchronously. Another very common task in modern websites and applications is making network requests to retrieve individual data items from the server to update sections of a webpage without having to load an entire new page. This seemingly small detail has had a huge impact on the performance and behavior of sites, so in this article, we'll explain the concept and look at technologies that make it possible: in particular, the Fetch API.
 
-  // Example 1: Fetch API
+    // Example 1: Fetch API
 
-  fetch("https://api.example.com/data") // The fetch() function is called with the URL of the API endpoint as an argument. This initiates a network request to the specified URL. fetch is a built-in JavaScript function that allows you to make network requests and handle responses asynchronously.
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    fetch("https://api.example.com/data") // The fetch() function is called with the URL of the API endpoint as an argument. This initiates a network request to the specified URL. fetch is a built-in JavaScript function that allows you to make network requests and handle responses asynchronously.
+      .then((response) => response.json())
+      .then((data) => console.log(data));
 
-  // Example 2: XMLHttpRequest
+    // Example 2: XMLHttpRequest
 
-  const xhr = new XMLHttpRequest(); // Create a new instance of the XMLHttpRequest object. This object is used to make HTTP requests to a server and it is part of the browser's built-in API for handling network communication. The difference with fetch is that XMLHttpRequest is an older API that uses a callback-based approach for handling responses, while fetch uses promises, which provide a more modern and flexible way to work with asynchronous operations. Fetch is not a browser API per se, but a modern interface built on top of the older XMLHttpRequest API, the JavaScript object that has been available in browsers for a long time.
+    const xhr = new XMLHttpRequest(); // Create a new instance of the XMLHttpRequest object. This object is used to make HTTP requests to a server and it is part of the browser's built-in API for handling network communication. The difference with fetch is that XMLHttpRequest is an older API that uses a callback-based approach for handling responses, while fetch uses promises, which provide a more modern and flexible way to work with asynchronous operations. Fetch is not a browser API per se, but a modern interface built on top of the older XMLHttpRequest API, the JavaScript object that has been available in browsers for a long time.
 
-  xhr.open("GET", "https://api.example.com/data", true);
+    xhr.open("GET", "https://api.example.com/data", true);
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
-    }
-  };
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+      }
+    };
 
-  xhr.send();
+    xhr.send();
 
-  // 2. Fetch API: The Fetch API provides a modern way to make network requests in JavaScript. It is a promise-based API that allows you to send HTTP requests and handle responses asynchronously. The Fetch API is supported by all modern browsers and provides a more flexible and powerful alternative to the older XMLHttpRequest object. The Fetch API supports various HTTP methods, headers, and request options, making it easy to work with APIs and servers.
+    // 2. Fetch API: The Fetch API provides a modern way to make network requests in JavaScript. It is a promise-based API that allows you to send HTTP requests and handle responses asynchronously. The Fetch API is supported by all modern browsers and provides a more flexible and powerful alternative to the older XMLHttpRequest object. The Fetch API supports various HTTP methods, headers, and request options, making it easy to work with APIs and servers.
 
-  // Fetch API - Examples:
+    // Fetch API - Examples:
 
-  // Example 1: Fetching JSON data
+    // Example 1: Fetching JSON data
 
-  fetch("https://api.example.com/data")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    fetch("https://api.example.com/data")
+      .then((response) => response.json())
+      .then((data) => console.log(data));
 
-  // Example 2: Fetching text data
+    // Example 2: Fetching text data
 
-  fetch("https://api.example.com/text")
-    .then((response) => response.text())
-    .then((data) => console.log(data));
+    fetch("https://api.example.com/text")
+      .then((response) => response.text())
+      .then((data) => console.log(data));
 
-  // Example 3: Fetching binary data
+    // Example 3: Fetching binary data
 
-  fetch("https://api.example.com/image")
-    .then((response) => response.blob())
-    .then((data) => console.log(data));
+    fetch("https://api.example.com/image")
+      .then((response) => response.blob())
+      .then((data) => console.log(data));
 
-  // 3. XMLHttpRequest: The XMLHttpRequest object is a built-in JavaScript object that allows you to make network requests to servers. It is commonly used to send and receive data from APIs and servers asynchronously. The XMLHttpRequest object provides methods and properties for configuring and sending HTTP requests, handling responses, and working with server data. While the Fetch API is the modern and recommended way to make network requests in JavaScript, the XMLHttpRequest object is still widely used and supported in web browsers.
-}
+    // 3. XMLHttpRequest: The XMLHttpRequest object is a built-in JavaScript object that allows you to make network requests to servers. It is commonly used to send and receive data from APIs and servers asynchronously. The XMLHttpRequest object provides methods and properties for configuring and sending HTTP requests, handling responses, and working with server data. While the Fetch API is the modern and recommended way to make network requests in JavaScript, the XMLHttpRequest object is still widely used and supported in web browsers.
+  }
 
-/* 18. Memory Management */
+  /* 18. Memory Management */
 
-{
-  // 1. Memory Management: Memory management is the process of managing computer memory resources, including allocating and deallocating memory for data storage and ensuring efficient use of memory. In JavaScript, memory management is primarily handled by the JavaScript engine, which automatically allocates and frees memory as needed. However, developers can also optimize memory usage in their applications by following best practices and using tools to monitor memory consumption. Low-level languages like C, have manual memory management primitives such as malloc() and free(). In contrast, JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection). This automaticity is a potential source of confusion: it can give developers the false impression that they don’t need to worry about memory management.
+  {
+    // 1. Memory Management: Memory management is the process of managing computer memory resources, including allocating and deallocating memory for data storage and ensuring efficient use of memory. In JavaScript, memory management is primarily handled by the JavaScript engine, which automatically allocates and frees memory as needed. However, developers can also optimize memory usage in their applications by following best practices and using tools to monitor memory consumption. Low-level languages like C, have manual memory management primitives such as malloc() and free(). In contrast, JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection). This automaticity is a potential source of confusion: it can give developers the false impression that they don’t need to worry about memory management.
 
-  // 2. Garbage Collection: Garbage collection is the automatic process of identifying and reclaiming memory that is no longer in use by a program. In JavaScript, garbage collection is performed by the JavaScript engine, which periodically scans the memory for objects that are no longer reachable or referenced by the program. When an object is no longer reachable, it is considered "garbage" and can be safely removed from memory. This process helps prevent memory leaks and ensures efficient use of memory resources.
+    // 2. Garbage Collection: Garbage collection is the automatic process of identifying and reclaiming memory that is no longer in use by a program. In JavaScript, garbage collection is performed by the JavaScript engine, which periodically scans the memory for objects that are no longer reachable or referenced by the program. When an object is no longer reachable, it is considered "garbage" and can be safely removed from memory. This process helps prevent memory leaks and ensures efficient use of memory resources.
 
-  // Reachability: Reachability is a concept in memory management that refers to whether an object can be accessed or referenced by the program. In JavaScript, an object is considered reachable if it can be accessed through a variable, property, or function. If an object is no longer reachable, it is eligible for garbage collection and can be removed from memory. For example:
+    // Reachability: Reachability is a concept in memory management that refers to whether an object can be accessed or referenced by the program. In JavaScript, an object is considered reachable if it can be accessed through a variable, property, or function. If an object is no longer reachable, it is eligible for garbage collection and can be removed from memory. For example:
 
-  // 3. Memory Lifecicle: Regardless of the programming language, the memory life cycle is pretty much always the same:
-  // - Allocate the memory you need
-  // - Use the allocated memory (read, write)
-  // - Release the allocated memory when it is not needed anymore
-  // The second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.
+    // 3. Memory Lifecicle: Regardless of the programming language, the memory life cycle is pretty much always the same:
+    // - Allocate the memory you need
+    // - Use the allocated memory (read, write)
+    // - Release the allocated memory when it is not needed anymore
+    // The second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.
 
-  // Example:
+    // Example:
 
-  // Creating an object and checking its reachability
+    // Creating an object and checking its reachability
 
-  const obj = { name: "Alice" };
+    const obj = { name: "Alice" };
 
-  console.log(obj); // Output: { name: "Alice" }
-  console.log(obj.name); // Output: "Alice"
-  console.log(obj === null); // Output: false
-  console.log(obj === undefined); // Output: false
-}
+    console.log(obj); // Output: { name: "Alice" }
+    console.log(obj.name); // Output: "Alice"
+    console.log(obj === null); // Output: false
+    console.log(obj === undefined); // Output: false
+  }
 
-/* 19. JavaScript Chrome Dev Tools */
-// These are a set of tools built into the browser to aid frontend developers diagnose and solve various issues in their applications — such as JavaScript and logical bugs, CSS styling issues or even just making quick temporary alterations to the DOM. To enter the dev tools, right click and click Inspect (or press ctrl+shift+c/cmd+opt+c) to enter the Elements panel. Here you can debug CSS and HTML issues. If you want to see logged messages or interact with javascript, enter the Console tab from the tabs above (or press ctrl+shift+j or F12 / cmd+opt+j to enter it directly). Another very useful feature in the Chrome dev tools is the Lighthouse (for checking performance).
+  /* 19. JavaScript Chrome Dev Tools */
+  // These are a set of tools built into the browser to aid frontend developers diagnose and solve various issues in their applications — such as JavaScript and logical bugs, CSS styling issues or even just making quick temporary alterations to the DOM. To enter the dev tools, right click and click Inspect (or press ctrl+shift+c/cmd+opt+c) to enter the Elements panel. Here you can debug CSS and HTML issues. If you want to see logged messages or interact with javascript, enter the Console tab from the tabs above (or press ctrl+shift+j or F12 / cmd+opt+j to enter it directly). Another very useful feature in the Chrome dev tools is the Lighthouse (for checking performance).
 
-{
-  // 1. JavaScript Chrome Dev Tools: The Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. It provides a powerful suite of tools for debugging, profiling, and optimizing web applications. The DevTools allow developers to inspect and modify HTML and CSS, debug JavaScript code, analyze network requests, and monitor performance. The DevTools are essential for modern web development and are widely used by developers to improve the quality and performance of their applications.
-  // The DevTools are accessible by right-clicking on a web page and selecting "Inspect" or by pressing F12 or Ctrl+Shift+I (Cmd+Option+I on Mac). The DevTools consist of several panels, including Elements, Console, Sources, Network, Performance, Memory, Application, Security, and Lighthouse. Each panel provides specific functionality for inspecting and debugging different aspects of a web application.
-  // Debug JavaScript with Chrome Dev Tools: https://www.youtube.com/watch?v=H0XScE08hy8
-  // 1. Debugging issues: The DevTools provide a powerful JavaScript debugger that allows developers to set breakpoints, step through code, and inspect variables and call stacks. This helps identify and fix issues in JavaScript code.
-  // 2. Debugging Memory Leaks: The DevTools provide tools for analyzing memory usage and identifying memory leaks in web applications. Developers can use the Memory panel to take heap snapshots, record allocation timelines, and analyze memory usage patterns. This helps identify objects that are not being properly garbage collected and can lead to memory leaks.
-  // 3. Debugging Performance Issues: The DevTools provide tools for analyzing the performance of web applications. Developers can use the Performance panel to record and analyze CPU usage, rendering performance, and network activity. This helps identify performance bottlenecks and optimize the performance of web applications. Lighthouse is a tool that audits the performance of web applications and provides recommendations for improving performance, accessibility, and SEO.
-  // Developers can use Lighthouse to generate reports on the performance of their web applications and identify areas for improvement.
-}
+  {
+    // 1. JavaScript Chrome Dev Tools: The Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. It provides a powerful suite of tools for debugging, profiling, and optimizing web applications. The DevTools allow developers to inspect and modify HTML and CSS, debug JavaScript code, analyze network requests, and monitor performance. The DevTools are essential for modern web development and are widely used by developers to improve the quality and performance of their applications.
+    // The DevTools are accessible by right-clicking on a web page and selecting "Inspect" or by pressing F12 or Ctrl+Shift+I (Cmd+Option+I on Mac). The DevTools consist of several panels, including Elements, Console, Sources, Network, Performance, Memory, Application, Security, and Lighthouse. Each panel provides specific functionality for inspecting and debugging different aspects of a web application.
+    // Debug JavaScript with Chrome Dev Tools: https://www.youtube.com/watch?v=H0XScE08hy8
+    // 1. Debugging issues: The DevTools provide a powerful JavaScript debugger that allows developers to set breakpoints, step through code, and inspect variables and call stacks. This helps identify and fix issues in JavaScript code.
+    // 2. Debugging Memory Leaks: The DevTools provide tools for analyzing memory usage and identifying memory leaks in web applications. Developers can use the Memory panel to take heap snapshots, record allocation timelines, and analyze memory usage patterns. This helps identify objects that are not being properly garbage collected and can lead to memory leaks.
+    // 3. Debugging Performance Issues: The DevTools provide tools for analyzing the performance of web applications. Developers can use the Performance panel to record and analyze CPU usage, rendering performance, and network activity. This helps identify performance bottlenecks and optimize the performance of web applications. Lighthouse is a tool that audits the performance of web applications and provides recommendations for improving performance, accessibility, and SEO.
+    // Developers can use Lighthouse to generate reports on the performance of their web applications and identify areas for improvement.
+  }
 
-/* 20. JS Frameworks */
+  /* 20. JS Frameworks */
 
-{
-  // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
-      // React - Features:
-      // 1. Component-Based Architecture: React follows a component-based architecture where UI elements are broken down into reusable components. Components can be composed together to build complex user interfaces.
-      // 2. Virtual DOM: React uses a virtual DOM to optimize the rendering of UI components. The virtual DOM is a lightweight copy of the actual DOM, which allows React to efficiently update the UI when the application state changes.
-      // 3. JSX: JSX is a syntax extension for JavaScript that allows developers to write HTML-like code within JavaScript. JSX makes it easier to create UI components and define their structure and behavior.
-      // 4. State Management: React provides a simple and efficient way to manage the state of an application. State can be stored in components and updated using the setState() method.
-      // 5. React Hooks: React Hooks are functions that allow developers to use state and other React features in functional components. Hooks provide a more flexible and concise way to manage state and side effects in React applications.
-      // 6. React Router: React Router is a popular library for handling routing in React applications. It allows developers to define routes and navigate between different views in a single-page application.
-      // 7. Context API: React's Context API allows developers to share state between components without having to pass props down the component tree. Context provides a way to manage global state in React applications.
-      // Steps to initialize a React App with vite:
-      // 1. Install Vite globally:
-      // npm install -g create-vite
-      // 2. Create a new React project:
-      // create-vite react-app
-      // 3. Change directory to the project folder:
-      // cd react-app
-      // 4. Start the development server:
-      // npm run dev
-      // 5. Open the project in a web browser:
-      // http://localhost:3000
-      // After this, typically you would start building your React application by creating components, defining routes, managing state, and fetching data from APIs. For example:
-      // Example: Creating a simple React component
-      // src/App.js file:
-      /*
+  {
+    // 1. React: React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers. React allows developers to create reusable UI components and build complex user interfaces with ease. React uses a declarative programming style, which makes it easier to reason about the application's state and how it changes over time. React is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
+    // React - Features:
+    // 1. Component-Based Architecture: React follows a component-based architecture where UI elements are broken down into reusable components. Components can be composed together to build complex user interfaces.
+    // 2. Virtual DOM: React uses a virtual DOM to optimize the rendering of UI components. The virtual DOM is a lightweight copy of the actual DOM, which allows React to efficiently update the UI when the application state changes.
+    // 3. JSX: JSX is a syntax extension for JavaScript that allows developers to write HTML-like code within JavaScript. JSX makes it easier to create UI components and define their structure and behavior.
+    // 4. State Management: React provides a simple and efficient way to manage the state of an application. State can be stored in components and updated using the setState() method.
+    // 5. React Hooks: React Hooks are functions that allow developers to use state and other React features in functional components. Hooks provide a more flexible and concise way to manage state and side effects in React applications.
+    // 6. React Router: React Router is a popular library for handling routing in React applications. It allows developers to define routes and navigate between different views in a single-page application.
+    // 7. Context API: React's Context API allows developers to share state between components without having to pass props down the component tree. Context provides a way to manage global state in React applications.
+    // Steps to initialize a React App with vite:
+    // 1. Install Vite globally:
+    // npm install -g create-vite
+    // 2. Create a new React project:
+    // create-vite react-app
+    // 3. Change directory to the project folder:
+    // cd react-app
+    // 4. Start the development server:
+    // npm run dev
+    // 5. Open the project in a web browser:
+    // http://localhost:3000
+    // After this, typically you would start building your React application by creating components, defining routes, managing state, and fetching data from APIs. For example:
+    // Example: Creating a simple React component
+    // src/App.js file:
+    /*
         import React from "react";
 
         function App() {
@@ -5973,16 +6037,15 @@ console.log(title);
           );
         }
       */
-
-  // 2. Angular: Angular is a TypeScript-based open-source web application framework developed by Google. It is used for building dynamic and complex web applications. Angular provides a comprehensive set of tools and features for building scalable and maintainable applications, including a powerful templating system, dependency injection, routing, and state management. Angular follows a component-based architecture, allowing developers to create reusable UI components and build complex user interfaces with ease. Angular is widely used in enterprise-level web development for building large-scale applications.
-  // Angular - Features:
+    // 2. Angular: Angular is a TypeScript-based open-source web application framework developed by Google. It is used for building dynamic and complex web applications. Angular provides a comprehensive set of tools and features for building scalable and maintainable applications, including a powerful templating system, dependency injection, routing, and state management. Angular follows a component-based architecture, allowing developers to create reusable UI components and build complex user interfaces with ease. Angular is widely used in enterprise-level web development for building large-scale applications.
+    // Angular - Features:
     // 1. Component-Based Architecture: Angular follows a component-based architecture where UI elements are broken down into reusable components. Components can be composed together to build complex user interfaces.
     // 2. TypeScript: Angular is built using TypeScript, a superset of JavaScript that adds static typing and other features to the language. TypeScript provides better tooling and helps catch errors during development.
     // 3. Dependency Injection: Angular has a built-in dependency injection system that allows developers to manage dependencies between components and services. This makes it easier to test and maintain code.
     // 4. Templating System: Angular provides a powerful templating system that allows developers to define the structure and behavior of UI components using HTML and Angular-specific syntax.
     // 5. Routing: Angular has a built-in routing module that allows developers to define routes and navigate between different views in a single-page application.
     // 6. State Management: Angular provides several options for managing the state of an application, including services, RxJS, and NgRx. These tools help developers manage complex application state and handle asynchronous data streams.
-  // Steps to initialize an Angular App with Angular CLI:
+    // Steps to initialize an Angular App with Angular CLI:
     // 1. Install Angular CLI globally:
     // npm install -g @angular/cli
     // 2. Create a new Angular project:
@@ -6008,9 +6071,8 @@ console.log(title);
       })
       export class AppComponent {}
     */
-
-  // 3. Vue.js: Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable, allowing developers to use as much or as little of the framework as needed. Vue.js provides a simple and flexible API for building UI components and managing application state. It uses a virtual DOM to optimize rendering performance and provides a reactive data binding system that makes it easy to keep the UI in sync with the application state. Vue.js is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
-  // Vue.js - Features:
+    // 3. Vue.js: Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable, allowing developers to use as much or as little of the framework as needed. Vue.js provides a simple and flexible API for building UI components and managing application state. It uses a virtual DOM to optimize rendering performance and provides a reactive data binding system that makes it easy to keep the UI in sync with the application state. Vue.js is widely used in web development for building single-page applications, progressive web apps, and mobile apps.
+    // Vue.js - Features:
     // 1. Reactive Data Binding: Vue.js provides a reactive data binding system that allows developers to easily keep the UI in sync with the application state. When the data changes, the UI automatically updates to reflect the changes.
     // 2. Component-Based Architecture: Vue.js follows a component-based architecture where UI elements are broken down into reusable components. Components can be composed together to build complex user interfaces.
     // 3. Virtual DOM: Vue.js uses a virtual DOM to optimize the rendering of UI components. The virtual DOM is a lightweight copy of the actual DOM, which allows Vue.js to efficiently update the UI when the application state changes.
@@ -6018,20 +6080,20 @@ console.log(title);
     // 5. Vue Router: Vue Router is a popular library for handling routing in Vue.js applications. It allows developers to define routes and navigate between different views in a single-page application.
     // 6. Vuex: Vuex is a state management library for Vue.js applications. It provides a centralized store for managing application state and helps developers manage complex state interactions in large applications.
     // Steps to initialize a Vue.js App with vite:
-      // 1. Install Vite globally: 
-      // npm install -g create-vite
-      // 2. Create a new Vue.js project:
-      // create-vite vue-app --template vue
-      // 3. Change directory to the project folder:
-      // cd vue-app
-      // 4. Start the development server:
-      // npm run dev
-      // 5. Open the project in a web browser:
-      // http://localhost:3000
-      // After this, typically you would start building your Vue.js application by creating components, defining routes, managing state, and fetching data from APIs. For example:
-      // Example: Creating a simple Vue.js component
-      // src/App.vue file:
-      /*
+    // 1. Install Vite globally:
+    // npm install -g create-vite
+    // 2. Create a new Vue.js project:
+    // create-vite vue-app --template vue
+    // 3. Change directory to the project folder:
+    // cd vue-app
+    // 4. Start the development server:
+    // npm run dev
+    // 5. Open the project in a web browser:
+    // http://localhost:3000
+    // After this, typically you would start building your Vue.js application by creating components, defining routes, managing state, and fetching data from APIs. For example:
+    // Example: Creating a simple Vue.js component
+    // src/App.vue file:
+    /*
         <template>
           <div>
             <h1>Hello, Vue.js!</h1>
@@ -6042,8 +6104,6 @@ console.log(title);
           name: "App",
         };
         </script>
-      */ 
-
-
-}
+      */
+  }
 }
