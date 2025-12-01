@@ -986,6 +986,12 @@ console.log(title);
   // try...catch: a statement that handles exceptions and errors.
 
   // ECMAScript 2 (ES2): Released in 1998, this version made minor revisions and corrections to the ES1 specification.
+  //  The corrections included clarifications on the behavior of certain features and the addition of some new features, such as the ability to use Unicode characters in identifiers.
+  // Here're the new features:
+  // Unicode Support: ES2 improved support for Unicode characters in identifiers, allowing developers to use a wider range of characters in variable and function names.
+  // Specification Corrections: ES2 made several corrections and clarifications to the ES1 specification, addressing ambiguities and inconsistencies in the original document.
+  // Overall, ES2 was a minor update to the ECMAScript standard that focused on improving the existing features and fixing issues from the previous version.
+  
   // ECMAScript 3 (ES3): Released in 1999, ES3 introduced several new features, such as regular expressions, better string handling, and improved error handling.
   // ECMAScript 4 (ES4): This version was never officially released due to disagreements among the JavaScript community. However, many of its proposed features were later incorporated into ES5 and ES6.
   // ECMAScript 5 (ES5): Released in 2009, ES5 introduced several important features, such as strict mode, JSON support, and new array methods like forEach, map, filter, and reduce.
