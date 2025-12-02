@@ -951,6 +951,7 @@ console.log(title);
   // 4. ECMAScript: ECMAScript is the standard upon which JavaScript is based. It specifies the core features of the language, such as syntax, types, and built-in objects. JavaScript is an implementation of ECMAScript, which means that it follows the rules and guidelines set by the ECMAScript standard.
   // The main versions of ECMAScript are:
   // ECMAScript 1 (ES1): The first version of ECMAScript, released in 1997, established the basic syntax and features of the language.
+  // ES1 was released in June 1997 and laid the foundation for the JavaScript language. It introduced the core features and syntax that are still used in modern JavaScript today. In 1997 the main browser was Netscape navigator 4.0, which had limited support for JavaScript. ES1 aimed to standardize the language and provide a consistent set of features across different browsers. JavaScript was primarily used for simple client-side scripting tasks, such as form validation and basic interactivity, it existed before from 1995, and it was created by Brendan Eich at Netscape Communications Corporation, as a solution to add interactivity to web pages. However, it was not standardized until the release of ES1.
   // This is the basic ES1 syntax:
   // var x = 5;
   // var y = 10;
@@ -987,6 +988,7 @@ console.log(title);
 
   // ECMAScript 2 (ES2): Released in 1998, this version made minor revisions and corrections to the ES1 specification.
   //  The corrections included clarifications on the behavior of certain features and the addition of some new features, such as the ability to use Unicode characters in identifiers.
+  // ES2 was released in June 1998, just a year after ES1. It was a minor update to the ECMAScript standard that focused on fixing issues and making small improvements to the language. At that time, Internet Explorer 4.0 and Netscape Navigator 4.0 were the dominant browsers, and both had limited support for JavaScript. ES2 aimed to address some of the inconsistencies and ambiguities in the ES1 specification and provide a more stable foundation for future versions of the language.
   // Here're the new features:
   // Unicode Support: ES2 improved support for Unicode characters in identifiers, allowing developers to use a wider range of characters in variable and function names.
   // Specification Corrections: ES2 made several corrections and clarifications to the ES1 specification, addressing ambiguities and inconsistencies in the original document.
@@ -995,6 +997,10 @@ console.log(title);
   // ECMAScript 3 (ES3): Released in 1999, ES3 introduced several new features, such as regular expressions, better string handling, and improved error handling.
   // ECMAScript 4 (ES4): This version was never officially released due to disagreements among the JavaScript community. However, many of its proposed features were later incorporated into ES5 and ES6.
   // ECMAScript 5 (ES5): Released in 2009, ES5 introduced several important features, such as strict mode, JSON support, and new array methods like forEach, map, filter, and reduce.
+  // Here're some of the key features of ES5:
+  // Strict Mode: A way to opt in to a restricted variant of JavaScript, which helps catch common coding mistakes and "unsafe" actions.
+  // JSON Support: Native support for parsing and stringifying JSON data using the JSON object.
+  // New Array Methods: Several new methods were added to the Array prototype, including forEach, map, filter, reduce, and some.
 
   // 5. ECMAScript 6 (ES6): ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced many new features to JavaScript, such as arrow functions, classes, template literals, and destructuring assignments. It was a major update to the language and laid the foundation for modern JavaScript development.
   // Some of the key features of ES6 include:
