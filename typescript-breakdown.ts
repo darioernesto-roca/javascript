@@ -29,3 +29,14 @@ console.log(title);
         // - On the other hand, we can use TypeScript code in JavaScript projects by simply compiling the TypeScript code into JavaScript. The generated JavaScript code can be used in any JavaScript environment, and it will work the same way as regular JavaScript code.
         // - TypeScript's compiler also supports type checking for plain JavaScript code by adding the // @ts-check comment at the top of a file. This allows the compiler to validate types by inspecting the JSDoc comments:
 }
+
+/* 2. Running TypeScript */
+
+{
+    // 2.1 To run TypeScript code, we'll need to have a TypeScript compiler installed. Here's a general process to run TypeScript code:
+        // Write TypeScript code in a .ts file (e.g. app.ts)
+        // Compile the TypeScript code into JavaScript using the TypeScript compiler:
+        // tsc app.ts
+        // Run the generated JavaScript code using a JavaScript runtime environment such as Node.js:
+        // node app.js
+}
