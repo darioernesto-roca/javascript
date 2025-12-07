@@ -36,7 +36,8 @@ console.log(title);
     // 2.1 To run TypeScript code, we'll need to have a TypeScript compiler installed. Here's a general process to run TypeScript code:
         // Write TypeScript code in a .ts file (e.g. app.ts)
         // Compile the TypeScript code into JavaScript using the TypeScript compiler:
-        // tsc app.ts
+            // tsc app.ts
         // Run the generated JavaScript code using a JavaScript runtime environment such as Node.js:
-        // node app.js
+            // node app.js
+        // These steps can also be automated using build tools like Webpack or task runners like Gulp. Some frameworks, such as Angular, have built-in support for TypeScript and provide their own tools for compiling and running TypeScript code. Others like React and Vue.js can be configured to work with TypeScript using additional libraries and tools.
 }
