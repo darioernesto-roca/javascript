@@ -40,4 +40,10 @@ console.log(title);
         // Run the generated JavaScript code using a JavaScript runtime environment such as Node.js:
             // node app.js
         // These steps can also be automated using build tools like Webpack or task runners like Gulp. Some frameworks, such as Angular, have built-in support for TypeScript and provide their own tools for compiling and running TypeScript code. Others like React and Vue.js can be configured to work with TypeScript using additional libraries and tools.
+
+    // 2.2 tsc: is the command line tool for the TypeScript compiler. It compiles TypeScript code into JavaScript code, making it compatible with the browser or any JavaScript runtime environment. We can use the tsc command to compile TypeScript code by running the following command in our terminal or command prompt: tsc
+    // This command will compile all TypeScript files in the project that are specified in the tsconfig.json file. If we want to compile a specific TypeScript file, we can specify the file name after the tsc command, like this: tsc index.ts
+    // The tsc command has several options and flags that we can use to customize the compilation process. For example, we can use the --target option to specify the version of JavaScript to compile to, or the --outDir option to specify the output directory for the compiled JavaScript files.
+    // We can also use the --watch option to automatically recompile TypeScript files whenever they change. This is useful for development, as it allows us to see the changes in real-time without having to manually run the tsc command each time we make a change.
+    // We can run 'tsc --help' to see a list of all available options and flags for the tsc command.
 }
