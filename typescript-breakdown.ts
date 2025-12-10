@@ -46,4 +46,10 @@ console.log(title);
     // The tsc command has several options and flags that we can use to customize the compilation process. For example, we can use the --target option to specify the version of JavaScript to compile to, or the --outDir option to specify the output directory for the compiled JavaScript files.
     // We can also use the --watch option to automatically recompile TypeScript files whenever they change. This is useful for development, as it allows us to see the changes in real-time without having to manually run the tsc command each time we make a change.
     // We can run 'tsc --help' to see a list of all available options and flags for the tsc command.
+
+    // 2.3 ts-node: is a command line tool that allows us to run TypeScript code directly without the need to compile it into JavaScript first. It combines the functionality of the TypeScript compiler (tsc) and the Node.js runtime environment, allowing us to execute TypeScript code in a single step.
+    // To use ts-node, we need to have it installed globally or as a dev dependency in our project. Once installed, we can run TypeScript files directly using the ts-node command followed by the file name, like this: ts-node app.ts
+    // This command will compile the TypeScript code on-the-fly and execute it using Node.js. This is particularly useful for development and testing, as it eliminates the need to manually compile TypeScript code before running it.
+    // ts-node also supports various options and flags that we can use to customize its behavior. For example, we can use the --project option to specify a custom tsconfig.json file, or the --transpile-only option to skip type checking and only transpile the code.
+    // We can run 'ts-node --help' to see a list of all available options and flags for the ts-node command.
 }
