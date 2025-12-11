@@ -53,5 +53,5 @@ console.log(title);
     // ts-node also supports various options and flags that we can use to customize its behavior. For example, we can use the --project option to specify a custom tsconfig.json file, or the --transpile-only option to skip type checking and only transpile the code.
     // We can run 'ts-node --help' to see a list of all available options and flags for the ts-node command.
 
-    // TS Playground: An online tool provided by the TypeScript team that allows us to write, compile, and run TypeScript code directly in our web browser. It provides a simple and convenient way to experiment with TypeScript features and test code snippets without the need to set up a local development environment.
+    // TS Playground: https://www.typescriptlang.org/play/ An online tool provided by the TypeScript team that allows us to write, compile, and run TypeScript code directly in our web browser. It provides a simple and convenient way to experiment with TypeScript features and test code snippets without the need to set up a local development environment.
 }
