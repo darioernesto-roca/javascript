@@ -55,3 +55,17 @@ console.log(title);
 
     // TS Playground: https://www.typescriptlang.org/play/ An online tool provided by the TypeScript team that allows us to write, compile, and run TypeScript code directly in our web browser. It provides a simple and convenient way to experiment with TypeScript features and test code snippets without the need to set up a local development environment.
 }
+
+/* 3. TS/JS Interoperability */
+{
+    // TypeScript is designed to be fully interoperable with JavaScript, meaning that we can use both languages in the same project.
+    // This interoperability allows us to gradually migrate existing JavaScript codebases to TypeScript, or to use TypeScript alongside existing JavaScript libraries and frameworks.
+    // When we write TypeScript code, it is compiled into JavaScript code, which means that the resulting JavaScript code can be executed in any JavaScript runtime environment.
+    // This means that we can use TypeScript in a variety of contexts, including web browsers, Node.js servers, and mobile applications.
+    // The interoperability between TypeScript and JavaScript also means that we can use existing JavaScript libraries and frameworks in our TypeScript projects without any issues.
+
+    // TypeScript and JavaScript have full interoperability, meaning you can use TypeScript code in JavaScript projects and vice versa. TypeScript is a superset of JavaScript, which means that any valid JavaScript code is also valid TypeScript code.
+    // You can use JavaScript libraries in TypeScript projects by either including the JavaScript files directly or using type definitions for the library. Type definitions provide type information for JavaScript libraries, making it easier to use them in TypeScript.
+    // On the other hand, you can use TypeScript code in JavaScript projects by simply compiling the TypeScript code into JavaScript. The generated JavaScript code can be used in any JavaScript environment, and it will work the same way as regular JavaScript code.
+    // TypeScript's compiler also supports type checking for plain JavaScript code by adding the // @ts-check comment at the top of a file. This allows the compiler to validate types by inspecting the JSDoc comments:
+}
