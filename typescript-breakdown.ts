@@ -64,8 +64,30 @@ console.log(title);
     // This means that we can use TypeScript in a variety of contexts, including web browsers, Node.js servers, and mobile applications.
     // The interoperability between TypeScript and JavaScript also means that we can use existing JavaScript libraries and frameworks in our TypeScript projects without any issues.
 
-    // TypeScript and JavaScript have full interoperability, meaning you can use TypeScript code in JavaScript projects and vice versa. TypeScript is a superset of JavaScript, which means that any valid JavaScript code is also valid TypeScript code.
-    // You can use JavaScript libraries in TypeScript projects by either including the JavaScript files directly or using type definitions for the library. Type definitions provide type information for JavaScript libraries, making it easier to use them in TypeScript.
-    // On the other hand, you can use TypeScript code in JavaScript projects by simply compiling the TypeScript code into JavaScript. The generated JavaScript code can be used in any JavaScript environment, and it will work the same way as regular JavaScript code.
-    // TypeScript's compiler also supports type checking for plain JavaScript code by adding the // @ts-check comment at the top of a file. This allows the compiler to validate types by inspecting the JSDoc comments:
+    // TypeScript and JavaScript have full interoperability, meaning we can use TypeScript code in JavaScript projects and vice versa. TypeScript is a superset of JavaScript, which means that any valid JavaScript code is also valid TypeScript code.
+    // We can use JavaScript libraries in TypeScript projects by either including the JavaScript files directly or using type definitions for the library. Type definitions provide type information for JavaScript libraries, making it easier to use them in TypeScript.
+    // On the other hand, we can use TypeScript code in JavaScript projects by simply compiling the TypeScript code into JavaScript. The generated JavaScript code can be used in any JavaScript environment, and it will work the same way as regular JavaScript code.
+    // TypeScript's compiler also supports type checking for plain JavaScript code by adding the // @ts-check comment at the top of a file. This allows the compiler to validate types by inspecting the JSDoc comments.
+}
+
+/* 4. Install and Configure */
+{
+    // 4.1 To install TypeScript globally using npm, we can run the following command in our terminal or command prompt:
+    // npm install -g typescript
+    // This command will install the latest version of TypeScript globally on our system, allowing us to use the tsc command from any directory.
+
+    // 4.2 To create a tsconfig.json file in our project, we can run the following command in our terminal or command prompt:
+    // tsc --init
+    // This command will generate a basic tsconfig.json file in the current directory with default settings. We can then customize the settings in the file to suit our project's needs.
+
+    // 4.3 To install and configure TypeScript in our project, we need to perform the following steps:
+        // - Initialize npm in our project directory by running the following command:
+        // - npm init
+        // - Install TypeScript as a project dependency by running the following command:
+        // - npm install --save-dev typescript
+        // - Create a tsconfig.json file in our project directory to specify the compiler options for building our project. For example:
+        // - { "compilerOptions": { "target": "es5", "module": "commonjs", "strict": true, "outDir": "./dist", "rootDir": "./src" }, "exclude": ["node_modules"] }
+        // - Compile our TypeScript code using the following command:
+        // - npx tsc
+    // Note: we can also compile individual TypeScript files by specifying the file path after the tsc command. For example: npx tsc ./src/index.ts
 }
