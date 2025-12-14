@@ -90,4 +90,28 @@ console.log(title);
         // - Compile our TypeScript code using the following command:
         // - npx tsc
     // Note: we can also compile individual TypeScript files by specifying the file path after the tsc command. For example: npx tsc ./src/index.ts
+
+    // 4.4 tsconfig.json
+       // tsconfig.json is a configuration file in TypeScript that specifies the compiler options for building our project. It helps the TypeScript compiler understand the structure of our project and how it should be compiled to JavaScript. Some common options include:
+         // "target": Specifies the version of JavaScript to compile to (e.g., "es5", "es6", "esnext").
+         // "module": Specifies the module system to use (e.g., "commonjs", "es6", "amd").
+         // "strict": enables/disables strict type checking options.
+         // "outDir": Specifies the output directory for the compiled JavaScript files.
+         // "rootDir": Specifies the root directory of the TypeScript source files.
+         // "include": Specifies an array of file patterns to include in the compilation.
+         // "exclude": Specifies an array of file patterns to exclude from the compilation.
+       // Given below is the sample tsconfig.json file:
+         /*
+            {
+                "compilerOptions": {
+                    "target": "es5",
+                    "module": "commonjs",
+                    "strict": true,
+                    "outDir": "./dist",
+                    "rootDir": "./src"
+                },
+                "exclude": ["node_modules"],
+                "include": ["src"]
+            }
+            */
 }
