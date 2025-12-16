@@ -118,3 +118,26 @@ console.log(title);
         // 4.5 Compiler options: TypeScript compiler accepts a number of command line options that allow you to customize the compilation process. These options can be passed to the compiler using the -- prefix, for example: tsc --target ES5 --module commonjs
         // We can check all available compiler options by running: tsc --help and refer to the official documentation for more details: https://www.typescriptlang.org/docs/handbook/compiler-options.html
 }
+
+/* 4. TypeScript Types */
+
+{
+    // 4.1 Types:
+    // TypeScript provides several built-in types, including:
+       // number
+       // string
+       // boolean
+       // any
+       // void
+       // null and undefined
+       // never
+       // object
+       // symbol
+       // Enumerated types (enum)
+       // Tuple types
+       // Array types
+       // Union types
+       // Intersection types
+       // Type aliases
+       // Type assertions
+}
