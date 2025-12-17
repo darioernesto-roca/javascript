@@ -140,4 +140,29 @@ console.log(title);
        // Intersection types
        // Type aliases
        // Type assertions
+
+    // 4.2 Primitive Types:
+        // boolean: represents logical values, either true or false.
+        // number: represents numeric values, both integers and floating-point numbers.
+        // string: represents textual data, enclosed in single or double quotes.
+        // void: represents the absence of a value, typically used for functions that do not return anything.
+        // undefined: a variable that has been declared but not assigned a value.
+        // null and undefined: represent the absence of a value or an uninitialized variable.
+
+    // 4.2 Object Types:
+        // Interface: defines the shape of an object, including its properties and methods.
+        // Class: defines a blueprint for creating objects with properties and methods.
+        // Enum: defines a set of named constants, which can be either numeric or string values.
+        // Array: represents a collection of values of the same type.
+        // Tuple: represents a fixed-size collection of values of different types.
+        // Object: represents a non-primitive type that can have properties and methods.
+
+    // 4.3 Top Types
+        // unknown: represents any value, but requires type checking before performing operations on it.
+        // any: represents any type of value, allowing for dynamic typing.
+
+    // 4.4 Bottom Types
+        // never: represents a value that never occurs, typically used for functions that always throw an error or never return.
+
+
 }
