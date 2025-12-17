@@ -143,9 +143,18 @@ console.log(title);
 
     // 4.2 Primitive Types:
         // boolean: represents logical values, either true or false.
+            // let boolValue: boolean = true;
+            // let isDone: boolean = false;
         // number: represents numeric values, both integers and floating-point numbers.
+            // let intValue: number = 42;
+            // let floatValue: number = 3.14;
         // string: represents textual data, enclosed in single or double quotes.
-        // void: represents the absence of a value, typically used for functions that do not return anything.
+            // let strValue: string = "Hello, TypeScript!";
+            // let name: string = 'John Doe';
+        // void: represents the absence of a value, typically used for functions that do not return anything. In JavaScript, a function that doesn’t return any value will implicitly return the value undefined. However, void and undefined are not the same thing in TypeScript.
+            // function noop() { {
+            //       return;
+            // }
         // undefined: a variable that has been declared but not assigned a value.
         // null and undefined: represent the absence of a value or an uninitialized variable.
 
