@@ -155,8 +155,9 @@ console.log(title);
             // function noop() { {
             //       return;
             // }
-        // undefined: a variable that has been declared but not assigned a value.
-        // null and undefined: represent the absence of a value or an uninitialized variable.
+        // undefined: a variable that has been declared but not assigned a value. JavaScript has two primitive values used to signal absent or uninitialized value: null (absent) and undefined (uninitialized). TypeScript has two corresponding types by the same names. How these types behave depends on whether you have the strictNullChecks option on.
+            // let undefValue: undefined = undefined;
+        // null and undefined: represent the absence of a value or an uninitialized variable. With strictNullChecks off, values that might be null or undefined can still be accessed normally, and the values null and undefined can be assigned to a property of any type. This is similar to how languages without null checks (e.g. C#, Java) behave. The lack of checking for these values tends to be a major source of bugs; TypeScript always recommend people turn strictNullChecks on if it’s practical to do so in the codebase.
 
     // 4.2 Object Types:
         // Interface: defines the shape of an object, including its properties and methods.
