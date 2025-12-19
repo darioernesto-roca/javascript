@@ -161,6 +161,14 @@ console.log(title);
 
     // 4.2 Object Types:
         // Interface: defines the shape of an object, including its properties and methods.
+            // interface Person {
+            //   name: string;
+            //   age: number;
+            // }
+            // 
+            // function greet(person: Person) {
+            //   return 'Hello ' + person.name;
+            // }
         // Class: defines a blueprint for creating objects with properties and methods.
         // Enum: defines a set of named constants, which can be either numeric or string values.
         // Array: represents a collection of values of the same type.
