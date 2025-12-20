@@ -160,7 +160,7 @@ console.log(title);
         // null and undefined: represent the absence of a value or an uninitialized variable. With strictNullChecks off, values that might be null or undefined can still be accessed normally, and the values null and undefined can be assigned to a property of any type. This is similar to how languages without null checks (e.g. C#, Java) behave. The lack of checking for these values tends to be a major source of bugs; TypeScript always recommend people turn strictNullChecks on if it’s practical to do so in the codebase.
 
     // 4.2 Object Types:
-        // Interface: defines the shape of an object, including its properties and methods.
+        // Interface: Defines the shape of an object, including its properties and methods. TypeScript allows you to specifically type an object using an interface that can be reused by multiple objects.
             // interface Person {
             //   name: string;
             //   age: number;
@@ -169,8 +169,34 @@ console.log(title);
             // function greet(person: Person) {
             //   return 'Hello ' + person.name;
             // }
-        // Class: defines a blueprint for creating objects with properties and methods.
-        // Enum: defines a set of named constants, which can be either numeric or string values.
+        // Class: Defines a blueprint for creating objects with properties and methods. In TypeScript, a class is a blueprint for creating objects with specific properties and methods. Classes are a fundamental concept in object-oriented programming. Here is an example of a simple class in TypeScript:
+            // class Car {
+            //   make: string;
+            //   model: string;
+            //   year: number;
+            // 
+            //   constructor(make: string, model: string, year: number) {
+            //     this.make = make;
+            //     this.model = model;
+            //     this.year = year;
+            //   }
+            // 
+            //   drive() {
+            //     console.log(`Driving my ${this.year} ${this.make} ${this.model}`);
+            //   }
+            // }
+        // Enum: defines a set of named constants, which can be either numeric or string values. Enums is not a type-level extension of JavaScript. It allows a developer to define a set of named constants. Using enums can make it easier to document intent, or create a set of distinct cases. TypeScript provides both numeric and string-based enums. Here is an example of a numeric enum in TypeScript:
+            // enum Direction {
+            //   Up = 1,
+            //   Down,
+            //   Left,
+            //   Right
+            // }
+            // 
+            // let dir: Direction = Direction.Up;
+            // console.log(dir); // Output: 1
+            // let dirName: string = Direction[2];
+            // console.log(dirName); // Output: Down
         // Array: represents a collection of values of the same type.
         // Tuple: represents a fixed-size collection of values of different types.
         // Object: represents a non-primitive type that can have properties and methods.
