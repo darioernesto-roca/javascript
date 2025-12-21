@@ -198,11 +198,17 @@ console.log(title);
             // let dirName: string = Direction[2];
             // console.log(dirName); // Output: Down
         // Array: represents a collection of values of the same type. To specify the type of an array like [1, 2, 3], you can use the syntax number[]; this syntax works for any type (e.g. string[] is an array of strings, and so on). You may also see this written as Array<number>, which means the same thing.
-        const numbers: number[] = [1, 2, 3];
-        console.log(numbers); // Array Type
-        const strings: Array<string> = ["a", "b", "c"];
-        console.log(strings); // Generic Array Type
-        // Tuple: represents a fixed-size collection of values of different types.
+            const numbers: number[] = [1, 2, 3];
+            console.log(numbers); // Array Type
+            const strings: Array<string> = ["a", "b", "c"];
+            console.log(strings); // Generic Array Type
+        // Tuple: represents a fixed-size collection of values of different types. A tuple type is another sort of Array type that knows exactly how many elements it contains, and exactly which types it contains at specific positions.
+            type StringNumberPair = [string, number];
+            const pair: StringNumberPair = ['hello', 42];
+            const first = pair[0];
+            const second = pair[1];
+            // Error: Index out of bounds
+        // const third = pair[2];
         // Object: represents a non-primitive type that can have properties and methods.
 
     // 4.3 Top Types
