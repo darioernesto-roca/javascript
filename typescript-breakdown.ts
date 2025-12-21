@@ -192,12 +192,16 @@ console.log(title);
             //   Left,
             //   Right
             // }
-            // 
+            // Above, we have a numeric enum where Up is initialized with 1. All of the following members are auto-incremented from that point on. In other words, Direction.Up has the value 1, Down has 2, Left has 3, and Right has 4. If we left off the initializer for Up, it would have the value 0 and the rest of the members would be auto-incremented from there.
             // let dir: Direction = Direction.Up;
             // console.log(dir); // Output: 1
             // let dirName: string = Direction[2];
             // console.log(dirName); // Output: Down
-        // Array: represents a collection of values of the same type.
+        // Array: represents a collection of values of the same type. To specify the type of an array like [1, 2, 3], you can use the syntax number[]; this syntax works for any type (e.g. string[] is an array of strings, and so on). You may also see this written as Array<number>, which means the same thing.
+        const numbers: number[] = [1, 2, 3];
+        console.log(numbers); // Array Type
+        const strings: Array<string> = ["a", "b", "c"];
+        console.log(strings); // Generic Array Type
         // Tuple: represents a fixed-size collection of values of different types.
         // Object: represents a non-primitive type that can have properties and methods.
 
