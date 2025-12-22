@@ -199,14 +199,16 @@ console.log(title);
             // console.log(dirName); // Output: Down
         // Array: represents a collection of values of the same type. To specify the type of an array like [1, 2, 3], you can use the syntax number[]; this syntax works for any type (e.g. string[] is an array of strings, and so on). You may also see this written as Array<number>, which means the same thing.
             const numbers: number[] = [1, 2, 3];
-            console.log(numbers); // Array Type
+            console.log(numbers); // Output: [1, 2, 3]
             const strings: Array<string> = ["a", "b", "c"];
-            console.log(strings); // Generic Array Type
+            console.log(strings); // Output: ['a', 'b', 'c']
         // Tuple: represents a fixed-size collection of values of different types. A tuple type is another sort of Array type that knows exactly how many elements it contains, and exactly which types it contains at specific positions.
-            type StringNumberPair = [string, number];
-            const pair: StringNumberPair = ['hello', 42];
+            type StringNumberPair = [string, number]; // A tuple type with a string and a number. type is used to create a new name for a type.
+            const pair: StringNumberPair = ['hello', 42]; // On TypesCript the variables are declared with const, let or var, and the type is specified after the variable name, separated by a colon, then the name of the type and the value is assigned with =. In JavaScript, the type is inferred from the value assigned to the variable. If we express the same thing in JavaScript, it would look like this: const pair = ['hello', 42]; Here, the type of pair is inferred to be (string | number)[]. However, this does not enforce the fixed size and types of the tuple. ¿Why this is important? Because in TypeScript, if we try to access an index that is out of bounds, the compiler will throw an error. In JavaScript, it would simply return undefined, and that could lead to runtime errors if we try to use that undefined value, which is a common source of bugs in JavaScript code, mainly in large codebases.
             const first = pair[0];
             const second = pair[1];
+            console.log(first); // Output: 'hello'
+            console.log(second); // Output: 42
             // Error: Index out of bounds
         // const third = pair[2];
         // Object: represents a non-primitive type that can have properties and methods.
