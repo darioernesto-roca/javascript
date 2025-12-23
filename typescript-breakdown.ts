@@ -211,7 +211,14 @@ console.log(title);
             console.log(second); // Output: 42
             // Error: Index out of bounds
         // const third = pair[2];
-        // Object: represents a non-primitive type that can have properties and methods.
+        // Object: represents a non-primitive type that can have properties and methods. To define an object type, we simply list its properties and their types. For example, here’s a function that takes a point-like object:
+        // The parameter's type annotation is an object type
+        function printCoord(pt: { x: number; y: number }) {
+        console.log("The coordinate's x value is " + pt.x);
+        console.log("The coordinate's y value is " + pt.y);
+        }
+
+        printCoord({ x: 3, y: 7 });
 
     // 4.3 Top Types
         // unknown: represents any value, but requires type checking before performing operations on it.
