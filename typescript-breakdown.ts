@@ -213,15 +213,23 @@ console.log(title);
         // const third = pair[2];
         // Object: represents a non-primitive type that can have properties and methods. To define an object type, we simply list its properties and their types. For example, here’s a function that takes a point-like object:
         // The parameter's type annotation is an object type
-        function printCoord(pt: { x: number; y: number }) {
-        console.log("The coordinate's x value is " + pt.x);
-        console.log("The coordinate's y value is " + pt.y);
-        }
+            function printCoord(pt: { x: number; y: number }) {
+                console.log("The coordinate's x value is " + pt.x);
+                console.log("The coordinate's y value is " + pt.y);
+            }
 
-        printCoord({ x: 3, y: 7 });
+            printCoord({ x: 3, y: 7 });
 
     // 4.3 Top Types
-        // unknown: represents any value, but requires type checking before performing operations on it.
+        // unknown: represents any value, but requires type checking before performing operations on it. unknown is the type-safe counterpart of any. Anything is assignable to unknown, but unknown isn’t assignable to anything but itself and any without a type assertion or a control flow based narrowing. Likewise, no operations are permitted on an unknown without first asserting or narrowing to a more specific type.
+            function f1(a: any) {
+                a.b(); // OK
+            }
+
+            function f2(a: unknown) {
+            // Error: Property 'b' does not exist on type 'unknown'.
+                // a.b();
+            }
         // any: represents any type of value, allowing for dynamic typing.
 
     // 4.4 Bottom Types
