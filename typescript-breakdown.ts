@@ -230,10 +230,11 @@ console.log(title);
             // Error: Property 'b' does not exist on type 'unknown'.
                 // a.b();
             }
-        // any: represents any type of value, allowing for dynamic typing.
+        // any: represents any type of value, allowing for dynamic typing. When a value is of type any, you can access any properties of it (which will in turn be of type any), call it like a function, assign it to (or from) a value of any type, or pretty much anything else that’s syntactically legal. 
 
     // 4.4 Bottom Types
         // never: represents a value that never occurs, typically used for functions that always throw an error or never return.
+
 
 
 }
