@@ -231,6 +231,16 @@ console.log(title);
                 // a.b();
             }
         // any: represents any type of value, allowing for dynamic typing. When a value is of type any, you can access any properties of it (which will in turn be of type any), call it like a function, assign it to (or from) a value of any type, or pretty much anything else that’s syntactically legal. 
+        let objAny: any = { x: 0 };
+            // None of the following lines of code will throw compiler errors.
+            // Using `any` disables all further type checking, and it is assumed
+            // you know the environment better than TypeScript.
+            objAny.foo();
+            objAny();
+            objAny.bar = 100;
+            objAny = 'hello';
+            const nAny: number = objAny;
+        // Any is a powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type checking during your migration. You can also use any when you’re working with third-party code that may not have type definitions available. However, using any too liberally can lead to a loss of type safety and make it harder to catch errors at compile-time.
 
     // 4.4 Bottom Types
         // never: represents a value that never occurs, typically used for functions that always throw an error or never return.
