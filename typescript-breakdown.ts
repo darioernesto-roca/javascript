@@ -5,6 +5,15 @@ console.log(title);
 /* 1. What is Typescript */
 
 {
+    var nombre = "Dario";
+    var edad = 30;
+
+    var resultado = nombre + edad;
+    console.log(resultado); // Output: Dario30
+
+}
+
+{
     // 1.1 Typescript is a superset of JavaScript that adds static typing and other features to the language. It is developed and maintained by Microsoft.
     const definition = "Typescript is a superset of JavaScript that adds static typing and other features.";
     console.log(definition);
@@ -240,11 +249,23 @@ console.log(title);
             objAny.bar = 100;
             objAny = 'hello';
             const nAny: number = objAny;
-        // Any is a powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type checking during your migration. You can also use any when you’re working with third-party code that may not have type definitions available. However, using any too liberally can lead to a loss of type safety and make it harder to catch errors at compile-time.
+        //
 
     // 4.4 Bottom Types
-        // never: represents a value that never occurs, typically used for functions that always throw an error or never return.
+        // never: represents a value that never occurs, typically used for functions that always throw an error or never return. The never type represents the type of values that never occur. For instance, never is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns. Variables also acquire the type never when narrowed by any type guards that can never be true.
+            // Function returning never must not have a reachable end point
+            function error(message: string): never {
+            throw new Error(message);
+            }
 
+            // Inferred return type is never
+            function fail() {
+            return error('Something failed');
+            }
 
+            // Function returning never must not have a reachable end point
+            function infiniteLoop(): never {
+            while (true) {}
+            }
 
 }
