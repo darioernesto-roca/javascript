@@ -129,6 +129,7 @@ console.log(title);
 }
 
 /* 4. TypeScript Types */
+// You can also create custom types in TypeScript using interfaces, classes, and type aliases.
 
 {
     // 4.1 Types:
@@ -269,3 +270,18 @@ console.log(title);
             }
 
 }
+
+/* 5. Type Inference */
+ {
+    // TypeScript uses a process called type inference to automatically determine the types of variables and expressions based on their usage. This means that if we don't explicitly specify a type for a variable, TypeScript will try to infer the type based on the value assigned to it.
+    // For example, if we declare a variable and assign it a string value, TypeScript will infer that the variable is of type string:
+        let message = "Hello, TypeScript!"; // TypeScript infers that message is of type string
+    // If we try to assign a value of a different type to the variable later on, TypeScript will throw an error:
+        // message = 42; // Error: Type 'number' is not assignable to type 'string'
+    // Type inference can also work with function parameters and return types. If we define a function that takes a parameter and returns a value, TypeScript will infer the types based on the function's implementation:
+        function add(a: number, b: number) {
+            return a + b; // TypeScript infers that the return type is number
+        }
+    // If we try to call the function with arguments of the wrong type, TypeScript will throw an error:
+        // add("hello", "world"); // Error: Argument of type 'string' is not assignable to parameter of type 'number'
+ }
