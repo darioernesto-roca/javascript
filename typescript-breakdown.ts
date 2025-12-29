@@ -271,17 +271,33 @@ console.log(title);
 
 }
 
-/* 5. Type Inference */
+/* 5. Type Inference and Compatibility */
  {
-    // TypeScript uses a process called type inference to automatically determine the types of variables and expressions based on their usage. This means that if we don't explicitly specify a type for a variable, TypeScript will try to infer the type based on the value assigned to it.
-    // For example, if we declare a variable and assign it a string value, TypeScript will infer that the variable is of type string:
-        let message = "Hello, TypeScript!"; // TypeScript infers that message is of type string
-    // If we try to assign a value of a different type to the variable later on, TypeScript will throw an error:
-        // message = 42; // Error: Type 'number' is not assignable to type 'string'
-    // Type inference can also work with function parameters and return types. If we define a function that takes a parameter and returns a value, TypeScript will infer the types based on the function's implementation:
-        function add(a: number, b: number) {
-            return a + b; // TypeScript infers that the return type is number
-        }
-    // If we try to call the function with arguments of the wrong type, TypeScript will throw an error:
-        // add("hello", "world"); // Error: Argument of type 'string' is not assignable to parameter of type 'number'
+    // 5.1 TypeScript uses a process called type inference to automatically determine the types of variables and expressions based on their usage. This means that if we don't explicitly specify a type for a variable, TypeScript will try to infer the type based on the value assigned to it.
+        // For example, if we declare a variable and assign it a string value, TypeScript will infer that the variable is of type string:
+            let message = "Hello, TypeScript!"; // TypeScript infers that message is of type string
+        // If we try to assign a value of a different type to the variable later on, TypeScript will throw an error:
+            // message = 42; // Error: Type 'number' is not assignable to type 'string'
+        // Type inference can also work with function parameters and return types. If we define a function that takes a parameter and returns a value, TypeScript will infer the types based on the function's implementation:
+            function add(a: number, b: number) {
+                return a + b; // TypeScript infers that the return type is number
+            }
+        // If we try to call the function with arguments of the wrong type, TypeScript will throw an error:
+            // add("hello", "world"); // Error: Argument of type 'string' is not assignable to parameter of type 'number'
+    
+    // 5.2 Type Compatibility: TypeScript uses a structural type system, which means that two types are considered compatible if they have the same shape or structure, regardless of their names or declarations. This allows for greater flexibility when working with different types and makes it easier to integrate with existing JavaScript code.
+        // For example, consider the following two interfaces:
+            interface Point2D {
+                x: number;
+                y: number;
+            }
+            interface Point3D {
+                x: number;
+                y: number;
+                z: number;
+            }
+        // In this case, Point3D is compatible with Point2D because it has all the properties of Point2D (x and y) plus an additional property (z). This means that we can assign a Point3D object to a variable of type Point2D without any issues:
+            let point2D: Point2D;
+            let point3D: Point3D = { x: 1, y: 2, z: 3 };
+            point2D = point3D; // This is allowed because Point3D is compatible with Point2D
  }
