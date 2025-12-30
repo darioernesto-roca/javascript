@@ -301,3 +301,15 @@ console.log(title);
             let point3D: Point3D = { x: 1, y: 2, z: 3 };
             point2D = point3D; // This is allowed because Point3D is compatible with Point2D
  }
+
+ /* 6. Assertions */
+
+ {
+    // 6.1 Type Assertions: Type assertions are a way to tell the TypeScript compiler to treat a value as a specific type, even if the compiler cannot infer the type on its own. Type assertions are similar to type casting in other programming languages, but they do not perform any runtime checks or conversions.
+
+    // 6.1.1 As Type: In TypeScript, the as keyword is used for type assertions, allowing you to explicitly inform the compiler about the type of a value when it cannot be inferred automatically. Type assertions are a way to override the default static type-checking behavior and tell the compiler that you know more about the type of a particular expression than it does.
+        let someValue: unknown = "This is a string";
+        let strLength: number = (someValue as string).length;
+        console.log(strLength); // Output: 16
+        // In this example, we have a variable someValue of type unknown, which means that the compiler does not know its type. We use the as keyword to assert that someValue is actually a string, allowing us to access the length property without any errors.
+ }
