@@ -1,3 +1,13 @@
+// sonar-ignore
+// @ts-nocheck
+
+/*
+  EDUCATIONAL FILE
+  Purpose: personal notes + examples
+  Not production code
+*/
+
+
 /* TYPESCRIPT BREAKDOWN */
 const title = "Typescript Breakdown";
 console.log(title);
@@ -307,9 +317,15 @@ console.log(title);
  {
     // 6.1 Type Assertions: Type assertions are a way to tell the TypeScript compiler to treat a value as a specific type, even if the compiler cannot infer the type on its own. Type assertions are similar to type casting in other programming languages, but they do not perform any runtime checks or conversions.
 
-    // 6.1.1 As Type: In TypeScript, the as keyword is used for type assertions, allowing you to explicitly inform the compiler about the type of a value when it cannot be inferred automatically. Type assertions are a way to override the default static type-checking behavior and tell the compiler that you know more about the type of a particular expression than it does.
+    // 6.1.1 as Type: In TypeScript, the as keyword is used for type assertions, allowing you to explicitly inform the compiler about the type of a value when it cannot be inferred automatically. Type assertions are a way to override the default static type-checking behavior and tell the compiler that you know more about the type of a particular expression than it does.
         let someValue: unknown = "This is a string";
         let strLength: number = (someValue as string).length;
         console.log(strLength); // Output: 16
         // In this example, we have a variable someValue of type unknown, which means that the compiler does not know its type. We use the as keyword to assert that someValue is actually a string, allowing us to access the length property without any errors.
+
+    // 6.1.2 as any: Sometimes, we may need to use the any type in TypeScript when we are working with dynamic data or when we are integrating with third-party libraries that do not have type definitions. In such cases, we can use the as any assertion to tell the compiler to treat a value as any type.
+        let dynamicValue: unknown = { name: "John", age: 30 };
+        let nameLength: number = (dynamicValue as any).name.length;
+        console.log(nameLength); // Output: 4
+        // In this example, we have a variable dynamicValue of type unknown, which means that the compiler does not know its type. We use the as any assertion to tell the compiler to treat dynamicValue as any type, allowing us to access the name property without any errors. However, using as any should be done with caution, as it can lead to runtime errors if the value does not have the expected properties or methods.
  }
