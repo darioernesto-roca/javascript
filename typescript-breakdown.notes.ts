@@ -328,4 +328,10 @@ console.log(title);
         let nameLength: number = (dynamicValue as any).name.length;
         console.log(nameLength); // Output: 4
         // In this example, we have a variable dynamicValue of type unknown, which means that the compiler does not know its type. We use the as any assertion to tell the compiler to treat dynamicValue as any type, allowing us to access the name property without any errors. However, using as any should be done with caution, as it can lead to runtime errors if the value does not have the expected properties or methods.
+
+    // 6.1.3 as const: The as const assertion in TypeScript is used to create a readonly tuple or object type from a literal value. When we use as const, TypeScript infers the narrowest possible type for the value, which means that the properties of the object or the elements of the tuple are treated as readonly and cannot be modified.It is a type assertion in TypeScript that allows you to assert that an expression has a specific type, and that its value should be treated as a read-only value.
+        let colors = ["red", "green", "blue"] as const; // colors is now of type readonly ['red', 'green', 'blue']
+        // In this example, we have an array of colors that we want to treat as a readonly tuple. By using as const, TypeScript infers the type of colors as readonly ["red", "green", "blue"], which means that we cannot modify the elements of the array.
+        // If we try to modify the array, TypeScript will throw an error:
+        // colors[0] = "yellow"; // Error: Index signature in type 'readonly ["red", "green", "blue"]' only permits reading
  }
