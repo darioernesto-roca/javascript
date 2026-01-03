@@ -334,4 +334,11 @@ console.log(title);
         // In this example, we have an array of colors that we want to treat as a readonly tuple. By using as const, TypeScript infers the type of colors as readonly ["red", "green", "blue"], which means that we cannot modify the elements of the array.
         // If we try to modify the array, TypeScript will throw an error:
         // colors[0] = "yellow"; // Error: Index signature in type 'readonly ["red", "green", "blue"]' only permits reading
+
+    // 6.1.4 Non-Null Assertion Operator (!): The non-null assertion operator (!) in TypeScript is used to tell the compiler that a value is not null or undefined, even if the compiler cannot infer that on its own. It is a way to override the default strict null checking behavior and assert that a value is definitely not null or undefined.
+        function getLength(str: string | null): number {
+            return str!.length; // Using the non-null assertion operator to assert that str is not null
+        }
+        console.log(getLength("Hello")); // Output: 5
+        // In this example, we have a function getLength that takes a string or null as a parameter. We use the non-null assertion operator (!) to assert that str is not null, allowing us to access the length property without any errors. However, using the non-null assertion operator should be done with caution, as it can lead to runtime errors if the value is actually null or undefined.
  }
