@@ -341,4 +341,16 @@ console.log(title);
         }
         console.log(getLength("Hello")); // Output: 5
         // In this example, we have a function getLength that takes a string or null as a parameter. We use the non-null assertion operator (!) to assert that str is not null, allowing us to access the length property without any errors. However, using the non-null assertion operator should be done with caution, as it can lead to runtime errors if the value is actually null or undefined.
+
+    // 6.1.5 satisfies operator: The satisfies operator in TypeScript is used to ensure that an expression conforms to a specific type without changing the resulting type of the expression. It acts as a type constraint, allowing developers to verify that an object meets certain criteria while preserving its original type.
+        interface Person1 {
+            name: string;
+            age: number;
+        }
+        const john1 = {
+            name: "John",
+            age: 30,
+            occupation: "Developer"
+        } satisfies Person1;
+        // In this example, we have an interface Person1 that defines the shape of a person object. We create an object john1 that has additional properties beyond those defined in the Person1 interface. By using the satisfies operator, we ensure that john1 conforms to the Person1 interface while retaining its full type, including the occupation property.
  }
