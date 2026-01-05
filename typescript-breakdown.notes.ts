@@ -354,3 +354,32 @@ console.log(title);
         } satisfies Person1;
         // In this example, we have an interface Person1 that defines the shape of a person object. We create an object john1 that has additional properties beyond those defined in the Person1 interface. By using the satisfies operator, we ensure that john1 conforms to the Person1 interface while retaining its full type, including the occupation property.
  }
+
+ /* Combining Types */
+
+ {
+    // 6.2.1 Union Types: Union types in TypeScript allow a variable to be one of several types. This is useful when a value can be of different types, but we want to restrict it to a specific set of types.
+        let value: string | number = "Hello";
+        console.log(value); // Output: Hello
+        value = 42;
+        console.log(value); // Output: 42
+        // In this example, we have a variable value that can be either a string or a number. We can assign either type to the variable without any errors.
+
+    // 6.2.2 Intersection Types: Intersection types in TypeScript combine multiple types into one, creating a new type that has all the properties of the individual types.
+        interface Person {
+            name: string;
+            age: number;
+        }
+        interface Employee {
+            employeeId: string;
+            salary: number;
+        }
+        type PersonEmployee = Person & Employee;
+        const personEmployee: PersonEmployee = {
+            name: "John",
+            age: 30,
+            employeeId: "12345",
+            salary: 50000
+        };
+        console.log(personEmployee); // Output: { name: "John", age: 30, employeeId: "12345", salary: 50000 }
+ }
