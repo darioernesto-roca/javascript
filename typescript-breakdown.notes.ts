@@ -387,4 +387,15 @@ console.log(title);
         type StringOrNumber = string | number;
         let myValue: StringOrNumber = "Hello";
         console.log(myValue); // Output: Hello
- }
+
+    // 7.4 keyof Operator: The keyof operator in TypeScript is used to obtain the keys of a given type as a union of string literal types. It allows us to create types that represent the property names of an object type.
+        interface Person2 {
+            name: string;
+            age: number;
+            occupation: string;
+        }   
+        type PersonKeys = keyof Person2; // "name" | "age" | "occupation"
+        let key: PersonKeys = "name";
+        console.log(key); // Output: name
+        // In this example, we have an interface Person2 that defines the shape of a person object. We use the keyof operator to create a new type PersonKeys that represents the keys of the Person2 interface as a union of string literal types. We can then use this type to declare variables that can only take on the values of the keys of the Person2 interface.
+    }
