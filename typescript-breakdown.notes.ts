@@ -399,3 +399,46 @@ console.log(title);
         console.log(key); // Output: name
         // In this example, we have an interface Person2 that defines the shape of a person object. We use the keyof operator to create a new type PersonKeys that represents the keys of the Person2 interface as a union of string literal types. We can then use this type to declare variables that can only take on the values of the keys of the Person2 interface.
     }
+
+    /* 8Type Guards */
+    // Type guards in TypeScript are used to narrow down the type of a variable within a specific scope. They allow us to check the type of a variable at runtime and provide type information to the TypeScript compiler, enabling it to perform more accurate type checking. This is useful when you want to do something different depending on the type of a variable.
+
+    {
+        // 8.1 instanceof: The instanceof operator is used to check if an object is an instance of a specific class or constructor function. It narrows the type of the object within the scope of the if statement.
+            class Animal {
+                name: string;
+                constructor(name: string) {
+                    this.name = name;
+                }
+            }
+            
+            class Dog {
+                bark() {
+                    console.log("Woof!");
+                }
+            }
+
+            class Cat {
+                meow() {
+                    console.log("Meow!");
+                }
+            }
+            function makeSound(animal: Dog | Cat) {
+                if (animal instanceof Dog) {
+                    animal.bark(); // TypeScript knows animal is a Dog here
+                } else {
+                    animal.meow(); // TypeScript knows animal is a Cat here
+                }
+            }
+        // In JavaScript, instanceof tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. In TypeScript, it serves as a type guard that narrows the type of a variable within a conditional block. The equivalent in JavaScript would be:
+            function makeSoundJS(animal) {
+                if (animal instanceof Dog) {
+                    animal.bark();
+                } else {
+                    animal.meow();
+                }
+            }
+
+
+
+    }
