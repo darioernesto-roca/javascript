@@ -439,6 +439,15 @@ console.log(title);
                 }
             }
 
+        // 8.2 typeof: The typeof operator is used to check the type of a variable. It returns a string value representing the type of the variable. It can be used as a type guard to narrow the type of a variable within the scope of an if statement.
+            function processValue(value: string | number) {
+                if (typeof value === "string") {
+                    console.log("String value: " + value.toUpperCase()); // TypeScript knows value is a string here
+                } else {
+                    console.log("Number value: " + (value * 2)); // TypeScript knows value is a number here
+                }
+            }
+
 
 
     }
