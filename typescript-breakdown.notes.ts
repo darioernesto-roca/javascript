@@ -461,6 +461,15 @@ console.log(title);
         }
         // When we checked that x and y are both equal in the above example, TypeScript knew their types also had to be equal. Since string is the only common type that both x and y could take on, TypeScript knows that x and y must be a string in the first branch.
 
+        // 8.4 Truthiness: TypeScript uses truthiness checks to narrow types in conditional statements. For example:
+        function printLength(str: string | null) {
+            if (str) {
+                console.log("String length: " + str.length); // TypeScript knows str is a string here
+            } else {
+                console.log("No string provided.");
+            }
+        }
+        // Truthiness might not be a word you’ll find in the dictionary, but it’s very much something you’ll hear about in JavaScript. In JavaScript, we can use any expression in conditionals, &&s, ||s, if statements, Boolean negations (!), and more. As an example, if statements don’t expect their condition to always have the type boolean.
 
 
     }
