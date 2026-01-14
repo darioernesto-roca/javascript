@@ -471,5 +471,20 @@ console.log(title);
         }
         // Truthiness might not be a word you’ll find in the dictionary, but it’s very much something you’ll hear about in JavaScript. In JavaScript, we can use any expression in conditionals, &&s, ||s, if statements, Boolean negations (!), and more. As an example, if statements don’t expect their condition to always have the type boolean.
 
+        // 8.5 Type Predicates: Type predicates are functions that return a boolean value. They are used to narrow the type of a variable. Type predicates are used in type guards.
+
+        function isString(value: unknown): value is string {
+            return typeof value === 'string';
+        }
+
+        function example(x: unknown) {
+            if (isString(x)) {
+                // We can now call any 'string' method on 'x'.
+                x.toUpperCase();
+            } else {
+                console.log(x);
+            }
+        }
+
 
     }
