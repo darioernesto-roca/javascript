@@ -485,6 +485,20 @@ console.log(title);
                 console.log(x);
             }
         }
+    }
 
+    /* 9. TypeScript Functions */
+    // Functions are a core building block in TypeScript. They allow us to wrap a piece of code and reuse it multiple times. Same thing as we do in JavaScript or in any other programming language in fact. In TypeScript functions can also be either declared using function declaration syntax or function expression syntax.
+    {
+        // 9.1 Function Declarations: Function declarations are the most common way to define functions in TypeScript. They are defined using the function keyword followed by the function name, parameters, and return type.
+            function add(a: number, b: number): number {
+                return a + b;
+            }
+            console.log(add(2, 3)); // Output: 5
+
+        // 9.2 Function Expressions: Function expressions are another way to define functions in TypeScript. They are defined using the function keyword followed by the parameters and return type, and assigned to a variable.
+            const multiply = function (a: number, b: number): number {
+                return a * b;
+            };
 
     }
