@@ -501,4 +501,10 @@ console.log(title);
                 return a * b;
             };
 
+        // 9.3 Arrow Functions: Arrow functions are a shorthand syntax for defining functions in TypeScript. They are defined using the => syntax and can be used for both function expressions and anonymous functions.
+        // Example:
+            const divide = (a: number, b: number): number => {
+                return a / b;
+            };
+
     }
