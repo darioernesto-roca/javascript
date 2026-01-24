@@ -507,4 +507,14 @@ console.log(title);
                 return a / b;
             };
 
+        // 9.4 Function Overloading: Function overloading is a feature in TypeScript that allows us to define multiple function signatures for a single function. This is useful when we want to create functions that can accept different types of arguments or return different types of values based on the input.
+        // Example:
+            function combine(a: string, b: string): string;
+            function combine(a: number, b: number): number;
+            function combine(a: any, b: any): any {
+                return a + b;
+            }
+            console.log(combine("Hello, ", "World!")); // Output: Hello, World!
+            console.log(combine(2, 3)); // Output: 5
+
     }
