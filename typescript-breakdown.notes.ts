@@ -516,5 +516,42 @@ console.log(title);
             }
             console.log(combine("Hello, ", "World!")); // Output: Hello, World!
             console.log(combine(2, 3)); // Output: 5
+    }
 
+    /* 10. TypeScript Interfaces */
+    // Interfaces in TypeScript provide a way to define a contract for a type, which includes a set of properties, methods, and events. It's used to enforce a structure for an object, class, or function argument. Interfaces are not transpiled to JavaScript and are only used by TypeScript at compile-time for type-checking purposes.
+
+    {
+        // 10.1 Types vs Interfaces: Both types and interfaces can be used to define the shape of an object in TypeScript. However, there are some differences between the two. Types are more flexible and can be used to define primitive types, union types, intersection types, and more. Interfaces, on the other hand, are primarily used to define the shape of an object and can be extended or implemented by classes.
+        // Example of Interface:
+            interface Person {
+                name: string;
+                age: number;
+                greet(): void;
+            }
+
+            const john: Person = {
+                name: "John",
+                age: 30,
+                greet() {
+                    console.log("Hello, my name is " + this.name);
+                }
+            };
+            john.greet(); // Output: Hello, my name is John
+
+        // Example of Type:
+            type Animal = {
+                species: string;
+                age: number;
+                makeSound(): void;
+            };
+            const dog: Animal = {
+                species: "Dog",
+                age: 5,
+                makeSound() {
+                    console.log("Woof!");
+                }
+            };
+            dog.makeSound(); // Output: Woof!
+            // As we cam see from the above examples, both interfaces and types can be used to define the shape of an object. However, interfaces are more suited for defining complex object structures, while types are more flexible and can be used for a wider range of use cases.
     }
