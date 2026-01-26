@@ -554,4 +554,22 @@ console.log(title);
             };
             dog.makeSound(); // Output: Woof!
             // As we cam see from the above examples, both interfaces and types can be used to define the shape of an object. However, interfaces are more suited for defining complex object structures, while types are more flexible and can be used for a wider range of use cases.
+
+        // 10.2 Extending Interfaces: Interfaces in TypeScript can be extended using the extends keyword. This allows us to create new interfaces that inherit properties and methods from existing interfaces.
+        // Example:
+            interface Employee extends Person {
+                employeeId: string;
+                salary: number;
+            }
+            const jane: Employee = {
+                name: "Jane",
+                age: 28,
+                employeeId: "E123",
+                salary: 60000,
+                greet() {
+                    console.log("Hello, my name is " + this.name);
+                }
+            };
+            jane.greet(); // Output: Hello, my name is Jane
+            // In this example, we have an Employee interface that extends the Person interface. The Employee interface inherits the properties and methods of the Person interface and adds its own properties (employeeId and salary). We then create an object jane of type Employee that implements all the properties and methods defined in both interfaces.
     }
