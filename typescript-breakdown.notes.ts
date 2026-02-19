@@ -591,4 +591,25 @@ console.log(title);
             };
             myCar.drive(); // Output: Driving my 2020 Toyota Camry
         
+        // 10.4 Hybrid Types: Hybrid types in TypeScript are a combination of different types, such as an object that can be called like a function. This is useful when we want to create objects that have both properties and methods, and can also be invoked as functions.
+        // Example:
+            interface Counter {
+                (start: number): string; // This allows the Counter to be called like a function
+                interval: number; // This is a property of the Counter
+                reset(): void; // This is a method of the Counter
+            }
+            function getCounter(): Counter {
+                let counter = <Counter>function (start: number) {
+                    console.log("Counter started at: " + start);
+                };
+                counter.interval = 1000;
+                counter.reset = function () {
+                    console.log("Counter reset");
+                };
+                return counter;
+            }
+            const myCounter = getCounter();
+            myCounter(10); // Output: Counter started at: 10
+            console.log(myCounter.interval); // Output: 1000
+            myCounter.reset(); // Output: Counter reset
     }
