@@ -572,4 +572,23 @@ console.log(title);
             };
             jane.greet(); // Output: Hello, my name is Jane
             // In this example, we have an Employee interface that extends the Person interface. The Employee interface inherits the properties and methods of the Person interface and adds its own properties (employeeId and salary). We then create an object jane of type Employee that implements all the properties and methods defined in both interfaces.
+
+        // 10.3 Interface Declaration: Interfaces in TypeScript can be declared using the interface keyword. An interface declaration consists of the interface name, followed by a block of code that defines the properties and methods of the interface.
+        // Example:
+            interface Car {
+                make: string;
+                model: string;
+                year: number;
+                drive(): void;
+            }
+            const myCar: Car = {
+                make: "Toyota",
+                model: "Camry",
+                year: 2020,
+                drive() {
+                    console.log(`Driving my ${this.year} ${this.make} ${this.model}`);
+                }
+            };
+            myCar.drive(); // Output: Driving my 2020 Toyota Camry
+        
     }
