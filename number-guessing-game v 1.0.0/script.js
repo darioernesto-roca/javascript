@@ -5,24 +5,89 @@ const resultDisplay = document.getElementById("result");
 const attemptsDisplay = document.getElementById("attempts");
 const correctNumberDisplay = document.getElementById("correct-number");
 const numberGuessedDisplay = document.getElementById("guessed-number");
+const bestScoreDisplay = document.getElementById("best-score");
 
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-let attempts = 0;
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
 
-submitButton.addEventListener("click", function() {
-    const userGuess = parseInt(guessInput.value);
-    attempts++;
+let randomNumber;
+let attempts;
+let bestScore = null;
+let gameOver;
+
+function getRandomNumber() {
+    return Math.floor(Math.random() * MAX_NUMBER) + MIN_NUMBER;
+}
+
+function setResultMessage(message, tone = "") {
+    resultDisplay.textContent = message;
+    resultDisplay.className = `result ${tone}`.trim();
+}
+
+function startNewRound() {
+    randomNumber = getRandomNumber();
+    attempts = 0;
+    gameOver = false;
+
+    attemptsDisplay.textContent = attempts;
+    numberGuessedDisplay.textContent = "—";
+    correctNumberDisplay.textContent = "?";
+    guessInput.value = "";
+    guessInput.focus();
+
+    setResultMessage("New round started. Enter your guess.");
+}
+
+function processGuess() {
+    if (gameOver) {
+        setResultMessage("Round is complete. Start a new round to keep playing.", "warning");
+        return;
+    }
+
+    const userGuess = Number.parseInt(guessInput.value, 10);
+
+    if (Number.isNaN(userGuess)) {
+        setResultMessage("Please enter a valid number.", "error");
+        return;
+    }
+
+    if (userGuess < MIN_NUMBER || userGuess > MAX_NUMBER) {
+        setResultMessage(`Please enter a number between ${MIN_NUMBER} and ${MAX_NUMBER}.`, "error");
+        return;
+    }
+
+    attempts += 1;
     attemptsDisplay.textContent = attempts;
     numberGuessedDisplay.textContent = userGuess;
 
     if (userGuess === randomNumber) {
-        resultDisplay.textContent = `Congratulations! The number is ${randomNumber}. You guessed the number in ${attempts} attempts.`;
+        gameOver = true;
         correctNumberDisplay.textContent = randomNumber;
-    } else if (userGuess < randomNumber) {
-        resultDisplay.textContent = `Too low! The correct number was ${randomNumber}. Try again.`;
-        correctNumberDisplay.textContent = randomNumber;
+
+        if (bestScore === null || attempts < bestScore) {
+            bestScore = attempts;
+            bestScoreDisplay.textContent = bestScore;
+        }
+
+        setResultMessage(`🎉 Correct! You guessed ${randomNumber} in ${attempts} attempt${attempts > 1 ? "s" : ""}.`, "success");
+        return;
+    }
+
+    if (userGuess < randomNumber) {
+        setResultMessage("Too low. Try a higher number.", "warning");
     } else {
-        resultDisplay.textContent = `Too high! The correct number was ${randomNumber}. Try again.`;
-        correctNumberDisplay.textContent = randomNumber;
+        setResultMessage("Too high. Try a lower number.", "warning");
+    }
+}
+
+submitButton.addEventListener("click", processGuess);
+
+guessInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        processGuess();
     }
 });
+
+resetButton.addEventListener("click", startNewRound);
+
+startNewRound();
