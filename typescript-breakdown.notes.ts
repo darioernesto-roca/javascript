@@ -613,3 +613,14 @@ console.log(title);
             console.log(myCounter.interval); // Output: 1000
             myCounter.reset(); // Output: Counter reset
     }
+
+    /* 11.. Classes */
+
+    // Classes in TypeScript are a blueprint for creating objects (instances of a class), providing a way to structure objects and encapsulate data and behavior. Classes in TypeScript have a similar syntax to classes in other object-oriented programming languages, such as Java and C#. A class in TypeScript is defined using the class keyword, followed by the name of the class. The class definition can include fields (also known as properties or attributes), methods (functions), and a constructor.
+
+    {
+        // 11.1 COnstructor Params: In TypeScript, constructor parameters can be declared with access modifiers (e.g. public, private, protected) and/or type annotations. The parameters are then automatically assigned to properties of the same name within the constructor, and can be accessed within the class. For example:
+        class ExampleConstructor {
+            constructor(private name: string, public age: number) {}
+        }
+    }
