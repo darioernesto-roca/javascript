@@ -623,4 +623,26 @@ console.log(title);
         class ExampleConstructor {
             constructor(private name: string, public age: number) {}
         }
+
+        // 11.2 Access Modifiers: TypeScript provides three access modifiers for class members: public, private, and protected. Public members are accessible from anywhere, private members are only accessible within the class, and protected members are accessible within the class and its subclasses. For example:
+        class ExampleAccessModifiers {
+            public publicProperty: string;
+            private privateProperty: string;
+            protected protectedProperty: string;
+
+            constructor(publicProperty: string, privateProperty: string, protectedProperty: string) {
+                this.publicProperty = publicProperty;
+                this.privateProperty = privateProperty;
+                this.protectedProperty = protectedProperty;
+            }
+
+            getPrivateProperty(): string {
+                return this.privateProperty; // This method allows us to access the private property from outside the class
+            }
+        }
+
+        const exampleAccess = new ExampleAccessModifiers("Public", "Private", "Protected");
+        console.log(exampleAccess.publicProperty); // Output: Public
+        // console.log(exampleAccess.privateProperty); // Error: Property 'privateProperty' is private and only accessible within class 'ExampleAccessModifiers'. To access it, you would need to create a public method within the class that returns the value of privateProperty.
+        // console.log(exampleAccess.protectedProperty); // Error: Property 'protectedProperty' is protected and only accessible within class 'ExampleAccessModifiers' and its subclasses.
     }
