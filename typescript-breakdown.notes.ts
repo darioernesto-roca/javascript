@@ -645,4 +645,24 @@ console.log(title);
         console.log(exampleAccess.publicProperty); // Output: Public
         // console.log(exampleAccess.privateProperty); // Error: Property 'privateProperty' is private and only accessible within class 'ExampleAccessModifiers'. To access it, you would need to create a public method within the class that returns the value of privateProperty.
         // console.log(exampleAccess.protectedProperty); // Error: Property 'protectedProperty' is protected and only accessible within class 'ExampleAccessModifiers' and its subclasses.
+
+        // 11.3 Abstract Classes: Abstract classes in TypeScript are classes that cannot be instantiated directly and are meant to be subclassed. They can contain abstract methods, which are methods that are declared but not implemented in the abstract class. Subclasses of an abstract class must implement all abstract methods. For example:
+        abstract class Shape {
+            abstract area(): number; // This is an abstract method that must be implemented by subclasses
+        }
+
+        class Circle extends Shape {
+            constructor(public radius: number) { // The constructor of the Circle class takes a radius parameter and initializes it as a public property of the class. This allows us to create instances of the Circle class with a specific radius. The word public before the radius parameter is a shorthand syntax in TypeScript that automatically creates a property on the class and assigns the value of the parameter to that property. This means that we don't have to explicitly declare a property for radius and assign it in the constructor; TypeScript does this for us when we use the public keyword in the constructor parameter. Radius is a property of the Circle class that represents the radius of the circle. It is used in the area method to calculate the area of the circle using the formula A = πr², where r is the radius of the circle. An finally, number is the return type of the area method, indicating that it will return a numeric value representing the area of the circle.
+                super(); // Call the constructor of the abstract class Shape. Super is used to call the constructor of the parent class (in this case, Shape) and is required when we have a constructor in a subclass that extends an abstract class.
+            }
+            area(): number { // This is the implementation of the abstract method area from the Shape class. It calculates and returns the area of the circle using the formula A = πr², where r is the radius of the circle. The Math.PI constant is used to represent the value of π in JavaScript.
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+
+        const circle = new Circle(5);
+        console.log(circle.area()); // Output: 78.53981633974483
+        // If we try to create an instance of the Shape class directly, we will get an error because it is an abstract class and cannot be instantiated:
+        // const shape = new Shape(); // Error: Cannot create an instance of an abstract class.
+        // Why this is important or useful? Abstract classes are useful when we want to define a common structure or behavior for a group of related classes, but we don't want to allow direct instantiation of the base class. They provide a way to enforce a certain design pattern and ensure that subclasses implement specific methods, while still allowing for flexibility in how those methods are implemented.
     }
