@@ -665,4 +665,29 @@ console.log(title);
         // If we try to create an instance of the Shape class directly, we will get an error because it is an abstract class and cannot be instantiated:
         // const shape = new Shape(); // Error: Cannot create an instance of an abstract class.
         // Why this is important or useful? Abstract classes are useful when we want to define a common structure or behavior for a group of related classes, but we don't want to allow direct instantiation of the base class. They provide a way to enforce a certain design pattern and ensure that subclasses implement specific methods, while still allowing for flexibility in how those methods are implemented.
+
+        //11.4 Inheritance vs Polymorphism: Inheritance and polymorphism are two fundamental concepts in object-oriented programming. Inheritance allows a new class (called a subclass or child class) to inherit properties and methods from an existing class (called a superclass or parent class). This promotes code reuse and establishes a natural hierarchical relationship between classes. Polymorphism, on the other hand, allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types). In TypeScript, we can achieve polymorphism through method overriding, where a subclass provides a specific implementation of a method that is already defined in its superclass. This allows us to call the same method on different objects and have each object respond in its own way, depending on its class.
+        // For example, we can have a base class called Animal with a method called makeSound, and then we can have subclasses like Dog and Cat that inherit from Animal and override the makeSound method to provide their own specific implementation:
+        class Animal {
+            makeSound() {
+                console.log("Animal makes a sound");
+            }
+        }
+        class Dog extends Animal {
+            makeSound() {
+                console.log("Woof!");
+            }   
+        }
+        class Cat extends Animal {
+            makeSound() {
+                console.log("Meow!");
+            }
+        }
+        const animals: Animal[] = [new Dog(), new Cat()];
+        animals.forEach(animal => animal.makeSound());
+        // Output:
+        // Woof!
+        // Meow!
+
+        // For inheritance, we can see that the Dog and Cat classes inherit from the Animal class, which means they have access to the makeSound method defined in the Animal class. For polymorphism, we can see that we can treat both Dog and Cat objects as instances of the Animal class, and when we call the makeSound method on each object, it responds according to its own implementation of the method. This allows us to write code that is more flexible and can work with different types of objects without needing to know their specific classes.
     }
