@@ -690,4 +690,22 @@ console.log(title);
         // Meow!
 
         // For inheritance, we can see that the Dog and Cat classes inherit from the Animal class, which means they have access to the makeSound method defined in the Animal class. For polymorphism, we can see that we can treat both Dog and Cat objects as instances of the Animal class, and when we call the makeSound method on each object, it responds according to its own implementation of the method. This allows us to write code that is more flexible and can work with different types of objects without needing to know their specific classes.
+
+        // 11.5 Method Overriding: Method overriding allows a subclass to provide a specific implementation for a method that is already defined in its superclass. When a method in a subclass has the same name, same parameters, and same return type (or a more specific return type, known as covariant return type) as a method in its superclass, the subclass's method overrides the superclass's method. This means that when the method is called on an object of the subclass, the subclass's version of the method will be executed instead of the superclass's version. For examples:
+        class Parent {
+            greet() {
+                console.log("Hello from the Parent class!");
+            }
+        }
+        class Child extends Parent {
+            greet() {
+                console.log("Hello from the Child class!");
+            }
+        }
+        const parent = new Parent();
+        const child = new Child();
+        parent.greet();
+        // Output: Hello from the Parent class!
+        child.greet();
+        // Output: Hello from the Child class!
     }
