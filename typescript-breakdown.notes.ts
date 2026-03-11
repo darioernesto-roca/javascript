@@ -708,4 +708,23 @@ console.log(title);
         // Output: Hello from the Parent class!
         child.greet();
         // Output: Hello from the Child class!
+
+        // 11.6 Constructor Overloading: Constructor overloading is a feature in object-oriented programming that allows a class to have multiple constructors with different parameter lists. This enables the creation of objects in different ways, depending on the arguments provided during instantiation. In TypeScript, we can achieve constructor overloading by defining multiple constructor signatures and providing a single implementation that handles all cases. For example:
+        class Person {
+            name: string;
+            age: number;
+            constructor(name: string);
+            constructor(name: string, age: number);
+            constructor(name: string, age?: number) {
+                this.name = name;
+                this.age = age ?? 0; // If age is not provided, default to 0
+            }
+        }
+
+        const person1 = new Person("Alice");
+        console.log(person1.name); // Output: Alice
+        console.log(person1.age); // Output: 0
+        const person2 = new Person("Bob", 25);
+        console.log(person2.name); // Output: Bob
+        console.log(person2.age); // Output: 25
     }
