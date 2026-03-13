@@ -728,3 +728,15 @@ console.log(title);
         console.log(person2.name); // Output: Bob
         console.log(person2.age); // Output: 25
     }
+
+    /* 12. Generics */
+
+    {
+        // 12.1 Generic Types: Generic types allow us to write code that can work with a variety of types without sacrificing type safety. Think of them as placeholders for types that you specify later when you use the code. To create a generic type, you use angle brackets <> to define type parameters. These parameters act as variables that represent the specific type you want to work with, allowing you to write reusable components that adapt to different data types. Generic types in TypeScript allow us to create reusable components that can work with a variety of data types. They enable us to define a type parameter that can be used within the component, allowing it to be flexible and adaptable to different types of data. For example:
+        function identity<T>(arg: T): T {
+            return arg;
+        }
+        console.log(identity<string>("Hello")); // Output: Hello
+        console.log(identity<number>(42)); // Output: 42
+        // In this example, we have a generic function identity that takes a type parameter T. The function takes an argument of type T and returns a value of the same type T. We can call the function with different types by specifying the type argument in angle brackets (e.g., identity<string> and identity<number>), allowing us to reuse the same function for different data types.
+    }
