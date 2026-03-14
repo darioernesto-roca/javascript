@@ -739,4 +739,12 @@ console.log(title);
         console.log(identity<string>("Hello")); // Output: Hello
         console.log(identity<number>(42)); // Output: 42
         // In this example, we have a generic function identity that takes a type parameter T. The function takes an argument of type T and returns a value of the same type T. We can call the function with different types by specifying the type argument in angle brackets (e.g., identity<string> and identity<number>), allowing us to reuse the same function for different data types.
+
+        // 12.2 Generic constraints: Generic constraints in TypeScript allow you to limit the types that can be used as type arguments for a generic type or function. They ensure that the type argument satisfies a specific requirement, like having certain properties or methods. This provides more type safety and enables you to work with specific properties of the generic type, knowing they are guaranteed to exist. For example:
+        interface Lengthwise {
+            length: number;
+        }
+        function logLength<T extends Lengthwise>(arg: T): void {
+            console.log(arg.length);
+        }
     }
