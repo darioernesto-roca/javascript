@@ -748,3 +748,26 @@ console.log(title);
             console.log(arg.length);
         }
     }
+
+/* 13. Decorators */
+
+{
+    // Decorators in TypeScript are a powerful feature that allows you to add metadata and modify the behavior of classes, methods, properties, or parameters at design time. They are a form of syntactic sugar that provides a way to annotate and modify code in a declarative manner. Decorators are defined using the @ symbol followed by the decorator name and can be applied to various elements in TypeScript, such as classes, methods, properties, and parameters. They can be used for a wide range of purposes, including logging, validation, dependency injection, and more. For example:
+
+    // This is a function that serves as a method decorator. It takes three parameters: target, which is the prototype of the class for instance methods or the constructor function for static methods; propertyKey, which is the name of the method being decorated; and descriptor, which is an object that contains information about the method, such as its value (the original method) and its configurable and enumerable properties. The log decorator modifies the behavior of the sayHello method by logging the method name and its arguments before calling the original method.
+    function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        const originalMethod = descriptor.value;
+        descriptor.value = function (...args: any[]) {
+            console.log(`Calling ${propertyKey} with arguments: ${JSON.stringify(args)}`);
+            return originalMethod.apply(this, args);
+        };
+    }
+    class Example {
+        @log // This applies the log decorator to the sayHello method. When sayHello is called, it will first execute the code in the log decorator, which logs the method name and its arguments, and then it will call the original sayHello method.
+        sayHello(name: string) {
+            return `Hello, ${name}!`;
+        }
+    }
+    const example = new Example();
+    console.log(example.sayHello("Alice")); // Output: Calling sayHello with arguments: ["Alice"] \n Hello, Alice!
+}
