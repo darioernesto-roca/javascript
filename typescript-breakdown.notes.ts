@@ -573,7 +573,7 @@ console.log(title);
             jane.greet(); // Output: Hello, my name is Jane
             // In this example, we have an Employee interface that extends the Person interface. The Employee interface inherits the properties and methods of the Person interface and adds its own properties (employeeId and salary). We then create an object jane of type Employee that implements all the properties and methods defined in both interfaces.
 
-        // 10.3 Interface Declaration: Interfaces in TypeScript can be declared using the interface keyword. An interface declaration consists of the interface name, followed by a block of code that defines the properties and methods of the interface.
+        // 10.3 Interface Declaration: Interfaces in TypeScript can be declared using the interface keyword. An interface declaration consists of the interface name, followed by a block of code that defines the properties and methods of the interface. The difference an interface and a class is that an interface only defines the shape of an object, while a class provides an implementation for that shape. An interface can be implemented by a class, which means that the class must provide an implementation for all the properties and methods defined in the interface.
         // Example:
             interface Car {
                 make: string;
@@ -770,4 +770,23 @@ console.log(title);
     }
     const example = new Example();
     console.log(example.sayHello("Alice")); // Output: Calling sayHello with arguments: ["Alice"] \n Hello, Alice!
+}
+
+/* 14. Utility Types */
+// Utility Types in TypeScript are built-in generic types that perform common type transformations. They allow us to create new types based on existing ones by applying operations like making properties optional, required, readonly, or picking specific properties. These utilities enhance type safety and code reusability by enabling us to express complex type manipulations in a concise and declarative way.
+
+{
+    // 14.1 Partial: The Partial utility type in TypeScript is used to create a new type that makes all properties of an existing type optional. This is useful when us want to create a type that represents a subset of the properties of another type, or when us want to allow for partial updates to an object without requiring all properties to be specified. For example:
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+    type PartialUser = Partial<User>;
+    const updateUser: PartialUser = {
+        name: "Alice"
+    };
+    console.log(updateUser); // Output: { name: "Alice" }
+    console.log(updateUser.id); // Output: undefined
+    // In this example, we have an interface User that defines the shape of a user object. We then create a new type PartialUser using the Partial utility type, which makes all properties of the User interface optional. This allows us to create an object updateUser that only includes the name property, without needing to specify the id and email properties.
 }
