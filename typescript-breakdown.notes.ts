@@ -789,4 +789,16 @@ console.log(title);
     console.log(updateUser); // Output: { name: "Alice" }
     console.log(updateUser.id); // Output: undefined
     // In this example, we have an interface User that defines the shape of a user object. We then create a new type PartialUser using the Partial utility type, which makes all properties of the User interface optional. This allows us to create an object updateUser that only includes the name property, without needing to specify the id and email properties.
+
+    // 14.2 Pick: It is a utility type that constructs a new type by selecting a set of properties from an existing type. You specify which properties you want to include in the new type using their keys. This is useful when you need a subset of properties from a larger type definition. For example:
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+    type UserName = Pick<User, 'name'>;
+    const userName: UserName = {
+        name: "Alice"
+    };
+    console.log(userName); // Output: { name: "Alice" }
 }
