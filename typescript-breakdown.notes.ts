@@ -801,4 +801,17 @@ console.log(title);
         name: "Alice"
     };
     console.log(userName); // Output: { name: "Alice" }
+
+    // 14.3 Omit: The Omit utility type in TypeScript is used to create a new type by excluding specific properties from an existing type. You specify which properties you want to exclude using their keys. This is useful when you want to create a type that has all the properties of another type except for a few that you want to omit. For example:
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+    type UserWithoutEmail = Omit<User, 'email'>; // This creates a new type UserWithoutEmail that has all the properties of the User interface except for the email property. This means that the UserWithoutEmail type will only include the id and name properties, and any attempt to include the email property in an object of type UserWithoutEmail will result in a TypeScript error.
+    const userWithoutEmail: UserWithoutEmail = {
+        id: 1,
+        name: "Alice"
+    };
+    console.log(userWithoutEmail); // Output: { id: 1, name: "Alice" }
 }
