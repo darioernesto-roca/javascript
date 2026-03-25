@@ -814,4 +814,19 @@ console.log(title);
         name: "Alice"
     };
     console.log(userWithoutEmail); // Output: { id: 1, name: "Alice" }
+
+    // 14.4 Readonly: The Readonly utility type in TypeScript constructs a new type where all properties of the original type are set as read-only. This means that once a property is initialized, its value cannot be changed later. This is useful for creating immutable objects and ensuring that data is not accidentally modified.
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+    type ReadonlyUser = Readonly<User>;
+    const readonlyUser: ReadonlyUser = {
+        id: 1,
+        name: "Alice",
+        email: "alice@example.com"
+    };
+    console.log(readonlyUser); // Output: { id: 1, name: "Alice", email: "alice@example.com" }
+    // readonlyUser.name = "Bob"; // Error: Cannot assign to 'name' because it is a read-only property.
 }
