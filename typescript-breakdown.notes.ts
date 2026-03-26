@@ -829,4 +829,14 @@ console.log(title);
     };
     console.log(readonlyUser); // Output: { id: 1, name: "Alice", email: "alice@example.com" }
     // readonlyUser.name = "Bob"; // Error: Cannot assign to 'name' because it is a read-only property.
+
+    // 14.5 Record: The Record utility type in TypeScript is used to create a new type that represents an object with a specific set of keys and values of a specific type. It takes two type parameters: the first is a union of string literal types that represent the keys of the object, and the second is the type of the values associated with those keys. This is useful when you want to create an object type with a fixed set of keys and values of a specific type. For example:
+    type UserRoles = "admin" | "editor" | "viewer";
+    type UserPermissions = Record<UserRoles, string[]>;
+    const permissions: UserPermissions = {
+        admin: ["read", "write", "delete"],
+        editor: ["read", "write"],
+        viewer: ["read"]
+    };
+    console.log(permissions); // Output: { admin: ["read", "write", "delete"], editor: ["read", "write"], viewer: ["read"] }
 }
