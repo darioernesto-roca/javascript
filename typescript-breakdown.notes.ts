@@ -839,4 +839,16 @@ console.log(title);
         viewer: ["read"]
     };
     console.log(permissions); // Output: { admin: ["read", "write", "delete"], editor: ["read", "write"], viewer: ["read"] }
+
+    // 14.6 ReturnType: The ReturnType utility type in TypeScript is used to create a new type that represents the return type of a function. It takes a single type parameter, which is the type of the function whose return type you want to extract. This is useful when you want to create a type that represents the output of a function without having to manually specify the return type. For example:
+    function getUser() {
+        return {
+            id: 1,
+            name: "Alice",
+            email: "alice@example.com"
+        };
+    }
+    type User = ReturnType<typeof getUser>;
+    const user: User = getUser();
+    console.log(user); // Output: { id: 1, name: "Alice", email: "alice@example.com" }
 }
