@@ -851,4 +851,9 @@ console.log(title);
     type User = ReturnType<typeof getUser>;
     const user: User = getUser();
     console.log(user); // Output: { id: 1, name: "Alice", email: "alice@example.com" }
+
+    // 14.7 Exclude: Exclude is a utility type in TypeScript that constructs a new type by removing types from a union type. Given two types, Type and ExcludedUnion, Exclude<Type, ExcludedUnion> creates a type that includes all members of Type that are not assignable to ExcludedUnion. This is useful for filtering out specific types from a union, resulting in a more refined and specific type.
+    // For example:
+    type T1 = string | number | boolean;
+    type T2 = Exclude<T1, string>; // T2 is now | number | boolean
 }
