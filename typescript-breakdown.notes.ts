@@ -862,4 +862,6 @@ console.log(title);
     type T3 = string | number | boolean;
     type T4 = Extract<T3, string | boolean>; // T4 is now string | boolean
 
+    // 14.7 Awaited: The Awaited utility type in TypeScript is used to extract the type that a Promise resolves to. It takes a single type parameter, which is the type of the Promise, and returns the type that the Promise resolves to. This is useful when you want to work with the resolved value of a Promise without having to manually specify its type. For example:
+    type ResolvedType = Awaited<Promise<string>>; // ResolvedType is now string
 }
