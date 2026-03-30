@@ -856,4 +856,10 @@ console.log(title);
     // For example:
     type T1 = string | number | boolean;
     type T2 = Exclude<T1, string>; // T2 is now | number | boolean
+
+    // 14.8 Extract: Extract is a utility type in TypeScript that constructs a new type by extracting types from a union type. Given two types, Type and Union, Extract<Type, Union> creates a type that includes all members of Type that are assignable to Union. This is useful for filtering out specific types from a union, resulting in a more refined and specific type.
+    // For example:
+    type T3 = string | number | boolean;
+    type T4 = Extract<T3, string | boolean>; // T4 is now string | boolean
+
 }
