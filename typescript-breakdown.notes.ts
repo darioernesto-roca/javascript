@@ -864,4 +864,10 @@ console.log(title);
 
     // 14.7 Awaited: The Awaited utility type in TypeScript is used to extract the type that a Promise resolves to. It takes a single type parameter, which is the type of the Promise, and returns the type that the Promise resolves to. This is useful when you want to work with the resolved value of a Promise without having to manually specify its type. For example:
     type ResolvedType = Awaited<Promise<string>>; // ResolvedType is now string
+
+    // 14.8 Parameters: The Parameters utility type in TypeScript is used to create a new type that represents the types of the parameters of a function. It takes a single type parameter, which is the type of the function, and returns a tuple type that contains the types of the parameters of the function. This is useful when you want to create a type that represents the input parameters of a function without having to manually specify their types. For example:
+    function exampleFunction(name: string, age: number): void {
+        console.log(`Name: ${name}, Age: ${age}`);
+    }
+    type ExampleFunctionParameters = Parameters<typeof exampleFunction>; // ExampleFunctionParameters is now [string, number]
 }
