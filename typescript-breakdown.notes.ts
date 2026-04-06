@@ -870,4 +870,8 @@ console.log(title);
         console.log(`Name: ${name}, Age: ${age}`);
     }
     type ExampleFunctionParameters = Parameters<typeof exampleFunction>; // ExampleFunctionParameters is now [string, number]
+
+    // 14.9 NonNullable: The NonNullable utility type in TypeScript is used to create a new type that excludes null and undefined from a given type. It takes a single type parameter, which is the type you want to modify, and returns a new type that includes all the members of the original type except for null and undefined. This is useful when you want to ensure that a value cannot be null or undefined, providing stronger type safety in your code. For example:
+    type T5 = string | number | null | undefined;
+    type T6 = NonNullable<T5>; // T6 is now string | number
 }
