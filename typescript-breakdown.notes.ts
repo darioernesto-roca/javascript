@@ -874,4 +874,10 @@ console.log(title);
     // 14.9 NonNullable: The NonNullable utility type in TypeScript is used to create a new type that excludes null and undefined from a given type. It takes a single type parameter, which is the type you want to modify, and returns a new type that includes all the members of the original type except for null and undefined. This is useful when you want to ensure that a value cannot be null or undefined, providing stronger type safety in your code. For example:
     type T5 = string | number | null | undefined;
     type T6 = NonNullable<T5>; // T6 is now string | number
+
+    // 14.10 ReturnType: ReturnType is a utility type that extracts the return type of a function. Given a function type, ReturnType<Type> produces a new type that represents the type of value that the function returns. This is useful when you need to work with the output of a function without knowing its exact return type beforehand. For example:
+    function exampleFunction2(): string {
+        return "Hello, World!";
+    }
+    type ExampleFunctionReturnType = ReturnType<typeof exampleFunction2>; // ExampleFunctionReturnType is now string
 }
