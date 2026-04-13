@@ -880,4 +880,10 @@ console.log(title);
         return "Hello, World!";
     }
     type ExampleFunctionReturnType = ReturnType<typeof exampleFunction2>; // ExampleFunctionReturnType is now string
+
+    // 14.11 InstanceType: The InstanceType utility type in TypeScript is used to create a new type that represents the instance type of a constructor function. It takes a single type parameter, which is the type of the constructor function, and returns the type of the instance that the constructor creates. This is useful when you want to work with the instance of a class without having to manually specify its type. For example:
+    class ExampleClass {
+        constructor(public name: string) {}
+    }
+    type ExampleClassInstance = InstanceType<typeof ExampleClass>; // ExampleClassInstance is now ExampleClass
 }
