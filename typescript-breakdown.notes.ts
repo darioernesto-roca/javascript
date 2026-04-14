@@ -887,3 +887,32 @@ console.log(title);
     }
     type ExampleClassInstance = InstanceType<typeof ExampleClass>; // ExampleClassInstance is now ExampleClass
 }
+
+/* 15. Advanced Types */
+/* TypeScript's advanced types allow for more precise and flexible type definitions beyond basic primitives. Intersection types combine multiple types into one, requiring a value to satisfy all combined types. Union types allow a value to be one of several specified types. Type aliases create a name for a type, making complex type definitions easier to reuse. Conditional types allow types to be determined based on a condition, often using generics. Index types enable you to extract the type of a property from another type using a key. Mapped types transform each property in a type, creating a new type based on the original. Type guards are functions that narrow down the type of a variable within a specific scope. */
+
+{
+    // 15.1 Mapped types: Mapped types in TypeScript allow you to create new types by transforming each property of an existing type. They are defined using the syntax { [P in K]: T }, where P is a placeholder for the property name, K is a union of string literal types representing the keys of the original type, and T is the type that each property will be transformed into. This is useful for creating new types based on existing ones while applying a specific transformation to each property. For example:
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+    type ReadonlyUser = { readonly [P in keyof User]: User[P] };
+    const readonlyUser: ReadonlyUser = {
+        id: 1,
+        name: "Alice",
+        email: "example@mail.com"
+    };
+    console.log(readonlyUser); // Output: { id: 1, name: "Alice", email: "example@mail.com" }
+
+    // Another example:
+    type Nullable<T> = { [P in keyof T]: T[P] | null };
+    type NullableUser = Nullable<User>;
+    const nullableUser: NullableUser = {
+        id: 1,
+        name: "Alice",
+        email: null
+    };
+    console.log(nullableUser); // Output: { id: 1, name: "Alice", email: null }
+}
