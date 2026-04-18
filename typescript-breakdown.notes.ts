@@ -915,4 +915,9 @@ console.log(title);
         email: null
     };
     console.log(nullableUser); // Output: { id: 1, name: "Alice", email: null }
+
+    // 15.2 Conditional Types: Conditional types in TypeScript allow you to create types that depend on a condition. They are defined using the syntax T extends U ? X : Y, where T is the type being checked, U is the type being compared against, X is the type returned if the condition is true, and Y is the type returned if the condition is false. This is useful for creating types that can adapt based on certain conditions, often using generics to make them more flexible. For example:
+    type IsString<T> = T extends string ? "Yes" : "No";
+    type Test1 = IsString<string>; // Test1 is "Yes"
+    type Test2 = IsString<number>; // Test2 is "No"
 }
