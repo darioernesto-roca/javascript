@@ -923,5 +923,11 @@ console.log(title);
 
     // 15.3 Literal Types: Literal types are a feature that allows you to specify the exact value a variable can hold. Instead of just saying a variable is a string or a number, you can specify that it can only be a particular string like "hello" or a particular number like 42. This enables more precise type checking and helps catch errors at compile time by ensuring that variables only hold the intended values. For example:
     type Direction = "North" | "South" | "East" | "West";
-    
+
+    // 15.4 Template Literal Types: Template literal types in TypeScript are a way to create new string literal types by combining existing string literal types, much like template literals in JavaScript. They allow you to define string types that are composed of other string types with specific patterns or structures. This is done by embedding other types within a string literal definition, enabling you to enforce stricter type safety and create more descriptive types based on string manipulation. For example:
+    type EventName = "click" | "hover" | "focus";
+    type PrefixedEventName = `on${Capitalize<EventName>}`;
+    const event: PrefixedEventName = "onClick"; // This is valid
+    // const invalidEvent: PrefixedEventName = "click"; // This would cause a TypeScript error because it does not match the pattern defined by PrefixedEventName
+
 }
