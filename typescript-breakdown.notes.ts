@@ -920,4 +920,8 @@ console.log(title);
     type IsString<T> = T extends string ? "Yes" : "No";
     type Test1 = IsString<string>; // Test1 is "Yes"
     type Test2 = IsString<number>; // Test2 is "No"
+
+    // 15.3 Literal Types: Literal types are a feature that allows you to specify the exact value a variable can hold. Instead of just saying a variable is a string or a number, you can specify that it can only be a particular string like "hello" or a particular number like 42. This enables more precise type checking and helps catch errors at compile time by ensuring that variables only hold the intended values. For example:
+    type Direction = "North" | "South" | "East" | "West";
+    
 }
