@@ -930,4 +930,22 @@ console.log(title);
     const event: PrefixedEventName = "onClick"; // This is valid
     // const invalidEvent: PrefixedEventName = "click"; // This would cause a TypeScript error because it does not match the pattern defined by PrefixedEventName
 
+    // 15.5 Recursive Types:Recursive types in TypeScript allow you to define types that refer to themselves. This is especially useful for representing data structures that have a nested or hierarchical structure, like trees or linked lists. By using recursion in type definitions, you can ensure that the type system accurately reflects the self-referential nature of these data structures, enabling strong type checking throughout your code. For example:
+    type TreeNode = {
+        value: number;
+        children: TreeNode[]; // This allows the TreeNode type to refer to itself, enabling the representation of a tree structure where each node can have multiple child nodes.
+    };
+    const rootNode: TreeNode = {
+        value: 1,
+        children: [
+            {
+                value: 2,
+                children: []
+            },
+            {
+                value: 3,
+                children: []
+            }
+        ]
+    };
 }
