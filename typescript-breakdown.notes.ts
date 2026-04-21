@@ -949,3 +949,23 @@ console.log(title);
         ]
     };
 }
+
+/* 16. TypeScript Modules */
+
+{
+    // 16.1. Namespace: Namespaces in TypeScript are a way to organize code and prevent naming conflicts by grouping related code together under a single name. They are defined using the namespace keyword, followed by the name of the namespace and a block of code that contains the members of the namespace. This allows you to create a logical grouping of related functions, classes, interfaces, or variables, and helps to avoid naming collisions in larger codebases. For example:
+    namespace MyNamespace {
+        export function greet(name: string): string {
+            return `Hello, ${name}!`;
+        }
+    }
+    console.log(MyNamespace.greet("Alice")); // Output: Hello, Alice!
+
+    // Namespace vs Module: The main difference between namespaces and modules in TypeScript is that namespaces are a way to organize code within a single file, while modules are a way to organize code across multiple files. Namespaces are typically used for internal organization of code within a project, while modules are used for external code organization and sharing. Modules use the import and export syntax to manage dependencies between files, while namespaces do not have this capability. Additionally, modules are more aligned with the ES6 module system and are generally recommended for modern TypeScript development, while namespaces are considered a legacy feature and are less commonly used in new projects.
+
+    // 16.2 Ambient Modules: Ambient modules in TypeScript are used to describe the shape of external modules that are not written in TypeScript. They allow you to provide type information for JavaScript libraries or modules that you want to use in your TypeScript code. Ambient modules are declared using the declare module syntax, and they typically include type definitions for the exported members of the module. This enables you to use these external modules with proper type checking and autocompletion in your TypeScript code. For example:
+    declare module "my-library" {
+        export function doSomething(): void;
+    }
+    // In this example, we declare an ambient module named "my-library" and specify that it exports a function called doSomething. This allows us to use the doSomething function in our TypeScript code with proper type checking, even though the actual implementation of the function is in a JavaScript library that we are importing.
+}
