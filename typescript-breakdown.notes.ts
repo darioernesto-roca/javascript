@@ -968,4 +968,29 @@ console.log(title);
         export function doSomething(): void;
     }
     // In this example, we declare an ambient module named "my-library" and specify that it exports a function called doSomething. This allows us to use the doSomething function in our TypeScript code with proper type checking, even though the actual implementation of the function is in a JavaScript library that we are importing.
+
+     
+    // 16.3 External Modules: External modules in TypeScript are files containing code that can be imported and used in other files. They help organize and structure your project by dividing code into logical units, improving maintainability and reusability. Each external module has its own scope, preventing naming conflicts and allowing you to explicitly control what is exposed from the module using export and what is consumed from other modules using import.
+    // For example, if you have a file named mathUtils.ts with the following content:
+    export function add(a: number, b: number): number {
+        return a + b;
+    }
+    export function subtract(a: number, b: number): number {
+        return a - b;
+    }
+    export function multiply(a: number, b: number): number {
+        return a * b;
+    }
+    export function divide(a: number, b: number): number {
+        if (b === 0) {
+            throw new Error("Cannot divide by zero");
+        }
+        return a / b;
+    }
+    // You can then import and use these functions in another file like this:
+    import { add, subtract, multiply } from "./mathUtils";
+    console.log(add(5, 3));
+    console.log(subtract(5, 3));
+    console.log(multiply(5, 3));
+    console.log(divide(5, 3));
 }
