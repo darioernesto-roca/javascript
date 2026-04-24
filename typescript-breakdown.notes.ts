@@ -993,4 +993,22 @@ console.log(title);
     console.log(subtract(5, 3));
     console.log(multiply(5, 3));
     console.log(divide(5, 3));
+
+    // 16.4 Namespace Augmentation: Namespace augmentation in TypeScript allows you to add new properties or methods to an existing namespace, even if that namespace is defined in a separate file or module. This feature is particularly useful for extending namespaces declared in external libraries or modules without directly modifying the original source code. It provides a way to customize or add functionality to existing namespaces in a modular and organized manner.
+    // For example, if you have an existing namespace called MyNamespace defined in one file, you can augment it in another file like this:
+    // In the first file (myNamespace.ts):
+    namespace MyNamespace {
+        export function greet(name: string): string {
+            return `Hello, ${name}!`;
+        }
+    }
+    // In the second file (myNamespaceAugmentation.ts):
+    namespace MyNamespace {
+        export function farewell(name: string): string {
+            return `Goodbye, ${name}!`;
+        }
+    }
+    // Now, both the greet and farewell functions are part of the MyNamespace namespace, and you can use them like this:
+    console.log(MyNamespace.greet("Alice")); // Output: Hello, Alice!
+    console.log(MyNamespace.farewell("Alice")); // Output: Goodbye, Alice!
 }
