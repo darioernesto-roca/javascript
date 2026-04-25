@@ -1011,4 +1011,15 @@ console.log(title);
     // Now, both the greet and farewell functions are part of the MyNamespace namespace, and you can use them like this:
     console.log(MyNamespace.greet("Alice")); // Output: Hello, Alice!
     console.log(MyNamespace.farewell("Alice")); // Output: Goodbye, Alice!
+
+    // 16.5 Global Augmentation: Global augmentation in TypeScript allows you to add new properties, methods, or types to the global scope. This is useful when you want to extend the functionality of built-in types or add new global variables without modifying the original source code. Global augmentation is typically done by declaring a module with the same name as the global object you want to augment and then adding your new properties or methods within that module. For example, if you want to add a new method to the built-in String type, you can do it like this:
+    declare global {
+        interface String {
+            reverse(): string;
+        }
+    }
+    String.prototype.reverse = function (): string {
+        return this.split("").reverse().join("");
+    };
+    console.log("Hello".reverse()); // Output: "olleH"
 }
