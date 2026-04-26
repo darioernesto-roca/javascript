@@ -952,6 +952,8 @@ console.log(title);
 
 /* 16. TypeScript Modules */
 
+/* Modules in TypeScript (and JavaScript) are a way to organize code into reusable and manageable blocks. Each module encapsulates its own variables, functions, classes, and interfaces, preventing naming collisions and promoting code modularity. Modules explicitly export parts that other code can use and import modules to gain access to their exported functionalities. */
+
 {
     // 16.1. Namespace: Namespaces in TypeScript are a way to organize code and prevent naming conflicts by grouping related code together under a single name. They are defined using the namespace keyword, followed by the name of the namespace and a block of code that contains the members of the namespace. This allows you to create a logical grouping of related functions, classes, interfaces, or variables, and helps to avoid naming collisions in larger codebases. For example:
     namespace MyNamespace {
