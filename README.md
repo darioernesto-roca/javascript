@@ -10,6 +10,8 @@ This repository is a small collection of JavaScript/TypeScript learning exercise
   - `javascript-typescript-mindmap.md`: quick visual/text map of JS/TS topics.
 - **TypeScript notes/config**
   - `typescript-breakdown.notes.ts`: TypeScript-oriented notes/examples.
+  - `javascript-roadmap.md`: step-by-step JavaScript practice roadmap.
+  - `typescript-roadmap.md`: step-by-step TypeScript practice roadmap.
   - `tsconfig.json`: starter TypeScript compiler configuration.
 - **Mini projects**
   - `number-guessing-game v 1.0.0/`: browser game where users guess a number from 1 to 100.
